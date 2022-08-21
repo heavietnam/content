@@ -48,7 +48,9 @@ Trước hết ta sẽ cần tìm hiểu chipset là gì? *Chipset máy tính l
 
 Vậy còn mainboard là gì? Mainboard hay main máy tính hay bo mạch chủ là một bảng mạch đóng vai trò nền tảng trên máy tính, laptop có tác dụng kết nối các linh kiện bên trong thành thể thống nhất. Mainboard PC sẽ nằm ở thùng máy, hoặc tích hợp đằng sau màn hình đối với máy tính AIO.
 
-Để xác định được mã của chúng ta sẽ làm như sau:
+Để xác định được mã của chúng ta sẽ làm như sau
+
+### Dùng system info
 
 B1: Chuột phải vào logo `Windows` ở góc dưới cùng bên trái và search `System Information`.
 
@@ -57,6 +59,18 @@ B1: Chuột phải vào logo `Windows` ở góc dưới cùng bên trái và s
 B2: Ta chú ý vào dòng `Baseboard manufacturer` (đây là dòng hiện thị main) và `Baseboard product` (đây là dòng hiển thị chipset).
 
 ![](https://i.imgur.com/IMq9aiW.png)
+
+> Nhưng một số main sẽ không hiển thị chipset vậy ta sẽ tiến hành làm như sau
+
+### Xác định thông qua device manager
+
+B1: mở `device manager`
+
+B2: chọn tới tab `IDE ATA/ATAPI controllers` 
+
+B3: Chọn `properties` ta sẽ có thể thấy thế hệ chipset
+
+![299460458_838685037052875_6042626987910816592_n.png](https://raw.githubusercontent.com/king-dragon/image/main/2022/08/21-11-49-06-299460458_838685037052875_6042626987910816592_n.png)
 
 ## Audio Codec
 
