@@ -12,9 +12,12 @@ B4: Tải GenSMBIOS [tại đây](https://github.com/corpnewt/GenSMBIOS)
 
 ## Tiến hành
 
-@del
-
-
+<details>
+    <summary>Support<summyar>
+    <p>Min version: OS X 10.4.1 (tiger)</p>
+    <p>Max version: Macos 10.13.6 (high sierra)</p>
+    <p>Hầu hết laptop Clarksfield và Arrandale không hỗ trợ UEFI</p>
+</details>
 
 ### ACPI
 
@@ -32,8 +35,6 @@ B4: Tải GenSMBIOS [tại đây](https://github.com/corpnewt/GenSMBIOS)
 ![booter-duetpkg.5a27db69.png](https://raw.githubusercontent.com/king-dragon/image/main/2022/08/21-10-55-36-booter-duetpkg.5a27db69.png)
 
 > Legacy
-
-
 
 ![aptio-iv-booter-sl.5e63b543.png](https://raw.githubusercontent.com/king-dragon/image/main/2022/08/21-10-55-52-aptio-iv-booter-sl.5e63b543.png)
 
@@ -71,8 +72,6 @@ Dùng để patch các device xem chi tiết [ở đây](https://heavietnam.ga/
 
 ![kernel-sandy-usb.8c9e4d73.png](https://raw.githubusercontent.com/king-dragon/image/main/2022/08/21-10-55-06-kernel-sandy-usb.8c9e4d73.png)
 
-
-
 - Add: Đây là mục quyết định sự load kext, thứ tự load kext. Thông thường bạn nên để đúng thứ tự load kext của propertree đã sắp xếp. Tuy nhiên với các cpu 32 bit thì bạn có thể tham khảo thông tin sau:
 
 1 số điều cần nhớ về việc load kext
@@ -99,8 +98,6 @@ Chi tiết về quirks kernel
 Thông tin chi tiết về Scheme
 
 ### Misc
-
-
 
 ![misc.60f4894d.png](https://raw.githubusercontent.com/king-dragon/image/main/2022/08/21-10-54-51-misc.60f4894d.png)
 
@@ -133,8 +130,6 @@ Chi tiết về Security
   - Chi tiết điều này bạn có thể xem ở mục 8.6 trong file [Configuration.pdf](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/Configuration.pdf)
 
 ### NVRAM
-
-
 
 ![nvram.8e75ddde.png](https://raw.githubusercontent.com/king-dragon/image/main/2022/08/21-10-54-37-nvram.8e75ddde.png)
 
@@ -182,8 +177,6 @@ Thông tin chi tiết về Delete Nvram
 
 ![smbios.51b5b579.png](https://raw.githubusercontent.com/king-dragon/image/main/2022/08/21-10-54-13-smbios.51b5b579.png)
 
-
-
 Các bạn sẽ tiến hành dùng tool Gen Smbios đã tải ở trên để inject thông tin
 
 Mở terminal và chạy lệnh sau
@@ -217,8 +210,6 @@ Thông tin chi tiết về Generic
 ### UEFI
 
 ![uefi-legacy-laptop.02008210.png](https://raw.githubusercontent.com/king-dragon/image/main/2022/08/21-10-53-54-uefi-legacy-laptop.02008210.png)
-
-
 
 - ConnectDrivers: YES
   - sẽ làm cho các driver tự động load
