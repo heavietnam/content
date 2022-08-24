@@ -1,6 +1,6 @@
 # Cách mod bios
 
-Hiện nay có nhiều bios đặc biệt là HP, Acer,Vaio bios của các laptop rất tù bạn hầu như chả làm gì được điều này gây khó khăn rất lớn cho việc hackintosh
+Hiện nay có nhiều bios đặc biệt là HP, Acer,Vaio bios của một số laptop rất tù bạn hầu như chả làm gì được điều này gây khó khăn rất lớn cho việc hackintosh
 
 ## Chuẩn bị
 
