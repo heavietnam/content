@@ -16,7 +16,7 @@ B4: Tải GenSMBIOS [tại đây](https://github.com/corpnewt/GenSMBIOS)
     <summary>Support<summyar>
     <p>Min version: OS X 10.4.1 (tiger)</p>
     <p>Max version: Macos 10.13.6 (high sierra)</p>
-    <p>Hầu hết laptop Clarksfield và Arrandale không hỗ trợ UEFI</p>
+    <p>Các Laptop Clarksfield và Arrandale không hỗ trợ UEFI</p>
 </details>
 
 ### ACPI
