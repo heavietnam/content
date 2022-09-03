@@ -16,19 +16,19 @@ Cách để biết bạn dùng patch rename HECI hay MEI:
 
 - Mở DSDT bằng [MaciASL](https://github.com/acidanthera/MaciASL/releases).
 
-- Search từ khoá sau “HECI” hoặc “MEI”.
+- Search từ khoá sau `HECI` hoặc `MEI`
 
 ![](https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-11-at-12.31.24.png?w=782)
 
 -  Từ khoá nào có các bạn add patch rename đó. 
 
-B3: Tải [gfxutil](https://github.com/acidanthera/gfxutil/releases) và nhập code sau vào terminal patch/gfxutil -f HDEF (như hình).
+B3: Tải [gfxutil](https://github.com/acidanthera/gfxutil/releases) và nhập code sau vào terminal `patch to gfxutil -f HDEF` 
 
 ![](https://lh5.googleusercontent.com/2AnHbqNDrwEeOVMONErYSRehzJyZQvfb4bKd4DUobxhKvWsfb6MzL5qy3YIsYG5RLpJZsIldYy1NcEcbzhLKTN2avgVZdKgMfbkCWpDlbmz3iBUIBQaKxFp1XgJzFxNPFpU-KyZZ=s0)
 
 B4: Lấy mục vừa đc dump từ Terminal, ở đây của mình là 
 
-`PciRoot(0)/Pci(0x1f,3) )` add vào mục `device properties` tiếp add các patch sau dưới dòng vừa tạo `hda-gfx | STRING | onboard-1` 
+`PciRoot(0)/Pci(0x1f,3)` add vào mục `device properties` tiếp add các patch sau dưới dòng vừa tạo `hda-gfx | STRING | onboard-1` 
 
 > đối với clover thì add như hình:
 
@@ -36,7 +36,7 @@ B4: Lấy mục vừa đc dump từ Terminal, ở đây của mình là 
 
 B5: Xác định `conX` liên kết với cổng hdmi (xem [tại đây](https://heavietnam.ga/2021/09/29/xiv-patch-connect-type-force-rgb-injects-edid/))
 
-B6: Các bạn mở  c`onfig.plist ⇒ Devices Properties ⇒ PciRoot(0)/Pci(0x02,0) `và add như sau: 
+B6: Các bạn mở  `config.plist ⇒ Devices Properties ⇒ PciRoot(0)/Pci(0x02,0) `và add như sau: 
 
 ```
 framebuffer-patch-enable | data | 01000000
@@ -45,18 +45,14 @@ framebuffer-conX-type | data | 00080000
 framebuffer-conX-pipe | data|12000000
 ```
 
-> chỉ add patch framebuffer-conX-pipe nếu như  máy của bạn bị restart sau khi được cắm thiết bị HDMI vào máy, bạn cần thay đổi giá trị pipe của đầu nối HDMI thành “12” sẽ giúp bạn giải quyết vấn đề này
+> chỉ add patch `framebuffer-conX-pipe` nếu như  máy của bạn bị restart sau khi được cắm thiết bị `HDMI` vào máy, bạn cần thay đổi giá trị pipe của đầu nối HDMI thành `12` sẽ giúp bạn giải quyết vấn đề này
 
-**Lưu ý: Nếu các bạn dùng các cổng kết nối khác thì thay đổi vault của mục framebuffer-conX-type theo bảng sau**
+> Nếu các bạn dùng các cổng kết nối khác thì thay đổi vault của mục framebuffer-conX-type theo bảng sau
 
-**Lưu ý 2: Các bạn thay chữ X thành index của con liên kết với cổng kết nối của các bạn (như của mình là “con1”)**
+![Screen Shot 2021-08-02 at 10.58.50.png](https://raw.githubusercontent.com/king-dragon/image/main/2022/09/03-11-02-35-Screen%20Shot%202021-08-02%20at%2010.58.50.png)
+
+> Các bạn thay chữ X thành index của con liên kết với cổng kết nối của các bạn như của mình là `con1`
 
 B7: Save lại và Reboot. 
 
-**Lưu ý : Nếu các bạn dùng CPU Haswell/Broadwell thì phải thêm** [**FakePCIID.kext**](https://bitbucket.org/RehabMan/os-x-fake-pci-id/downloads/) **+** [**FakePCIID_Intel_HDMI_Audio.kext**](https://bitbucket.org/RehabMan/os-x-fake-pci-id/downloads/) **vào mục EFI ⇒ OC ⇒ kext và snaps lại (FakePCIID Intel_HDMI_ Audio.kext sẽ nằm chung 1 folder với kext FakePCIID.kext | như hình)**.
-
-![](https://lh6.googleusercontent.com/XFnrxIl5xqUaeV197TsRS5ggpUFcd6X4MhFbRikWRLsKPdQ1pnUXmlnPm0i2LGo-WX0C8JjBlLmb8Un81wtle9VhSlCwmjWqIX6xi1sZh-gzoP29XTM_1mn_-pHRaMWyCE19lI-3=s0)
-
-**Lưu ý 2: Đối với các bạn vẫn muốn nhận âm thanh nhưng lười làm cách này thì các bạn có thể patch VoodooHDA mình có hướng dẫn ở [đây](https://heavietnam.ga/2021/09/29/iii-patch-voodoohda-khi-da-patch-thanh-cong-am-thanh-se-khong-thua-apple-alc/) các bạn có thể tham khảo**  
-
-**Lưu ý 3: Các source tham khảo** [**Cài driver âm thanh, đừng để Hackintosh của bạn im lặng mãi!!!**](https://hackintosh.vn/driver-audio#hdmisound) **|** [**Fixing audio with AppleALC | OpenCore Post-Install (dortania.github.io)**](https://dortania.github.io/OpenCore-Post-Install/universal/audio.html#making-layout-id-more-permanent) **|** [**Các loại đầu nối vá lỗi | OpenCore Sau cài đặt (dortania.github.io)**](https://dortania.github.io/OpenCore-Post-Install/gpu-patching/intel-patching/connector.html)
+> Các source tham khảo: [**Cài driver âm thanh, đừng để Hackintosh của bạn im lặng mãi!!!**](https://hackintosh.vn/driver-audio#hdmisound) **|** [**Fixing audio with AppleALC | OpenCore Post-Install (dortania.github.io)**](https://dortania.github.io/OpenCore-Post-Install/universal/audio.html#making-layout-id-more-permanent) **|** [**Các loại đầu nối vá lỗi | OpenCore Sau cài đặt (dortania.github.io)**](https://dortania.github.io/OpenCore-Post-Install/gpu-patching/intel-patching/connector.html)
