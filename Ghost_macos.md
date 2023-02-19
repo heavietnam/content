@@ -1,6 +1,6 @@
 # Ghost macos
 
-nghe có vẻ lạ nhưng đây là 1 chuyện hoàn toàn có thể thực hiện được. nó hoàn toàn giống như ghost win tạo ra một bản macos của riêng bạn và khi bung chỉ mất vài phục thật tuyệt vời đúng không nào. Còn chờ gì nữa mà không bắt đầu ngay thôi ![😀](https://s.w.org/images/core/emoji/14.0.0/svg/1f600.svg)
+nghe có vẻ lạ nhưng đây là 1 chuyện hoàn toàn có thể thực hiện được. nó hoàn toàn giống như ghost win tạo ra một bản macos của riêng bạn và khi bung chỉ mất vài phục thật tuyệt vời đúng không nào. Còn chờ gì nữa mà không bắt đầu ngay thôi ! :D 
 
 ## Ghost
 
