@@ -1,0 +1,2599 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.2.11">
+    
+    
+      
+        <title>Fix WiFi và Bluetooth - Hackintosh Documents</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c5ef100.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.9647289d.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fix-wifi-va-bluetooth" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Hackintosh Documents" class="md-header__button md-logo" aria-label="Hackintosh Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Hackintosh Documents
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Fix WiFi và Bluetooth
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Hackintosh Documents" class="md-nav__button md-logo" aria-label="Hackintosh Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Hackintosh Documents
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        content
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Add_device-id_in_amd_kext/" class="md-nav__link">
+        Add device-id vào amd kext
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Backup_and_Restore_with_Time_Machine/" class="md-nav__link">
+        Backup and Restore with Time Machine
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Boot_Arguments/" class="md-nav__link">
+        Boot Arguments
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Boot_without_USB_and_mount_partion_EFI/" class="md-nav__link">
+        Boot không cần USB và mount phân vùng EFI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Config_Laptop_Clarksfield_and_Arrandale/" class="md-nav__link">
+        Config Laptop Clarksfield và Arrandale
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Control_Brightness_External_Display/" class="md-nav__link">
+        Control Brightness cho External Display
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Control_Led_RGB/" class="md-nav__link">
+        Control Led RGB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Convert_Bootloader/" class="md-nav__link">
+        Convert Bootloader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C%C3%A1ch%20x%C3%A1c%20%C4%91%E1%BB%8Bnh%20ph%E1%BA%A7n%20c%E1%BB%A9ng/" class="md-nav__link">
+        Cách xác định phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_CFG-Clock/" class="md-nav__link">
+        Disable CFG-Clock
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_dGPU_Desktop/" class="md-nav__link">
+        Disable dGPU Desktop
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_dgpu_Laptop/" class="md-nav__link">
+        Disable dgpu Laptop
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Emulated_NVRAM/" class="md-nav__link">
+        Emulated NVRAM
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Enable_Trim_For_SSD/" class="md-nav__link">
+        Enable Trim For SSD
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../External_Card_Reader/" class="md-nav__link">
+        Fix Internal/External Card Reader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fake_CPU-ID/" class="md-nav__link">
+        Fake CPU-ID
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix%20_for_slow_AMD_GPU/" class="md-nav__link">
+        Fix for slow AMD GPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Backlight/" class="md-nav__link">
+        Fix Backlight
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Connect_%28HDMI%29/" class="md-nav__link">
+        Fix Connect (HDMI)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Ethernet/" class="md-nav__link">
+        Fix Ethernet
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_HDMI_Audio/" class="md-nav__link">
+        Fix HDMI Audio
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Hotkeys/" class="md-nav__link">
+        Fix Hotkeys
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_RTC_Manual/" class="md-nav__link">
+        Fix RTC Manual
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_RTC_write_issues/" class="md-nav__link">
+        Fix RTC write issues
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Shutdown/" class="md-nav__link">
+        Fix Shut down
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_System_Clocks_on_HEDT/" class="md-nav__link">
+        Fix System Clocks on HEDT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Fix WiFi và Bluetooth
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Fix WiFi và Bluetooth
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wifi-va-bluetooth-cac-dong-arxxx" class="md-nav__link">
+    Wifi và Bluetooth các dòng arXXX:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fix-wifi-bluetooth-cho-cac-card-intel" class="md-nav__link">
+    Fix WiFi, Bluetooth cho các card Intel:
+  </a>
+  
+    <nav class="md-nav" aria-label="Fix WiFi, Bluetooth cho các card Intel:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cac-dong-card-uoc-ho-tro" class="md-nav__link">
+    Các dòng card được hỗ trợ:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cac-dong-card-khong-uoc-ho-tro" class="md-nav__link">
+    Các dòng card không được hỗ trợ:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cai-at" class="md-nav__link">
+    Cài đặt:
+  </a>
+  
+    <nav class="md-nav" aria-label="Cài đặt:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cach-1-dung-itiwm-heliport" class="md-nav__link">
+    Cách 1: dùng ItIwm + HeliPort:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cach-2-dung-airportitiwm" class="md-nav__link">
+    Cách 2: Dùng AirportItIwm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bluetooth" class="md-nav__link">
+    Bluetooth:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fix-wifi-va-bluetooth-cho-cac-card-broadcom" class="md-nav__link">
+    Fix WiFi và Bluetooth cho các card Broadcom:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fix-bluetooth-bta-403-tren-monterey" class="md-nav__link">
+    Fix bluetooth BTA-403 trên monterey
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fix-usb-wifi-in-bigsur" class="md-nav__link">
+    Fix usb wifi in bigsur+
+  </a>
+  
+    <nav class="md-nav" aria-label="Fix usb wifi in bigsur+">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cac-dong-card-support" class="md-nav__link">
+    Các dòng card support
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tien-hanh" class="md-nav__link">
+    Tiến hành
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#luu-y" class="md-nav__link">
+    Lưu ý
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_darkwake/" class="md-nav__link">
+        Fix darkwake
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_iServices/" class="md-nav__link">
+        Fix iServices
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_keyboard_wake/" class="md-nav__link">
+        Fix keyboard wake
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_power_management/" class="md-nav__link">
+        Fix power management
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_sleep/" class="md-nav__link">
+        Fix sleep
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_trackpad/" class="md-nav__link">
+        Fix trackpad
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fixing_KASLR/" class="md-nav__link">
+        Fixing KASLR
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GPRW_UPRW_LANC/" class="md-nav__link">
+        GPRW/UPRW/LANC
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ghost_macos/" class="md-nav__link">
+        Ghost macos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Guide_dual_Boot/" class="md-nav__link">
+        Hướng dẫn Dual Boot
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HotPlug_Thunderbolt_3/" class="md-nav__link">
+        HotPlug Thunderbolt 3
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hotpatch_PTS_Wake_TTS/" class="md-nav__link">
+        Hotpatch PTS Wake TTS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Injects_USB_Manual/" class="md-nav__link">
+        Injects USB Manual
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kernel_issue/" class="md-nav__link">
+        Kernel issue
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Map_USB/" class="md-nav__link">
+        Map USB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenCore_Legacy/" class="md-nav__link">
+        OpenCore Legacy
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_AMD_GPU/" class="md-nav__link">
+        Patch Card đồ họa AMD
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_2/" class="md-nav__link">
+        Patch DSDT Phần 2
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_3/" class="md-nav__link">
+        Patch DSDT Phần 3
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_4/" class="md-nav__link">
+        Patch DSDT phần 4
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_GMA_GPU/" class="md-nav__link">
+        Patch GMA GPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_IGPU/" class="md-nav__link">
+        Patch IGPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_NVIDIA_GPU/" class="md-nav__link">
+        Patch Card đồ họa NVIDIA
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_SATA_Controller/" class="md-nav__link">
+        Patch SATA Controller
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_audio_with_AppleALC/" class="md-nav__link">
+        Patch âm thanh với AppleALC
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_audio_with_VoodooHDA/" class="md-nav__link">
+        Patch audio với VoodooHDA
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_dsdt_part_1/" class="md-nav__link">
+        Patch dsdt phần 1
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_pin/" class="md-nav__link">
+        Patch pin
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Resize_EFI/" class="md-nav__link">
+        Resize EFI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SIP_and_Gatekeeper/" class="md-nav__link">
+        SIP và Gatekeeper
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SLE_kext_in_bigsur/" class="md-nav__link">
+        Cách sửa kext S/L/E trên bigsur
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SSDT_recomend/" class="md-nav__link">
+        SSDT recomend
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Scan_policy/" class="md-nav__link">
+        Scan policy
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Some_error_in_bigsur/" class="md-nav__link">
+        Một số lỗi ở xuất hiện ở macOS Big Sur
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Some_error_in_propertree/" class="md-nav__link">
+        1 số lỗi ProperTree
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Turn_on_Backlight_Keyboard/" class="md-nav__link">
+        Turn on Backlight Keyboard
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Update_macOS_and_Bootloader/" class="md-nav__link">
+        Update macOS và Bootloader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Use_SSDT-time_to_Prebuilt%20SSDT/" class="md-nav__link">
+        Dùng SSDT-Time để Prebuilt SSDT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%5BEB%7C%23LOG%3AEXITBS%3ASTART%5D/" class="md-nav__link">
+        [EB|#LOG:EXITBS:START]
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../add_boot_option_in_bios/" class="md-nav__link">
+        Cách thêm Boot vào BIOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creat_GUI/" class="md-nav__link">
+        Tạo GUI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creat_online_usb_%28recovery%29/" class="md-nav__link">
+        Cách tạo bộ cài online (recovery)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_EFI_OpenCore/" class="md-nav__link">
+        Cách tạo EFI OpenCore
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_EFI_Opencore_No_ACPI/" class="md-nav__link">
+        Cách làm EFI Opencore No ACPI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_offline_bootable_without_no_usb/" class="md-nav__link">
+        Cách tạo bộ cài Offline khi không có USB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_usb_offline/" class="md-nav__link">
+        Cách tạo bộ cài offline
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fake_CPU_Name%3Aigpu_name/" class="md-nav__link">
+        Fake iGPU/ CPU Name
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_mod_bios/" class="md-nav__link">
+        Cách mod bios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inject_all_hardware_properties/" class="md-nav__link">
+        Cách inject toàn bộ thông tin phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn_about_hackintosh/" class="md-nav__link">
+        Tìm hiểu về Hackintosh
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn_about_to_hardware/" class="md-nav__link">
+        Tìm hiểu chung về phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../macOS_12_Monterey/" class="md-nav__link">
+        macOS 12: Monterey
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patch_connector_type_force_rgb%3AInject_EDID/" class="md-nav__link">
+        Patch Connect Type/ Force RGB/ Inject EDID
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wifi-va-bluetooth-cac-dong-arxxx" class="md-nav__link">
+    Wifi và Bluetooth các dòng arXXX:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fix-wifi-bluetooth-cho-cac-card-intel" class="md-nav__link">
+    Fix WiFi, Bluetooth cho các card Intel:
+  </a>
+  
+    <nav class="md-nav" aria-label="Fix WiFi, Bluetooth cho các card Intel:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cac-dong-card-uoc-ho-tro" class="md-nav__link">
+    Các dòng card được hỗ trợ:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cac-dong-card-khong-uoc-ho-tro" class="md-nav__link">
+    Các dòng card không được hỗ trợ:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cai-at" class="md-nav__link">
+    Cài đặt:
+  </a>
+  
+    <nav class="md-nav" aria-label="Cài đặt:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cach-1-dung-itiwm-heliport" class="md-nav__link">
+    Cách 1: dùng ItIwm + HeliPort:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cach-2-dung-airportitiwm" class="md-nav__link">
+    Cách 2: Dùng AirportItIwm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bluetooth" class="md-nav__link">
+    Bluetooth:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fix-wifi-va-bluetooth-cho-cac-card-broadcom" class="md-nav__link">
+    Fix WiFi và Bluetooth cho các card Broadcom:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fix-bluetooth-bta-403-tren-monterey" class="md-nav__link">
+    Fix bluetooth BTA-403 trên monterey
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fix-usb-wifi-in-bigsur" class="md-nav__link">
+    Fix usb wifi in bigsur+
+  </a>
+  
+    <nav class="md-nav" aria-label="Fix usb wifi in bigsur+">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cac-dong-card-support" class="md-nav__link">
+    Các dòng card support
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tien-hanh" class="md-nav__link">
+    Tiến hành
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#luu-y" class="md-nav__link">
+    Lưu ý
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="fix-wifi-va-bluetooth">Fix WiFi và Bluetooth<a class="headerlink" href="#fix-wifi-va-bluetooth" title="Permanent link">&para;</a></h1>
+<h2 id="wifi-va-bluetooth-cac-dong-arxxx"><strong><em>Wifi và Bluetooth các dòng arXXX:</em></strong><a class="headerlink" href="#wifi-va-bluetooth-cac-dong-arxxx" title="Permanent link">&para;</a></h2>
+<p><strong>B1</strong>: Đối với Mojave, Catalina và Big Sur (10.14, 10.15, 11), tải xuống kext <code>AirPortATH40</code> và<code>HS80211Family</code> và <code>Ath3kBT</code> theo link: <a href="https://drive.google.com/drive/folders/1BVXdIqBJ2I1vYW0rUc_-40mXDcMiVSuo?usp=sharing">Kexts</a> (chỉ lấy <code>HS80211Family.kext</code>)</p>
+<p>Tải các kext sau:</p>
+<ul>
+<li><a href="https://www.insanelymac.com/applications/core/interface/file/attachment.php?id=358450">AR9565</a></li>
+<li><a href="https://www.insanelymac.com/applications/core/interface/file/attachment.php?id=358451">AR9462</a></li>
+<li><a href="https://www.insanelymac.com/applications/core/interface/file/attachment.php?id=358452">AR9463</a></li>
+<li><a href="https://www.insanelymac.com/applications/core/interface/file/attachment.php?id=358453">AR9485</a></li>
+</ul>
+<p>Và bỏ vào EFI, snapshot config và save lại.</p>
+<p>Đối với Catalina trở xuống, tải các kext sau:</p>
+<ul>
+<li><a href="https://www.mediafire.com/file/u5j19uuavpxzn6u/AR9462.zip/file">AR 9462</a></li>
+<li><a href="https://www.mediafire.com/file/s0i1tasojzn83ur/AR9463.zip/file">AR9463</a></li>
+<li><a href="https://www.mediafire.com/file/4umyyowc1bpnn70/AR9485%25281%2529.zip/file">AR9485</a></li>
+<li><a href="https://www.mediafire.com/file/izsscv0z9f1c90e/AR9565.zip/file">AR9565</a></li>
+</ul>
+<p>Và bỏ vào <code>S/L/E</code> bằng <a href="https://github.com/chris1111/Kext-Droplet">kext droplet</a></p>
+<p>Để fix Bluetooth, tải kext sau về:</p>
+<ul>
+<li><a href="https://github.com/zxystd/AthBluetoothFirmware/">Big Sur (11)</a> (bỏ vào <code>EFI</code>)</li>
+<li><a href="https://www.mediafire.com/file/ltd2y9v3v2co3js/IOath3kfrmwr.kext.zip/file">Catalina (10.15)</a> (bỏ vào <code>S/L/E</code>)</li>
+</ul>
+<p><strong>B2:</strong> Add vào boot-arg dòng sau <code>-athXXX</code> (thay <code>XXX</code> thành mã của card wifi vd như card mình là <code>AR9485</code> mình sẽ add là <code>-ath9485</code> )</p>
+<h2 id="fix-wifi-bluetooth-cho-cac-card-intel"><strong><em>Fix WiFi, Bluetooth cho các card Intel:</em></strong><a class="headerlink" href="#fix-wifi-bluetooth-cho-cac-card-intel" title="Permanent link">&para;</a></h2>
+<h3 id="cac-dong-card-uoc-ho-tro">Các dòng card được hỗ trợ:<a class="headerlink" href="#cac-dong-card-uoc-ho-tro" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>1000 Series</p>
+</li>
+<li>
+<p>Intel(R) Centrino(R) Wireless-N 1000 BGN</p>
+</li>
+<li>Intel(R) Centrino(R) Wireless-N 1000 BG</li>
+<li>Intel(R) Centrino(R) Wireless-N 100 BGN</li>
+<li>
+<p>Intel(R) Centrino(R) Wireless-N 100 BG</p>
+</li>
+<li>
+<p>2000 Series</p>
+</li>
+<li>
+<p>Intel(R) Centrino(R) Wireless-N 2200 BGN</p>
+</li>
+<li>Intel(R) Centrino(R) Wireless-N 2200D BGN</li>
+<li>Intel(R) Centrino(R) Wireless-N 2230 BGN</li>
+<li>Intel(R) Centrino(R) Wireless-N 105 BGN</li>
+<li>Intel(R) Centrino(R) Wireless-N 105D BGN</li>
+<li>
+<p>Intel(R) Centrino(R) Wireless-N 135 BGN</p>
+</li>
+<li>
+<p>5000 Series</p>
+</li>
+<li>
+<p>Intel(R) Ultimate N WiFi Link 5300 AGN</p>
+</li>
+<li>Intel(R) WiFi Link 5100 BGN</li>
+<li>Intel(R) WiFi Link 5100 ABG</li>
+<li>Intel(R) WiFi Link 5100 AGN</li>
+<li>Intel(R) WiMAX/WiFi Link 5350 AGN</li>
+<li>Intel(R) WiMAX/WiFi Link 5150 AGN</li>
+<li>
+<p>Intel(R) WiMAX/WiFi Link 5150 ABG</p>
+</li>
+<li>
+<p>6000 Series</p>
+</li>
+<li>
+<p>Intel(R) Centrino(R) Advanced-N 6205 AGN</p>
+</li>
+<li>Intel(R) Centrino(R) Advanced-N 6205 ABG</li>
+<li>Intel(R) Centrino(R) Advanced-N 6205 BG</li>
+<li>Intel(R) Centrino(R) Advanced-N 6205S AGN</li>
+<li>Intel(R) Centrino(R) Advanced-N 6205D AGN</li>
+<li>Intel(R) Centrino(R) Advanced-N 6206 AGN</li>
+<li>Intel(R) Centrino(R) Advanced-N 6207 AGN</li>
+<li>Intel(R) Centrino(R) Advanced-N 6230 AGN</li>
+<li>Intel(R) Centrino(R) Advanced-N 6230 ABG</li>
+<li>Intel(R) Centrino(R) Advanced-N 6230 BGN</li>
+<li>Intel(R) Centrino(R) Advanced-N 6230 BG</li>
+<li>Intel(R) Centrino(R) Advanced-N 6235 AGN</li>
+<li>Intel(R) Centrino(R) Ultimate-N 6235 AGN</li>
+<li>Intel(R) Centrino(R) Wireless-N 1030 BGN</li>
+<li>Intel(R) Centrino(R) Wireless-N 1030 BG</li>
+<li>Intel(R) Centrino(R) Wireless-N 130 BGN</li>
+<li>Intel(R) Centrino(R) Wireless-N 130 BG</li>
+<li>Intel(R) Centrino(R) Advanced-N 6200 AGN</li>
+<li>Intel(R) Centrino(R) Advanced-N 6200 ABG</li>
+<li>Intel(R) Centrino(R) Advanced-N 6200 BG</li>
+<li>Intel(R) Centrino(R) Advanced-N + WiMAX 6250 AGN</li>
+<li>Intel(R) Centrino(R) Advanced-N + WiMAX 6250 ABG</li>
+<li>Intel(R) Centrino(R) Wireless-N + WiMAX 6150 BGN</li>
+<li>Intel(R) Centrino(R) Wireless-N + WiMAX 6150 BG</li>
+<li>
+<p>Intel(R) Centrino(R) Ultimate-N 6300 AGN</p>
+</li>
+<li>
+<p>7000 Series</p>
+</li>
+<li>
+<p>Intel(R) Dual Band Wireless AC 7260</p>
+</li>
+<li>Intel(R) Dual Band Wireless N 7260</li>
+<li>Intel(R) Wireless N 7260</li>
+<li>Intel(R) Dual Band Wireless AC 3160</li>
+<li>Intel(R) Dual Band Wireless N 3160</li>
+<li>Intel(R) Wireless N 3160</li>
+<li>Intel(R) Dual Band Wireless AC 3165</li>
+<li>Intel(R) Dual Band Wireless AC 3168</li>
+<li>Intel(R) Dual Band Wireless AC 7265</li>
+<li>Intel(R) Dual Band Wireless N 7265</li>
+<li>Intel(R) Wireless N 7265</li>
+<li>Intel(R) Dual Band Wireless AC 7265</li>
+<li>Intel(R) Dual Band Wireless N 7265</li>
+<li>
+<p>Intel(R) Wireless N 7265</p>
+</li>
+<li>
+<p>8000 Series</p>
+</li>
+<li>
+<p>Intel(R) Dual Band Wireless N 8260</p>
+</li>
+<li>Intel(R) Dual Band Wireless AC 8260</li>
+<li>Intel(R) Dual Band Wireless AC 8265</li>
+<li>Intel(R) Dual Band Wireless AC 8275</li>
+<li>
+<p>Intel(R) Dual Band Wireless AC 4165</p>
+</li>
+<li>
+<p>9000 Series</p>
+</li>
+<li>
+<p>Intel(R) Wireless-AC 9162</p>
+</li>
+<li>Intel(R) Wireless-AC 9260</li>
+<li>Intel(R) Wireless-AC 9260-1</li>
+<li>Intel(R) Wireless-AC 9270</li>
+<li>Intel(R) Wireless-AC 9461</li>
+<li>Intel(R) Wireless-AC 9462</li>
+<li>
+<p>Intel(R) Wireless-AC 9560</p>
+</li>
+<li>
+<p>22000 Series</p>
+</li>
+<li>
+<p>Intel(R) Wireless-AC 9162 160MHz</p>
+</li>
+<li>
+<p>Intel(R) Wireless-AC 9260 160MHz</p>
+</li>
+<li>
+<p>Intel(R) Wireless-AC 9270 160MHz</p>
+</li>
+<li>
+<p>Intel(R) Wireless-AC 9461 160MHz</p>
+</li>
+<li>
+<p>Intel(R) Wireless-AC 9462 160MHz</p>
+</li>
+<li>
+<p>Intel(R) Wireless-AC 9560 160MHz</p>
+</li>
+<li>
+<p>Killer (R) Wireless-AC 1550 Wireless Network Adapter (9260NGW)</p>
+</li>
+<li>
+<p>Killer (R) Wireless-AC 1550i Wireless Network Adapter (9560NGW)</p>
+</li>
+<li>
+<p>Killer (R) Wireless-AC 1550s Wireless Network Adapter (9560NGW)</p>
+</li>
+<li>
+<p>Intel(R) Wi-Fi 6 AX101</p>
+</li>
+<li>
+<p>Intel(R) Wi-Fi 6 AX200 160MHz</p>
+</li>
+<li>
+<p>Intel(R) Wi-Fi 6 AX201 160MHz</p>
+</li>
+<li>
+<p>Intel(R) Wi-Fi 6 AX211 160MHz</p>
+</li>
+<li>
+<p>Intel(R) Wi-Fi 6 AX411 160MHz</p>
+</li>
+<li>
+<p>Intel(R) Wi-Fi 6</p>
+</li>
+<li>
+<p>Killer(R) Wi-Fi 6 AX1650w 160MHz Wireless Network Adapter (200D2W)</p>
+</li>
+<li>
+<p>Killer(R) Wi-Fi 6 AX1650x 160MHz Wireless Network Adapter (200NGW)</p>
+</li>
+<li>
+<p>Killer(R) Wi-Fi 6 AX1650s 160MHz Wireless Network Adapter (201D2W)</p>
+</li>
+<li>
+<p>Killer(R) Wi-Fi 6 AX1650i 160MHz Wireless Network Adapter (201NGW)</p>
+</li>
+</ul>
+<h3 id="cac-dong-card-khong-uoc-ho-tro">Các dòng card không được hỗ trợ:<a class="headerlink" href="#cac-dong-card-khong-uoc-ho-tro" title="Permanent link">&para;</a></h3>
+<ul>
+<li>22000 Series</li>
+<li>Intel(R) Wireless-AC 9560 160MHz</li>
+<li>Intel(R) Wi-Fi 6 AX210 160MHz</li>
+</ul>
+<h3 id="cai-at">Cài đặt:<a class="headerlink" href="#cai-at" title="Permanent link">&para;</a></h3>
+<h4 id="cach-1-dung-itiwm-heliport">Cách 1: dùng ItIwm + HeliPort:<a class="headerlink" href="#cach-1-dung-itiwm-heliport" title="Permanent link">&para;</a></h4>
+<p>B1: Tải ItIwm <a href="https://github.com/OpenIntelWireless/itlwm/releases">tại đây</a></p>
+<p>B2: Thêm kext vào <code>EFI ==&gt; OC ==&gt; Kexts</code> và snapshot config (nếu dùng OpenCore) hoặc bỏ kext vào <code>EFI ==&gt; Clover ==&gt; Kext ==&gt; Other</code> ( nếu dùng Clover )</p>
+<p>B3: Reboot</p>
+<p>B4: Tải HeliPort <a href="https://github.com/OpenIntelWireless/HeliPort/releases">tại đây</a></p>
+<p>B5: Nhấn giữ phím <code>Option</code> và mở app <code>HeliPort</code> lên, sau đó kết nối WiFi</p>
+<h4 id="cach-2-dung-airportitiwm">Cách 2: Dùng AirportItIwm<a class="headerlink" href="#cach-2-dung-airportitiwm" title="Permanent link">&para;</a></h4>
+<p>B1: Tải <code>AirportItIwm</code> <a href="https://github.com/OpenIntelWireless/itlwm/releases">tại đây</a></p>
+<p><a href="b2: Th%C3%AAm kext v%C3%A0o EFI ==&gt; OC ==&gt; Kexts v%C3%A0 snapshot config (n%E1%BA%BFu d%C3%B9ng OpenCore) ho%E1%BA%B7c b%E1%BB%8F kext v%C3%A0o EFI ==&gt; Clover ==&gt; Kext ==&gt; Other ( n%E1%BA%BFu d%C3%B9ng Clover )%E2%80%9D&gt;B2: Th%C3%AAm kext v%C3%A0o EFI ==&gt; OC ==&gt; Kexts v%C3%A0 snapshot config (n%E1%BA%BFu d%C3%B9ng OpenCore) ho%E1%BA%B7c b%E1%BB%8F kext v%C3%A0o EFI ==&gt; Clover ==&gt; Kext ==&gt; Other ( n%E1%BA%BFu d%C3%B9ng Clover )&lt;/a&gt;&lt;/p&gt;&lt;p&gt;B3: Reboot&lt;/p&gt;&lt;p&gt;N%E1%BA%BFu nh%C6%B0 l%C3%A0m nh%C6%B0 tr%C3%AAn m%C3%A0 v%E1%BA%ABn ko nh%E1%BA%ADn th%C3%AC c%C3%B3 th%E1%BB%83 l%C3%A0m th%C3%AAm 1 s%E1%BB%91 b%C6%B0%E1%BB%9Bc nh%C6%B0 sau:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Enable Apple Secure Boot, chi ti%E1%BA%BFt &lt;a href=">tại đây</a></p>
+<ul>
+<li>Force load kext <code>IO80211Family</code> như sau:</li>
+<li>B1: Mở config lên vào mục <code>Kernel -&gt; Force</code></li>
+<li>B2: Chỉnh config như hình (đối với những bạn dùng clover có thể convert ngược các patch này, chi tiết <a href="https://heavietnam.ga/2020/12/24/convert-bootloader/">tại đây</a>)</li>
+</ul>
+<p><img alt="force-io80211.2e4f9bcd.png" src="https://raw.githubusercontent.com/king-dragon/image/main/2022/08/21-15-30-03-force-io80211.2e4f9bcd.png" /></p>
+<ul>
+<li>Chuột phải vào <code>IO80211Family</code>, chọn <code>Show package contents</code> và cho kext <code>AirportItlwm</code> vào làm plugin, sau đó bỏ kext <code>IO80211Family</code> vừa chỉnh vào EFI</li>
+</ul>
+<p><strong>Lưu ý: không bao giờ load chung 2 kext ItIwm và AirportItwIm</strong></p>
+<h4 id="bluetooth">Bluetooth:<a class="headerlink" href="#bluetooth" title="Permanent link">&para;</a></h4>
+<p>B1: Tải kext IntelBluetoothFirmware <a href="https://github.com/OpenIntelWireless/IntelBluetoothFirmware/releases">tại đây</a></p>
+<p>B2: Thêm kext vào <code>EFI ==&gt; OC ==&gt; Kexts</code> và snapshot config (nếu dùng OpenCore) hoặc bỏ kext vào <code>EFI ==&gt; Clover ==&gt; Kext ==&gt; Other</code> ( nếu dùng Clover )</p>
+<p>B3: Reboot</p>
+<p><strong>Lưu ý đối với Monterey (12):</strong></p>
+<ul>
+<li><strong>Đảm bảo rằng kext <code>IntelBluetoothFirmware.kext</code> ở version 1.1.3+</strong></li>
+<li><strong>Disable kext <code>IntelBluetoothInjector.kext</code> trong config</strong></li>
+<li><strong>Thêm kext <code>BlueToolFixup.kext</code> có trong <code>BrcmPatchRAM.kext</code>, tải xuống <a href="https://github.com/acidanthera/BrcmPatchRAM">tại đây</a></strong></li>
+</ul>
+<h2 id="fix-wifi-va-bluetooth-cho-cac-card-broadcom"><strong><em>Fix WiFi và Bluetooth cho các card Broadcom:</em></strong><a class="headerlink" href="#fix-wifi-va-bluetooth-cho-cac-card-broadcom" title="Permanent link">&para;</a></h2>
+<p><strong>B1</strong>: Tải xuống kext <a href="https://github.com/acidanthera/AirportBrcmFixup/releases">tại đây</a> và Bcrmpatchram <a href="https://github.com/acidanthera/BrcmPatchRAM">tại đây</a></p>
+<p>B2: Thêm kext vào <code>EFI ==&gt; OC ==&gt; Kexts</code> và snapshot config (nếu dùng OpenCore) hoặc bỏ kext vào <code>EFI ==&gt; Clover ==&gt; Kext ==&gt; Other</code> ( nếu dùng Clover )</p>
+<p>B3: Reboot</p>
+<h2 id="fix-bluetooth-bta-403-tren-monterey">Fix bluetooth BTA-403 trên monterey<a class="headerlink" href="#fix-bluetooth-bta-403-tren-monterey" title="Permanent link">&para;</a></h2>
+<p>B1: map usb xem hướng dẫn tại bài <a href="https://heavietnam.ga/2021/2021/09/29/vi-1map-usb-intel-and-amd/index.html">này</a></p>
+<p>B2: các bạn thêm kext <code>bluetoothtoolfixup</code> <a href="https://github.com/acidanthera/BrcmPatchRAM/releases">tại đây</a></p>
+<p>B3: snaps và restart</p>
+<h2 id="fix-usb-wifi-in-bigsur">Fix usb wifi in bigsur+<a class="headerlink" href="#fix-usb-wifi-in-bigsur" title="Permanent link">&para;</a></h2>
+<h3 id="cac-dong-card-support">Các dòng card support<a class="headerlink" href="#cac-dong-card-support" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>ASUS_USB-N10E_92CU</p>
+</li>
+<li>
+<p>ASUS_USB-N13_92CU</p>
+</li>
+<li>
+<p>ASUS_USB-N10_92CU</p>
+</li>
+<li>
+<p>ASUS_1870_8812BU</p>
+</li>
+<li>
+<p>ASUS_USB-N10E_92CU</p>
+</li>
+<li>
+<p>ASUS_USB-N10_92CU</p>
+</li>
+<li>
+<p>ASUS_USB-N13_92CU</p>
+</li>
+<li>
+<p>ASUS_USB-AC53_8812BU</p>
+</li>
+<li>
+<p>ASUS_USB-AC55B1_8812BU</p>
+</li>
+<li>
+<p>ASUS_USB-AC56_8812AU</p>
+</li>
+<li>
+<p>ASUS_USB-AC55_8812BU</p>
+</li>
+<li>
+<p>ASUS_USB-AC68ALL_8814AU</p>
+</li>
+<li>
+<p>ASUS_USB-AC68CE_8814AU</p>
+</li>
+<li>
+<p>ASUS_USB-AC68FCC_8814AU</p>
+</li>
+<li>
+<p>AboCom_8178_92CU</p>
+</li>
+<li>
+<p>AboCom_0811_8811AU</p>
+</li>
+<li>
+<p>AboCom_8189_92CU</p>
+</li>
+<li>
+<p>AboCom_92EU</p>
+</li>
+<li>
+<p>AboCom_88EU</p>
+</li>
+<li>
+<p>AboCom_AC_8812AU</p>
+</li>
+<li>
+<p>AboCom_AC_8812AU</p>
+</li>
+<li>
+<p>Actiontec_8811AU</p>
+</li>
+<li>
+<p>AirTies_Air2520_8811AU</p>
+</li>
+<li>
+<p>AirTies_Air2525_8811AU</p>
+</li>
+<li>
+<p>AboCom_8178_92CU</p>
+</li>
+<li>
+<p>AboCom_8189_92CU</p>
+</li>
+<li>
+<p>Actiontec_8105_SingleBand_8811AU</p>
+</li>
+<li>
+<p>Actiontec_8108_DualBand_8811AU</p>
+</li>
+<li>
+<p>Amigo_92CU</p>
+</li>
+<li>
+<p>Amigo_92CU</p>
+</li>
+<li>
+<p>AzureWave_92CU</p>
+</li>
+<li>
+<p>Belkin_1004_92CU</p>
+</li>
+<li>
+<p>Belkin_1102_92CU</p>
+</li>
+<li>
+<p>Belkin_2102_92CU</p>
+</li>
+<li>
+<p>Belkin_2103_92CU</p>
+</li>
+<li>
+<p>Belkin_92DUVS_1105</p>
+</li>
+<li>
+<p>Belkin_92DUVS_110A</p>
+</li>
+<li>
+<p>Belkin_92DUVS_120A</p>
+</li>
+<li>
+<p>Belkin_F9L1106_v2_8812AU</p>
+</li>
+<li>
+<p>Belkin_F9L1106v2_8812AU</p>
+</li>
+<li>
+<p>Buffallo_25D_8812AU</p>
+</li>
+<li>
+<p>Buffallo_433DM_8811AU</p>
+</li>
+<li>
+<p>Buffallo_WI_U2_433DHP_8811AU</p>
+</li>
+<li>
+<p>Buffallo_WLP_U2_433DHP_8811AU</p>
+</li>
+<li>
+<p>Compare-8010_92CU</p>
+</li>
+<li>
+<p>Compare-8011_92CU</p>
+</li>
+<li>
+<p>Corega_92CU</p>
+</li>
+<li>
+<p>DLink_DWA121_92CU</p>
+</li>
+<li>
+<p>DLink_DWA123_92CU</p>
+</li>
+<li>
+<p>DLink_DWA131B1_92CU</p>
+</li>
+<li>
+<p>DLink_DWA132_92CU</p>
+</li>
+<li>
+<p>DLink_DWA133_92CU</p>
+</li>
+<li>
+<p>DLink_DWA123_88EU</p>
+</li>
+<li>
+<p>DLink_DWA125_88EU</p>
+</li>
+<li>
+<p>DLink_DWA131C1_92EU</p>
+</li>
+<li>
+<p>DLink_DWA131E_92EU</p>
+</li>
+<li>
+<p>DLink_DWA171_8812AU</p>
+</li>
+<li>
+<p>DLink_DWA182B1_8812AU</p>
+</li>
+<li>
+<p>DLink_DWA182_8812AU</p>
+</li>
+<li>
+<p>DLink_DWA192_8814AU</p>
+</li>
+<li>
+<p>DLink_GO_USB_N150_88EU</p>
+</li>
+<li>
+<p>ELECOM_WDC300SU2S_92CU</p>
+</li>
+<li>
+<p>ELECOM_8811AU</p>
+</li>
+<li>
+<p>ELECOM_WDB433SU2M_8811AU</p>
+</li>
+<li>
+<p>ELECOM_WDC1300DU3_8814AU</p>
+</li>
+<li>
+<p>ELECOM_WDC1300SU3_8814AU</p>
+</li>
+<li>
+<p>ELECOM_WDC150SU2M_88EU</p>
+</li>
+<li>
+<p>ELECOM_WDC433DU2_8812AU</p>
+</li>
+<li>
+<p>ELECOM_WDC433SU2M2_8811AU</p>
+</li>
+<li>
+<p>EDIMAX- EW-7722UTn V2</p>
+</li>
+<li>
+<p>EDIMAX N300</p>
+</li>
+<li>
+<p>EDIMAX EW-7811Un</p>
+</li>
+<li>
+<p>Edimax_AC1750_8814AU</p>
+</li>
+<li>
+<p>Edimax_AC1750_A834_8814AU</p>
+</li>
+<li>
+<p>Edimax_AC600_8812AU</p>
+</li>
+<li>
+<p>Edimax_EW-7611ULB_8723BU</p>
+</li>
+<li>
+<p>Edimax_EW-7811UAC_8812AU</p>
+</li>
+<li>
+<p>Edimax_EW-7822UAC_8812AU</p>
+</li>
+<li>
+<p>Edimax_EW-7822ULC_8812AU</p>
+</li>
+<li>
+<p>Edimax_GLP_8812AU</p>
+</li>
+<li>
+<p>Edimax_7811_92CU</p>
+</li>
+<li>
+<p>Edimax_7822_92CU</p>
+</li>
+<li>
+<p>Feixun_90_92CU</p>
+</li>
+<li>
+<p>Feixun_91_92CU</p>
+</li>
+<li>
+<p>EnGenius_AC_8812AU</p>
+</li>
+<li>
+<p>HP_92CU</p>
+</li>
+<li>
+<p>Hawking_HWDN3_92CU</p>
+</li>
+<li>
+<p>Hawking_HWUN4_92CU</p>
+</li>
+<li>
+<p>Hercules_HWUm300_92CU</p>
+</li>
+<li>
+<p>Hercules_HWUp150_92CU</p>
+</li>
+<li>
+<p>Hawking_8812AU</p>
+</li>
+<li>
+<p>Hawking_HW7ACU_8812AU</p>
+</li>
+<li>
+<p>IO_DATA_AC433UM_8812AU</p>
+</li>
+<li>
+<p>O_DATA_WN-AC867U_8812AU</p>
+</li>
+<li>
+<p>Infocus_INA-LCKEY_8812AU</p>
+</li>
+<li>
+<p>IO_DATA_92CU</p>
+</li>
+<li>
+<p>Linksys_WUSB6300_8812AU</p>
+</li>
+<li>
+<p>Logitec_92CU</p>
+</li>
+<li>
+<p>Loopcomm_ACA1_8812AU</p>
+</li>
+<li>
+<p>Netgear_A7000</p>
+</li>
+<li>
+<p>Netgear_N300MA_92CU</p>
+</li>
+<li>
+<p>Netgear_WNA1000M_92CU</p>
+</li>
+<li>
+<p>Netgear_WNA3100M_92CU</p>
+</li>
+<li>
+<p>Netgear_A6100_8812AU</p>
+</li>
+<li>
+<p>Netgear_A6200v2_8812AU</p>
+</li>
+<li>
+<p>PCI_BT-Micro3H2X_92CU</p>
+</li>
+<li>
+<p>PCI_GW_USEco300_92CU</p>
+</li>
+<li>
+<p>PCI_GW_USLight_92CU</p>
+</li>
+<li>
+<p>PCI_GW_USNano2_92CU</p>
+</li>
+<li>
+<p>PCI_GW_USValue_EZ_92CU</p>
+</li>
+<li>
+<p>PCI_SW_WF02-AD15_92CU</p>
+</li>
+<li>
+<p>PCI_GW-300S_92EU</p>
+</li>
+<li>
+<p>PCI_GW-450S_8812AU</p>
+</li>
+<li>
+<p>PCI_GW-900D_8812AU</p>
+</li>
+<li>
+<p>Proxim_USB-9100_8812AU</p>
+</li>
+<li>
+<p>RTL8188CTV</p>
+</li>
+<li>
+<p>RTL8188CTV_0A8A</p>
+</li>
+<li>
+<p>RTL8188CTV_8011</p>
+</li>
+<li>
+<p>RTL8188CU</p>
+</li>
+<li>
+<p>RTL8188CUS</p>
+</li>
+<li>
+<p>RTL8188CUS_1E1E</p>
+</li>
+<li>
+<p>RTL8188CUS_2E2E</p>
+</li>
+<li>
+<p>RTL8188CUS_5088</p>
+</li>
+<li>
+<p>RTL8188CUS_Combo</p>
+</li>
+<li>
+<p>RTL8188CUS_Combo_AFF8</p>
+</li>
+<li>
+<p>RTL8188CUS_Combo_AFFB</p>
+</li>
+<li>
+<p>RTL8188CUS_Combo_AFFC</p>
+</li>
+<li>
+<p>RTL8188CUS_Solo</p>
+</li>
+<li>
+<p>RTL8188CUS_VL</p>
+</li>
+<li>
+<p>RTL8188CUS_solo_AFF7</p>
+</li>
+<li>
+<p>RTL8188CUS_solo_AFF9</p>
+</li>
+<li>
+<p>RTL8188CUS_solo_AFFA</p>
+</li>
+<li>
+<p>RTL8188RU</p>
+</li>
+<li>
+<p>RTL8188RU_Netcore</p>
+</li>
+<li>
+<p>RTL8192CU</p>
+</li>
+<li>
+<p>RTL8192CU_8177</p>
+</li>
+<li>
+<p>RTL8192CU_8178</p>
+</li>
+<li>
+<p>RTL8192DU_VS</p>
+</li>
+<li>
+<p>RTL8188EU</p>
+</li>
+<li>
+<p>RTL8188EUS</p>
+</li>
+<li>
+<p>RTL8188EU_ETV</p>
+</li>
+<li>
+<p>RTL8188EU_VAU</p>
+</li>
+<li>
+<p>RTL8192EU</p>
+</li>
+<li>
+<p>RTL8192EU-2</p>
+</li>
+<li>
+<p>RTL8811AU</p>
+</li>
+<li>
+<p>RTL8812AU</p>
+</li>
+<li>
+<p>RTL8812BU</p>
+</li>
+<li>
+<p>RTL8812AU-VL</p>
+</li>
+<li>
+<p>RTL8812AU-VN</p>
+</li>
+<li>
+<p>RTL8812AU-VS</p>
+</li>
+<li>
+<p>RTL8814AU</p>
+</li>
+<li>
+<p>Sitecom_WL365_92CU</p>
+</li>
+<li>
+<p>Sitecom_WLA1001v1_92CU</p>
+</li>
+<li>
+<p>Sitecom_WLA2102_92CU</p>
+</li>
+<li>
+<p>Sitecom_WLA4001_92CU</p>
+</li>
+<li>
+<p>Sitecom_WLA1100_88EU</p>
+</li>
+<li>
+<p>Sitecom_WLA2104_8812AU</p>
+</li>
+<li>
+<p>Sitecom_WLA7100_8812AU</p>
+</li>
+<li>
+<p>Sitecom_WLA8100_8814AU</p>
+</li>
+<li>
+<p>Tenda U3 Mini</p>
+</li>
+<li>
+<p>TPLink-Archer_T2U_NANO</p>
+</li>
+<li>
+<p>TL-WN823Nv3</p>
+</li>
+<li>
+<p>TL-WN725Nv3</p>
+</li>
+<li>
+<p>TL-WN723Nv3</p>
+</li>
+<li>
+<p>TL-WN723Nv2</p>
+</li>
+<li>
+<p>TL-WN722Nv3</p>
+</li>
+<li>
+<p>TL-WN722Nv2</p>
+</li>
+<li>
+<p>TL-WN821Nv6</p>
+</li>
+<li>
+<p>TPLink_92CU</p>
+</li>
+<li>
+<p>TPLink_821v5_92EU</p>
+</li>
+<li>
+<p>TPLink_822v4_92EU</p>
+</li>
+<li>
+<p>TPLink_823v2_92EU</p>
+</li>
+<li>
+<p>TPLink_8812AU_1</p>
+</li>
+<li>
+<p>TPLink_8812AU_2</p>
+</li>
+<li>
+<p>TPLink_8812AU_3</p>
+</li>
+<li>
+<p>TPLink_88EUSU</p>
+</li>
+<li>
+<p>TPLink_T4UH_8812AU</p>
+</li>
+<li>
+<p>TPLink_T4U_8812AU</p>
+</li>
+<li>
+<p>TPLink_T9UH_8814AU</p>
+</li>
+<li>
+<p>TRENDnet N150 Micro</p>
+</li>
+<li>
+<p>Trendnet_624D_92CU</p>
+</li>
+<li>
+<p>Trendnet_648B_92CU</p>
+</li>
+<li>
+<p>Trendnet_92DUVS</p>
+</li>
+<li>
+<p>TrendNet_TEW804B_8812AU</p>
+</li>
+<li>
+<p>TrendNet_TEW805B_8812AU</p>
+</li>
+<li>
+<p>TrendNet_TEW809UB_8814AU</p>
+</li>
+<li>
+<p>Western_AC_8812AU</p>
+</li>
+<li>
+<p>ZyXEL_AC_8812AU</p>
+</li>
+<li>
+<p>ZyXEL_92CU</p>
+</li>
+</ul>
+<h3 id="tien-hanh">Tiến hành<a class="headerlink" href="#tien-hanh" title="Permanent link">&para;</a></h3>
+<p>B1: Down file pkg <a href="[Release Wireless USB Big Sur Adapter-V13 · chris1111/Wireless-USB-Big-Sur-Adapter (github.com)](https://github.com/chris1111/Wireless-USB-Big-Sur-Adapter/releases/tag/V13)">tại đây</a></p>
+<p>B2: tắt sip và gate keeper</p>
+<p>B3: Tiến hành chạy file pkg</p>
+<p>B4: restart</p>
+<h2 id="luu-y">Lưu ý<a class="headerlink" href="#luu-y" title="Permanent link">&para;</a></h2>
+<p><strong>Nếu bạn đã làm theo như trên nhưng card vẫn không nhận thì làm như sau:</strong> </p>
+<ul>
+<li><strong>Vào plugin của airportbcrm fixup và xoá kext sau đi <code>AirPortBrcm4360_Injector.kext</code> sau đó snapshot lại config và save</strong> </li>
+<li><strong>Reboot</strong></li>
+</ul>
+<p>Nếu bạn đang boot monterey thì hãy xoá các kext injector đi</p>
+<ul>
+<li>IntelBluetoothInjector.kext</li>
+<li>BrcmBluetoothInjector.kext</li>
+</ul>
+<p><strong>Khi làm theo cách trên đồng thời các bạn cần map USB theo hướng dẫn <a href="https://heavietnam.ga/2021/09/29/vi-1map-usb-intel-and-amd/">tại đây</a></strong></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../Fix_System_Clocks_on_HEDT/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Fix System Clocks on HEDT" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Fix System Clocks on HEDT
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../Fix_darkwake/" class="md-footer__link md-footer__link--next" aria-label="Next: Fix darkwake" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Fix darkwake
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.748e2769.min.js"></script>
+      
+    
+  </body>
+</html>

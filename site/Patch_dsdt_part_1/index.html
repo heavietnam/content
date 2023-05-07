@@ -1,0 +1,2019 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.2.11">
+    
+    
+      
+        <title>Patch dsdt phần 1 - Hackintosh Documents</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c5ef100.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.9647289d.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#patch-dsdt-phan-1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Hackintosh Documents" class="md-header__button md-logo" aria-label="Hackintosh Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Hackintosh Documents
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Patch dsdt phần 1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Hackintosh Documents" class="md-nav__button md-logo" aria-label="Hackintosh Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Hackintosh Documents
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        content
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Add_device-id_in_amd_kext/" class="md-nav__link">
+        Add device-id vào amd kext
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Backup_and_Restore_with_Time_Machine/" class="md-nav__link">
+        Backup and Restore with Time Machine
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Boot_Arguments/" class="md-nav__link">
+        Boot Arguments
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Boot_without_USB_and_mount_partion_EFI/" class="md-nav__link">
+        Boot không cần USB và mount phân vùng EFI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Config_Laptop_Clarksfield_and_Arrandale/" class="md-nav__link">
+        Config Laptop Clarksfield và Arrandale
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Control_Brightness_External_Display/" class="md-nav__link">
+        Control Brightness cho External Display
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Control_Led_RGB/" class="md-nav__link">
+        Control Led RGB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Convert_Bootloader/" class="md-nav__link">
+        Convert Bootloader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C%C3%A1ch%20x%C3%A1c%20%C4%91%E1%BB%8Bnh%20ph%E1%BA%A7n%20c%E1%BB%A9ng/" class="md-nav__link">
+        Cách xác định phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_CFG-Clock/" class="md-nav__link">
+        Disable CFG-Clock
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_dGPU_Desktop/" class="md-nav__link">
+        Disable dGPU Desktop
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_dgpu_Laptop/" class="md-nav__link">
+        Disable dgpu Laptop
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Emulated_NVRAM/" class="md-nav__link">
+        Emulated NVRAM
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Enable_Trim_For_SSD/" class="md-nav__link">
+        Enable Trim For SSD
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../External_Card_Reader/" class="md-nav__link">
+        Fix Internal/External Card Reader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fake_CPU-ID/" class="md-nav__link">
+        Fake CPU-ID
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix%20_for_slow_AMD_GPU/" class="md-nav__link">
+        Fix for slow AMD GPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Backlight/" class="md-nav__link">
+        Fix Backlight
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Connect_%28HDMI%29/" class="md-nav__link">
+        Fix Connect (HDMI)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Ethernet/" class="md-nav__link">
+        Fix Ethernet
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_HDMI_Audio/" class="md-nav__link">
+        Fix HDMI Audio
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Hotkeys/" class="md-nav__link">
+        Fix Hotkeys
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_RTC_Manual/" class="md-nav__link">
+        Fix RTC Manual
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_RTC_write_issues/" class="md-nav__link">
+        Fix RTC write issues
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Shutdown/" class="md-nav__link">
+        Fix Shut down
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_System_Clocks_on_HEDT/" class="md-nav__link">
+        Fix System Clocks on HEDT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_WiFi_and_Bluetooth/" class="md-nav__link">
+        Fix WiFi và Bluetooth
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_darkwake/" class="md-nav__link">
+        Fix darkwake
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_iServices/" class="md-nav__link">
+        Fix iServices
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_keyboard_wake/" class="md-nav__link">
+        Fix keyboard wake
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_power_management/" class="md-nav__link">
+        Fix power management
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_sleep/" class="md-nav__link">
+        Fix sleep
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_trackpad/" class="md-nav__link">
+        Fix trackpad
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fixing_KASLR/" class="md-nav__link">
+        Fixing KASLR
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GPRW_UPRW_LANC/" class="md-nav__link">
+        GPRW/UPRW/LANC
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ghost_macos/" class="md-nav__link">
+        Ghost macos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Guide_dual_Boot/" class="md-nav__link">
+        Hướng dẫn Dual Boot
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HotPlug_Thunderbolt_3/" class="md-nav__link">
+        HotPlug Thunderbolt 3
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hotpatch_PTS_Wake_TTS/" class="md-nav__link">
+        Hotpatch PTS Wake TTS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Injects_USB_Manual/" class="md-nav__link">
+        Injects USB Manual
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kernel_issue/" class="md-nav__link">
+        Kernel issue
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Map_USB/" class="md-nav__link">
+        Map USB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenCore_Legacy/" class="md-nav__link">
+        OpenCore Legacy
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_AMD_GPU/" class="md-nav__link">
+        Patch Card đồ họa AMD
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_2/" class="md-nav__link">
+        Patch DSDT Phần 2
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_3/" class="md-nav__link">
+        Patch DSDT Phần 3
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_4/" class="md-nav__link">
+        Patch DSDT phần 4
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_GMA_GPU/" class="md-nav__link">
+        Patch GMA GPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_IGPU/" class="md-nav__link">
+        Patch IGPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_NVIDIA_GPU/" class="md-nav__link">
+        Patch Card đồ họa NVIDIA
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_SATA_Controller/" class="md-nav__link">
+        Patch SATA Controller
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_audio_with_AppleALC/" class="md-nav__link">
+        Patch âm thanh với AppleALC
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_audio_with_VoodooHDA/" class="md-nav__link">
+        Patch audio với VoodooHDA
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Patch dsdt phần 1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Patch dsdt phần 1
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dump-dsdt" class="md-nav__link">
+    Dump dsdt
+  </a>
+  
+    <nav class="md-nav" aria-label="Dump dsdt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#he-ieu-hanh-windowns-khuyen-khich" class="md-nav__link">
+    Hệ điều hành Windowns (khuyến khích)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#winpe" class="md-nav__link">
+    winpe
+  </a>
+  
+    <nav class="md-nav" aria-label="winpe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rw-everything" class="md-nav__link">
+    rw everything
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acpidumpexe" class="md-nav__link">
+    acpidump.exe
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#he-ieu-hanh-macos" class="md-nav__link">
+    Hệ điều hành macos
+  </a>
+  
+    <nav class="md-nav" aria-label="Hệ điều hành macos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#with-opencore" class="md-nav__link">
+    With opencore
+  </a>
+  
+    <nav class="md-nav" aria-label="With opencore">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cach-1-dump-bang-acpidumpefi" class="md-nav__link">
+    Cách 1 : Dump bằng acpidump.efi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cach-2-sysreport-quirk-khuyen-khich" class="md-nav__link">
+    Cách 2 : SysReport Quirk ( khuyến khích
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with-hackintool" class="md-nav__link">
+    with hackintool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with-patchmatic" class="md-nav__link">
+    with patchmatic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with-clover-khuyen-khich" class="md-nav__link">
+    with clover (khuyến khích)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#he-ieu-hanh-linux" class="md-nav__link">
+    Hệ điều hành linux
+  </a>
+  
+    <nav class="md-nav" aria-label="Hệ điều hành linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cach-1-with-terminal" class="md-nav__link">
+    Cách 1 : with terminal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with-ssdt-time" class="md-nav__link">
+    with ssdt-time
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bien-dich-dsdt" class="md-nav__link">
+    Biên dịch dsdt
+  </a>
+  
+    <nav class="md-nav" aria-label="Biên dịch dsdt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aml-to-dsl" class="md-nav__link">
+    AML to DSL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dsl-to-aml" class="md-nav__link">
+    DSL to AML
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_pin/" class="md-nav__link">
+        Patch pin
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Resize_EFI/" class="md-nav__link">
+        Resize EFI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SIP_and_Gatekeeper/" class="md-nav__link">
+        SIP và Gatekeeper
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SLE_kext_in_bigsur/" class="md-nav__link">
+        Cách sửa kext S/L/E trên bigsur
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SSDT_recomend/" class="md-nav__link">
+        SSDT recomend
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Scan_policy/" class="md-nav__link">
+        Scan policy
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Some_error_in_bigsur/" class="md-nav__link">
+        Một số lỗi ở xuất hiện ở macOS Big Sur
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Some_error_in_propertree/" class="md-nav__link">
+        1 số lỗi ProperTree
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Turn_on_Backlight_Keyboard/" class="md-nav__link">
+        Turn on Backlight Keyboard
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Update_macOS_and_Bootloader/" class="md-nav__link">
+        Update macOS và Bootloader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Use_SSDT-time_to_Prebuilt%20SSDT/" class="md-nav__link">
+        Dùng SSDT-Time để Prebuilt SSDT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%5BEB%7C%23LOG%3AEXITBS%3ASTART%5D/" class="md-nav__link">
+        [EB|#LOG:EXITBS:START]
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../add_boot_option_in_bios/" class="md-nav__link">
+        Cách thêm Boot vào BIOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creat_GUI/" class="md-nav__link">
+        Tạo GUI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creat_online_usb_%28recovery%29/" class="md-nav__link">
+        Cách tạo bộ cài online (recovery)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_EFI_OpenCore/" class="md-nav__link">
+        Cách tạo EFI OpenCore
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_EFI_Opencore_No_ACPI/" class="md-nav__link">
+        Cách làm EFI Opencore No ACPI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_offline_bootable_without_no_usb/" class="md-nav__link">
+        Cách tạo bộ cài Offline khi không có USB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_usb_offline/" class="md-nav__link">
+        Cách tạo bộ cài offline
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fake_CPU_Name%3Aigpu_name/" class="md-nav__link">
+        Fake iGPU/ CPU Name
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_mod_bios/" class="md-nav__link">
+        Cách mod bios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inject_all_hardware_properties/" class="md-nav__link">
+        Cách inject toàn bộ thông tin phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn_about_hackintosh/" class="md-nav__link">
+        Tìm hiểu về Hackintosh
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn_about_to_hardware/" class="md-nav__link">
+        Tìm hiểu chung về phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../macOS_12_Monterey/" class="md-nav__link">
+        macOS 12: Monterey
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patch_connector_type_force_rgb%3AInject_EDID/" class="md-nav__link">
+        Patch Connect Type/ Force RGB/ Inject EDID
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dump-dsdt" class="md-nav__link">
+    Dump dsdt
+  </a>
+  
+    <nav class="md-nav" aria-label="Dump dsdt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#he-ieu-hanh-windowns-khuyen-khich" class="md-nav__link">
+    Hệ điều hành Windowns (khuyến khích)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#winpe" class="md-nav__link">
+    winpe
+  </a>
+  
+    <nav class="md-nav" aria-label="winpe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rw-everything" class="md-nav__link">
+    rw everything
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acpidumpexe" class="md-nav__link">
+    acpidump.exe
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#he-ieu-hanh-macos" class="md-nav__link">
+    Hệ điều hành macos
+  </a>
+  
+    <nav class="md-nav" aria-label="Hệ điều hành macos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#with-opencore" class="md-nav__link">
+    With opencore
+  </a>
+  
+    <nav class="md-nav" aria-label="With opencore">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cach-1-dump-bang-acpidumpefi" class="md-nav__link">
+    Cách 1 : Dump bằng acpidump.efi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cach-2-sysreport-quirk-khuyen-khich" class="md-nav__link">
+    Cách 2 : SysReport Quirk ( khuyến khích
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with-hackintool" class="md-nav__link">
+    with hackintool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with-patchmatic" class="md-nav__link">
+    with patchmatic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with-clover-khuyen-khich" class="md-nav__link">
+    with clover (khuyến khích)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#he-ieu-hanh-linux" class="md-nav__link">
+    Hệ điều hành linux
+  </a>
+  
+    <nav class="md-nav" aria-label="Hệ điều hành linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cach-1-with-terminal" class="md-nav__link">
+    Cách 1 : with terminal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with-ssdt-time" class="md-nav__link">
+    with ssdt-time
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bien-dich-dsdt" class="md-nav__link">
+    Biên dịch dsdt
+  </a>
+  
+    <nav class="md-nav" aria-label="Biên dịch dsdt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aml-to-dsl" class="md-nav__link">
+    AML to DSL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dsl-to-aml" class="md-nav__link">
+    DSL to AML
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="patch-dsdt-phan-1">Patch dsdt phần 1<a class="headerlink" href="#patch-dsdt-phan-1" title="Permanent link">&para;</a></h1>
+<h2 id="dump-dsdt"><strong><em>Dump dsdt</em></strong><a class="headerlink" href="#dump-dsdt" title="Permanent link">&para;</a></h2>
+<h3 id="he-ieu-hanh-windowns-khuyen-khich"><strong><em>Hệ điều hành Windowns (khuyến khích)</em></strong><a class="headerlink" href="#he-ieu-hanh-windowns-khuyen-khich" title="Permanent link">&para;</a></h3>
+<p><strong>B1</strong>: Down ssdt-time từ nguồn sau <a href="https://github.com/corpnewt/SSDTTime">GitHub - corpnewt/SSDTTime: SSDT/DSDT hotpatch attempts.</a></p>
+<p><strong>B2</strong>: Bấm phím 8 sau đó enter </p>
+<p><strong>B3</strong>: Lấy dsdt từ thư mục của ssdt-time</p>
+<p><img alt="" src="https://lh5.googleusercontent.com/3YtJQMBP_rs6jRtn-PsyRTOe29lq8xdNBXqRjngYHXNuEJKuZfUAmbtIPA9lQZKMMXix-f2XnuZyyxnhnXS9xxunyg4g4Ucvj7xOZaWsNx_KwpuEUkudAqZWXOsw4Gr88S1EStDv=s0" /></p>
+<p><strong>Lưu ý : Nếu các bạn dual boot với win qua opencore thì dsdt sau khi dump sẽ mất đi sự thuần khiết (sinh ra nhiều lỗi hơn)</strong></p>
+<h3 id="winpe">winpe<a class="headerlink" href="#winpe" title="Permanent link">&para;</a></h3>
+<h4 id="rw-everything">rw everything<a class="headerlink" href="#rw-everything" title="Permanent link">&para;</a></h4>
+<p>B1: Tải <a href="http://rweverything.com/download/">rw-evrything</a></p>
+<p>B2: Các bạn tiến hành cài đặt và mở app </p>
+<p>B3: Sau đó các bạn chọn vào menu Access ⇒ ACPI Tables ⇒ dsdt</p>
+<p>B4: Sau đó các bạn bấm save và chọn nơi lưu </p>
+<p>B5: Tiếp các bạn đổi tên file từ đuôi .bin ⇒ .aml </p>
+<p>B6: Sau đó boot về mac và tận hưởng thôi </p>
+<h4 id="acpidumpexe">acpidump.exe<a class="headerlink" href="#acpidumpexe" title="Permanent link">&para;</a></h4>
+<p>B1: Tải <a href="https://acpica.org/downloads/binary-tools">acpidump.exe</a> </p>
+<p>B2 : Mở cmd ra </p>
+<p>B3: [ kéo acpidump.exe vào ] -b -n DSDT -z</p>
+<p>B4: Đổi extension của dsdt từ .dat ⇒ .aml </p>
+<h2 id="he-ieu-hanh-macos">Hệ điều hành macos<a class="headerlink" href="#he-ieu-hanh-macos" title="Permanent link">&para;</a></h2>
+<h3 id="with-opencore">With opencore<a class="headerlink" href="#with-opencore" title="Permanent link">&para;</a></h3>
+<h4 id="cach-1-dump-bang-acpidumpefi">Cách 1 : Dump bằng acpidump.efi<a class="headerlink" href="#cach-1-dump-bang-acpidumpefi" title="Permanent link">&para;</a></h4>
+<p><strong>B1</strong>: Tải acpidum.efi từ nguồn <a href="https://github.com/dortania/OpenCore-Install-Guide/blob/master/extra-files/acpidump.efi.zip">OpenCore-Install-Guide/acpidump.efi.zip at master · dortania/OpenCore-Install-Guide · GitHub</a> sau đó bỏ nó vào mục EFI-tool rồi snapshot config</p>
+<p><strong>B2</strong>: Tại giao diện boot chọn acpidum.efi  </p>
+<p><strong>B3</strong>: Dùng open‌sell.efi  dán đoạn sau vào openshell.efi ( viết từng dòng không dán toàn bộ)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>fs0: // replace with proper drive
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>dir  // to verify this is the right directory
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>cd EFI\OC\Tools
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>EFI\OC\Tools&gt; acpidump.efi -b -n DSDT -z
+</code></pre></div>
+<p>Khi dán toàn bộ vào nó sẽ có dạng là</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>shell&gt; fs0: // replace with proper drive
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>fs0:\&gt; dir  // to verify this is the right directory
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>   Directory of fs0:\
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>   01/01/01 3:30p EFI
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>fs0:\&gt; cd EFI\OC\Tools
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>fs0:\EFI\OC\Tools&gt; acpidump.efi -b -n DSDT -z
+</code></pre></div>
+<p><strong>Lưu ý : Sau khi dump xong nó sẽ nằm ở mục EFI ⇒ OC ⇒ tool dưới dạng file .dat hay rename nó lại thành file .aml</strong></p>
+<h4 id="cach-2-sysreport-quirk-khuyen-khich">Cách 2 : SysReport Quirk ( khuyến khích<a class="headerlink" href="#cach-2-sysreport-quirk-khuyen-khich" title="Permanent link">&para;</a></h4>
+<p>B1: Các bạn cần tạo 1 bộ efi debug như sau :</p>
+<ul>
+<li>
+<p>Tải bộ <a href="https://github.com/acidanthera/opencorepkg/releases">opencore pkg debug</a></p>
+</li>
+<li>
+<p>Thay thế các mục sau vào efi đang sử dụng </p>
+</li>
+<li>
+<p>bootX64.efi</p>
+</li>
+<li>
+<p>drivers</p>
+</li>
+<li>
+<p>opencore.efi</p>
+</li>
+</ul>
+<p>B2: Mở config lên snaps lại và tìm như hình </p>
+<p><img alt="" src="https://lh6.googleusercontent.com/k_3zv83oQuGu2EEU1i-xk6Aqn_vlW7HtIDJz8f-9X6GUdoN-hoRga1NEvRAv91Wcu5BAnFV1r2EcLUgd5n4zftJRSaMc1l-tzg_GJA85cFFX6xPrr4YhczrnElJWIb-ZTlWEZWy9=s0" /></p>
+<p>B3: Boot lại vào ổ cứng </p>
+<p>B4: Các bạn sẽ thấy xuất hiện mục SysReport ⇒ ACPI</p>
+<p><img alt="" src="https://lh5.googleusercontent.com/DHiHPSsiG_klXenIfZgwXllxnEXwh3RIgAIu1FSSMM-760pSubbLzerXAqD0cQPsKV7RXEuCVd2uk_KJ-8UPQS8ag5AynOMdzAuU_otPyzBF_ccSdSefxapZx3PNDL_nxp0un1rz=s0" /></p>
+<p><img alt="" src="https://lh3.googleusercontent.com/3z0J2PxCdKzjDtR7usSNQ3a7dUn-qgvYymJjQgSmMGdB6_0jDiM-4o3Jg03LmKV56HJ58mVYMq4Hu5rU4pmZEUIddR5VbWVRVcH7GLkdaB3iPQCKAh0zc0P_PTVWHCKbeMTZKH2Y=s0" /></p>
+<p>Sau khi làm xong các bạn sẽ được như hình </p>
+<p><img alt="" src="https://lh4.googleusercontent.com/H5ZqduhdBqrFczNnkQq_sNicD-S-pvJs2RvqynIdm8wEAUbnCTdPLzp-qLqGZBHI3YFqWk-6EqEIz4444bJIw91hwx5wafulgjPVcv3rElPRr_9pznrzrskqPnEl9J6WeU8k99Lt=s0" /></p>
+<h3 id="with-hackintool">with hackintool<a class="headerlink" href="#with-hackintool" title="Permanent link">&para;</a></h3>
+<p>B1:  Các bạn mở hackintool mục utilities </p>
+<p>B2: Các bạn ấn <img alt="" src="https://lh3.googleusercontent.com/dfguZY9Ik7T8V-Asyqw-qrxS4FpJWYIDMe6Z49WQJErhryBwbJGxnoaeHl3tHW5ty5DhK0KruPMwtyH9h2B5xY4vnhyhXWU120_8sk4gt80Mtb2jNWpgJLUq26TvCRXh45h3pCUz=s0" /> </p>
+<p>B3: Chọn nơi lưu ( sau khi chọn xong sẽ được như hình )</p>
+<p><img alt="" src="https://lh3.googleusercontent.com/aHTbga7EWfVBM11xNzpn71A5QRfHaeI0YBm30OSX26M8ZBsVL3_HDsM8plK0nA2Cv4RFOaOaTJi_NI0jhpHEfs8Aafe6OHg2A6-QRwRm21LBBrTq98qYZ7RN4DcuLo2HDeakUrDw=s0" /></p>
+<p>B4: Mở folder chọn lưu ở bước 2 ra và copy file dsdt.aml ra nơi mà bạn muốn như của mình nó sẽ là ở desktop  </p>
+<p><img alt="" src="https://lh6.googleusercontent.com/Y1q-FciNEJhvvtsgnHbz_5c9JMvt9gcn5WvxXpEW1SglbqPZmUvNXp8bHIt0abbM_EwNBN6xFuB7NhV6Ozy7HUhLQQWc2x-rqpwK32xOUoEmxA0RL994Vt0LeNcr0SSBiShtzMQ1=s0" /></p>
+<h3 id="with-patchmatic">with patchmatic<a class="headerlink" href="#with-patchmatic" title="Permanent link">&para;</a></h3>
+<p>B1: Tải <a href="https://bitbucket.org/RehabMan/os-x-maciasl-patchmatic/downloads/">patchmatic</a></p>
+<p>B2: Nhập lệnh sau vào terminal </p>
+<p>cd + [ kéo folder muốn lưu ssdt vào ] [kéo patchmatic vào ] -extract</p>
+<p>Sau khi làm xong các bạn sẽ được như hình </p>
+<p><img alt="" src="https://lh3.googleusercontent.com/gDaVFvNeT_OTDv0TFpUUKDEdQICsaSd0g6nwlGEHXF0NLAHnXkPVAtkIFa8EhwMED3hF-mVcQ7q1aLRfH3dfdqtU4ZXr5_g_7VDmncKMiWaE5XBW0EAoUh8r4u4oeihgg40TcIf6=s0" /></p>
+<p>B3: Mở folder vừa chọn ở bước 2 sẽ được như hình </p>
+<p><img alt="" src="https://lh4.googleusercontent.com/Q3eNYJzyRnQfazI_M-NulPKHe_KapLfzbNZITawpAeeGsHLu1gJ4A5Wo2k2rAxCwKCJ46LzzgWTf_yzSha0oYocqZR0O5uutL2QKEvVVllvyr10PAAx69xcdr2JcGiV-QL6p09tH=s0" /></p>
+<h3 id="with-clover-khuyen-khich">with clover (khuyến khích)<a class="headerlink" href="#with-clover-khuyen-khich" title="Permanent link">&para;</a></h3>
+<p>B1: Tải efi clover <a href="https://drive.google.com/drive/folders/1fh5ZKcshCjLAp5SMH200Snd0DAvTmIDL?usp=sharing">ở đây</a> </p>
+<p>B2: Cho efi vừa tải vào usb hoặc 1 phân vùng trên ổ cứng ( được format  với chuẩn fat32 )</p>
+<p>B3: Boot vào efi vừa tải </p>
+<p>B4: Ngay giao diện boot các bạn ấn f4 ( hoặc fn +f4 )</p>
+<p>B5: Boot lại vào macos các bạn vào efi clover mục ACPI ⇒ origin </p>
+<p>B6: Các bạn sẽ được như hình </p>
+<p><img alt="" src="https://lh5.googleusercontent.com/Q7IceDENPqbwTFkXgEN9871vRGFDqBh-fLAiFZ9A5FrNJ4i3TbrCZ8sHb37862jHjxblYbWm1WkwcSh_G1e4d8A0Y7UUwP_PwkC6riuPRuUpV-E5cmBECDEO1h10PSQ5RIWMAWVD=s0" /></p>
+<p><strong>Lưu ý: Ở macos mình đưa ra khá nhiều cách dump nhưng theo cảm nhận của mình thì  cách dump bằng clover là chuẩn và trực quan nhất</strong> </p>
+<h2 id="he-ieu-hanh-linux">Hệ điều hành linux<a class="headerlink" href="#he-ieu-hanh-linux" title="Permanent link">&para;</a></h2>
+<h3 id="cach-1-with-terminal">Cách 1 : with terminal<a class="headerlink" href="#cach-1-with-terminal" title="Permanent link">&para;</a></h3>
+<p>B1: Mở terminal ( nhấn alt + T )</p>
+<p>B2: Gõ lệnh </p>
+<p>Cd + [ tên nơi các bạn muốn lưu file ]</p>
+<p>sudo apt update</p>
+<p>sudo apt install acpidump</p>
+<p>sudo acpidump &gt; acpidump.out</p>
+<p>sudo acpixtract -a acpidump.out</p>
+<p>B3: Sau khi nhập các lệnh trên thì terminal sẽ dump tất cả các file acpi ra ngoài nơi mà các bạn chỉ định ở đây các bạn sẽ tìm file dsdt và đổi tên file từ đuôi .dat ⇒ .aml</p>
+<h3 id="with-ssdt-time">with ssdt-time<a class="headerlink" href="#with-ssdt-time" title="Permanent link">&para;</a></h3>
+<p>B1: Tải <a href="https://github.com/corpnewt/SSDTTime">ssdt-time</a></p>
+<p>B2: Chọn phím 4 </p>
+<p>B3: ssdt sẽ được dump tự động vào mục Results<img alt="" src="https://lh6.googleusercontent.com/Li54WCXY7_Y15H-HtXL_Ur9rFkXlMTvni_MQnWltCHKUwpS1Tx_InJ0mYwVZ8XtIdMJlwOOPC6_L1sAZCh5zoUuHNfDH2XIpfOTwZr0b-uqL0okK76PAMFF_HRFnDMn61D3G12D8=s0" /></p>
+<p><strong>Lưu ý: Do ở đây mình mod giao diện giống mac</strong> </p>
+<p><strong>Lưu ý 2: Mình khuyến khích các bạn dùng sysreport và tính năng dump của clover ( vậy khi nào thì dùng patchmatic ? Dùng patchmatic sẽ apply tất cả các hotpatch vào dsdt vì vậy sẽ mất đi bản chất gốc của dsdt nó sẽ sinh ra 1 số lỗi còn nếu các máy dùng patchmatic để dump dsdt mà không có error thì cứ dùng patchmatic để dump )</strong></p>
+<h2 id="bien-dich-dsdt"><strong><em>Biên dịch dsdt</em></strong><a class="headerlink" href="#bien-dich-dsdt" title="Permanent link">&para;</a></h2>
+<h3 id="aml-to-dsl">AML to DSL<a class="headerlink" href="#aml-to-dsl" title="Permanent link">&para;</a></h3>
+<p>B1: Tải <a href="https://bitbucket.org/RehabMan/os-x-maciasl-patchmatic/downloads/">maciasl</a></p>
+<p>B2: Chọn show package contents ⇒ contents  ⇒ macos  ( như hình )</p>
+<p><img alt="" src="https://lh3.googleusercontent.com/vxlfGSeeSldAmAeiA2hzupFHa_XavD3Krv6p6JDQY81YBZh0_Xw-MVX_0A8SWENZSTQ6bd_EYAc1Rqy9-FqxRiflBbrtabaZElvOSUQa10NbPXsHdF_AvaiUSdq_NB05dRTcudTk=s0" /></p>
+<p><img alt="" src="https://lh6.googleusercontent.com/Tuu-JT2IjfcstvBIeMuONaTTrdRDUj4sK64zEN5zaatiuNop5d99FcQFN5sj41ZAqNPcip4A_7AyJEugwvAR6Ft6fFxBSswPC_msFKn3in-jbO4mlZi-GLMMfkbhh1N8ertqgRTM=s0" /></p>
+<p>B3: Copy file iasl62 vào thư mục lưu dsdt ( như của mình là extract )</p>
+<p><img alt="" src="https://lh5.googleusercontent.com/OEkCeGPzc5pyTlTG93A3SBZZzX_vRSbBZhicHJNDvGVPj1SyZEHc9ob4X8YSAh3F-Oj_DY3UpNyUODpmSLZLPDr8uxpXGrVe0z-CfLOAJIaiUir1jik7IS2DaiPZIsGCBdw_fbh4=s0" /></p>
+<p>B4: Copy đoạn code sau vào bộ nhớ tạm ( command +c )</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>External(MDBG, MethodObj, 1)
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>External(_GPE.MMTB, MethodObj, 0)
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>External(_SB.PCI0.LPCB.H_EC.ECWT, MethodObj, 2)
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>External(_SB.PCI0.LPCB.H_EC.ECRD, MethodObj, 1)
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>External(_SB.PCI0.LPCB.H_EC.ECMD, MethodObj, 1)
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>External(_SB.PCI0.PEG0.PEGP.SGPO, MethodObj, 2)
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>External(_SB.PCI0.GFX0.DD02._BCM, MethodObj, 1)
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>External(_SB.PCI0.SAT0.SDSM, MethodObj, 4)
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>External(_GPE.VHOV, MethodObj, 3)
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>External(_SB.PCI0.XHC.RHUB.TPLD, MethodObj, 2)
+</code></pre></div>
+<p>B5: Gõ lệnh sau và terminal ( sau khi làm xong sẽ được như hình )</p>
+<p>cd + [ kéo folder lưu dsdt vào ]</p>
+<p>pbpaste&gt;refs.txt</p>
+<p><img alt="" src="https://lh6.googleusercontent.com/28fTnQzt65XKqbMNVcI3h3RHKBc5jjWgNUeuOEINLNTlx782-Q-4cHF8MnxYYy4Y7RmculCSmGSLRp4UGDJ6Ytop22mFoWW4GG_I_0BRXPp_rpl7X3RxzQRXU3gGyMsg8VhmLYUJ=s0" /></p>
+<p>B6: Gõ lệnh sau vào terminal </p>
+<p>cd + [ kéo file chứ dsdt vào ] [ kéo file iasl62 vào ] -da -dl -fe refs.txt DSDT.aml SSDT*.aml</p>
+<p><strong>Lưu ý: Ở đây mình hướng dẫn biên dịch file dsdt với refs.txt sẽ giúp giảm các lỗi phổ biến . nếu bạn nào cảm thấy không thích refs.txt thì các bạn nhập code sau vào terminal</strong> </p>
+<p><strong>[ kéo file iasl62 vào ]</strong> <strong>-da -dl *.aml</strong></p>
+<p><strong>Lưu ý 2: Nếu các bạn cần biên dịch 1 file ssdt nào đó hoặc dsdt mà muốn dùng refs.txt thì dùng code trên sẽ ta sẽ bị lỗi vì code trên áp dụng khi bạn có 2 file dsdt và ssdt cần biên dịch nếu chỉ biên dịch 1 file ta nhập code sau ( ơ đây đang nói là dùng phương pháp refs.txt )</strong></p>
+<ul>
+<li><strong>Ssdt : <code>[ kéo file iasl62 vào ] -da -dl -fe refs.txt SSDT*.aml</code></strong></li>
+<li><strong>Dsdt : <code>[ kéo file iasl62 vào ] -da -dl -fe refs.txt DSDT.aml</code></strong> </li>
+</ul>
+<h3 id="dsl-to-aml">DSL to AML<a class="headerlink" href="#dsl-to-aml" title="Permanent link">&para;</a></h3>
+<p>B1: ấn comlie</p>
+<p><img alt="" src="https://i.imgur.com/mlAru41.png" /></p>
+<p>B2: chọn <code>File -&gt; Save as</code></p>
+<p><img alt="" src="https://i.imgur.com/ftj2NmU.png" /></p>
+<p>B3: Sửa file formart lại thành <code>ACPI Machine language Binary</code></p>
+<p><img alt="" src="https://i.imgur.com/dpMrREJ.png" /></p>
+<p>B4: Ấn save</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../Patch_audio_with_VoodooHDA/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Patch audio với VoodooHDA" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Patch audio với VoodooHDA
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../Patch_pin/" class="md-footer__link md-footer__link--next" aria-label="Next: Patch pin" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Patch pin
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.748e2769.min.js"></script>
+      
+    
+  </body>
+</html>

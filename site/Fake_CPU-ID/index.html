@@ -1,0 +1,2014 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.2.11">
+    
+    
+      
+        <title>Fake CPU-ID - Hackintosh Documents</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c5ef100.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.9647289d.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fake-cpu-id" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Hackintosh Documents" class="md-header__button md-logo" aria-label="Hackintosh Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Hackintosh Documents
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Fake CPU-ID
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Hackintosh Documents" class="md-nav__button md-logo" aria-label="Hackintosh Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Hackintosh Documents
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        content
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Add_device-id_in_amd_kext/" class="md-nav__link">
+        Add device-id vào amd kext
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Backup_and_Restore_with_Time_Machine/" class="md-nav__link">
+        Backup and Restore with Time Machine
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Boot_Arguments/" class="md-nav__link">
+        Boot Arguments
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Boot_without_USB_and_mount_partion_EFI/" class="md-nav__link">
+        Boot không cần USB và mount phân vùng EFI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Config_Laptop_Clarksfield_and_Arrandale/" class="md-nav__link">
+        Config Laptop Clarksfield và Arrandale
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Control_Brightness_External_Display/" class="md-nav__link">
+        Control Brightness cho External Display
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Control_Led_RGB/" class="md-nav__link">
+        Control Led RGB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Convert_Bootloader/" class="md-nav__link">
+        Convert Bootloader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C%C3%A1ch%20x%C3%A1c%20%C4%91%E1%BB%8Bnh%20ph%E1%BA%A7n%20c%E1%BB%A9ng/" class="md-nav__link">
+        Cách xác định phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_CFG-Clock/" class="md-nav__link">
+        Disable CFG-Clock
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_dGPU_Desktop/" class="md-nav__link">
+        Disable dGPU Desktop
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_dgpu_Laptop/" class="md-nav__link">
+        Disable dgpu Laptop
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Emulated_NVRAM/" class="md-nav__link">
+        Emulated NVRAM
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Enable_Trim_For_SSD/" class="md-nav__link">
+        Enable Trim For SSD
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../External_Card_Reader/" class="md-nav__link">
+        Fix Internal/External Card Reader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Fake CPU-ID
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Fake CPU-ID
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cac-cpu-pentiumceleronxeon" class="md-nav__link">
+    Các CPU Pentium/Celeron/Xeon
+  </a>
+  
+    <nav class="md-nav" aria-label="Các CPU Pentium/Celeron/Xeon">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cac-cpu-tu-haswell-tro-len-pentiumceleron" class="md-nav__link">
+    Các CPU từ Haswell trở lên (Pentium/Celeron)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cac-cpu-dong-hdet-xeon" class="md-nav__link">
+    Các CPU dòng HDET (Xeon)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-xcpm-tren-cac-dong-low-end-pentium-va-celeron" class="md-nav__link">
+    Enable XCPM trên các dòng low-end (Pentium và Celeron)
+  </a>
+  
+    <nav class="md-nav" aria-label="Enable XCPM trên các dòng low-end (Pentium và Celeron)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pentiumceleron-1011-tro-xuong" class="md-nav__link">
+    Pentium/Celeron (10.11 trở xuống)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pentiumceleron-1013" class="md-nav__link">
+    Pentium/Celeron (10.13+)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pentiumceleron-dong-avx-12" class="md-nav__link">
+    Pentium/Celeron dòng AVX (12+)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cpu-gen-11-rocket-lake-dong-core-i" class="md-nav__link">
+    CPU Gen 11 (Rocket Lake | dòng Core i)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cpu-gen-10-dong-core-i" class="md-nav__link">
+    CPU Gen 10 (dòng Core i)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quy-tac-fake-cpu-id" class="md-nav__link">
+    Quy tắc Fake CPU-ID
+  </a>
+  
+    <nav class="md-nav" aria-label="Quy tắc Fake CPU-ID">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cach-lay-cpu-id" class="md-nav__link">
+    Cách lấy CPU-ID:
+  </a>
+  
+    <nav class="md-nav" aria-label="Cách lấy CPU-ID:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cach-1-search-google" class="md-nav__link">
+    Cách 1 Search Google
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cach-2-dung-clover-configurator" class="md-nav__link">
+    Cách 2 dùng Clover Configurator
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quy-tac-oi-cpu-id" class="md-nav__link">
+    Quy tắc đổi CPU-ID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cach-fake-1-cpu-cu-the" class="md-nav__link">
+    Cách Fake 1 CPU cụ thể
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix%20_for_slow_AMD_GPU/" class="md-nav__link">
+        Fix for slow AMD GPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Backlight/" class="md-nav__link">
+        Fix Backlight
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Connect_%28HDMI%29/" class="md-nav__link">
+        Fix Connect (HDMI)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Ethernet/" class="md-nav__link">
+        Fix Ethernet
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_HDMI_Audio/" class="md-nav__link">
+        Fix HDMI Audio
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Hotkeys/" class="md-nav__link">
+        Fix Hotkeys
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_RTC_Manual/" class="md-nav__link">
+        Fix RTC Manual
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_RTC_write_issues/" class="md-nav__link">
+        Fix RTC write issues
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Shutdown/" class="md-nav__link">
+        Fix Shut down
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_System_Clocks_on_HEDT/" class="md-nav__link">
+        Fix System Clocks on HEDT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_WiFi_and_Bluetooth/" class="md-nav__link">
+        Fix WiFi và Bluetooth
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_darkwake/" class="md-nav__link">
+        Fix darkwake
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_iServices/" class="md-nav__link">
+        Fix iServices
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_keyboard_wake/" class="md-nav__link">
+        Fix keyboard wake
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_power_management/" class="md-nav__link">
+        Fix power management
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_sleep/" class="md-nav__link">
+        Fix sleep
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_trackpad/" class="md-nav__link">
+        Fix trackpad
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fixing_KASLR/" class="md-nav__link">
+        Fixing KASLR
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GPRW_UPRW_LANC/" class="md-nav__link">
+        GPRW/UPRW/LANC
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ghost_macos/" class="md-nav__link">
+        Ghost macos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Guide_dual_Boot/" class="md-nav__link">
+        Hướng dẫn Dual Boot
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HotPlug_Thunderbolt_3/" class="md-nav__link">
+        HotPlug Thunderbolt 3
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hotpatch_PTS_Wake_TTS/" class="md-nav__link">
+        Hotpatch PTS Wake TTS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Injects_USB_Manual/" class="md-nav__link">
+        Injects USB Manual
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kernel_issue/" class="md-nav__link">
+        Kernel issue
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Map_USB/" class="md-nav__link">
+        Map USB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenCore_Legacy/" class="md-nav__link">
+        OpenCore Legacy
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_AMD_GPU/" class="md-nav__link">
+        Patch Card đồ họa AMD
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_2/" class="md-nav__link">
+        Patch DSDT Phần 2
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_3/" class="md-nav__link">
+        Patch DSDT Phần 3
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_4/" class="md-nav__link">
+        Patch DSDT phần 4
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_GMA_GPU/" class="md-nav__link">
+        Patch GMA GPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_IGPU/" class="md-nav__link">
+        Patch IGPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_NVIDIA_GPU/" class="md-nav__link">
+        Patch Card đồ họa NVIDIA
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_SATA_Controller/" class="md-nav__link">
+        Patch SATA Controller
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_audio_with_AppleALC/" class="md-nav__link">
+        Patch âm thanh với AppleALC
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_audio_with_VoodooHDA/" class="md-nav__link">
+        Patch audio với VoodooHDA
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_dsdt_part_1/" class="md-nav__link">
+        Patch dsdt phần 1
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_pin/" class="md-nav__link">
+        Patch pin
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Resize_EFI/" class="md-nav__link">
+        Resize EFI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SIP_and_Gatekeeper/" class="md-nav__link">
+        SIP và Gatekeeper
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SLE_kext_in_bigsur/" class="md-nav__link">
+        Cách sửa kext S/L/E trên bigsur
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SSDT_recomend/" class="md-nav__link">
+        SSDT recomend
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Scan_policy/" class="md-nav__link">
+        Scan policy
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Some_error_in_bigsur/" class="md-nav__link">
+        Một số lỗi ở xuất hiện ở macOS Big Sur
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Some_error_in_propertree/" class="md-nav__link">
+        1 số lỗi ProperTree
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Turn_on_Backlight_Keyboard/" class="md-nav__link">
+        Turn on Backlight Keyboard
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Update_macOS_and_Bootloader/" class="md-nav__link">
+        Update macOS và Bootloader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Use_SSDT-time_to_Prebuilt%20SSDT/" class="md-nav__link">
+        Dùng SSDT-Time để Prebuilt SSDT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%5BEB%7C%23LOG%3AEXITBS%3ASTART%5D/" class="md-nav__link">
+        [EB|#LOG:EXITBS:START]
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../add_boot_option_in_bios/" class="md-nav__link">
+        Cách thêm Boot vào BIOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creat_GUI/" class="md-nav__link">
+        Tạo GUI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creat_online_usb_%28recovery%29/" class="md-nav__link">
+        Cách tạo bộ cài online (recovery)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_EFI_OpenCore/" class="md-nav__link">
+        Cách tạo EFI OpenCore
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_EFI_Opencore_No_ACPI/" class="md-nav__link">
+        Cách làm EFI Opencore No ACPI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_offline_bootable_without_no_usb/" class="md-nav__link">
+        Cách tạo bộ cài Offline khi không có USB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_usb_offline/" class="md-nav__link">
+        Cách tạo bộ cài offline
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fake_CPU_Name%3Aigpu_name/" class="md-nav__link">
+        Fake iGPU/ CPU Name
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_mod_bios/" class="md-nav__link">
+        Cách mod bios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inject_all_hardware_properties/" class="md-nav__link">
+        Cách inject toàn bộ thông tin phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn_about_hackintosh/" class="md-nav__link">
+        Tìm hiểu về Hackintosh
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn_about_to_hardware/" class="md-nav__link">
+        Tìm hiểu chung về phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../macOS_12_Monterey/" class="md-nav__link">
+        macOS 12: Monterey
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patch_connector_type_force_rgb%3AInject_EDID/" class="md-nav__link">
+        Patch Connect Type/ Force RGB/ Inject EDID
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cac-cpu-pentiumceleronxeon" class="md-nav__link">
+    Các CPU Pentium/Celeron/Xeon
+  </a>
+  
+    <nav class="md-nav" aria-label="Các CPU Pentium/Celeron/Xeon">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cac-cpu-tu-haswell-tro-len-pentiumceleron" class="md-nav__link">
+    Các CPU từ Haswell trở lên (Pentium/Celeron)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cac-cpu-dong-hdet-xeon" class="md-nav__link">
+    Các CPU dòng HDET (Xeon)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-xcpm-tren-cac-dong-low-end-pentium-va-celeron" class="md-nav__link">
+    Enable XCPM trên các dòng low-end (Pentium và Celeron)
+  </a>
+  
+    <nav class="md-nav" aria-label="Enable XCPM trên các dòng low-end (Pentium và Celeron)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pentiumceleron-1011-tro-xuong" class="md-nav__link">
+    Pentium/Celeron (10.11 trở xuống)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pentiumceleron-1013" class="md-nav__link">
+    Pentium/Celeron (10.13+)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pentiumceleron-dong-avx-12" class="md-nav__link">
+    Pentium/Celeron dòng AVX (12+)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cpu-gen-11-rocket-lake-dong-core-i" class="md-nav__link">
+    CPU Gen 11 (Rocket Lake | dòng Core i)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cpu-gen-10-dong-core-i" class="md-nav__link">
+    CPU Gen 10 (dòng Core i)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quy-tac-fake-cpu-id" class="md-nav__link">
+    Quy tắc Fake CPU-ID
+  </a>
+  
+    <nav class="md-nav" aria-label="Quy tắc Fake CPU-ID">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cach-lay-cpu-id" class="md-nav__link">
+    Cách lấy CPU-ID:
+  </a>
+  
+    <nav class="md-nav" aria-label="Cách lấy CPU-ID:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cach-1-search-google" class="md-nav__link">
+    Cách 1 Search Google
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cach-2-dung-clover-configurator" class="md-nav__link">
+    Cách 2 dùng Clover Configurator
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quy-tac-oi-cpu-id" class="md-nav__link">
+    Quy tắc đổi CPU-ID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cach-fake-1-cpu-cu-the" class="md-nav__link">
+    Cách Fake 1 CPU cụ thể
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="fake-cpu-id">Fake CPU-ID<a class="headerlink" href="#fake-cpu-id" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>Phần này dành cho những bạn có CPU Pentium hoặc Celeron hoặc Desktop Gen 11 và các CPU Gen10 muốn sử dụng High Sierra các bạn bắt buộc phải fake CPU-ID.</p>
+</blockquote>
+<h2 id="cac-cpu-pentiumceleronxeon">Các CPU Pentium/Celeron/Xeon<a class="headerlink" href="#cac-cpu-pentiumceleronxeon" title="Permanent link">&para;</a></h2>
+<p>Add các patch sau vào Kernel ⇒ Emulate (đối với Clover các bạn chỉ lấy mục cpuid1data thôi và add vào mục cpu-id và bấm vào dấu</p>
+<p><img alt="" src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-11-at-17.11.59.png?w=150" /></p>
+<p><img alt="" src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-11-at-17.10.55.png?w=1024" /></p>
+<p><img alt="" src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-12-at-11.36.19-1.png?w=874" /></p>
+<h3 id="cac-cpu-tu-haswell-tro-len-pentiumceleron">Các CPU từ Haswell trở lên (Pentium/Celeron)<a class="headerlink" href="#cac-cpu-tu-haswell-tro-len-pentiumceleron" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Cpuid1Data: A9 06 03 00 00 00 00 00 00 00 00 00 00 00 00 00
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Cpuid1Mask: FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00
+</code></pre></div>
+<h3 id="cac-cpu-dong-hdet-xeon">Các CPU dòng HDET (Xeon)<a class="headerlink" href="#cac-cpu-dong-hdet-xeon" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Haswell-E :</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Cpuid1Data: C3 06 03 00 00 00 00 00 00 00 00 00 00 00 00 00
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Cpuid1Mask: FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00
+</code></pre></div>
+<ul>
+<li>Broadwell-E :</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Cpuid1Data: D4 06 03 00 00 00 00 00 00 00 00 00 00 00 00 00
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Cpuid1Mask: FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00
+</code></pre></div>
+<h3 id="enable-xcpm-tren-cac-dong-low-end-pentium-va-celeron">Enable XCPM trên các dòng low-end (Pentium và Celeron)<a class="headerlink" href="#enable-xcpm-tren-cac-dong-low-end-pentium-va-celeron" title="Permanent link">&para;</a></h3>
+<p>Các bạn add các patch sau vào <code>Root ⇒ Kernel ⇒ Patch</code> (đối với Clover các bạn chuyển các mục patch sau theo quy tắt dưới vào mục kextopatch)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Comment: sử dụng cho cả OpenCore và Clover.
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Disabled: tương ứng với mục Enable ben OpenCore.
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>MatchBuild: được thay thế bằng Minkernel và Maxkernel (các bạn dùng trang sau để search version Darwin [Darwin (operating system) - Wikipedia](https://en.wikipedia.org/wiki/Darwin_(operating_system))).
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>MatchOS: được thay thế bằng Minkernel và Maxkernel (các bạn dùng trang sau để search version Darwin [Darwin (operating system) - Wikipedia](https://en.wikipedia.org/wiki/Darwin_(operating_system))).
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>Find: có ở OpenCore và Clover.
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>Replace: có cả ở OpenCore và Clover.
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>MaskFind: OpenCore sử dụng Mask để thay thế.
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>Mask replace: có cả ở OpenCore và Clover.
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>Count, limit, skip thường được đặt thành 0.
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>Identifier thường được đặt thành kernel (trông 1 số trường hợp khi bạn patch kext nào thì sẽ để đường dẫn theo kext đó vd như com.apple.iokit.IOGraphicsFamily).
+</code></pre></div>
+<h4 id="pentiumceleron-1011-tro-xuong">Pentium/Celeron (10.11 trở xuống)<a class="headerlink" href="#pentiumceleron-1011-tro-xuong" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Base: _xcpm_bootstrap
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Comment: _xcpm_bootstrap (Haswell+ low-end Celeron/Pentium) 10.12
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>Count: 1
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>Enabled: YES
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>Find: C4830022
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>Identifier: kernel
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>Limit: 0
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>Mask: FFFF00FF
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>MatchKernel: 16.
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>Replace: C6830022
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>ReplaceMask: FFFF00FF
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>Skip: 0
+</code></pre></div>
+<h4 id="pentiumceleron-1013">Pentium/Celeron (10.13+)<a class="headerlink" href="#pentiumceleron-1013" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Base: _xcpm_bootstrap
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Comment: _xcpm_bootstrap (Haswell+ low-end Celeron/Pentium) 10.13+
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>Count: 1
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>Enabled: YES
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>Find: 00C43C22
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>Identifier: kernel
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>Limit: 0
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>Mask: 00FFFFFF
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>MatchKernel: 16.
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>Replace: 00C63C22
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>ReplaceMask: 00FFFFFF
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>Skip: 0
+</code></pre></div>
+<h4 id="pentiumceleron-dong-avx-12">Pentium/Celeron dòng AVX (12+)<a class="headerlink" href="#pentiumceleron-dong-avx-12" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Base: [EMPTY]
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Comment: Haswell+ low-end Celeron/Pentium cpuid_set_info_rdmsr (c) vit9696
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>Count: 1
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>Enabled: YES
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>Find: B9A00100000F32
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>Identifier: kernel
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>Limit: 0
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>Mask: [EMPTY]
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>MatchKernel: [EMPTY]
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>Replace: B9A001000031C0
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>ReplaceMask: [EMPTY]
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>Skip: 0
+</code></pre></div>
+<blockquote>
+<p>Lưu ý: Sau khi các bạn add các patch trên các bạn hãy patch powermanagement</p>
+</blockquote>
+<h2 id="cpu-gen-11-rocket-lake-dong-core-i">CPU Gen 11 (Rocket Lake | dòng Core i)<a class="headerlink" href="#cpu-gen-11-rocket-lake-dong-core-i" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Hiện tại Gen 11 Desktop đã có thể Hackintosh mà không cần Fake CPU-ID nhưng nếu các bạn gặp 1 số lỗi thì có thể fake CPU-ID theo sau: </p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Cpuid1Data: EB 06 09 00 00 00 00 00 00 00 00 00 00 00 00 00 
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>Cpuid1Mask: FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00
+</code></pre></div>
+<h2 id="cpu-gen-10-dong-core-i">CPU Gen 10 (dòng Core i)<a class="headerlink" href="#cpu-gen-10-dong-core-i" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Đối với các dòng Gen 10 ko cần fake cpuid nhưng nếu các bạn muốn cài High Sierra (để sử dụng card rời thì fake theo đây) trong quá trình cài Web Driver các bạn có thể gặp lỗi tự bật CSM trong BIOS dẫn đến bị đen màn khi cài Web Driver.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Cpuid1Data: EC 06 08 00 00 00 00 00 00 00 00 00 00 00 00 00
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>Cpuid1Mask: FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00
+</code></pre></div>
+<blockquote>
+<p>dành cho các dòng U</p>
+</blockquote>
+<p>Hoặc </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Cpuid1Data: EB 06 08 00 00 00 00 00 00 00 00 00 00 00 00 00
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>Cpuid1Mask: FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00
+</code></pre></div>
+<p>Hoặc</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Cpuid1Data to ED060900 00000000 00000000 00000000
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>Cpuid1Mask to FFFFFFFF 00000000 00000000 00000000
+</code></pre></div>
+<blockquote>
+<p>đã thử nghiệm trên Mojave</p>
+</blockquote>
+<h2 id="quy-tac-fake-cpu-id">Quy tắc Fake CPU-ID<a class="headerlink" href="#quy-tac-fake-cpu-id" title="Permanent link">&para;</a></h2>
+<h3 id="cach-lay-cpu-id">Cách lấy CPU-ID:<a class="headerlink" href="#cach-lay-cpu-id" title="Permanent link">&para;</a></h3>
+<h4 id="cach-1-search-google">Cách 1 Search Google<a class="headerlink" href="#cach-1-search-google" title="Permanent link">&para;</a></h4>
+<p>B1: Các bạn 1 vào 1 trình duyệt bất kỳ search cpuid + tên cpu cần fake (vd cpuid haswell)</p>
+<p>B2: Nên vào trang wiki để tìm kết quả (cpuid sẽ có mã là 0306C3)</p>
+<p><img alt="" src="https://lh4.googleusercontent.com/uJP-9DYEuigV6TvVJZfn8BzHaszQIFD-1Z2Khd9BXPXbmCiLNscN4EaiQ_kQ7BkDjhwHuhBOjl_sUlBSlgy_Il6ZfIYjZV67aE5ckh95SCvVZiPn1AsYbBQF8US3xK3auczVswKD=s0" /></p>
+<h4 id="cach-2-dung-clover-configurator">Cách 2 dùng Clover Configurator<a class="headerlink" href="#cach-2-dung-clover-configurator" title="Permanent link">&para;</a></h4>
+<p>B1: Tải Clover Configurator <a href="https://mackie100projects.altervista.org/download-clover-configurator/">tại đây</a>. </p>
+<p>B2: Vào Tab Kernel and Kext Patches. </p>
+<p><img alt="" src="https://lh6.googleusercontent.com/8pOnhOf5kCqzVd1lTF3voNQVVdltwZcpixUnpElH2iXjhlwK_hMXrzRwLorNzSjMcJP2A1YDROeuLOj0q-KhpEhtKvnK66eLniGxv1drhYNN5A_ZGh25PBqlC04CFSrJQ2evamhg=s0" /></p>
+<p>B3: Nhấn vào dấu <img alt="" src="https://lh3.googleusercontent.com/7JTeJC23uPzXkOLr8T-Z_KXj3VQlBVGbMjCJI5hQ22S4O3FlwZxppwtmg0tVzM_dbsF5F-rlnVfwTWbPPIJH7yLqaCpvGu6fo-QyD3QcA7oINtLMFRF0fpM1XZlLJ0R1gSqOi3PF=s0" /> </p>
+<p>B4: Chọn CPU-ID phù hợp (cao nhất là kabylake như ở đây mình sẽ có là 0x0306C0 của Haswell)</p>
+<ul>
+<li>Cách 3:</li>
+</ul>
+<p>B1: Vào trang Tìm hiểu phần cứng để lấy <code>cpuid</code></p>
+<h3 id="quy-tac-oi-cpu-id">Quy tắc đổi CPU-ID<a class="headerlink" href="#quy-tac-oi-cpu-id" title="Permanent link">&para;</a></h3>
+<p>B1: Các bạn loại bỏ chữ số <code>0x</code> đi (<code>0x0306C0 ⇒ 0306C0</code>).</p>
+<p>B2: Tách nó thành các cập rồi đổi thứ tự (<code>0306C0 ⇒ 03 06 C0 ⇒ C0 06 03</code>).</p>
+<p>B3: Sau đó chuyển nó thành hệ thập lục phân(<code>C0 06 03 ⇒ C0 06 03 00 00 00 00 00 00 00 00 00 00 00 00 00</code>).</p>
+<p>B4: Ta có (Clover chỉ lấy mục <code>CPU1</code> Data).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Cpuid1Data: C3 06 03 00 00 00 00 00 00 00 00 00 00 00 00 00
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>Cpuid1Mask: FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00
+</code></pre></div>
+<h3 id="cach-fake-1-cpu-cu-the">Cách Fake 1 CPU cụ thể<a class="headerlink" href="#cach-fake-1-cpu-cu-the" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Giải thích. 1 chút về phần này. Ở các phần trước thì mình chỉ các bạn cách Fake CPU-ID theo gen tức lấy 1 CPU-IDlàm đại diện để fake ở đây mình sẽ hướng dẫn các bạn cách Fake thành 1 CPU cụ thể VD cụ thể ở đây sẽ là <code>i9-9980HK</code></p>
+</blockquote>
+<p>B1: Các bạn truy cập vào trang cpuid world <a href="https://www.cpu-world.com/cgi-bin/CPUID.pl">tại đây</a></p>
+<p>B2: Các bạn chọn cpu muốn fake </p>
+<blockquote>
+<p>ở đây các bạn có thể dùng tính năng filter để lọc</p>
+</blockquote>
+<p><img alt="" src="https://imgur.com/h4S7cqY.png" /></p>
+<p>B3: Sau khi các bạn chọn được cpu muốn fake các bạn tiếp tục ấn tổ hợp phím <code>Command + F</code> hoặc <code>Ctrl + F</code> và gõ từ khóa <code>cpuid</code></p>
+<p><img alt="" src="https://imgur.com/CeE6Ul1.png" /></p>
+<p>Các bạn chú ý đến dòng <code>CPUID signature</code> đây chính là cpuid các bạn cần tìm nhưng nó vẫn chưa thể dùng được các bạn cần biến đổi nó 1 tí</p>
+<p>B4: Các bạn tách cpuid vừa nhận được thành các cập từ phải qua trái:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>// ví dụ như cpuid của con i9-9980HK sẽ là
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>906ED ==&gt; 9 06 ED
+</code></pre></div>
+<p>B5: Các bạn thêm số 0 vào trc dãy 6 đảm bảo dãy số có đủ 6 chữ số.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>// thêm số vào trc dãy số đảm bảo có đủ 6 chữ số
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>9 06 ED ==&gt; 09 06 ED
+</code></pre></div>
+<p>B6: Các bạn thực hiện quy tắc đổi cpuid như ở phần IV và viết lại như bình thường.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>// đảo thứ tự các cập
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>09 06 ED ==&gt; ED 06 09
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>// chuyển thành hệ thập lục phân
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>ED 06 09 ==&gt; ED 06 09 00 00 00 00 00 00 00 00 00 00 00 00 00
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>// viết lại và sử dụng
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>ED 06 09 00 00 00 00 00 00 00 00 00 00 00 00 00 ==&gt; ED060900000000000000000000000000
+</code></pre></div>
+<blockquote>
+<p>Lưu ý : Sau khi làm xong thì cpu sẽ mất khả năng quản lý năng lượng các bạn có thể patch PowerManagement theo mục VI.2 nếu các bạn gặp lỗi khi Boot (chỉ với CPU dong low-end tức là Celeron hay Pentinum thì các bạn có thể sử dụng <a href="https://drive.google.com/file/d/1tRgTaoZrQ6HB3NE_iOMS1UcxA-yfm4by/view?usp=sharing"><strong>N</strong></a><a href="https://drive.google.com/file/d/1tRgTaoZrQ6HB3NE_iOMS1UcxA-yfm4by/view?usp=sharing"><strong>ullCPUPowerManagement.kext</strong></a> hoặc bật <code>config ⇒ Kernel ⇒ Emulate ⇒ DummyPowerManagement</code>.</p>
+<p>Nếu sau khi đã Patch PowerManagement thì các bạn phải xóa <code>NullCPUPowerManagement.kext</code> đi hoặc tắt <code>DummyPowerManagement</code>.</p>
+</blockquote>
+<p><strong>Các nguồn tham khảo</strong> <a href="https://github.com/acidanthera/bugtracker/issues/365"><strong>OcAppleKernelLib: Add builtin XCPM patches for Ivy Bridge and other unsupported CPUs · Issue #365 · acidanthera/bugtracker (github.com)</strong></a> </p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../External_Card_Reader/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Fix Internal/External Card Reader" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Fix Internal/External Card Reader
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../Fix%20_for_slow_AMD_GPU/" class="md-footer__link md-footer__link--next" aria-label="Next: Fix for slow AMD GPU" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Fix for slow AMD GPU
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.748e2769.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1851 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.2.11">
+    
+    
+      
+        <title>Fixing KASLR - Hackintosh Documents</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c5ef100.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.9647289d.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fixing-kaslr" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Hackintosh Documents" class="md-header__button md-logo" aria-label="Hackintosh Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Hackintosh Documents
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Fixing KASLR
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Hackintosh Documents" class="md-nav__button md-logo" aria-label="Hackintosh Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Hackintosh Documents
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        content
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Add_device-id_in_amd_kext/" class="md-nav__link">
+        Add device-id vào amd kext
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Backup_and_Restore_with_Time_Machine/" class="md-nav__link">
+        Backup and Restore with Time Machine
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Boot_Arguments/" class="md-nav__link">
+        Boot Arguments
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Boot_without_USB_and_mount_partion_EFI/" class="md-nav__link">
+        Boot không cần USB và mount phân vùng EFI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Config_Laptop_Clarksfield_and_Arrandale/" class="md-nav__link">
+        Config Laptop Clarksfield và Arrandale
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Control_Brightness_External_Display/" class="md-nav__link">
+        Control Brightness cho External Display
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Control_Led_RGB/" class="md-nav__link">
+        Control Led RGB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Convert_Bootloader/" class="md-nav__link">
+        Convert Bootloader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C%C3%A1ch%20x%C3%A1c%20%C4%91%E1%BB%8Bnh%20ph%E1%BA%A7n%20c%E1%BB%A9ng/" class="md-nav__link">
+        Cách xác định phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_CFG-Clock/" class="md-nav__link">
+        Disable CFG-Clock
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_dGPU_Desktop/" class="md-nav__link">
+        Disable dGPU Desktop
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_dgpu_Laptop/" class="md-nav__link">
+        Disable dgpu Laptop
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Emulated_NVRAM/" class="md-nav__link">
+        Emulated NVRAM
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Enable_Trim_For_SSD/" class="md-nav__link">
+        Enable Trim For SSD
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../External_Card_Reader/" class="md-nav__link">
+        Fix Internal/External Card Reader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fake_CPU-ID/" class="md-nav__link">
+        Fake CPU-ID
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix%20_for_slow_AMD_GPU/" class="md-nav__link">
+        Fix for slow AMD GPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Backlight/" class="md-nav__link">
+        Fix Backlight
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Connect_%28HDMI%29/" class="md-nav__link">
+        Fix Connect (HDMI)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Ethernet/" class="md-nav__link">
+        Fix Ethernet
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_HDMI_Audio/" class="md-nav__link">
+        Fix HDMI Audio
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Hotkeys/" class="md-nav__link">
+        Fix Hotkeys
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_RTC_Manual/" class="md-nav__link">
+        Fix RTC Manual
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_RTC_write_issues/" class="md-nav__link">
+        Fix RTC write issues
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Shutdown/" class="md-nav__link">
+        Fix Shut down
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_System_Clocks_on_HEDT/" class="md-nav__link">
+        Fix System Clocks on HEDT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_WiFi_and_Bluetooth/" class="md-nav__link">
+        Fix WiFi và Bluetooth
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_darkwake/" class="md-nav__link">
+        Fix darkwake
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_iServices/" class="md-nav__link">
+        Fix iServices
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_keyboard_wake/" class="md-nav__link">
+        Fix keyboard wake
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_power_management/" class="md-nav__link">
+        Fix power management
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_sleep/" class="md-nav__link">
+        Fix sleep
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_trackpad/" class="md-nav__link">
+        Fix trackpad
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Fixing KASLR
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Fixing KASLR
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#kaslr-la-gi" class="md-nav__link">
+    KASLR là gì?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vay-khi-nao-can-fix-kaslr" class="md-nav__link">
+    Vậy khi nào cần Fix KASLR
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chuan-bi" class="md-nav__link">
+    Chuẩn bị:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-bios" class="md-nav__link">
+    Setting BIOS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tim-slide-value" class="md-nav__link">
+    Tìm Slide Value
+  </a>
+  
+    <nav class="md-nav" aria-label="Tìm Slide Value">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#luu-y" class="md-nav__link">
+    Lưu ý:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-devirtualisemmio" class="md-nav__link">
+    Using DevirtualiseMmio
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GPRW_UPRW_LANC/" class="md-nav__link">
+        GPRW/UPRW/LANC
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ghost_macos/" class="md-nav__link">
+        Ghost macos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Guide_dual_Boot/" class="md-nav__link">
+        Hướng dẫn Dual Boot
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HotPlug_Thunderbolt_3/" class="md-nav__link">
+        HotPlug Thunderbolt 3
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hotpatch_PTS_Wake_TTS/" class="md-nav__link">
+        Hotpatch PTS Wake TTS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Injects_USB_Manual/" class="md-nav__link">
+        Injects USB Manual
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kernel_issue/" class="md-nav__link">
+        Kernel issue
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Map_USB/" class="md-nav__link">
+        Map USB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenCore_Legacy/" class="md-nav__link">
+        OpenCore Legacy
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_AMD_GPU/" class="md-nav__link">
+        Patch Card đồ họa AMD
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_2/" class="md-nav__link">
+        Patch DSDT Phần 2
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_3/" class="md-nav__link">
+        Patch DSDT Phần 3
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_4/" class="md-nav__link">
+        Patch DSDT phần 4
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_GMA_GPU/" class="md-nav__link">
+        Patch GMA GPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_IGPU/" class="md-nav__link">
+        Patch IGPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_NVIDIA_GPU/" class="md-nav__link">
+        Patch Card đồ họa NVIDIA
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_SATA_Controller/" class="md-nav__link">
+        Patch SATA Controller
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_audio_with_AppleALC/" class="md-nav__link">
+        Patch âm thanh với AppleALC
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_audio_with_VoodooHDA/" class="md-nav__link">
+        Patch audio với VoodooHDA
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_dsdt_part_1/" class="md-nav__link">
+        Patch dsdt phần 1
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_pin/" class="md-nav__link">
+        Patch pin
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Resize_EFI/" class="md-nav__link">
+        Resize EFI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SIP_and_Gatekeeper/" class="md-nav__link">
+        SIP và Gatekeeper
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SLE_kext_in_bigsur/" class="md-nav__link">
+        Cách sửa kext S/L/E trên bigsur
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SSDT_recomend/" class="md-nav__link">
+        SSDT recomend
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Scan_policy/" class="md-nav__link">
+        Scan policy
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Some_error_in_bigsur/" class="md-nav__link">
+        Một số lỗi ở xuất hiện ở macOS Big Sur
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Some_error_in_propertree/" class="md-nav__link">
+        1 số lỗi ProperTree
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Turn_on_Backlight_Keyboard/" class="md-nav__link">
+        Turn on Backlight Keyboard
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Update_macOS_and_Bootloader/" class="md-nav__link">
+        Update macOS và Bootloader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Use_SSDT-time_to_Prebuilt%20SSDT/" class="md-nav__link">
+        Dùng SSDT-Time để Prebuilt SSDT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%5BEB%7C%23LOG%3AEXITBS%3ASTART%5D/" class="md-nav__link">
+        [EB|#LOG:EXITBS:START]
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../add_boot_option_in_bios/" class="md-nav__link">
+        Cách thêm Boot vào BIOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creat_GUI/" class="md-nav__link">
+        Tạo GUI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creat_online_usb_%28recovery%29/" class="md-nav__link">
+        Cách tạo bộ cài online (recovery)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_EFI_OpenCore/" class="md-nav__link">
+        Cách tạo EFI OpenCore
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_EFI_Opencore_No_ACPI/" class="md-nav__link">
+        Cách làm EFI Opencore No ACPI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_offline_bootable_without_no_usb/" class="md-nav__link">
+        Cách tạo bộ cài Offline khi không có USB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_usb_offline/" class="md-nav__link">
+        Cách tạo bộ cài offline
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fake_CPU_Name%3Aigpu_name/" class="md-nav__link">
+        Fake iGPU/ CPU Name
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_mod_bios/" class="md-nav__link">
+        Cách mod bios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inject_all_hardware_properties/" class="md-nav__link">
+        Cách inject toàn bộ thông tin phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn_about_hackintosh/" class="md-nav__link">
+        Tìm hiểu về Hackintosh
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn_about_to_hardware/" class="md-nav__link">
+        Tìm hiểu chung về phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../macOS_12_Monterey/" class="md-nav__link">
+        macOS 12: Monterey
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patch_connector_type_force_rgb%3AInject_EDID/" class="md-nav__link">
+        Patch Connect Type/ Force RGB/ Inject EDID
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#kaslr-la-gi" class="md-nav__link">
+    KASLR là gì?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vay-khi-nao-can-fix-kaslr" class="md-nav__link">
+    Vậy khi nào cần Fix KASLR
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chuan-bi" class="md-nav__link">
+    Chuẩn bị:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-bios" class="md-nav__link">
+    Setting BIOS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tim-slide-value" class="md-nav__link">
+    Tìm Slide Value
+  </a>
+  
+    <nav class="md-nav" aria-label="Tìm Slide Value">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#luu-y" class="md-nav__link">
+    Lưu ý:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-devirtualisemmio" class="md-nav__link">
+    Using DevirtualiseMmio
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="fixing-kaslr">Fixing KASLR<a class="headerlink" href="#fixing-kaslr" title="Permanent link">&para;</a></h1>
+<h2 id="kaslr-la-gi">KASLR là gì?<a class="headerlink" href="#kaslr-la-gi" title="Permanent link">&para;</a></h2>
+<p>Nó là viết tắt của cụm từ <strong>Kernel address space layout randomization</strong>. Nó là 1 công cụ bảo mật của Apple làm cho những Hacker khó có thể tìm ra những object quan trọng trong bộ nhớ vì nó luôn thay đổi ngẫu nhiên sau mỗi lần khởi động chi tiết xem <a href="https://lwn.net/Articles/569635/">tại đây</a>.</p>
+<p>Đối với những máy có memory maps nhỏ hoặc hoặc có quá nhiều device trong DSDT. Có thể sẽ có space cho kernel hoạt động nhưng cũng có thể sẽ có free space mà kernel không bao phủ tới. Vì thế ta sẽ không để macOS chọn 1 khu vực ngẫu nhiên để hoạt động trong mỗi lần reboot mà ta sẽ giới hạn khu vực bất kì mà chắc chắn nó sẽ hoạt động.</p>
+<h2 id="vay-khi-nao-can-fix-kaslr">Vậy khi nào cần Fix KASLR<a class="headerlink" href="#vay-khi-nao-can-fix-kaslr" title="Permanent link">&para;</a></h2>
+<p>Thường khi boot macOS sẽ gặp các lỗi như sau:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Error allocating 0x1197b pages at 0x0000000017a80000 alloc type 2
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Couldn&#39;t allocate runtime area
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>//hoặc
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>Only 244/256 slide values are usable!
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>//hoặc
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>panic(cpu 6 caller 0xffffff801fc057ba): a freed zone element has been modified in zone kalloc.4096: expected 0x3f00116dbe8a46f6 but found 0x3f00116d00000000
+</code></pre></div>
+<h2 id="chuan-bi">Chuẩn bị:<a class="headerlink" href="#chuan-bi" title="Permanent link">&para;</a></h2>
+<p>B1: Tải OpenRuntime.efi (trong OpenCorePKG xem chi tiết <a href="https://heavietnam.ga/2020/11/23/cach-tao-efi-cho-opencore/">tại đây</a>).</p>
+<p>B2: Tải OpenShell.efi (xem cách tải OpenShell <a href="https://heavietnam.ga/2020/11/23/cach-tao-efi-cho-opencore/">tại đây</a>).</p>
+<p>B3: chỉnh config &ndash;&gt; Booter theo sau:</p>
+<ul>
+<li>AvoidRuntimeDefrag: YES</li>
+<li>DevirtualiseMmio: YES</li>
+<li>EnableSafeModeSlide: YES</li>
+<li>ProtectUefiServices: NO</li>
+<li>ProvideCustomSlide: YES</li>
+<li>RebuildAppleMemoryMap: YES</li>
+</ul>
+<h2 id="setting-bios">Setting BIOS<a class="headerlink" href="#setting-bios" title="Permanent link">&para;</a></h2>
+<p>B1: Update BIOS (khá quan trọng đặc biệt là Z390).</p>
+<p>B2: Clear CMOS.</p>
+<p>B3: Bật các option sau trong BIOS:</p>
+<ul>
+<li>Above4GDecoding (đảm bảo rằng Booter -&gt; Quirks -&gt; ResizeAppleGpuBars: 0).</li>
+<li>Boot Options -&gt; Windows8.1/10 mode.</li>
+<li>Disable các option không cần thiết trong bios (không cần thiết ở đây có nghĩa là bạn không sử dụng):</li>
+<li>CSM</li>
+<li>Intel SGX</li>
+<li>Parallel Port</li>
+<li>Serial Port</li>
+<li>iGPU</li>
+<li>Thunderbolt</li>
+<li>LED lighting</li>
+<li>Legacy USB</li>
+</ul>
+<h2 id="tim-slide-value">Tìm Slide Value<a class="headerlink" href="#tim-slide-value" title="Permanent link">&para;</a></h2>
+<p>B1: Bạn chọn OpenShell.efi tại picker của OpenCore.</p>
+<p>B2: Ấn Enter hoặc đợi vài giây.</p>
+<p>B3: Các bạn gõ lệnh:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>//truy cập vào ổ đĩa
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>fs0:
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>// kiểm tra xem bạn có đang ở đúng đường dẫn mong muốn không nếu không có thể thử fs1:
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>ls
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>// tạo file memmap.txt
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>memmap &gt; memmap.txt
+</code></pre></div>
+<p><img alt="" src="https://i.imgur.com/uQQPkHc.jpg" /></p>
+<p>B4: Mở file memmap.txt ra ta sẽ được:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Type       Start            End              # Pages          Attributes
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>BS_Code    0000000000000000-0000000000007FFF 0000000000000008 000000000000000F
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Available  0000000000008000-000000000005DFFF 0000000000000056 000000000000000F
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>BS_Data    000000000005E000-000000000005FFFF 0000000000000002 000000000000000F
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>BS_Code    0000000000060000-000000000009EFFF 000000000000003F 000000000000000F
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>RT_Data    000000000009F000-000000000009FFFF 0000000000000001 800000000000000F
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>Available  0000000000100000-0000000000FFFFFF 0000000000000F00 000000000000000F
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>LoaderData 0000000001000000-00000000010FFFFF 0000000000000100 000000000000000F
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>Available  0000000001100000-000000001FFFFFFF 000000000001EF00 000000000000000F
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>Reserved   0000000020000000-00000000201FFFFF 0000000000000200 000000000000000F
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>Available  0000000020200000-0000000040003FFF 000000000001FE04 000000000000000F
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>Reserved   0000000040004000-0000000040004FFF 0000000000000001 000000000000000F
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>Available  0000000040005000-00000000CD431FFF 000000000008D42D 000000000000000F
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>LoaderCode 00000000CD432000-00000000CD53AFFF 0000000000000109 000000000000000F
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>BS_Data    00000000CD53B000-00000000CE025FFF 0000000000000AEB 000000000000000F
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>Available  00000000CE026000-00000000CE220FFF 00000000000001FB 000000000000000F
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>BS_Data    00000000CE221000-00000000CE5C2FFF 00000000000003A2 000000000000000F
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>Available  00000000CE5C3000-00000000CE5D6FFF 0000000000000014 000000000000000F
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>BS_Data    00000000CE5D7000-00000000CE762FFF 000000000000018C 000000000000000F
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>LoaderCode 00000000CE763000-00000000CE7EAFFF 0000000000000088 000000000000000F
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>BS_Data    00000000CE7EB000-00000000D90E3FFF 000000000000A8F9 000000000000000F
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>Available  00000000D90E4000-00000000D96C3FFF 00000000000005E0 000000000000000F
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>BS_Code    00000000D96C4000-00000000D9762FFF 000000000000009F 000000000000000F
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>RT_Code    00000000D9763000-00000000D9767FFF 0000000000000005 800000000000000F
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>BS_Code    00000000D9768000-00000000D97C5FFF 000000000000005E 000000000000000F
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>ACPI_NVS   00000000D97C6000-00000000D9DC6FFF 0000000000000601 000000000000000F
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>RT_Code    00000000D9DC7000-00000000D9DC9FFF 0000000000000003 800000000000000F
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>BS_Code    00000000D9DCA000-00000000D9DE0FFF 0000000000000017 000000000000000F
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>RT_Code    00000000D9DE1000-00000000D9DE6FFF 0000000000000006 800000000000000F
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>BS_Code    00000000D9DE7000-00000000D9DE8FFF 0000000000000002 000000000000000F
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>RT_Code    00000000D9DE9000-00000000D9DF6FFF 000000000000000E 800000000000000F
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>BS_Code    00000000D9DF7000-00000000D9F4DFFF 0000000000000157 000000000000000F
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>RT_Code    00000000D9F4E000-00000000D9F51FFF 0000000000000004 800000000000000F
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>BS_Code    00000000D9F52000-00000000D9F9CFFF 000000000000004B 000000000000000F
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>RT_Code    00000000D9F9D000-00000000D9FA3FFF 0000000000000007 800000000000000F
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>RT_Data    00000000D9FA4000-00000000D9FB0FFF 000000000000000D 800000000000000F
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>RT_Code    00000000D9FB1000-00000000D9FC2FFF 0000000000000012 800000000000000F
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>BS_Code    00000000D9FC3000-00000000D9FC5FFF 0000000000000003 000000000000000F
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>RT_Code    00000000D9FC6000-00000000D9FC7FFF 0000000000000002 800000000000000F
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>BS_Code    00000000D9FC8000-00000000D9FDEFFF 0000000000000017 000000000000000F
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>RT_Code    00000000D9FDF000-00000000D9FE4FFF 0000000000000006 800000000000000F
+<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>BS_Code    00000000D9FE5000-00000000D9FECFFF 0000000000000008 000000000000000F
+<a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a>RT_Code    00000000D9FED000-00000000D9FEDFFF 0000000000000001 800000000000000F
+<a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a>BS_Code    00000000D9FEE000-00000000D9FFCFFF 000000000000000F 000000000000000F
+<a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a>RT_Code    00000000D9FFD000-00000000D9FFDFFF 0000000000000001 800000000000000F
+<a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a>BS_Code    00000000D9FFE000-00000000DA008FFF 000000000000000B 000000000000000F
+<a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a>RT_Code    00000000DA009000-00000000DA00DFFF 0000000000000005 800000000000000F
+<a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a>BS_Code    00000000DA00E000-00000000DA039FFF 000000000000002C 000000000000000F
+<a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a>RT_Code    00000000DA03A000-00000000DA03AFFF 0000000000000001 800000000000000F
+<a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a>BS_Code    00000000DA03B000-00000000DA04AFFF 0000000000000010 000000000000000F
+<a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a>RT_Code    00000000DA04B000-00000000DA070FFF 0000000000000026 800000000000000F
+<a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a>BS_Code    00000000DA071000-00000000DA083FFF 0000000000000013 000000000000000F
+<a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a>RT_Code    00000000DA084000-00000000DA084FFF 0000000000000001 800000000000000F
+<a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a>BS_Code    00000000DA085000-00000000DA085FFF 0000000000000001 000000000000000F
+<a id="__codelineno-2-55" name="__codelineno-2-55" href="#__codelineno-2-55"></a>RT_Code    00000000DA086000-00000000DA087FFF 0000000000000002 800000000000000F
+<a id="__codelineno-2-56" name="__codelineno-2-56" href="#__codelineno-2-56"></a>BS_Code    00000000DA088000-00000000DA088FFF 0000000000000001 000000000000000F
+<a id="__codelineno-2-57" name="__codelineno-2-57" href="#__codelineno-2-57"></a>RT_Code    00000000DA089000-00000000DA08DFFF 0000000000000005 800000000000000F
+<a id="__codelineno-2-58" name="__codelineno-2-58" href="#__codelineno-2-58"></a>BS_Code    00000000DA08E000-00000000DA0A2FFF 0000000000000015 000000000000000F
+<a id="__codelineno-2-59" name="__codelineno-2-59" href="#__codelineno-2-59"></a>RT_Data    00000000DA0A3000-00000000DA102FFF 0000000000000060 800000000000000F
+<a id="__codelineno-2-60" name="__codelineno-2-60" href="#__codelineno-2-60"></a>RT_Code    00000000DA103000-00000000DA11DFFF 000000000000001B 800000000000000F
+<a id="__codelineno-2-61" name="__codelineno-2-61" href="#__codelineno-2-61"></a>RT_Data    00000000DA11E000-00000000DA120FFF 0000000000000003 800000000000000F
+<a id="__codelineno-2-62" name="__codelineno-2-62" href="#__codelineno-2-62"></a>RT_Data    00000000DA121000-00000000DA127FFF 0000000000000007 800000000000000F
+<a id="__codelineno-2-63" name="__codelineno-2-63" href="#__codelineno-2-63"></a>RT_Data    00000000DA128000-00000000DA128FFF 0000000000000001 800000000000000F
+<a id="__codelineno-2-64" name="__codelineno-2-64" href="#__codelineno-2-64"></a>RT_Data    00000000DA129000-00000000DA147FFF 000000000000001F 800000000000000F
+<a id="__codelineno-2-65" name="__codelineno-2-65" href="#__codelineno-2-65"></a>Reserved   00000000DA148000-00000000DA4ADFFF 0000000000000366 000000000000000F
+<a id="__codelineno-2-66" name="__codelineno-2-66" href="#__codelineno-2-66"></a>Reserved   00000000DA4AE000-00000000DA647FFF 000000000000019A 000000000000000F
+<a id="__codelineno-2-67" name="__codelineno-2-67" href="#__codelineno-2-67"></a>ACPI_NVS   00000000DA648000-00000000DA70DFFF 00000000000000C6 000000000000000F
+<a id="__codelineno-2-68" name="__codelineno-2-68" href="#__codelineno-2-68"></a>ACPI_NVS   00000000DA70E000-00000000DA8C7FFF 00000000000001BA 000000000000000F
+<a id="__codelineno-2-69" name="__codelineno-2-69" href="#__codelineno-2-69"></a>ACPI_Recl  00000000DA8C8000-00000000DA8CCFFF 0000000000000005 000000000000000F
+<a id="__codelineno-2-70" name="__codelineno-2-70" href="#__codelineno-2-70"></a>BS_Data    00000000DA8CD000-00000000DA8CDFFF 0000000000000001 000000000000000F
+<a id="__codelineno-2-71" name="__codelineno-2-71" href="#__codelineno-2-71"></a>ACPI_NVS   00000000DA8CE000-00000000DA910FFF 0000000000000043 000000000000000F
+<a id="__codelineno-2-72" name="__codelineno-2-72" href="#__codelineno-2-72"></a>BS_Data    00000000DA911000-00000000DAA5CFFF 000000000000014C 000000000000000F
+<a id="__codelineno-2-73" name="__codelineno-2-73" href="#__codelineno-2-73"></a>BS_Code    00000000DAA5D000-00000000DACF6FFF 000000000000029A 000000000000000F
+<a id="__codelineno-2-74" name="__codelineno-2-74" href="#__codelineno-2-74"></a>BS_Data    00000000DACF7000-00000000DAD06FFF 0000000000000010 000000000000000F
+<a id="__codelineno-2-75" name="__codelineno-2-75" href="#__codelineno-2-75"></a>BS_Code    00000000DAD07000-00000000DAD18FFF 0000000000000012 000000000000000F
+<a id="__codelineno-2-76" name="__codelineno-2-76" href="#__codelineno-2-76"></a>BS_Data    00000000DAD19000-00000000DAD1FFFF 0000000000000007 000000000000000F
+<a id="__codelineno-2-77" name="__codelineno-2-77" href="#__codelineno-2-77"></a>RT_Data    00000000DAD20000-00000000DAFF3FFF 00000000000002D4 800000000000000F
+<a id="__codelineno-2-78" name="__codelineno-2-78" href="#__codelineno-2-78"></a>BS_Data    00000000DAFF4000-00000000DAFFFFFF 000000000000000C 000000000000000F
+<a id="__codelineno-2-79" name="__codelineno-2-79" href="#__codelineno-2-79"></a>Available  0000000100000000-000000011F1FFFFF 000000000001F200 000000000000000F
+<a id="__codelineno-2-80" name="__codelineno-2-80" href="#__codelineno-2-80"></a>Reserved   00000000DBC00000-00000000DFDFFFFF 0000000000004200 8000000000000000
+<a id="__codelineno-2-81" name="__codelineno-2-81" href="#__codelineno-2-81"></a>MMIO       00000000F8000000-00000000FBFFFFFF 0000000000004000 8000000000000001
+<a id="__codelineno-2-82" name="__codelineno-2-82" href="#__codelineno-2-82"></a>MMIO       00000000FEC00000-00000000FEC00FFF 0000000000000001 8000000000000001
+<a id="__codelineno-2-83" name="__codelineno-2-83" href="#__codelineno-2-83"></a>MMIO       00000000FED00000-00000000FED03FFF 0000000000000004 8000000000000001
+<a id="__codelineno-2-84" name="__codelineno-2-84" href="#__codelineno-2-84"></a>MMIO       00000000FED1C000-00000000FED1FFFF 0000000000000004 8000000000000001
+<a id="__codelineno-2-85" name="__codelineno-2-85" href="#__codelineno-2-85"></a>MMIO       00000000FEE00000-00000000FEE00FFF 0000000000000001 8000000000000001
+<a id="__codelineno-2-86" name="__codelineno-2-86" href="#__codelineno-2-86"></a>MMIO       00000000FF000000-00000000FFFFFFFF 0000000000001000 8000000000000001
+<a id="__codelineno-2-87" name="__codelineno-2-87" href="#__codelineno-2-87"></a>
+<a id="__codelineno-2-88" name="__codelineno-2-88" href="#__codelineno-2-88"></a>  Reserved  :         18,689 Pages (76,550,144 Bytes)
+<a id="__codelineno-2-89" name="__codelineno-2-89" href="#__codelineno-2-89"></a>  LoaderCode:            401 Pages (1,642,496 Bytes)
+<a id="__codelineno-2-90" name="__codelineno-2-90" href="#__codelineno-2-90"></a>  LoaderData:            256 Pages (1,048,576 Bytes)
+<a id="__codelineno-2-91" name="__codelineno-2-91" href="#__codelineno-2-91"></a>  BS_Code   :          1,613 Pages (6,606,848 Bytes)
+<a id="__codelineno-2-92" name="__codelineno-2-92" href="#__codelineno-2-92"></a>  BS_Data   :         47,748 Pages (195,575,808 Bytes)
+<a id="__codelineno-2-93" name="__codelineno-2-93" href="#__codelineno-2-93"></a>  RT_Code   :            146 Pages (598,016 Bytes)
+<a id="__codelineno-2-94" name="__codelineno-2-94" href="#__codelineno-2-94"></a>  RT_Data   :            876 Pages (3,588,096 Bytes)
+<a id="__codelineno-2-95" name="__codelineno-2-95" href="#__codelineno-2-95"></a>  ACPI_Recl :              5 Pages (20,480 Bytes)
+<a id="__codelineno-2-96" name="__codelineno-2-96" href="#__codelineno-2-96"></a>  ACPI_NVS  :          2,244 Pages (9,191,424 Bytes)
+<a id="__codelineno-2-97" name="__codelineno-2-97" href="#__codelineno-2-97"></a>  MMIO      :         20,490 Pages (83,927,040 Bytes)
+<a id="__codelineno-2-98" name="__codelineno-2-98" href="#__codelineno-2-98"></a>  MMIO_Port :              0 Pages (0 Bytes)
+<a id="__codelineno-2-99" name="__codelineno-2-99" href="#__codelineno-2-99"></a>  PalCode   :              0 Pages (0 Bytes)
+<a id="__codelineno-2-100" name="__codelineno-2-100" href="#__codelineno-2-100"></a>  Available :        969,334 Pages (3,970,392,064 Bytes)
+<a id="__codelineno-2-101" name="__codelineno-2-101" href="#__codelineno-2-101"></a>  Persistent:              0 Pages (0 Bytes)
+<a id="__codelineno-2-102" name="__codelineno-2-102" href="#__codelineno-2-102"></a>              -------------- 
+<a id="__codelineno-2-103" name="__codelineno-2-103" href="#__codelineno-2-103"></a>Total Memory:          3,994 MB (4,188,663,808 Bytes)
+</code></pre></div>
+<p>B5: Bây giờ ta sẽ tiến hành chuyển giá trị thành Slide value chú ý vào giá trị <code>Available</code> lớn nhất ở cột <code>start</code> (chuyển sang decimal để so sánh).</p>
+<p>B6: Các bạn sẽ thực hiện tính toán theo công thức (chuyển sang decimal để tính toán).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>(HEX - 0x100000)/0x200000 = Slide Value in HEX
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>(DECIMAL - 0x100000)/0x200000 = Slide Value in decimal
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>(0000000100000000 - 0x100000)/0x200000
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>// convert hex to decimal 
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>(4294967296 - 1048576)/2097152 = 2047,5
+</code></pre></div>
+<p><img alt="" src="https://i.imgur.com/LiarwbH.png" /></p>
+<p>B7: Nhưng con số này quá lớn (<strong>&gt; 256</strong>) vì vậy ta cần phải hạ xuống các <code>Available</code> có giá trị nhỏ hơn cho đến khi bé hơn hoặc bằng 256.</p>
+<p>B8: Ta sẽ thử với <code>0000000001100000</code> covert to decimal: <code>17825792</code> ta được kết quả là 8.</p>
+<p>B9: Add vào boot-arg tham số <code>slide=XXX</code> (ở đây ta sẽ có là s<code>lide=8</code>).</p>
+<p>B10: Reboot.</p>
+<h3 id="luu-y"><strong>Lưu ý:</strong><a class="headerlink" href="#luu-y" title="Permanent link">&para;</a></h3>
+<p>Ở 1 số máy sẽ nhận được slide value rất nhỏ như <code>slide=-0.379150390625</code> đối với trưởng hợp này ta sẽ đặt <code>slide=0</code>.</p>
+<h2 id="using-devirtualisemmio">Using DevirtualiseMmio<a class="headerlink" href="#using-devirtualisemmio" title="Permanent link">&para;</a></h2>
+<p>Đối với 1 số main như Z390 và hầu hết dòng HEDT chúng ta cần lập 1 danh sách trắng. Đó là lúc MmioWhitelist phát huy tác dụng. Với <strong>DevirtualiseMmio</strong> và <strong>ProvideCustomSlide</strong> bạn vừa có thể bảo mật lại vừa có thể Boot, 1 combo hoàn hảo.</p>
+<p>B1: Tạo 1 EFI Debug theo hướng dẫn <a href="https://heavietnam.ga/forum/topic/opencore-debugging/">tại đây</a> (nhớ enable <code>DevirtualiseMmio</code>).</p>
+<ul>
+<li>Đối với clover các bản cũng build tương tự (sử dụng bản clover debug) để dump được log file các bạn sẽ dùng hackintool –&gt; log</li>
+</ul>
+<p>B2: Bạn sẽ nhận được 1 file log mở nó ra và ta sẽ có:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>21:495 00:009 OCABC: MMIO devirt start
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>21:499 00:003 OCABC: MMIO devirt 0x60000000 (0x10000 pages, 0x8000000000000001) skip 021:503 00:003 OCABC: MMIO devirt 0xFE000000 (0x11 pages, 0x8000000000000001) skip 021:506 00:003 OCABC: MMIO devirt 0xFEC00000 (0x1 pages, 0x8000000000000001) skip 021:510 00:003 OCABC: MMIO devirt 0xFED00000 (0x1 pages, 0x8000000000000001) skip 021:513 00:003 OCABC: MMIO devirt 0xFEE00000 (0x1 pages, 0x800000000000100D) skip 021:516 00:003 OCABC: MMIO devirt 0xFF000000 (0x1000 pages, 0x800000000000100D) skip 0
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>21:520 00:003 OCABC: MMIO devirt end, saved 278608 KB
+</code></pre></div>
+<p>Bây giờ ta có 6 regions cần thêm vào danh sách trắng (in đậm).</p>
+<p>Ta cần convert hex to decimal (có thể dùng Hackintool).</p>
+<ul>
+<li>MMIO devirt 0x60000000 -&gt; 1610612736</li>
+<li>MMIO devirt 0xFE000000 -&gt; 4261412864</li>
+<li>MMIO devirt 0xFEC00000 -&gt; 4273995776</li>
+<li>MMIO devirt 0xFED00000 -&gt; 4275044352</li>
+<li>MMIO devirt 0xFEE00000 -&gt; 4276092928</li>
+<li>MMIO devirt 0xFF000000 -&gt; 4278190080</li>
+</ul>
+<p><img alt="" src="https://imgur.com/4a65sZl.png" /></p>
+<p>B3: Add vào config ==&gt; booter ==&gt; MmioWhitelist.</p>
+<p><img alt="" src="https://dortania.github.io/OpenCore-Install-Guide/assets/img/mmio-white.0ee7b5c7.png" /></p>
+<p><strong>Source tham khảo: <a href="https://dortania.github.io/OpenCore-Install-Guide/extras/kaslr-fix.html">Fixing KASLR slide values | OpenCore Install Guide (dortania.github.io)</a></strong></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../Fix_trackpad/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Fix trackpad" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Fix trackpad
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../GPRW_UPRW_LANC/" class="md-footer__link md-footer__link--next" aria-label="Next: GPRW/UPRW/LANC" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              GPRW/UPRW/LANC
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.748e2769.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1897 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.2.11">
+    
+    
+      
+        <title>Một số lỗi ở xuất hiện ở macOS Big Sur - Hackintosh Documents</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c5ef100.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.9647289d.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mot-so-loi-o-xuat-hien-o-macos-big-sur" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Hackintosh Documents" class="md-header__button md-logo" aria-label="Hackintosh Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Hackintosh Documents
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Một số lỗi ở xuất hiện ở macOS Big Sur
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Hackintosh Documents" class="md-nav__button md-logo" aria-label="Hackintosh Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Hackintosh Documents
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        content
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Add_device-id_in_amd_kext/" class="md-nav__link">
+        Add device-id vào amd kext
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Backup_and_Restore_with_Time_Machine/" class="md-nav__link">
+        Backup and Restore with Time Machine
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Boot_Arguments/" class="md-nav__link">
+        Boot Arguments
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Boot_without_USB_and_mount_partion_EFI/" class="md-nav__link">
+        Boot không cần USB và mount phân vùng EFI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Config_Laptop_Clarksfield_and_Arrandale/" class="md-nav__link">
+        Config Laptop Clarksfield và Arrandale
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Control_Brightness_External_Display/" class="md-nav__link">
+        Control Brightness cho External Display
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Control_Led_RGB/" class="md-nav__link">
+        Control Led RGB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Convert_Bootloader/" class="md-nav__link">
+        Convert Bootloader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C%C3%A1ch%20x%C3%A1c%20%C4%91%E1%BB%8Bnh%20ph%E1%BA%A7n%20c%E1%BB%A9ng/" class="md-nav__link">
+        Cách xác định phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_CFG-Clock/" class="md-nav__link">
+        Disable CFG-Clock
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_dGPU_Desktop/" class="md-nav__link">
+        Disable dGPU Desktop
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_dgpu_Laptop/" class="md-nav__link">
+        Disable dgpu Laptop
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Emulated_NVRAM/" class="md-nav__link">
+        Emulated NVRAM
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Enable_Trim_For_SSD/" class="md-nav__link">
+        Enable Trim For SSD
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../External_Card_Reader/" class="md-nav__link">
+        Fix Internal/External Card Reader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fake_CPU-ID/" class="md-nav__link">
+        Fake CPU-ID
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix%20_for_slow_AMD_GPU/" class="md-nav__link">
+        Fix for slow AMD GPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Backlight/" class="md-nav__link">
+        Fix Backlight
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Connect_%28HDMI%29/" class="md-nav__link">
+        Fix Connect (HDMI)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Ethernet/" class="md-nav__link">
+        Fix Ethernet
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_HDMI_Audio/" class="md-nav__link">
+        Fix HDMI Audio
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Hotkeys/" class="md-nav__link">
+        Fix Hotkeys
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_RTC_Manual/" class="md-nav__link">
+        Fix RTC Manual
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_RTC_write_issues/" class="md-nav__link">
+        Fix RTC write issues
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Shutdown/" class="md-nav__link">
+        Fix Shut down
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_System_Clocks_on_HEDT/" class="md-nav__link">
+        Fix System Clocks on HEDT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_WiFi_and_Bluetooth/" class="md-nav__link">
+        Fix WiFi và Bluetooth
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_darkwake/" class="md-nav__link">
+        Fix darkwake
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_iServices/" class="md-nav__link">
+        Fix iServices
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_keyboard_wake/" class="md-nav__link">
+        Fix keyboard wake
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_power_management/" class="md-nav__link">
+        Fix power management
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_sleep/" class="md-nav__link">
+        Fix sleep
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_trackpad/" class="md-nav__link">
+        Fix trackpad
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fixing_KASLR/" class="md-nav__link">
+        Fixing KASLR
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GPRW_UPRW_LANC/" class="md-nav__link">
+        GPRW/UPRW/LANC
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ghost_macos/" class="md-nav__link">
+        Ghost macos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Guide_dual_Boot/" class="md-nav__link">
+        Hướng dẫn Dual Boot
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HotPlug_Thunderbolt_3/" class="md-nav__link">
+        HotPlug Thunderbolt 3
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hotpatch_PTS_Wake_TTS/" class="md-nav__link">
+        Hotpatch PTS Wake TTS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Injects_USB_Manual/" class="md-nav__link">
+        Injects USB Manual
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kernel_issue/" class="md-nav__link">
+        Kernel issue
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Map_USB/" class="md-nav__link">
+        Map USB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenCore_Legacy/" class="md-nav__link">
+        OpenCore Legacy
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_AMD_GPU/" class="md-nav__link">
+        Patch Card đồ họa AMD
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_2/" class="md-nav__link">
+        Patch DSDT Phần 2
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_3/" class="md-nav__link">
+        Patch DSDT Phần 3
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_4/" class="md-nav__link">
+        Patch DSDT phần 4
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_GMA_GPU/" class="md-nav__link">
+        Patch GMA GPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_IGPU/" class="md-nav__link">
+        Patch IGPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_NVIDIA_GPU/" class="md-nav__link">
+        Patch Card đồ họa NVIDIA
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_SATA_Controller/" class="md-nav__link">
+        Patch SATA Controller
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_audio_with_AppleALC/" class="md-nav__link">
+        Patch âm thanh với AppleALC
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_audio_with_VoodooHDA/" class="md-nav__link">
+        Patch audio với VoodooHDA
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_dsdt_part_1/" class="md-nav__link">
+        Patch dsdt phần 1
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_pin/" class="md-nav__link">
+        Patch pin
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Resize_EFI/" class="md-nav__link">
+        Resize EFI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SIP_and_Gatekeeper/" class="md-nav__link">
+        SIP và Gatekeeper
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SLE_kext_in_bigsur/" class="md-nav__link">
+        Cách sửa kext S/L/E trên bigsur
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SSDT_recomend/" class="md-nav__link">
+        SSDT recomend
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Scan_policy/" class="md-nav__link">
+        Scan policy
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Một số lỗi ở xuất hiện ở macOS Big Sur
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Một số lỗi ở xuất hiện ở macOS Big Sur
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#stuck-at-forcing-cs_runtime-for-entitlement" class="md-nav__link">
+    Stuck at Forcing CS_RUNTIME for entitlement
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stuck-at-pci-configuration-begins-o-cac-main-x99-va-x299" class="md-nav__link">
+    Stuck at PCI Configuration Begins ở các main X99 và X299
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stuck-on-ramrod" class="md-nav__link">
+    Stuck on ramrod(^^^^^^^^^^^^^)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-panic-on-opcifamily-o-x79-and-x99" class="md-nav__link">
+    Kernel panic on OPCIFamily ở X79 and X99
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deviceproperties-injection-failing" class="md-nav__link">
+    DeviceProperties injection failing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keyboard-and-mouse-broken" class="md-nav__link">
+    Keyboard and Mouse broken
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#early-kernel-panic-on-max_cpus_from_firmware-not-yet-initialized" class="md-nav__link">
+    Early Kernel Panic on max_cpus_from_firmware not yet initialized
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#can-not-update-to-newer-versions-of-big-sur" class="md-nav__link">
+    Can not update to newer versions of Big Sur
+  </a>
+  
+    <nav class="md-nav" aria-label="Can not update to newer versions of Big Sur">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#broken-update-utility" class="md-nav__link">
+    Broken Update Utility
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broken-seal" class="md-nav__link">
+    Broken Seal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-panic-on-rooting-from-the-live-fs" class="md-nav__link">
+    Kernel Panic on Rooting from the live fs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asus-z97-and-hedt-cu-the-la-x99-va-x299-that-bai-trong-giai-oan-2-cua-qua-trinh-cai-at" class="md-nav__link">
+    Asus Z97 and HEDT (cụ thể là X99 và X299) thất bại trong giai đoạn 2 của quá trình cài đặt.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#laptops-kernel-panicking-on-cannot-perform-kext-scan" class="md-nav__link">
+    Laptops kernel panicking on cannot perform kext scan
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reboot-on-appleusbhostportcreatedevice-failed-to-create-device-on-macos-113" class="md-nav__link">
+    Reboot on “AppleUSBHostPort::createDevice: failed to create device” on macOS 11.3+
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#an-error-occurred-preparing-the-software-update" class="md-nav__link">
+    An error occurred preparing the software update.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#failed-to-install-required-firmware-update" class="md-nav__link">
+    Failed to install required firmware update
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Some_error_in_propertree/" class="md-nav__link">
+        1 số lỗi ProperTree
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Turn_on_Backlight_Keyboard/" class="md-nav__link">
+        Turn on Backlight Keyboard
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Update_macOS_and_Bootloader/" class="md-nav__link">
+        Update macOS và Bootloader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Use_SSDT-time_to_Prebuilt%20SSDT/" class="md-nav__link">
+        Dùng SSDT-Time để Prebuilt SSDT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%5BEB%7C%23LOG%3AEXITBS%3ASTART%5D/" class="md-nav__link">
+        [EB|#LOG:EXITBS:START]
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../add_boot_option_in_bios/" class="md-nav__link">
+        Cách thêm Boot vào BIOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creat_GUI/" class="md-nav__link">
+        Tạo GUI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creat_online_usb_%28recovery%29/" class="md-nav__link">
+        Cách tạo bộ cài online (recovery)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_EFI_OpenCore/" class="md-nav__link">
+        Cách tạo EFI OpenCore
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_EFI_Opencore_No_ACPI/" class="md-nav__link">
+        Cách làm EFI Opencore No ACPI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_offline_bootable_without_no_usb/" class="md-nav__link">
+        Cách tạo bộ cài Offline khi không có USB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_usb_offline/" class="md-nav__link">
+        Cách tạo bộ cài offline
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fake_CPU_Name%3Aigpu_name/" class="md-nav__link">
+        Fake iGPU/ CPU Name
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_mod_bios/" class="md-nav__link">
+        Cách mod bios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inject_all_hardware_properties/" class="md-nav__link">
+        Cách inject toàn bộ thông tin phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn_about_hackintosh/" class="md-nav__link">
+        Tìm hiểu về Hackintosh
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn_about_to_hardware/" class="md-nav__link">
+        Tìm hiểu chung về phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../macOS_12_Monterey/" class="md-nav__link">
+        macOS 12: Monterey
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patch_connector_type_force_rgb%3AInject_EDID/" class="md-nav__link">
+        Patch Connect Type/ Force RGB/ Inject EDID
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#stuck-at-forcing-cs_runtime-for-entitlement" class="md-nav__link">
+    Stuck at Forcing CS_RUNTIME for entitlement
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stuck-at-pci-configuration-begins-o-cac-main-x99-va-x299" class="md-nav__link">
+    Stuck at PCI Configuration Begins ở các main X99 và X299
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stuck-on-ramrod" class="md-nav__link">
+    Stuck on ramrod(^^^^^^^^^^^^^)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-panic-on-opcifamily-o-x79-and-x99" class="md-nav__link">
+    Kernel panic on OPCIFamily ở X79 and X99
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deviceproperties-injection-failing" class="md-nav__link">
+    DeviceProperties injection failing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keyboard-and-mouse-broken" class="md-nav__link">
+    Keyboard and Mouse broken
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#early-kernel-panic-on-max_cpus_from_firmware-not-yet-initialized" class="md-nav__link">
+    Early Kernel Panic on max_cpus_from_firmware not yet initialized
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#can-not-update-to-newer-versions-of-big-sur" class="md-nav__link">
+    Can not update to newer versions of Big Sur
+  </a>
+  
+    <nav class="md-nav" aria-label="Can not update to newer versions of Big Sur">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#broken-update-utility" class="md-nav__link">
+    Broken Update Utility
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broken-seal" class="md-nav__link">
+    Broken Seal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-panic-on-rooting-from-the-live-fs" class="md-nav__link">
+    Kernel Panic on Rooting from the live fs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asus-z97-and-hedt-cu-the-la-x99-va-x299-that-bai-trong-giai-oan-2-cua-qua-trinh-cai-at" class="md-nav__link">
+    Asus Z97 and HEDT (cụ thể là X99 và X299) thất bại trong giai đoạn 2 của quá trình cài đặt.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#laptops-kernel-panicking-on-cannot-perform-kext-scan" class="md-nav__link">
+    Laptops kernel panicking on cannot perform kext scan
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reboot-on-appleusbhostportcreatedevice-failed-to-create-device-on-macos-113" class="md-nav__link">
+    Reboot on “AppleUSBHostPort::createDevice: failed to create device” on macOS 11.3+
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#an-error-occurred-preparing-the-software-update" class="md-nav__link">
+    An error occurred preparing the software update.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#failed-to-install-required-firmware-update" class="md-nav__link">
+    Failed to install required firmware update
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="mot-so-loi-o-xuat-hien-o-macos-big-sur">Một số lỗi ở xuất hiện ở macOS Big Sur<a class="headerlink" href="#mot-so-loi-o-xuat-hien-o-macos-big-sur" title="Permanent link">&para;</a></h1>
+<h2 id="stuck-at-forcing-cs_runtime-for-entitlement">Stuck at <code>Forcing CS_RUNTIME for entitlement</code><a class="headerlink" href="#stuck-at-forcing-cs_runtime-for-entitlement" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="https://dortania.github.io/OpenCore-Install-Guide/assets/img/cs-stuck.bddc4a2d.jpg" /></p>
+<p>Nhìn có vẻ giống như 1 lỗi nhưng nó không phải lỗi bạn cần khá nhiều thời gian để vượt qua nó. Không khởi động lại vì nó có thể phá hủy quá trình cài đặt của bạn.</p>
+<h2 id="stuck-at-pci-configuration-begins-o-cac-main-x99-va-x299">Stuck at <code>PCI Configuration Begins</code> ở các main X99 và X299<a class="headerlink" href="#stuck-at-pci-configuration-begins-o-cac-main-x99-va-x299" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="https://dortania.github.io/OpenCore-Install-Guide/assets/img/rtc-error.d53fdc66.jpg" /></p>
+<p>Ở Big Sur các dòng main hedt bị thiếu các vùng rtc do đó macos gặp lỗi fix chi tiết theo trang <a href="https://heavietnam.ga/2022/2022/01/22/fix-system-clocks-on-hedt/index.html">sau</a>.</p>
+<h2 id="stuck-on-ramrod">Stuck on <code>ramrod</code>(^^^^^^^^^^^^^)<a class="headerlink" href="#stuck-on-ramrod" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="https://dortania.github.io/OpenCore-Install-Guide/assets/img/ramrod.55591fc5.jpg" /></p>
+<p>Khi bạn bị stuck ở dòng <code>ramrod</code>thì macOS sẽ bị reset sau đó lại gặp dòng này và tiếp tục reset. Nó đã tạo 1 vòng lập restart. Điều đó cho thấy bộ phận giả lập SMC của bạn đã bị hỏng vì vậy bạn có 2 sự lựa chọn:</p>
+<ul>
+<li>Sử dụng bản cập nhật mới nhất của VirtualSMC và Lilu sau đó add boot-arg  <code>vsmcgen=1</code></li>
+<li>Hoặc bạn có thể chuyển qua kext <a href="https://bitbucket.org/RehabMan/os-x-fakesmc-kozlek/downloads/">Fake-SMC</a> của rehabMan.</li>
+<li>Lưu ý: không đồng thời sử dụng cả 2 kext VirtualSMC và Fake-SMC.</li>
+</ul>
+<h2 id="kernel-panic-on-opcifamily-o-x79-and-x99">Kernel panic on <code>OPCIFamily</code> ở X79 and X99<a class="headerlink" href="#kernel-panic-on-opcifamily-o-x79-and-x99" title="Permanent link">&para;</a></h2>
+<p>Lỗi này là do uncore PCI Bridges không được enable trong ACPI. Do đó IOPCIFamily sẽ bị kernel panic để giải quyết vấn đề này các bạn có thể dùng <a href="https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/Source/SSDT-UNC.dsl">SSDT-UNC</a> chỉ cần biên dịch bằng Maciasl và sử dụng theo guide chi tiết <a href="https://heavietnam.ga/2022/2021/09/29/xxviii-patch-dsdt-phan-3/index.html">tại đây</a>.</p>
+<h2 id="deviceproperties-injection-failing">DeviceProperties injection failing<a class="headerlink" href="#deviceproperties-injection-failing" title="Permanent link">&para;</a></h2>
+<p>Khi gặp lỗi này các bạn sẽ không thể tiêm được device-properties được cách fix các có thể dùng SSDT-BRG0. Fix chi tiết theo trang <a href="https://heavietnam.ga/2022/2021/09/29/xxiii-patch-card-doi-hoa-amd/index.html">sau</a>.</p>
+<h2 id="keyboard-and-mouse-broken">Keyboard and Mouse broken<a class="headerlink" href="#keyboard-and-mouse-broken" title="Permanent link">&para;</a></h2>
+<p>Lỗi này khiến cho các HID-based devices như chuột và bạn phím bị hỏng trong khi các cổng USB vẫn hoạt động, để khắc phục tình trạng này các bạn add patch như sau:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>// add vào config.plist -&gt; Kernel -&gt; Patch
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>base | string | _isSingleUser
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Count | Integer | 1
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>Enabled | Boolean  |  True
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>Find  | Data | &lt;blank&gt;
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>Identifier | String | com.apple.iokit.IOHIDFamily
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>Limit | Integer |  0
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>Mask | Data | &lt;blank&gt;
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>MaxKernel | String | &lt;blank&gt;
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>MinKernel | String | 20.0.0
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>Replace | Data | B801000000C3
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>ReplaceMask | Data | &lt;blank&gt;
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>Skip | Integer | 0
+</code></pre></div>
+<h2 id="early-kernel-panic-on-max_cpus_from_firmware-not-yet-initialized">Early Kernel Panic on <code>max_cpus_from_firmware not yet initialized</code><a class="headerlink" href="#early-kernel-panic-on-max_cpus_from_firmware-not-yet-initialized" title="Permanent link">&para;</a></h2>
+<p>Để fix lỗi này các bạn cần đảm bảo đang ở OpenCore version 0.6.0+ và <code>AvoidRuntimeDefrag</code> được enable.</p>
+<p>Trên 1 số máy chủ yếu trên HP DC7900. Kernel không thể xác định chính xác có bao nhiêu luồng ở phần cứng của các bạn gây panic cách fix như sau.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>// add vào config.plist -&gt; Kernel -&gt; Patch
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>base | string | _acpi_count_enabled_logical_processors
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Count | Integer | 1
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>Enabled | Boolean  |  True
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>Find  | Data | &lt;blank&gt;
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>Identifier | String | Kernel
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>Limit | Integer |  0
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>Mask | Data | &lt;blank&gt;
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>MaxKernel | String | &lt;blank&gt;
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>MinKernel | String | 20.0.0
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>Replace | Data | B804000000C3
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>ReplaceMask | Data | &lt;blank&gt;
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>Skip | Integer | 0
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>// thay 04 bằng số luồng ở phần cứng của các bạn
+</code></pre></div>
+<h2 id="can-not-update-to-newer-versions-of-big-sur">Can not update to newer versions of Big Sur<a class="headerlink" href="#can-not-update-to-newer-versions-of-big-sur" title="Permanent link">&para;</a></h2>
+<p>Có 2 trường hợp Broken Update Utility và Broken Seal.</p>
+<h3 id="broken-update-utility">Broken Update Utility<a class="headerlink" href="#broken-update-utility" title="Permanent link">&para;</a></h3>
+<p>lỗi này thường xảy ra khi bạn dùng bản beta. Để khắc phục chúng ta chỉ cần hủy đăng kí và đăng kí lại</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a># hủy đăng kí
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>sudo /System/Library/PrivateFrameworks/Seeding.framework/Resources/seedutil unenroll
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a># đăng kí lại
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>sudo /System/Library/PrivateFrameworks/Seeding.framework/Resources/seedutil enroll
+</code></pre></div>
+<p>Tiếp theo bản vào cài đặt và kiểm tra lại nếu vẫn chưa được hãy kiểm tra tới phần tiếp theo.</p>
+<h3 id="broken-seal">Broken Seal<a class="headerlink" href="#broken-seal" title="Permanent link">&para;</a></h3>
+<p>bạn gõ câu lệnh sau vào terminal</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>diskutil apfs list
+</code></pre></div>
+<p>Nhìn vào phần <code>Snapshot Sealed</code> Nếu nó trả về là <code>broken</code> thì bạn hãy fix theo các cách sau:</p>
+<ul>
+<li>Update OpenCore version 0.6.4+</li>
+<li>Khôi phục đến bản Snapshot cũ hơn tham khảo tại link <a href="https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/post-issues.html#rolling-back-apfs-snapshot">sau</a>.</li>
+</ul>
+<h2 id="kernel-panic-on-rooting-from-the-live-fs">Kernel Panic on <code>Rooting from the live fs</code><a class="headerlink" href="#kernel-panic-on-rooting-from-the-live-fs" title="Permanent link">&para;</a></h2>
+<p>Lỗi đầy đủ:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Rooting from the live fs of a sealed volume is not allowed on a RELEASE build
+</code></pre></div>
+<p>Do SecureBoot được khởi động để khắc phục chỉ cần update lên version 0.6.4+</p>
+<h2 id="asus-z97-and-hedt-cu-the-la-x99-va-x299-that-bai-trong-giai-oan-2-cua-qua-trinh-cai-at">Asus Z97 and HEDT (cụ thể là X99 và X299) thất bại trong giai đoạn 2 của quá trình cài đặt.<a class="headerlink" href="#asus-z97-and-hedt-cu-the-la-x99-va-x299-that-bai-trong-giai-oan-2-cua-qua-trinh-cai-at" title="Permanent link">&para;</a></h2>
+<p>Có 2 cách fix:</p>
+<ul>
+<li>Cài Big Sur vào 1 máy khác sau đó chuyển ổ đĩa vào máy cần cài</li>
+<li>Fix the motherboard’s NVRAM.</li>
+<li>Chủ yếu cho Asus Z97 series.</li>
+<li>Chi tiết tham khảo tại trang <a href="https://www.reddit.com/r/hackintosh/comments/jw7qf1/haswell_asus_z97_big_sur_update_and_installation/">sau</a>.</li>
+</ul>
+<h2 id="laptops-kernel-panicking-on-cannot-perform-kext-scan">Laptops kernel panicking on <code>cannot perform kext scan</code><a class="headerlink" href="#laptops-kernel-panicking-on-cannot-perform-kext-scan" title="Permanent link">&para;</a></h2>
+<p>Lỗi này thường xảy ra do có nhiều bản sao của cùng 1 kext trong bộ nhớ cache của kernel. Thường là kext voodooinput. Để khắc phục tình trạng này các bạn hãy kiểm tra trong config.plist &ndash;&gt;  kernel &ndash;&gt; add và chỉ enable 1 kext voodooinput duy nhất.</p>
+<h2 id="reboot-on-appleusbhostportcreatedevice-failed-to-create-device-on-macos-113">Reboot on “AppleUSBHostPort::createDevice: failed to create device” on macOS 11.3+<a class="headerlink" href="#reboot-on-appleusbhostportcreatedevice-failed-to-create-device-on-macos-113" title="Permanent link">&para;</a></h2>
+<p>Để fix lỗi này các bạn cần phải tắt <code>XhciPortLimit</code> ở mục <code>Kernel -&gt; Quirks</code>  và map usb theo hướng dẫn <a href="https://heavietnam.ga/2022/2021/09/29/vi-1map-usb-intel-and-amd/index.html">tại đây</a>.</p>
+<h2 id="an-error-occurred-preparing-the-software-update">An error occurred preparing the software update.<a class="headerlink" href="#an-error-occurred-preparing-the-software-update" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="https://i.imgur.com/ESyQ5QL.jpg" /></p>
+<p>Có 3 cách fix cho trường hợp này:</p>
+<ul>
+<li>Bật firmwarevolume trong config.plist lên</li>
+<li>Có thể là do ổ cứng của bạn:</li>
+<li>Thử boot bằng hdd</li>
+<li>Hoặc thay ổ mới</li>
+<li>Cần tránh mua các ổ sau<ul>
+<li>Kingston, Kingspec, Kingmax, Colorful, Fgloway,….</li>
+</ul>
+</li>
+<li>Hoặc bạn có thể tạo máy ảo rồi dùng Time Machine tạo thành file Backup sao đó tiến hành bung file ra trong Recovery của macOS trên USB.</li>
+</ul>
+<h2 id="failed-to-install-required-firmware-update">Failed to install required firmware update<a class="headerlink" href="#failed-to-install-required-firmware-update" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="https://i.imgur.com/y4vGxLo.jpg" /></p>
+<p>Để khắc phụ lỗi này các bạn sẽ cần enable <code>AdviseFeatures</code> trong <code>EFI --&gt; OC --&gt; config.plist</code></p>
+<p>Source tham khảo: <a href="https://dortania.github.io/OpenCore-Install-Guide/extras/big-sur/#stuck-at-forcing-cs-runtime-for-entitlement">OpenCore and macOS 11: Big Sur | OpenCore Install Guide (dortania.github.io)</a></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../Scan_policy/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Scan policy" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Scan policy
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../Some_error_in_propertree/" class="md-footer__link md-footer__link--next" aria-label="Next: 1 số lỗi ProperTree" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              1 số lỗi ProperTree
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.748e2769.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  mkdocs:
+    platform: linux/amd64
+    image: ghcr.io/peaceiris/mkdocs-material:v3.5.3
+    container_name: heavietnam
+    ports:
+      - 8002:8000
+    restart: always
+    volumes:
+      - ${PWD}:/root
+    stdin_open: true
+    tty: true
+    command:
+      - "mkdocs"
+      - "serve"
+      - "--dev-addr=0.0.0.0:8000"
+      - "--config-file"
+      - "./mkdocs.yml"

@@ -1,0 +1,1720 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.2.11">
+    
+    
+      
+        <title>Patch DSDT Phần 2 - Hackintosh Documents</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c5ef100.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.9647289d.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#patch-dsdt-phan-2" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Hackintosh Documents" class="md-header__button md-logo" aria-label="Hackintosh Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Hackintosh Documents
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Patch DSDT Phần 2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Hackintosh Documents" class="md-nav__button md-logo" aria-label="Hackintosh Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Hackintosh Documents
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        content
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Add_device-id_in_amd_kext/" class="md-nav__link">
+        Add device-id vào amd kext
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Backup_and_Restore_with_Time_Machine/" class="md-nav__link">
+        Backup and Restore with Time Machine
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Boot_Arguments/" class="md-nav__link">
+        Boot Arguments
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Boot_without_USB_and_mount_partion_EFI/" class="md-nav__link">
+        Boot không cần USB và mount phân vùng EFI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Config_Laptop_Clarksfield_and_Arrandale/" class="md-nav__link">
+        Config Laptop Clarksfield và Arrandale
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Control_Brightness_External_Display/" class="md-nav__link">
+        Control Brightness cho External Display
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Control_Led_RGB/" class="md-nav__link">
+        Control Led RGB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Convert_Bootloader/" class="md-nav__link">
+        Convert Bootloader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C%C3%A1ch%20x%C3%A1c%20%C4%91%E1%BB%8Bnh%20ph%E1%BA%A7n%20c%E1%BB%A9ng/" class="md-nav__link">
+        Cách xác định phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_CFG-Clock/" class="md-nav__link">
+        Disable CFG-Clock
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_dGPU_Desktop/" class="md-nav__link">
+        Disable dGPU Desktop
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_dgpu_Laptop/" class="md-nav__link">
+        Disable dgpu Laptop
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Emulated_NVRAM/" class="md-nav__link">
+        Emulated NVRAM
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Enable_Trim_For_SSD/" class="md-nav__link">
+        Enable Trim For SSD
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../External_Card_Reader/" class="md-nav__link">
+        Fix Internal/External Card Reader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fake_CPU-ID/" class="md-nav__link">
+        Fake CPU-ID
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix%20_for_slow_AMD_GPU/" class="md-nav__link">
+        Fix for slow AMD GPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Backlight/" class="md-nav__link">
+        Fix Backlight
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Connect_%28HDMI%29/" class="md-nav__link">
+        Fix Connect (HDMI)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Ethernet/" class="md-nav__link">
+        Fix Ethernet
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_HDMI_Audio/" class="md-nav__link">
+        Fix HDMI Audio
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Hotkeys/" class="md-nav__link">
+        Fix Hotkeys
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_RTC_Manual/" class="md-nav__link">
+        Fix RTC Manual
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_RTC_write_issues/" class="md-nav__link">
+        Fix RTC write issues
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Shutdown/" class="md-nav__link">
+        Fix Shut down
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_System_Clocks_on_HEDT/" class="md-nav__link">
+        Fix System Clocks on HEDT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_WiFi_and_Bluetooth/" class="md-nav__link">
+        Fix WiFi và Bluetooth
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_darkwake/" class="md-nav__link">
+        Fix darkwake
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_iServices/" class="md-nav__link">
+        Fix iServices
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_keyboard_wake/" class="md-nav__link">
+        Fix keyboard wake
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_power_management/" class="md-nav__link">
+        Fix power management
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_sleep/" class="md-nav__link">
+        Fix sleep
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_trackpad/" class="md-nav__link">
+        Fix trackpad
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fixing_KASLR/" class="md-nav__link">
+        Fixing KASLR
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GPRW_UPRW_LANC/" class="md-nav__link">
+        GPRW/UPRW/LANC
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ghost_macos/" class="md-nav__link">
+        Ghost macos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Guide_dual_Boot/" class="md-nav__link">
+        Hướng dẫn Dual Boot
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HotPlug_Thunderbolt_3/" class="md-nav__link">
+        HotPlug Thunderbolt 3
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hotpatch_PTS_Wake_TTS/" class="md-nav__link">
+        Hotpatch PTS Wake TTS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Injects_USB_Manual/" class="md-nav__link">
+        Injects USB Manual
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kernel_issue/" class="md-nav__link">
+        Kernel issue
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Map_USB/" class="md-nav__link">
+        Map USB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenCore_Legacy/" class="md-nav__link">
+        OpenCore Legacy
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_AMD_GPU/" class="md-nav__link">
+        Patch Card đồ họa AMD
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Patch DSDT Phần 2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Patch DSDT Phần 2
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lam-quen-voi-maciasl" class="md-nav__link">
+    Làm quen với MaciASL
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xxvii4-fix-error" class="md-nav__link">
+    XXVII.4 : Fix Error
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-so-loi-pho-bien" class="md-nav__link">
+    1 số lỗi phổ biến
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_3/" class="md-nav__link">
+        Patch DSDT Phần 3
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_4/" class="md-nav__link">
+        Patch DSDT phần 4
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_GMA_GPU/" class="md-nav__link">
+        Patch GMA GPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_IGPU/" class="md-nav__link">
+        Patch IGPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_NVIDIA_GPU/" class="md-nav__link">
+        Patch Card đồ họa NVIDIA
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_SATA_Controller/" class="md-nav__link">
+        Patch SATA Controller
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_audio_with_AppleALC/" class="md-nav__link">
+        Patch âm thanh với AppleALC
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_audio_with_VoodooHDA/" class="md-nav__link">
+        Patch audio với VoodooHDA
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_dsdt_part_1/" class="md-nav__link">
+        Patch dsdt phần 1
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_pin/" class="md-nav__link">
+        Patch pin
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Resize_EFI/" class="md-nav__link">
+        Resize EFI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SIP_and_Gatekeeper/" class="md-nav__link">
+        SIP và Gatekeeper
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SLE_kext_in_bigsur/" class="md-nav__link">
+        Cách sửa kext S/L/E trên bigsur
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SSDT_recomend/" class="md-nav__link">
+        SSDT recomend
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Scan_policy/" class="md-nav__link">
+        Scan policy
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Some_error_in_bigsur/" class="md-nav__link">
+        Một số lỗi ở xuất hiện ở macOS Big Sur
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Some_error_in_propertree/" class="md-nav__link">
+        1 số lỗi ProperTree
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Turn_on_Backlight_Keyboard/" class="md-nav__link">
+        Turn on Backlight Keyboard
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Update_macOS_and_Bootloader/" class="md-nav__link">
+        Update macOS và Bootloader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Use_SSDT-time_to_Prebuilt%20SSDT/" class="md-nav__link">
+        Dùng SSDT-Time để Prebuilt SSDT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%5BEB%7C%23LOG%3AEXITBS%3ASTART%5D/" class="md-nav__link">
+        [EB|#LOG:EXITBS:START]
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../add_boot_option_in_bios/" class="md-nav__link">
+        Cách thêm Boot vào BIOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creat_GUI/" class="md-nav__link">
+        Tạo GUI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creat_online_usb_%28recovery%29/" class="md-nav__link">
+        Cách tạo bộ cài online (recovery)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_EFI_OpenCore/" class="md-nav__link">
+        Cách tạo EFI OpenCore
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_EFI_Opencore_No_ACPI/" class="md-nav__link">
+        Cách làm EFI Opencore No ACPI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_offline_bootable_without_no_usb/" class="md-nav__link">
+        Cách tạo bộ cài Offline khi không có USB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_usb_offline/" class="md-nav__link">
+        Cách tạo bộ cài offline
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fake_CPU_Name%3Aigpu_name/" class="md-nav__link">
+        Fake iGPU/ CPU Name
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_mod_bios/" class="md-nav__link">
+        Cách mod bios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inject_all_hardware_properties/" class="md-nav__link">
+        Cách inject toàn bộ thông tin phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn_about_hackintosh/" class="md-nav__link">
+        Tìm hiểu về Hackintosh
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn_about_to_hardware/" class="md-nav__link">
+        Tìm hiểu chung về phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../macOS_12_Monterey/" class="md-nav__link">
+        macOS 12: Monterey
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patch_connector_type_force_rgb%3AInject_EDID/" class="md-nav__link">
+        Patch Connect Type/ Force RGB/ Inject EDID
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lam-quen-voi-maciasl" class="md-nav__link">
+    Làm quen với MaciASL
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xxvii4-fix-error" class="md-nav__link">
+    XXVII.4 : Fix Error
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-so-loi-pho-bien" class="md-nav__link">
+    1 số lỗi phổ biến
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="patch-dsdt-phan-2">Patch DSDT Phần 2<a class="headerlink" href="#patch-dsdt-phan-2" title="Permanent link">&para;</a></h1>
+<h2 id="lam-quen-voi-maciasl"><strong><em>Làm quen với MaciASL</em></strong><a class="headerlink" href="#lam-quen-voi-maciasl" title="Permanent link">&para;</a></h2>
+<p>B1: Thiết lập MaciASL về 5.0 hoặc cao hơn. </p>
+<p><img alt="" src="https://lh6.googleusercontent.com/F04DBx2fmlW8trALW90inBbb8t3UXrhKRYyyumCkPCyZaMlNT2p-MLE4dD9I2rFrzxzQp5Xus_od5UKy-iQJTHj7bogrKiuWZnWuzMqBy1hnGlLf3iCMunC1S-qkM17ssDVBkAHo=s0" /></p>
+<p>B2: Thêm các Source hữu ích: </p>
+<ul>
+<li>Vào Setting của MaciASL (Command + “,”).</li>
+</ul>
+<p><img alt="" src="https://lh4.googleusercontent.com/DPRPDwh2g5Hld1fV3SGBQDjkZU4V3_VftBHgS74WU8_HPwSZR2IGTkSMt3Op9ZHlaQ3ivqAKW1x6aKTnXEg7RzdyLI3Sui1xEgcGGXhtQ0VUSVKvdxMyItrud7iNAxzPsv7_95mn=s0" /></p>
+<ul>
+<li>Bấm dấu “+” để thêm Source. </li>
+</ul>
+<p><img alt="" src="https://lh3.googleusercontent.com/EVcqFbg-RLgfUmQeVTyX4wqGRw2RPUMo-FxPE2PuZfOJSOFXDMQ-7RpEUwy67YrJzes-L1G1QUtstiEv0vORd5KUFj3X4ygmngfph7z-0nQC5P1cxYOKM5YoWjNwhpNPNcq56DIx=s0" /></p>
+<ul>
+<li>
+<p>Các Source hữu ích </p>
+</li>
+<li>
+<p><strong>Rehabman DSDT Patches</strong>:<br />
+  http://raw.github.com/RehabMan/Laptop-DSDT-Patch/master</p>
+</li>
+<li>
+<p><strong>HP Probook patch</strong>:<br />
+  http://raw.github.com/RehabMan/HP-ProBook-4x30s-DSDT-Patch/master</p>
+</li>
+<li>
+<p><strong>PCbeta dxxs dsdt Patches</strong>:<br />
+  http://raw.github.com/Yuki-Judai/dxxs-DSDT-Patch/master</p>
+</li>
+<li>
+<p><strong>MacMan Gigabyte</strong>:<br />
+  http://www.tonymac86.com/DSDT/</p>
+</li>
+<li>
+<p><strong>Toleda Audio HDMI HD4600/Haswell/8 Series</strong>:<br />
+  http://raw.github.com/toleda/audio_hdmi_8series/master</p>
+</li>
+<li>
+<p><strong>Toleda Airport PCle Half Mini</strong>:<br />
+  http://raw.github.com/toleda/audio_ALCInjection/master</p>
+</li>
+<li>
+<p><strong>Toleda Audio Realtek ALC injection</strong>http://raw.github.com/toleda/audio_ALCInjection/master</p>
+</li>
+<li>
+<p><strong>Toleda Audio HDMI UEFI Audio dsdt edits – Desktop/Laptop/Intel NUC</strong>http://raw.github.com/toleda/audio_hdmi_uefi/master</p>
+</li>
+<li>
+<p><strong>Toleda Audio HDMI HD4000/Ivy Bridge/7 Series</strong>http://raw.github.com/toleda/audio_hdmi_hd4000/master</p>
+</li>
+<li>
+<p><strong>Toleda Audio HDMI HD3000/Sandy Bridge/6 Series</strong>http://raw.github.com/toleda/audio_hdmi_hd3000/master </p>
+</li>
+<li>
+<p><strong>Toleda Audio HDMI 5 Series</strong>http://raw.github.com/toleda/audio_hdmi_5series/master</p>
+</li>
+<li>
+<p><strong>ASUS:</strong> <strong>All-in-one patches for ASUS motherboards</strong>http://maciasl.sourceforge.net/pjalm/asus/</p>
+</li>
+<li>
+<p><strong>MSI:</strong> <strong>All-in-one patches for MSI motherboards</strong>http://maciasl.sourceforge.net/pjalm/msi/</p>
+</li>
+<li>
+<p><strong>Zotac:</strong> <strong>All-in-one patches for Zotac motherboards</strong>http://maciasl.sourceforge.net/pjalm/zotac/</p>
+</li>
+<li>
+<p><strong>Gigabyte:</strong> <strong>All-in-one patches for Gigabyte motherboards</strong>http://maciasl.sourceforge.net/pjalm/gigabyte/</p>
+</li>
+<li>
+<p><strong>ASRock:</strong> <strong>All-in-one patches for ASRock motherboards</strong>http://maciasl.sourceforge.net/pjalm/asrock/</p>
+</li>
+<li>
+<p><strong>Graphics:</strong> <strong>Patches for Intel HD and AMD/nVidia graphic cards</strong>http://maciasl.sourceforge.net/pjalm/graphics/</p>
+</li>
+<li>
+<p><strong>Intel Series 6:</strong> <strong>Intel Series 6 Patches for SATA, USB, SMBUS, IGPU, GbE and general fixes</strong>http://maciasl.sourceforge.net/pjalm/intel6/</p>
+</li>
+<li>
+<p><strong>Intel Series 7:</strong> <strong>Intel Series 7 Patches for SATA, USB, SMBUS, IGPU, GbE and general fixes</strong>http://maciasl.sourceforge.net/pjalm/intel7/</p>
+</li>
+<li>
+<p><strong>Intel Series 8:</strong> <strong>Intel Series 8 Patches for SATA, USB and general fixes</strong>http://maciasl.sourceforge.net/pjalm/intel8/</p>
+</li>
+<li>
+<p><strong>Intel Series 9:</strong> <strong>Intel Series 9 Patches for SATA, USB and general fixes</strong>http://maciasl.sourceforge.net/pjalm/intel9/</p>
+</li>
+<li>
+<p><strong>General:</strong> <strong>General patches for Shutdown, HDEF, USB3, SATA and LAN</strong>http://maciasl.sourceforge.net/pjalm/general/</p>
+</li>
+</ul>
+<p>B3: Apply các Patch Online như hình: <img alt="" src="https://lh6.googleusercontent.com/Q3WNU_soF5eKLmr7K0P-Nns8By13aW_6eg7y2lW1N5_9cnTybAKbdOOUqimed4OpuRDW5v9wl8rKksZJhhohmzRzo9Vxe7t6yjvJR9vIv98KnqYMHzf7KesR_TcfbWE7l5izMIFL=s0" /></p>
+<p><img alt="" src="https://lh4.googleusercontent.com/T7tl4_1XDJ9M-eBrqpxOfiUo-mr8zxx9BZzNP7MSLVDcJdhc8iiTy78Wqe815EzLZCFKFSPWhsSMk76-Wa9WRBywooHfI-aklTNOEkwSoSYDDEIr1V_SpJmu_VqNB4hfr8yWGb3X=s0" /></p>
+<p>Các bạn chọn các Patch ở mục 1 rồi Apply vào nút ở mục 2</p>
+<p>B4: Apply các patch offline: </p>
+<ul>
+<li>
+<p>Vào trang offline của các patch muốn apply ( vd mình muốn apply patch battery  )</p>
+</li>
+<li>
+<p>Vào patch muốn down chọn như hình </p>
+</li>
+<li>
+<p>Nhấn tổ hợp phím Command + A và Command + C </p>
+</li>
+<li>
+<p>Tải <a href="https://www.sublimetext.com/">sublime text</a> </p>
+</li>
+<li>
+<p>Nhấn tổ hợp phím Command + V </p>
+</li>
+<li>
+<p>Và Command + S và save các bạn đặt tên tùy ý ở cuối tên các bạn để là .txt </p>
+</li>
+<li>
+<p>Các bạn chọn như hình:</p>
+</li>
+</ul>
+<p><img alt="" src="https://lh3.googleusercontent.com/GU4JHoCFRE0oDWOFALFp5c8mAkxzjdaMr-FGXmQqYssiW7mZ4HF-RBHBlOTieeHzVeRiCMSxUeG09sjZSXVOnKFGREM-JAA_gwXSlRukO5MBsroR5X5h6zRSEXBJskYUExf7iTPR=s0" /></p>
+<p><img alt="" src="https://lh5.googleusercontent.com/t9RJSSlPZ27aTGC_J-yveH2L4wkyMa1qSN5oRu9-u1jZ5IUbN2mQ-Cn4w3Uq3mc22J3WYHrEV5iIJKQ3_c3H5Xa5LvSqB3s8MfcIF33kXYGacYjzLD7iYdkgynzghhqGC4_DBxdh=s0" /></p>
+<p><img alt="" src="https://lh6.googleusercontent.com/OxS54qXXtyi1KFAAXqNA-nHsKiz-g0_GvXsR6jUWNvw__LdTlhG_afL676EmWr-2TVRXHntovUkltJYb_GwXp7by171_GYQPCOVcCjBNOaQljRZOIPFIE0ycdWnNnMIjxh5_gKgx=s0" /></p>
+<p><strong>Lưu ý : Thông thường khi dùng DSDT 90% các bạn sẽ bị treo táo do DSDT chưa Rename EC thì các bạn hãy làm theo sau:</strong></p>
+<p><strong>B1: Mở DSDT với MaciASL bấm tổ hợp phím Command + F và tìm từ khóa sau PNP0C09</strong>.</p>
+<p><strong>B2: Nhìn đến mục Device để xác định Device cần đổi tên thường sẽ là các tên sau EC0, H_EC, ECDV,…..</strong></p>
+<p><strong>B3: Vào nút</strong>  </p>
+<p><strong>B4: Nhận vào dòng replace “EC” và nhấn “ALL”</strong> </p>
+<p><img alt="" src="https://lh5.googleusercontent.com/oabS33LjsoOuvpLLpohUN00-IQLKAe_IaNLM_DyMVJKEoxf19gps8UBd8GVARPKTOUuZZVJ8i36hgW6Pev3PwNGSMIjy7zEngPYX2z14JvsbrUHF-IKKwkK7G5EHr2sEwsQK5OaO=s0" /></p>
+<h2 id="xxvii4-fix-error"><strong><em>XXVII.4 : Fix Error</em></strong><a class="headerlink" href="#xxvii4-fix-error" title="Permanent link">&para;</a></h2>
+<p>Đa số các DSDT Native và được biên dịch đúng thường sẽ không có Error nhưng vẫn có 1 số trường hợp ngoại lệ là vẫn có từ 1-3 Error thì các bạn sẽ fix như sau:</p>
+<p>B1: Bấm vào nút <img alt="" src="https://lh3.googleusercontent.com/G2z06nvwh0acmhihJFr76tlu9LiO8EDZJaFCEgcjleE48z-7F_7_j971PCE7KxA3UeSWoRlULkN1fkBbwCRzcPaclPEGx92rMmmF7uugBpsR-cfJBPqOT89EgRmIsq6M7HK5xV2Y=s0" /> để hiển thị lỗi và fix lỗi như hình: </p>
+<p><img alt="" src="https://lh6.googleusercontent.com/mGGzpYDNegFFpNGwSY8X-WHPVj-fOjtzVqSe1e9II6T5hwvprDMnvQ8C6cmuMPbHV7PP17U2Z6YwVxNJDRERQPzCI7TMAVCrev_ueZsXvB2ljU5RddBZhLTtW6aTGPZ5KKmIAe8E=s0" /></p>
+<p>1: Số dòng lỗi.</p>
+<p>2: Thứ tự code bị lỗi. </p>
+<p>3: Nội dung lỗi. </p>
+<p>B2: Add source của Rehabman vào <a href="https://raw.github.com/RehabMan/Laptop-DSDT-Patch/master">http://raw.github.com/RehabMan/Laptop-DSDT-Patch/master</a> hoặc add các patch offline theo hướng dẫn ở trên từ link sau đây: </p>
+<p>https://github.com/RehabMan/Laptop-DSDT-Patch</p>
+<p>B3: Apply các patch vá lỗi của Rehabman (thường sẽ có các ký tự đầu là “syn”).</p>
+<p><strong>Lưu ý : Các bạn nên Remove các _DSM methods của dsdt trước khi Apply các bản vá lỗi của Rehabman các Remove như sau các bạn làm như hình</strong>:</p>
+<p><img alt="" src="https://lh4.googleusercontent.com/ryb4stc6eHWDke87B_y7z_uWmIQWSjr2rJATbBed0BgEo4LrA-LTcT6qg3YkCxIgpImXJf_IodkgCs9joju-lovo9tJeU6YEegEBh6_M5r3Va8MvRjC3WMvFYG3Jx0QV_UF4a7-g=s0" /></p>
+<h2 id="1-so-loi-pho-bien">1 số lỗi phổ biến<a class="headerlink" href="#1-so-loi-pho-bien" title="Permanent link">&para;</a></h2>
+<p>Lỗi bm6h khi gặp lỗi như hình:</p>
+<p><img alt="" src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-11-at-19.17.57.png?w=1024" /></p>
+<p>Khi gặp lỗi này các bạn thay đoạn code sau vào chỗ bị lỗi:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>
+</code></pre></div>
+<p><strong>Lưu ý 2 : Luôn phải Fix Error trước khi Apply các bản vá vào</strong>.</p>
+<p><strong>Lưu ý 3: Các nguồn tham khảo</strong> <a href="https://dortania.github.io/Getting-Started-With-ACPI/Manual/dump.html#from-windows"><strong>Getting a copy of your DSDT | Getting Started With ACPI (dortania.github.io)</strong></a> <strong>|</strong> <a href="https://www.tonymacx86.com/threads/guide-patching-laptop-dsdt-ssdts.152573/"><strong>[Guide] Patching LAPTOP DSDT/SSDTs | tonymacx86.com</strong></a> <strong>|</strong> <a href="https://niemtin007.blogspot.com/2015/05/guide-huong-dan-patch-dsdt-cho-may.html"><strong>[Guide] Patch DSDT cho máy Hackintosh (Phần 5) – UEFI &amp; OS (niemtin007.blogspot.com)</strong></a> <strong>|</strong> <a href="https://laptrinhtv.blogspot.com/2014/03/dsdt-ssdt-nhung-kien-thuc-co-ban.html#.YRzAS9Tiu00"><strong>DSDT, SSDT: Những kiến thức cơ bản | Lập Trình TV (laptrinhtv.blogspot.com)</strong></a></p>
+<p><strong>Lưu ý 4: Đối với những máy dùng Patchmatic để Dump DSDT mà gặp Error thì xui cho các bạn rồi các bạn bắt buộc phải dùng DSDT gốc máy nếu dùng DSDT gốc máy thì trong ACPI các bạn phải xoá hết (bao gồm các patch rename) đi chỉ để mỗi DSDT thôi rồi add các patch vào từ từ.</strong> </p>
+<p><strong>Lưu ý 5: Đối với Clover các bạn cần phải bật Drop OEM lên nếu muốn Load được DSDT</strong></p>
+<p><img alt="" src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-11-at-19.46.50.png?w=874" /></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../Patch_AMD_GPU/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Patch Card đồ họa AMD" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Patch Card đồ họa AMD
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../Patch_DSDT_part_3/" class="md-footer__link md-footer__link--next" aria-label="Next: Patch DSDT Phần 3" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Patch DSDT Phần 3
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.748e2769.min.js"></script>
+      
+    
+  </body>
+</html>
