@@ -1,0 +1,1819 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.2.11">
+    
+    
+      
+        <title>Cách xác định phần cứng - Hackintosh Documents</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c5ef100.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.9647289d.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cach-xac-inh-phan-cung" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Hackintosh Documents" class="md-header__button md-logo" aria-label="Hackintosh Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Hackintosh Documents
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cách xác định phần cứng
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Hackintosh Documents" class="md-nav__button md-logo" aria-label="Hackintosh Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Hackintosh Documents
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        content
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Add_device-id_in_amd_kext/" class="md-nav__link">
+        Add device-id vào amd kext
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Backup_and_Restore_with_Time_Machine/" class="md-nav__link">
+        Backup and Restore with Time Machine
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Boot_Arguments/" class="md-nav__link">
+        Boot Arguments
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Boot_without_USB_and_mount_partion_EFI/" class="md-nav__link">
+        Boot không cần USB và mount phân vùng EFI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Config_Laptop_Clarksfield_and_Arrandale/" class="md-nav__link">
+        Config Laptop Clarksfield và Arrandale
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Control_Brightness_External_Display/" class="md-nav__link">
+        Control Brightness cho External Display
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Control_Led_RGB/" class="md-nav__link">
+        Control Led RGB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Convert_Bootloader/" class="md-nav__link">
+        Convert Bootloader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Cách xác định phần cứng
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Cách xác định phần cứng
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cpu" class="md-nav__link">
+    CPU
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#igpu" class="md-nav__link">
+    iGPU
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chipset-model-va-mainboard" class="md-nav__link">
+    Chipset model và Mainboard
+  </a>
+  
+    <nav class="md-nav" aria-label="Chipset model và Mainboard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dung-system-info" class="md-nav__link">
+    Dùng system info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xac-inh-thong-qua-device-manager" class="md-nav__link">
+    Xác định thông qua device manager
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#audio-codec" class="md-nav__link">
+    Audio Codec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-controller-models" class="md-nav__link">
+    Network Controller models
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#drive-model" class="md-nav__link">
+    Drive Model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dgpu" class="md-nav__link">
+    dGPU
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keyboard-trackpad-and-touchscreen-connection-type" class="md-nav__link">
+    Keyboard, Trackpad and Touchscreen Connection Type
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xac-inh-location-path" class="md-nav__link">
+    Xác định location path
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xac-inh-vendor-id-va-device-id-cua-usb-controller" class="md-nav__link">
+    Xác định vendor id và device id của usb controller
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_CFG-Clock/" class="md-nav__link">
+        Disable CFG-Clock
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_dGPU_Desktop/" class="md-nav__link">
+        Disable dGPU Desktop
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_dgpu_Laptop/" class="md-nav__link">
+        Disable dgpu Laptop
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Emulated_NVRAM/" class="md-nav__link">
+        Emulated NVRAM
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Enable_Trim_For_SSD/" class="md-nav__link">
+        Enable Trim For SSD
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../External_Card_Reader/" class="md-nav__link">
+        Fix Internal/External Card Reader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fake_CPU-ID/" class="md-nav__link">
+        Fake CPU-ID
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix%20_for_slow_AMD_GPU/" class="md-nav__link">
+        Fix for slow AMD GPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Backlight/" class="md-nav__link">
+        Fix Backlight
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Connect_%28HDMI%29/" class="md-nav__link">
+        Fix Connect (HDMI)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Ethernet/" class="md-nav__link">
+        Fix Ethernet
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_HDMI_Audio/" class="md-nav__link">
+        Fix HDMI Audio
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Hotkeys/" class="md-nav__link">
+        Fix Hotkeys
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_RTC_Manual/" class="md-nav__link">
+        Fix RTC Manual
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_RTC_write_issues/" class="md-nav__link">
+        Fix RTC write issues
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Shutdown/" class="md-nav__link">
+        Fix Shut down
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_System_Clocks_on_HEDT/" class="md-nav__link">
+        Fix System Clocks on HEDT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_WiFi_and_Bluetooth/" class="md-nav__link">
+        Fix WiFi và Bluetooth
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_darkwake/" class="md-nav__link">
+        Fix darkwake
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_iServices/" class="md-nav__link">
+        Fix iServices
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_keyboard_wake/" class="md-nav__link">
+        Fix keyboard wake
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_power_management/" class="md-nav__link">
+        Fix power management
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_sleep/" class="md-nav__link">
+        Fix sleep
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_trackpad/" class="md-nav__link">
+        Fix trackpad
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fixing_KASLR/" class="md-nav__link">
+        Fixing KASLR
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GPRW_UPRW_LANC/" class="md-nav__link">
+        GPRW/UPRW/LANC
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ghost_macos/" class="md-nav__link">
+        Ghost macos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Guide_dual_Boot/" class="md-nav__link">
+        Hướng dẫn Dual Boot
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HotPlug_Thunderbolt_3/" class="md-nav__link">
+        HotPlug Thunderbolt 3
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hotpatch_PTS_Wake_TTS/" class="md-nav__link">
+        Hotpatch PTS Wake TTS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Injects_USB_Manual/" class="md-nav__link">
+        Injects USB Manual
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kernel_issue/" class="md-nav__link">
+        Kernel issue
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Map_USB/" class="md-nav__link">
+        Map USB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenCore_Legacy/" class="md-nav__link">
+        OpenCore Legacy
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_AMD_GPU/" class="md-nav__link">
+        Patch Card đồ họa AMD
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_2/" class="md-nav__link">
+        Patch DSDT Phần 2
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_3/" class="md-nav__link">
+        Patch DSDT Phần 3
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_4/" class="md-nav__link">
+        Patch DSDT phần 4
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_GMA_GPU/" class="md-nav__link">
+        Patch GMA GPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_IGPU/" class="md-nav__link">
+        Patch IGPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_NVIDIA_GPU/" class="md-nav__link">
+        Patch Card đồ họa NVIDIA
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_SATA_Controller/" class="md-nav__link">
+        Patch SATA Controller
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_audio_with_AppleALC/" class="md-nav__link">
+        Patch âm thanh với AppleALC
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_audio_with_VoodooHDA/" class="md-nav__link">
+        Patch audio với VoodooHDA
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_dsdt_part_1/" class="md-nav__link">
+        Patch dsdt phần 1
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_pin/" class="md-nav__link">
+        Patch pin
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Resize_EFI/" class="md-nav__link">
+        Resize EFI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SIP_and_Gatekeeper/" class="md-nav__link">
+        SIP và Gatekeeper
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SLE_kext_in_bigsur/" class="md-nav__link">
+        Cách sửa kext S/L/E trên bigsur
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SSDT_recomend/" class="md-nav__link">
+        SSDT recomend
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Scan_policy/" class="md-nav__link">
+        Scan policy
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Some_error_in_bigsur/" class="md-nav__link">
+        Một số lỗi ở xuất hiện ở macOS Big Sur
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Some_error_in_propertree/" class="md-nav__link">
+        1 số lỗi ProperTree
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Turn_on_Backlight_Keyboard/" class="md-nav__link">
+        Turn on Backlight Keyboard
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Update_macOS_and_Bootloader/" class="md-nav__link">
+        Update macOS và Bootloader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Use_SSDT-time_to_Prebuilt%20SSDT/" class="md-nav__link">
+        Dùng SSDT-Time để Prebuilt SSDT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%5BEB%7C%23LOG%3AEXITBS%3ASTART%5D/" class="md-nav__link">
+        [EB|#LOG:EXITBS:START]
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../add_boot_option_in_bios/" class="md-nav__link">
+        Cách thêm Boot vào BIOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creat_GUI/" class="md-nav__link">
+        Tạo GUI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creat_online_usb_%28recovery%29/" class="md-nav__link">
+        Cách tạo bộ cài online (recovery)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_EFI_OpenCore/" class="md-nav__link">
+        Cách tạo EFI OpenCore
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_EFI_Opencore_No_ACPI/" class="md-nav__link">
+        Cách làm EFI Opencore No ACPI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_offline_bootable_without_no_usb/" class="md-nav__link">
+        Cách tạo bộ cài Offline khi không có USB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_usb_offline/" class="md-nav__link">
+        Cách tạo bộ cài offline
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fake_CPU_Name%3Aigpu_name/" class="md-nav__link">
+        Fake iGPU/ CPU Name
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_mod_bios/" class="md-nav__link">
+        Cách mod bios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inject_all_hardware_properties/" class="md-nav__link">
+        Cách inject toàn bộ thông tin phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn_about_hackintosh/" class="md-nav__link">
+        Tìm hiểu về Hackintosh
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn_about_to_hardware/" class="md-nav__link">
+        Tìm hiểu chung về phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../macOS_12_Monterey/" class="md-nav__link">
+        macOS 12: Monterey
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patch_connector_type_force_rgb%3AInject_EDID/" class="md-nav__link">
+        Patch Connect Type/ Force RGB/ Inject EDID
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cpu" class="md-nav__link">
+    CPU
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#igpu" class="md-nav__link">
+    iGPU
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chipset-model-va-mainboard" class="md-nav__link">
+    Chipset model và Mainboard
+  </a>
+  
+    <nav class="md-nav" aria-label="Chipset model và Mainboard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dung-system-info" class="md-nav__link">
+    Dùng system info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xac-inh-thong-qua-device-manager" class="md-nav__link">
+    Xác định thông qua device manager
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#audio-codec" class="md-nav__link">
+    Audio Codec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-controller-models" class="md-nav__link">
+    Network Controller models
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#drive-model" class="md-nav__link">
+    Drive Model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dgpu" class="md-nav__link">
+    dGPU
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keyboard-trackpad-and-touchscreen-connection-type" class="md-nav__link">
+    Keyboard, Trackpad and Touchscreen Connection Type
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xac-inh-location-path" class="md-nav__link">
+    Xác định location path
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xac-inh-vendor-id-va-device-id-cua-usb-controller" class="md-nav__link">
+    Xác định vendor id và device id của usb controller
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="cach-xac-inh-phan-cung">Cách xác định phần cứng<a class="headerlink" href="#cach-xac-inh-phan-cung" title="Permanent link">&para;</a></h1>
+<h2 id="cpu">CPU<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h2>
+<p>Ta dễ thấy đối với những guide hướng dẫn hackintosh hiện nay hầu hết đều dùng <code>Code Name</code> . Để xác định được <code>code name</code> của CPU và <code>iGPU</code> ta làm như sau:</p>
+<p>B1: Bạn chuột phải vào biểu tượng <code>windows</code> ở góc dưới cùng bên trái và chọn <code>system</code>.</p>
+<p><img alt="" src="https://i.imgur.com/3QEza7m.png" /></p>
+<p>B2: Copy mục <code>processor</code>.</p>
+<p><img alt="" src="https://i.imgur.com/wwrPl8K.png" /></p>
+<p>B3: Ta tiến hành search mục <code>processor</code> trên trình duyệt.</p>
+<p><img alt="" src="https://i.imgur.com/wdh3pK5.png" /></p>
+<p>B4: Các bạn tiến hành mở kết quả tìm kiếm có domain là <code>ark.intel.com</code></p>
+<p><img alt="" src="https://i.imgur.com/HeOXlJI.png" /></p>
+<p>B5: Bạn sẽ chú ý vào phần <code>tên mã</code> hoặc <code>code name</code>. Đây chính là <code>code name CPU</code> của bạn.</p>
+<p><img alt="" src="https://i.imgur.com/OADzcWa.png" /></p>
+<p>như ở đây ta có code name là Comet Lake</p>
+<h2 id="igpu">iGPU<a class="headerlink" href="#igpu" title="Permanent link">&para;</a></h2>
+<p>Để có thể patch được <code>i</code>GPU thì ta phải xác định được <code>iGPU name.</code> Làm như sau:</p>
+<p>B1: Ta sẽ tiến hành search <code>processor</code> trên trình duyệt và mở trang <code>ark.intel.com</code> như hướng dẫn ở <code>CPU</code>.</p>
+<p><img alt="" src="https://i.imgur.com/ngljFRK.png" /></p>
+<p>B2: Các bạn chú ý vào mục <code>Đồ họa Bộ xử lý --&gt; Đồ họa bộ xử lý ‡</code></p>
+<p>Đây chính là <code>iGPU name</code> của bạn.</p>
+<p><img alt="" src="https://i.imgur.com/Y724Y6p.png" /></p>
+<p>ở đây igpu name là HD4000</p>
+<h2 id="chipset-model-va-mainboard">Chipset model và Mainboard<a class="headerlink" href="#chipset-model-va-mainboard" title="Permanent link">&para;</a></h2>
+<p>Trước hết ta sẽ cần tìm hiểu chipset là gì? <em>Chipset máy tính là một</em> mạch tích hợp giúp xử lý giao tiếp giữa CPU, RAM, bộ lưu trữ và các thiết bị ngoại vi khác. Chipset xác định số lượng thành phần tốc độ cao hoặc thiết bị USB mà bo mạch chủ của bạn có thể hỗ trợ. Chipset thường bao gồm một đến bốn chip và các bộ điều khiển tính năng cho các thiết bị ngoại vi thường được sử dụng, như bàn phím, chuột hoặc màn hình.</p>
+<p>Vậy còn mainboard là gì? Mainboard hay main máy tính hay bo mạch chủ là một bảng mạch đóng vai trò nền tảng trên máy tính, laptop có tác dụng kết nối các linh kiện bên trong thành thể thống nhất. Mainboard PC sẽ nằm ở thùng máy, hoặc tích hợp đằng sau màn hình đối với máy tính AIO.</p>
+<p>Để xác định được mã của chúng ta sẽ làm như sau</p>
+<h3 id="dung-system-info">Dùng system info<a class="headerlink" href="#dung-system-info" title="Permanent link">&para;</a></h3>
+<p>B1: Chuột phải vào logo <code>Windows</code> ở góc dưới cùng bên trái và search <code>System Information</code>.</p>
+<p><img alt="" src="https://i.imgur.com/ifY4jbQ.png" /></p>
+<p>B2: Ta chú ý vào dòng <code>Baseboard manufacturer</code> (đây là dòng hiện thị main) và <code>Baseboard product</code> (đây là dòng hiển thị chipset).</p>
+<p><img alt="" src="https://i.imgur.com/IMq9aiW.png" /></p>
+<blockquote>
+<p>Nhưng một số main sẽ không hiển thị chipset vậy ta sẽ tiến hành làm như sau</p>
+</blockquote>
+<h3 id="xac-inh-thong-qua-device-manager">Xác định thông qua device manager<a class="headerlink" href="#xac-inh-thong-qua-device-manager" title="Permanent link">&para;</a></h3>
+<p>B1: mở <code>device manager</code></p>
+<p>B2: chọn tới tab <code>IDE ATA/ATAPI controllers</code> </p>
+<p>B3: Chọn <code>properties</code> ta sẽ có thể thấy thế hệ chipset</p>
+<p><img alt="299460458_838685037052875_6042626987910816592_n.png" src="https://raw.githubusercontent.com/king-dragon/image/main/2022/08/21-11-49-06-299460458_838685037052875_6042626987910816592_n.png" /></p>
+<h2 id="audio-codec">Audio Codec<a class="headerlink" href="#audio-codec" title="Permanent link">&para;</a></h2>
+<p>B1: Các bạn tải <code>aida64</code> <a href="https://www.aida64.com/downloads">tại đây</a>.</p>
+<p>B2: Các bạn sẽ vào tab <code>Multimedia --&gt; PCI/PnP Audio</code> ở đây ta sẽ có thể thấy <code>audio codec</code>.</p>
+<p><img alt="" src="https://dortania.github.io/OpenCore-Install-Guide/assets/img/audio-controller-aida64.c4a94a0b.png" /></p>
+<h2 id="network-controller-models">Network Controller models<a class="headerlink" href="#network-controller-models" title="Permanent link">&para;</a></h2>
+<p>B1: Các bạn tải <code>aida64</code> <a href="https://www.aida64.com/downloads">tại đây</a>.</p>
+<p>B2: Các bạn sẽ chú ý đến mục sau <code>Network --&gt; PCI/PnP Network</code>.</p>
+<p><img alt="" src="https://i.imgur.com/XiTPa8B.png" /></p>
+<h2 id="drive-model">Drive Model<a class="headerlink" href="#drive-model" title="Permanent link">&para;</a></h2>
+<p>B1: Chuột phải vào logo Windows ở góc cuối bên trái và chọn <code>device manager</code>.</p>
+<p><img alt="" src="https://i.imgur.com/oNBcTmN.png" /></p>
+<p>B2: Bạn chọn vào disk ở đây ta sẽ có được tên ổ cứng.</p>
+<p><img alt="" src="https://i.imgur.com/vL2khbW.png" /></p>
+<h2 id="dgpu">dGPU<a class="headerlink" href="#dgpu" title="Permanent link">&para;</a></h2>
+<p>B1: Bạn nhấn tổ hợp phím <code>Windows + R</code>.</p>
+<p>Và gõ <code>dxdiag</code> sau đó enter.</p>
+<p><img alt="" src="https://i.imgur.com/XHk4Jxy.png" /></p>
+<p>B2: Hệ thống sẽ mở <code>DirectX Diagnostic Tool</code> và bạn hãy chuyển đến tab <code>render</code> chú ý đến dòng name.</p>
+<p><img alt="" src="https://i.imgur.com/zzNSJad.png" /></p>
+<h2 id="keyboard-trackpad-and-touchscreen-connection-type">Keyboard, Trackpad and Touchscreen Connection Type<a class="headerlink" href="#keyboard-trackpad-and-touchscreen-connection-type" title="Permanent link">&para;</a></h2>
+<p>B1: Các bạn tải aida64 <a href="https://www.aida64.com/downloads">tại đây</a></p>
+<p>B2: Các bạn truy cập vào đường dẫn <code>Devices --&gt; Physical Devices --&gt; PnP Devices</code> ở đây các bạn sẽ tiến hành tìm kiếm name Touchpad.</p>
+<p><img alt="" src="https://i.imgur.com/PgeqvQY.png" /></p>
+<h2 id="xac-inh-location-path">Xác định <code>location path</code><a class="headerlink" href="#xac-inh-location-path" title="Permanent link">&para;</a></h2>
+<p>Trước tiên ta cần tìm hiểu <code>location path</code> là gì? Nó là đường dẫn đến <code>devices</code> trong hệ thống và thường được hệ thống đọc dưới 2 dạng là <code>ACPI path</code> và <code>Device path</code>. <code>ACPI path</code> thường được sử dụng trong việc <code>patch DSDT</code> còn <code>Device path</code> thường được dùng trong <code>config.plist</code> để inject <code>properties</code> của các <code>Device</code>.</p>
+<p>B1: Các bạn nháy chuột phải vào biểu tượng <code>Windows</code> ở góc dưới bên trái và chọn <code>device manager</code>.</p>
+<p><img alt="" src="https://i.imgur.com/oNBcTmN.png" /></p>
+<p>B2: Tiến hành chuột phải vào device cần lấy <code>location path</code> và chọn <code>properties</code>.</p>
+<p><img alt="" src="https://i.imgur.com/2bzgPTP.png" /></p>
+<p>B3: Chọn tab <code>Details --&gt; location paths</code>.</p>
+<p><img alt="" src="https://i.imgur.com/strrnkL.png" /></p>
+<p>B4: Ta sẽ tiến hành chuyển value vừa lấy được ở trên về dạng path để có thể sử dụng.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>//value mặc định
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>PCIROOT<span class="o">(</span><span class="m">0</span><span class="o">)</span><span class="c1">#PCI(1C01)#PCI(0000)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>ACPI<span class="o">(</span>_SB_<span class="o">)</span><span class="c1">#ACPI(PCI0)#ACPI(RP02)#ACPI(WLAN)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>//Device path mặc định
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>PCIROOT<span class="o">(</span><span class="m">0</span><span class="o">)</span><span class="c1">#PCI(1C01)#PCI(0000)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>//ACPI path mặc định 
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>ACPI<span class="o">(</span>_SB_<span class="o">)</span><span class="c1">#ACPI(PCI0)#ACPI(RP02)#ACPI(WLAN)</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>//Convert Device path mặc định
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>PCIROOT<span class="o">(</span><span class="m">0</span><span class="o">)</span><span class="c1">#PCI(1C01)#PCI(0000)</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c1"># Tiến hành chuyển dấu &quot;#&quot; thành dấu &quot;/&quot;</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>PCIROOT<span class="o">(</span><span class="m">0</span><span class="o">)</span>/PCI<span class="o">(</span>1C01<span class="o">)</span>/PCI<span class="o">(</span><span class="m">0000</span><span class="o">)</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="c1"># Ta tiến hành chia các giá trị nhỏ trong &quot;()&quot; thành các cặp 2 số. Nếu cặp số không bắt đầu bằng số &quot;0&quot; thì thêm số &quot;0&quot; vào trước</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>PCIROOT<span class="o">(</span><span class="m">00</span><span class="o">)</span>/PCI<span class="o">(</span>01C <span class="m">01</span><span class="o">)</span>/PCI<span class="o">(</span><span class="m">00</span> <span class="m">00</span><span class="o">)</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="c1"># Viết thế chữ &quot;x&quot; vào giữa các cặp 2 chữ số</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>PCIROOT<span class="o">(</span>0x0<span class="o">)</span>/PCI<span class="o">(</span>0x1C 0x1<span class="o">)</span>/PCI<span class="o">(</span>0x0 0x0<span class="o">)</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="c1"># chuyển các dấu cách trong ngoặc thành dấu &quot;,&quot;</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>PCIROOT<span class="o">(</span>0x0<span class="o">)</span>/PCI<span class="o">(</span>0x1C,0x1<span class="o">)</span>/PCI<span class="o">(</span>0x0,0x0<span class="o">)</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>// Convert ACPI path nguyên mẫu
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="c1"># Ta tiến hành giữ lại các ký tự trong ngoặc những ký tự khác thì lược bỏ </span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>_SB_ PCI0 RP02 WLAN
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="c1"># Tiếp đó tiến hành thay dấu cách bằng dấu &quot;.&quot;</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>_SB_.PCI0.RP02.WLAN
+</code></pre></div>
+<h2 id="xac-inh-vendor-id-va-device-id-cua-usb-controller">Xác định vendor id và device id của usb controller<a class="headerlink" href="#xac-inh-vendor-id-va-device-id-cua-usb-controller" title="Permanent link">&para;</a></h2>
+<p>Khi tiến hành map usb các bạn cần xác định device id và vendor id để sử dụng đúng kext. Việc này rất dễ thực hiện ở mac nhưng khi không có mac thì các bạn làm theo sau:</p>
+<p>B1: chuột phải vào biểu tượng windows chọn <code>device manager</code></p>
+<p>B2: chuột phải vào tên usb controller và chọn <code>Properties</code></p>
+<blockquote>
+<p>tên usb controller thường bắt đầu bằng <code>Intel (R)</code></p>
+</blockquote>
+<p><img alt="" src="https://i.imgur.com/8l5Fdg8.png" /></p>
+<p>B3: tới tab <code>Details</code> và chọn <code>Hardware ID</code> và nhìn vào dòng đầu tiên</p>
+<p><img alt="" src="https://i.imgur.com/pu11YG6.png" /></p>
+<p>Ở đây ta có vendor id là <code>8086</code> device id là <code>1E31</code></p>
+<p><strong>Source tham khảo: <a href="https://dortania.github.io/OpenCore-Install-Guide/find-hardware.html#finding-hardware-using-windows">Finding your hardware | OpenCore Install Guide (dortania.github.io)</a></strong></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../Convert_Bootloader/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Convert Bootloader" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Convert Bootloader
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../Disable_CFG-Clock/" class="md-footer__link md-footer__link--next" aria-label="Next: Disable CFG-Clock" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Disable CFG-Clock
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.748e2769.min.js"></script>
+      
+    
+  </body>
+</html>

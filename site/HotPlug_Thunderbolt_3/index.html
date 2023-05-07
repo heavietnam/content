@@ -1,0 +1,2251 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.2.11">
+    
+    
+      
+        <title>HotPlug Thunderbolt 3 - Hackintosh Documents</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c5ef100.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.9647289d.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#hotplug-thunderbolt-3" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Hackintosh Documents" class="md-header__button md-logo" aria-label="Hackintosh Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Hackintosh Documents
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              HotPlug Thunderbolt 3
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Hackintosh Documents" class="md-nav__button md-logo" aria-label="Hackintosh Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Hackintosh Documents
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        content
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Add_device-id_in_amd_kext/" class="md-nav__link">
+        Add device-id vào amd kext
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Backup_and_Restore_with_Time_Machine/" class="md-nav__link">
+        Backup and Restore with Time Machine
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Boot_Arguments/" class="md-nav__link">
+        Boot Arguments
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Boot_without_USB_and_mount_partion_EFI/" class="md-nav__link">
+        Boot không cần USB và mount phân vùng EFI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Config_Laptop_Clarksfield_and_Arrandale/" class="md-nav__link">
+        Config Laptop Clarksfield và Arrandale
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Control_Brightness_External_Display/" class="md-nav__link">
+        Control Brightness cho External Display
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Control_Led_RGB/" class="md-nav__link">
+        Control Led RGB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Convert_Bootloader/" class="md-nav__link">
+        Convert Bootloader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C%C3%A1ch%20x%C3%A1c%20%C4%91%E1%BB%8Bnh%20ph%E1%BA%A7n%20c%E1%BB%A9ng/" class="md-nav__link">
+        Cách xác định phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_CFG-Clock/" class="md-nav__link">
+        Disable CFG-Clock
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_dGPU_Desktop/" class="md-nav__link">
+        Disable dGPU Desktop
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_dgpu_Laptop/" class="md-nav__link">
+        Disable dgpu Laptop
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Emulated_NVRAM/" class="md-nav__link">
+        Emulated NVRAM
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Enable_Trim_For_SSD/" class="md-nav__link">
+        Enable Trim For SSD
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../External_Card_Reader/" class="md-nav__link">
+        Fix Internal/External Card Reader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fake_CPU-ID/" class="md-nav__link">
+        Fake CPU-ID
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix%20_for_slow_AMD_GPU/" class="md-nav__link">
+        Fix for slow AMD GPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Backlight/" class="md-nav__link">
+        Fix Backlight
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Connect_%28HDMI%29/" class="md-nav__link">
+        Fix Connect (HDMI)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Ethernet/" class="md-nav__link">
+        Fix Ethernet
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_HDMI_Audio/" class="md-nav__link">
+        Fix HDMI Audio
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Hotkeys/" class="md-nav__link">
+        Fix Hotkeys
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_RTC_Manual/" class="md-nav__link">
+        Fix RTC Manual
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_RTC_write_issues/" class="md-nav__link">
+        Fix RTC write issues
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Shutdown/" class="md-nav__link">
+        Fix Shut down
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_System_Clocks_on_HEDT/" class="md-nav__link">
+        Fix System Clocks on HEDT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_WiFi_and_Bluetooth/" class="md-nav__link">
+        Fix WiFi và Bluetooth
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_darkwake/" class="md-nav__link">
+        Fix darkwake
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_iServices/" class="md-nav__link">
+        Fix iServices
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_keyboard_wake/" class="md-nav__link">
+        Fix keyboard wake
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_power_management/" class="md-nav__link">
+        Fix power management
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_sleep/" class="md-nav__link">
+        Fix sleep
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_trackpad/" class="md-nav__link">
+        Fix trackpad
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fixing_KASLR/" class="md-nav__link">
+        Fixing KASLR
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GPRW_UPRW_LANC/" class="md-nav__link">
+        GPRW/UPRW/LANC
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ghost_macos/" class="md-nav__link">
+        Ghost macos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Guide_dual_Boot/" class="md-nav__link">
+        Hướng dẫn Dual Boot
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          HotPlug Thunderbolt 3
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        HotPlug Thunderbolt 3
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tim-hieu-chung" class="md-nav__link">
+    Tìm hiểu chung
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-bios" class="md-nav__link">
+    Setting BIOS
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting BIOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#luu-y" class="md-nav__link">
+    Lưu ý:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desktop" class="md-nav__link">
+    Desktop
+  </a>
+  
+    <nav class="md-nav" aria-label="Desktop">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general" class="md-nav__link">
+    General:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asus-600-series" class="md-nav__link">
+    Asus 600 series:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#msi" class="md-nav__link">
+    MSI:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#laptop" class="md-nav__link">
+    Laptop
+  </a>
+  
+    <nav class="md-nav" aria-label="Laptop">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#asusclevo" class="md-nav__link">
+    ASUS/Clevo:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#general_1" class="md-nav__link">
+    General:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-gpio-force-pwr" class="md-nav__link">
+    Enable GPIO Force Pwr
+  </a>
+  
+    <nav class="md-nav" aria-label="Enable GPIO Force Pwr">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cach-1-dung-uefitool" class="md-nav__link">
+    Cách 1: Dùng UEFITool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cach-2-dung-driver-tbtforcepowerefi" class="md-nav__link">
+    Cách 2: Dùng Driver TbtForcePower.efi
+  </a>
+  
+    <nav class="md-nav" aria-label="Cách 2: Dùng Driver TbtForcePower.efi">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#luu-y_1" class="md-nav__link">
+    Lưu ý:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hotplug-thunderbolt-3_1" class="md-nav__link">
+    Hotplug Thunderbolt 3
+  </a>
+  
+    <nav class="md-nav" aria-label="Hotplug Thunderbolt 3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xac-inh-acpi-path" class="md-nav__link">
+    Xác định ACPI Path
+  </a>
+  
+    <nav class="md-nav" aria-label="Xác định ACPI Path">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cach-1-dung-ioreg" class="md-nav__link">
+    Cách 1: dùng IOReg
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cach-2-dung-device-manager" class="md-nav__link">
+    Cách 2: Dùng Device Manager
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#luu-y-cho-multiple-cards" class="md-nav__link">
+    Lưu ý cho Multiple Cards:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lay-mau-ssdt-tu-hackindrom" class="md-nav__link">
+    Lấy mẫu SSDT từ HackinDrom
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thay-oi-uong-dan-cua-ssdt-thunderbolt" class="md-nav__link">
+    Thay đổi đường dẫn của SSDT Thunderbolt
+  </a>
+  
+    <nav class="md-nav" aria-label="Thay đổi đường dẫn của SSDT Thunderbolt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#luu-y-cho-luu-y-cho-multiple-cards" class="md-nav__link">
+    Lưu ý cho Lưu ý cho Multiple Cards:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#luu-y-cuoi-bai" class="md-nav__link">
+    Lưu ý cuối bài
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hotpatch_PTS_Wake_TTS/" class="md-nav__link">
+        Hotpatch PTS Wake TTS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Injects_USB_Manual/" class="md-nav__link">
+        Injects USB Manual
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kernel_issue/" class="md-nav__link">
+        Kernel issue
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Map_USB/" class="md-nav__link">
+        Map USB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenCore_Legacy/" class="md-nav__link">
+        OpenCore Legacy
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_AMD_GPU/" class="md-nav__link">
+        Patch Card đồ họa AMD
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_2/" class="md-nav__link">
+        Patch DSDT Phần 2
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_3/" class="md-nav__link">
+        Patch DSDT Phần 3
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_4/" class="md-nav__link">
+        Patch DSDT phần 4
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_GMA_GPU/" class="md-nav__link">
+        Patch GMA GPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_IGPU/" class="md-nav__link">
+        Patch IGPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_NVIDIA_GPU/" class="md-nav__link">
+        Patch Card đồ họa NVIDIA
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_SATA_Controller/" class="md-nav__link">
+        Patch SATA Controller
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_audio_with_AppleALC/" class="md-nav__link">
+        Patch âm thanh với AppleALC
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_audio_with_VoodooHDA/" class="md-nav__link">
+        Patch audio với VoodooHDA
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_dsdt_part_1/" class="md-nav__link">
+        Patch dsdt phần 1
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_pin/" class="md-nav__link">
+        Patch pin
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Resize_EFI/" class="md-nav__link">
+        Resize EFI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SIP_and_Gatekeeper/" class="md-nav__link">
+        SIP và Gatekeeper
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SLE_kext_in_bigsur/" class="md-nav__link">
+        Cách sửa kext S/L/E trên bigsur
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SSDT_recomend/" class="md-nav__link">
+        SSDT recomend
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Scan_policy/" class="md-nav__link">
+        Scan policy
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Some_error_in_bigsur/" class="md-nav__link">
+        Một số lỗi ở xuất hiện ở macOS Big Sur
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Some_error_in_propertree/" class="md-nav__link">
+        1 số lỗi ProperTree
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Turn_on_Backlight_Keyboard/" class="md-nav__link">
+        Turn on Backlight Keyboard
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Update_macOS_and_Bootloader/" class="md-nav__link">
+        Update macOS và Bootloader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Use_SSDT-time_to_Prebuilt%20SSDT/" class="md-nav__link">
+        Dùng SSDT-Time để Prebuilt SSDT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%5BEB%7C%23LOG%3AEXITBS%3ASTART%5D/" class="md-nav__link">
+        [EB|#LOG:EXITBS:START]
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../add_boot_option_in_bios/" class="md-nav__link">
+        Cách thêm Boot vào BIOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creat_GUI/" class="md-nav__link">
+        Tạo GUI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creat_online_usb_%28recovery%29/" class="md-nav__link">
+        Cách tạo bộ cài online (recovery)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_EFI_OpenCore/" class="md-nav__link">
+        Cách tạo EFI OpenCore
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_EFI_Opencore_No_ACPI/" class="md-nav__link">
+        Cách làm EFI Opencore No ACPI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_offline_bootable_without_no_usb/" class="md-nav__link">
+        Cách tạo bộ cài Offline khi không có USB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_usb_offline/" class="md-nav__link">
+        Cách tạo bộ cài offline
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fake_CPU_Name%3Aigpu_name/" class="md-nav__link">
+        Fake iGPU/ CPU Name
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_mod_bios/" class="md-nav__link">
+        Cách mod bios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inject_all_hardware_properties/" class="md-nav__link">
+        Cách inject toàn bộ thông tin phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn_about_hackintosh/" class="md-nav__link">
+        Tìm hiểu về Hackintosh
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn_about_to_hardware/" class="md-nav__link">
+        Tìm hiểu chung về phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../macOS_12_Monterey/" class="md-nav__link">
+        macOS 12: Monterey
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patch_connector_type_force_rgb%3AInject_EDID/" class="md-nav__link">
+        Patch Connect Type/ Force RGB/ Inject EDID
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tim-hieu-chung" class="md-nav__link">
+    Tìm hiểu chung
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-bios" class="md-nav__link">
+    Setting BIOS
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting BIOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#luu-y" class="md-nav__link">
+    Lưu ý:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desktop" class="md-nav__link">
+    Desktop
+  </a>
+  
+    <nav class="md-nav" aria-label="Desktop">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general" class="md-nav__link">
+    General:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asus-600-series" class="md-nav__link">
+    Asus 600 series:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#msi" class="md-nav__link">
+    MSI:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#laptop" class="md-nav__link">
+    Laptop
+  </a>
+  
+    <nav class="md-nav" aria-label="Laptop">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#asusclevo" class="md-nav__link">
+    ASUS/Clevo:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#general_1" class="md-nav__link">
+    General:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-gpio-force-pwr" class="md-nav__link">
+    Enable GPIO Force Pwr
+  </a>
+  
+    <nav class="md-nav" aria-label="Enable GPIO Force Pwr">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cach-1-dung-uefitool" class="md-nav__link">
+    Cách 1: Dùng UEFITool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cach-2-dung-driver-tbtforcepowerefi" class="md-nav__link">
+    Cách 2: Dùng Driver TbtForcePower.efi
+  </a>
+  
+    <nav class="md-nav" aria-label="Cách 2: Dùng Driver TbtForcePower.efi">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#luu-y_1" class="md-nav__link">
+    Lưu ý:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hotplug-thunderbolt-3_1" class="md-nav__link">
+    Hotplug Thunderbolt 3
+  </a>
+  
+    <nav class="md-nav" aria-label="Hotplug Thunderbolt 3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xac-inh-acpi-path" class="md-nav__link">
+    Xác định ACPI Path
+  </a>
+  
+    <nav class="md-nav" aria-label="Xác định ACPI Path">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cach-1-dung-ioreg" class="md-nav__link">
+    Cách 1: dùng IOReg
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cach-2-dung-device-manager" class="md-nav__link">
+    Cách 2: Dùng Device Manager
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#luu-y-cho-multiple-cards" class="md-nav__link">
+    Lưu ý cho Multiple Cards:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lay-mau-ssdt-tu-hackindrom" class="md-nav__link">
+    Lấy mẫu SSDT từ HackinDrom
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thay-oi-uong-dan-cua-ssdt-thunderbolt" class="md-nav__link">
+    Thay đổi đường dẫn của SSDT Thunderbolt
+  </a>
+  
+    <nav class="md-nav" aria-label="Thay đổi đường dẫn của SSDT Thunderbolt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#luu-y-cho-luu-y-cho-multiple-cards" class="md-nav__link">
+    Lưu ý cho Lưu ý cho Multiple Cards:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#luu-y-cuoi-bai" class="md-nav__link">
+    Lưu ý cuối bài
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="hotplug-thunderbolt-3">HotPlug Thunderbolt 3<a class="headerlink" href="#hotplug-thunderbolt-3" title="Permanent link">&para;</a></h1>
+<h2 id="tim-hieu-chung">Tìm hiểu chung<a class="headerlink" href="#tim-hieu-chung" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Patch Thunderbolt là 1 việc khá vất vả bạn nên tìm hiểu việc Patch DSDT trước khi đọc guide này (<a href="https://heavietnam.ga/2021/09/29/xxvi-patch-dsdt-phan-1/">Patch DSDT Phần 1</a>, <a href="https://heavietnam.ga/2021/09/29/xxvii-patch-dsdt-phan-2/">Patch DSDT Phần 2</a>, <a href="https://heavietnam.ga/2021/09/29/xxviii-patch-dsdt-phan-3/">Patch DSDT Phần 3</a>).</p>
+<p>Trước tiên chúng ta hãy cùng nhau tìm hiểu sự hoạt động của Thunderbolt trên Windows và macOS.</p>
+<p>Ở trên Windows cổng Thunderbolt được cấp nguồn khi có 1 thiết bị được cắm vào cổng Thunderbolt. Khi bị ngắt kết nối thì nguồn điện cũng tự ngắt khỏi cổng Thunderbolt.</p>
+<p>Mặt khác ở macOS Thunderbolt luôn được cấp nguồn khi được kết nối thì nó sẽ được kết nối vào Thunderbolt cho đến khi tắt máy.</p>
+<p>sNhưng đối với Hackintosh nó là sự hỗ hợp của Windows và macOS do đó bạn chỉ có thể sử dụng Thunderbolt nếu bạn cắm nó trước khi khởi động do đó chúng ta cần hotplug.</p>
+</blockquote>
+<h2 id="setting-bios">Setting BIOS<a class="headerlink" href="#setting-bios" title="Permanent link">&para;</a></h2>
+<h3 id="luu-y"><strong><em>Lưu ý:</em></strong><a class="headerlink" href="#luu-y" title="Permanent link">&para;</a></h3>
+<p>Nhưng giá trị mặc định tức là giữ nguyên sau khi bạn đặt lại BIOS.</p>
+<p>Nếu dòng máy của bạn không có những Option trong đây thì hãy để mặc định.</p>
+<p>Nếu bạn đang dùng Thunderbolt cards or chips with flashed firmware thì disable <code>Thunderbolt USB Support</code> hoặc không tìm thấy option này thì disable <code>Thunderbolt Boot Support</code>.</p>
+<p>Nếu máy không có tùy chọn GPIO Force Pwr thì hãy xem cách enable nó ở phần dưới.</p>
+<h3 id="desktop"><strong><em>Desktop</em></strong><a class="headerlink" href="#desktop" title="Permanent link">&para;</a></h3>
+<h4 id="general">General:<a class="headerlink" href="#general" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Discrete Thunderbolt(TM) Support: Enabled.</li>
+<li>TBT Vt-d base security: Disable.</li>
+<li>Thunderbolt Boot Support: Enabled / Boot Once.</li>
+<li>GPIO Force Pwr: Enable.</li>
+<li>Skip PCI OptionRom: Enable.</li>
+<li>Wake from Thunderbolt(TM) Devices: Enable.</li>
+<li>Security Level: SL0-No Security.</li>
+<li>DTBT Controller 0: Enable.</li>
+<li>TBT Host Router: Two port.</li>
+<li>Extra Bus Reserved: Mặc định.</li>
+<li>Reserved Memory: Mặc định.</li>
+<li>Reserved PMemory: Mặc định.</li>
+<li>Reserved I/O: Mặc định.</li>
+</ul>
+<h4 id="asus-600-series">Asus 600 series:<a class="headerlink" href="#asus-600-series" title="Permanent link">&para;</a></h4>
+<ul>
+<li>PCIE Tunneling Over USB4: Disable.</li>
+<li>Discrete Thunderbolt(TM) Support: Enable.</li>
+<li>Wake from Thunderbolt(TM) Devices: Enable.</li>
+<li>Thunderbolt Boot Support: Enable.</li>
+<li>DTBT Go2Sx Command: Enable.</li>
+<li>Windows 10 Thunderbolt support: Enable.</li>
+<li>DTBT Controller 0: Enable.</li>
+<li>TBT Host Router: Enable.</li>
+<li>Extra Bus Reserved: Mặc định.</li>
+<li>Reserved Memory: Mặc định.</li>
+<li>Memory Alignment: Mặc định.</li>
+<li>Reserved PMemory: Mặc định.</li>
+<li>PMemory Alignment: Mặc định.</li>
+<li>Reserved I/O: Mặc định.</li>
+</ul>
+<h4 id="msi">MSI:<a class="headerlink" href="#msi" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Discrete Thunderbolt(TM) Support: Enable.</li>
+<li>Wake from Thunderbolt(TM) Devices: Enable.</li>
+<li>Current Security Level: Enable.</li>
+<li>Native OS Security for TBT: Enable.</li>
+<li>Thunderbolt USB Support: Enable.</li>
+<li>Thunderbolt Boot Support: Enable.</li>
+<li>Titan Ridge Workaround for OSUP: Enable.</li>
+<li>Tbt Dynamic AC/DC L1: Enable.</li>
+<li>GPIO Force Pwr: Enable.</li>
+<li>Wait time in ms after applying Force Pwr: Mặc định.</li>
+<li>GPIO filter: Enable.</li>
+<li>DTBT Controller 0: Enable.</li>
+<li>TBT Host Router: two port</li>
+<li>Extra Bus Reserved: Mặc định.</li>
+<li>Reserved Memory: Mặc định.</li>
+<li>Memory Alignment: Mặc định.</li>
+<li>Reserved PMemory: Mặc định.</li>
+<li>PMemory Alignment: Mặc định.</li>
+<li>Reserved I/O: Mặc định.</li>
+<li>Windows 10 Thunderbolt support: Enable + RTD3</li>
+</ul>
+<h3 id="laptop"><strong><em>Laptop</em></strong><a class="headerlink" href="#laptop" title="Permanent link">&para;</a></h3>
+<h4 id="asusclevo">ASUS/Clevo:<a class="headerlink" href="#asusclevo" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Intel Thunderbolt Technology: Enable.</li>
+<li>Security:</li>
+<li>Unique ID: Trên Laptop đời mới.</li>
+<li>Normal Mode w/o NHI: trên lap cũ hơn như Haswell.</li>
+<li>Thunderbolt Boot Support: Enable.</li>
+<li>Security Level: SL0-No Security.</li>
+<li>Extra Bus Reserved: Mặc định.</li>
+<li>Reserved Memory: Mặc định.</li>
+<li>Reserved PMemory: Mặc định.</li>
+<li>PMemory Alignment: Mặc định.</li>
+<li>Reserved I/O: Mặc định.</li>
+</ul>
+<h4 id="general_1">General:<a class="headerlink" href="#general_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>Intel Thunderbolt Technology: Enable.</p>
+</li>
+<li>
+<p>Discrete Thunderbolt(TM) Support: Enable.</p>
+</li>
+<li>
+<p>TBT Vt-d Base Security: disable</p>
+</li>
+<li>
+<p>Thunderbolt Boot Support: disable</p>
+</li>
+<li>
+<p>Wake from Thunderbolt(TM) Devices: Enable.</p>
+</li>
+<li>
+<p>Security Level:</p>
+</li>
+<li>
+<p>No Security: Đối với hầu hết các loại máy.</p>
+</li>
+<li>
+<p>SL0-No Security: Giống như tùy chọn No Security sử dụng khi không có tùy chọn No Security.</p>
+</li>
+<li>
+<p>Legacy Mode: Thiết bị Legacy.</p>
+</li>
+<li>
+<p>Unique ID: Chỉ áp dụng đối với laptop.</p>
+</li>
+<li>
+<p>One time saved Key: One time saved Key.</p>
+</li>
+<li>
+<p>DP++ only: DP++ only.</p>
+</li>
+<li>
+<p>Normal Mode w/o NHI: Ở trên 1 số laptop cũ như haswell sử dụng tùy chọn này thay cho debug mode.</p>
+</li>
+<li>
+<p>Debug Mode: Ở trên 1 số laptop cũ như haswell sử dụng tùy chọn <code>Normal Mode w/o NH</code> thay cho tùy chọn này.</p>
+</li>
+<li>
+<p>Thunderbolt Usb Support: Enable/ Disable.</p>
+</li>
+<li>
+<p>GPIO Force Pwr: Enable.</p>
+</li>
+<li>
+<p>DTBT Controller 0: Enable.</p>
+</li>
+<li>
+<p>TBT Host Router: Mặc định.</p>
+</li>
+<li>
+<p>Extra Bus Reserved: Mặc định.</p>
+</li>
+<li>
+<p>Reserved Memory: Mặc định.</p>
+</li>
+<li>
+<p>Memory Alignment: Mặc định.</p>
+</li>
+<li>
+<p>Reserved PMemory: Mặc định.</p>
+</li>
+<li>
+<p>PMemory Alignment: Mặc định.</p>
+</li>
+<li>
+<p>Reserved I/O: Mặc định.</p>
+</li>
+<li>
+<p>TBT Root port Selector:</p>
+</li>
+<li>
+<p>Auto Detect: Tự động chọn cổng Thunderbolt.</p>
+</li>
+<li>
+<p>Thunderbolt USB: Nếu Thunderbolt USB hoạt động thì nên chọn tùy chọn này.</p>
+</li>
+<li>
+<p>Thunderbolt(TM) PCI Cache-line size: Mặc định.</p>
+</li>
+<li>
+<p>Wait time in ms after applying Force Pwr: Mặc định.</p>
+</li>
+<li>
+<p>Skip PCI OptionRom: enable</p>
+</li>
+<li>
+<p>Reserve memory per phy slot: Mặc định.</p>
+</li>
+<li>
+<p>Reserve P memory per phy slot: Mặc định.</p>
+</li>
+<li>
+<p>Reserve IO per phy slot: Mặc định.</p>
+</li>
+<li>
+<p>Delay before SX Exit: Mặc định.</p>
+</li>
+<li>
+<p>GPIO Filter: Enable.</p>
+</li>
+<li>
+<p>Enable CLK REQ: Disable.</p>
+</li>
+<li>
+<p>Enable ASPM: Disable.</p>
+</li>
+<li>
+<p>Enable LTR: Disable.</p>
+</li>
+<li>
+<p>Alpine Ridge XHCi WA: Enable.</p>
+</li>
+<li>
+<p>AR XHCI Host Pre-Wake: Enable.</p>
+</li>
+<li>
+<p>AR XHCI Host Active LTR: Mặc định.</p>
+</li>
+<li>
+<p>AR XHCI Host High LTR: Mặc định.</p>
+</li>
+<li>
+<p>AR XHCI Host Medium LTR: Mặc định.</p>
+</li>
+<li>
+<p>AR XHCI Host Low LTR: Mặc định.</p>
+</li>
+</ul>
+<h2 id="enable-gpio-force-pwr">Enable GPIO Force Pwr<a class="headerlink" href="#enable-gpio-force-pwr" title="Permanent link">&para;</a></h2>
+<h3 id="cach-1-dung-uefitool">Cách 1: Dùng UEFITool<a class="headerlink" href="#cach-1-dung-uefitool" title="Permanent link">&para;</a></h3>
+<p>B1: Tải UEFITool <a href="https://github.com/LongSoft/UEFITool/releases">tại đây</a> Không tải version Axx</p>
+<p>B2: Tải file BIOS của các bạn ( định dạng .bin ).</p>
+<p>B3: Mở file BIOS ra bằng UEFITool và nhấn Command + F sau đó search <code>Force Pwr</code> (định dạng là unicode).</p>
+<p>B4: Bạn sẽ nhận được kết quả tìm kiếm ở mục có subtext là <code>DXE driver</code> text là <code>setup</code>.</p>
+<p>B5: Nhấn extra body.</p>
+<p><img alt="/" src="https://www.tonymacx86.com/attachments/screen-shot-2020-06-29-at-13-01-53-png.478421/" /></p>
+<p>B6: Tải <a href="https://github.com/LongSoft/Universal-IFR-Extractor/releases/">Universal-IFR-Extractor</a> và run ở trên Terminal (các run tham khảo <a href="https://heavietnam.ga/2021/10/28/xxxviii-disable-cfg-clock/#Cach_1_Disable_trong_config">XXXVIII. Disable CFG-Clock – Heavietnam February 2022</a>).</p>
+<p><img alt="/" src="https://www.tonymacx86.com/attachments/screen-shot-2020-06-29-at-13-07-03-png.478422/" />B7: Mở file text vừa dump ra và search <code>GPIO3 Force Pwr</code> (mặc định là disable | hoặc search <code>GPIO Force Pwr</code>).</p>
+<p>B8: Nhìn phía trên dòng tìm được:</p>
+<p><img alt="/" src="https://www.tonymacx86.com/attachments/screen-shot-2020-06-29-at-13-12-03-png.478423/" /></p>
+<p>B9: Copy <code>12 06 25 2B 00 00</code> và thay thế bằng <code>12 06 25 2B FF 00</code>.</p>
+<p>B10: Sử dụng hex editor để thay thế (ấn replace on).</p>
+<p><img alt="/" src="https://www.tonymacx86.com/attachments/screen-shot-2020-06-29-at-13-15-32-png.478424/" /></p>
+<p>B11 Save file lại.</p>
+<p>B12: Mở lại file bin ban đầu và ấn <code>replace body</code> sau đó chọn đến file vừa sửa và save lại tiếp theo Reboot.</p>
+<p><img alt="/" src="https://www.tonymacx86.com/attachments/screen-shot-2020-06-29-at-13-17-01-png.478425/" /></p>
+<h3 id="cach-2-dung-driver-tbtforcepowerefi">Cách 2: Dùng Driver TbtForcePower.efi<a class="headerlink" href="#cach-2-dung-driver-tbtforcepowerefi" title="Permanent link">&para;</a></h3>
+<p>B1: Tải <a href="https://github.com/al3xtjames/ThunderboltPkg">TbtForcePower.efi</a>.</p>
+<p>B2: Bỏ file driver vào <code>EFI ==&gt; OC ==&gt; driver</code> hoặc <code>EFI ==&gt; Clover ==&gt; driver ==&gt; UEFI</code>.</p>
+<p>B3: Snapshot lại nếu ở OpenCore.</p>
+<p>B4: Reboot.</p>
+<h5 id="luu-y_1">Lưu ý:<a class="headerlink" href="#luu-y_1" title="Permanent link">&para;</a></h5>
+<p>Đối với 1 số PC thì khi dùng cách 2 sẽ bị Panic bạn phải dùng cách 1.</p>
+<h2 id="hotplug-thunderbolt-3_1">Hotplug Thunderbolt 3<a class="headerlink" href="#hotplug-thunderbolt-3_1" title="Permanent link">&para;</a></h2>
+<h3 id="xac-inh-acpi-path">Xác định ACPI Path<a class="headerlink" href="#xac-inh-acpi-path" title="Permanent link">&para;</a></h3>
+<h4 id="cach-1-dung-ioreg">Cách 1: dùng IOReg<a class="headerlink" href="#cach-1-dung-ioreg" title="Permanent link">&para;</a></h4>
+<p>B1: Tải IOReg <a href="https://github.com/vulgo/IORegistryExplorer">tại đây</a>.</p>
+<p>B2: Cắm Thunderbolt (cắm trước khi mở máy).</p>
+<p>B3: Nhấn Command + F và search Thunderbolt.</p>
+<p><img alt="/" src="https://elitemacx86.com/attachments/screenshot-2020-01-28-at-5-52-53-am-png.2047/" />Ta có thể thấy đường dẫn dẫn tới thunderbolt sẽ là <code>PCI0.RP21.PXSX</code></p>
+<h4 id="cach-2-dung-device-manager">Cách 2: Dùng Device Manager<a class="headerlink" href="#cach-2-dung-device-manager" title="Permanent link">&para;</a></h4>
+<p>B1: Chọn Option Thunderbolt</p>
+<p>B2: Chọn vào mục <code>Details ==&gt; Location Paths</code>.</p>
+<p>B3: Lấy đường dẫn (chi tiết về cách lấy xem ở bài <a href="https://heavietnam.ga/2021/09/29/xxiii-patch-card-doi-hoa-amd/">này</a>).</p>
+<h4 id="luu-y-cho-multiple-cards">Lưu ý cho <strong>Multiple Cards</strong>:<a class="headerlink" href="#luu-y-cho-multiple-cards" title="Permanent link">&para;</a></h4>
+<p>Đối với những máy có nhiều Card Thunderbolt thì bạn sẽ xác định đường dẫn card bằng cách cắm vào từng port trước khi khởi động.</p>
+<p>Ngoài ra để sử dụng Type-C bạn sẽ cần 1 cầu nối trong SSDT Thunderbolt và thường cầu nói đó sẽ là <code>PEGP</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>// ví dụ chúng ta có các đường dẫn là 
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>PCI0.RP21.PXSX
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>PCI0.BR1A.SL01
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>PCI0.BR3A.SL09
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>// khi thêm cầu nối sẽ là 
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>PCI0.RP21.PEGP
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>PCI0.BR1A.PEGP
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>PCI0.BR3A.PEGP
+</code></pre></div>
+<h3 id="lay-mau-ssdt-tu-hackindrom">Lấy mẫu SSDT từ <a href="https://hackindrom.zapto.org/">HackinDrom</a><a class="headerlink" href="#lay-mau-ssdt-tu-hackindrom" title="Permanent link">&para;</a></h3>
+<p>B1: Các bản tải SSDT từ <a href="https://hackindrom.zapto.org/">HackinDrom</a>.</p>
+<p>B2: Các bạn chọn 1 mẫu Thunderbolt Device phù hợp với cấu hình của bạn.</p>
+<p>B3: Đối với những bạn sử dụng Multiple Cards thì hãy chọn vào mục Custom và và định dạng Busid là 0 hoặc 1. Số 0 hoặc 1 chính là Thunderbolt Card thứ nhất của bạn. Ví dụ bạn có 3 Card Thunderbolt nếu card đầu tiên có Busid là 0 thì các card tiếp theo sẽ là 1 và 2. Ngược lại thì Busid của card đầu tiên là 0 thì 2 Vard tiếp theo tương ứng sẽ là 2 và 3.</p>
+<p>B4: Ấn COMPILE.</p>
+<p>B5: Ấn Download.</p>
+<h3 id="thay-oi-uong-dan-cua-ssdt-thunderbolt">Thay đổi đường dẫn của SSDT Thunderbolt<a class="headerlink" href="#thay-oi-uong-dan-cua-ssdt-thunderbolt" title="Permanent link">&para;</a></h3>
+<p>B1: Tìm đường dẫn mặc định của SSDT.</p>
+<p>B2: Ấn Replace.</p>
+<p>B3: Rồi thay bằng đường dẫn bạn đã tìm được ở phần trên ví dụ như thay <code>RP05 to RP21</code>.<img alt="" src="https://imgur.com/9LKnktd.png" /></p>
+<h4 id="luu-y-cho-luu-y-cho-multiple-cards">Lưu ý cho Lưu ý cho <strong>Multiple Cards</strong>:<a class="headerlink" href="#luu-y-cho-luu-y-cho-multiple-cards" title="Permanent link">&para;</a></h4>
+<p>Như đã nói ở trên đối với Multiple Cards thì ta sẽ cần dùng cầu nối nên ta vẫn cần sử dụng Method gốc.</p>
+<p>B1: Thêm cầu nối vào đường dẫn:</p>
+<p><img alt="/" src="https://imgur.com/aR0JH68.png" />B2: Add Method gốc (paste trước dòng method pegp)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Scope (PXSX)
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>            {
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>                Name (_STA, Zero)  // _STA: Status
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>            }
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>// thay method thích hợp
+</code></pre></div>
+<p>B3: Khai báo method vừa Add:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>External (_SB_.PCI0.RP21.PXSX, DeviceObj)   
+</code></pre></div>
+<p>Sau khi hoàn thành sẽ được<br />
+<img alt="/" src="https://imgur.com/zvkylQQ.png" /></p>
+<h2 id="luu-y-cuoi-bai">Lưu ý cuối bài<a class="headerlink" href="#luu-y-cuoi-bai" title="Permanent link">&para;</a></h2>
+<p>Các bạn đừng quên cho SSDT vào EFI ==&gt; OC ==&gt; ACPI hoặc EFI ==&gt; Clover ==&gt; ACPI (nhớ Snapshot nếu ở OpenCore)</p>
+<p>Đối với Multiple Cards. Bạn nên thử bus id cho card đầu tiên là busid 0 và thử tiếp sau đó.</p>
+<p>Để hotplug cho Alpine Ridge Cards thì bạn phải disable THB_C Header.</p>
+<p>Ngoài ra khi patch Multiple Cards có thể sẽ không hiện trong About This Mac đó là vì macOS chưa nhận dạng được chipset của Thunderbolt. Nhưng cũng không cần quan tâm vì mọi chức năng đều hoạt động (1 số chức năng không chạy như kết nối màn 5k)</p>
+<p><strong>Source tham khảo: <a href="https://elitemacx86.com/threads/how-to-enable-thunderbolt-3-hotplug-on-macos.462/">GUIDE – How to Enable Thunderbolt 3 Hotplug on macOS | EliteMacx86 Forum</a> | <a href="https://elitemacx86.com/threads/how-to-enable-thunderbolt-2-thunderbolt-3-and-thunderbolt-4-on-macos.461/">GUIDE – How to Enable ThunderBolt 2, Thunderbolt 3 and Thunderbolt 4 on macOS | EliteMacx86 Forum</a> | <a href="https://www.tonymacx86.com/threads/howto-real-thunderbolt-hotplug-hotswap-on-the-fly.282953/page-3">HowTo: Real Thunderbolt HotPlug/HotSwap on the fly | Page 3 | tonymacx86.com</a></strong></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../Guide_dual_Boot/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Hướng dẫn Dual Boot" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Hướng dẫn Dual Boot
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../Hotpatch_PTS_Wake_TTS/" class="md-footer__link md-footer__link--next" aria-label="Next: Hotpatch PTS Wake TTS" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Hotpatch PTS Wake TTS
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.748e2769.min.js"></script>
+      
+    
+  </body>
+</html>

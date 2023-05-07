@@ -1,0 +1,1825 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.2.11">
+    
+    
+      
+        <title>Cách tạo EFI OpenCore - Hackintosh Documents</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c5ef100.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.9647289d.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cach-tao-efi-opencore" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Hackintosh Documents" class="md-header__button md-logo" aria-label="Hackintosh Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Hackintosh Documents
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cách tạo EFI OpenCore
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Hackintosh Documents" class="md-nav__button md-logo" aria-label="Hackintosh Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Hackintosh Documents
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        content
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Add_device-id_in_amd_kext/" class="md-nav__link">
+        Add device-id vào amd kext
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Backup_and_Restore_with_Time_Machine/" class="md-nav__link">
+        Backup and Restore with Time Machine
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Boot_Arguments/" class="md-nav__link">
+        Boot Arguments
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Boot_without_USB_and_mount_partion_EFI/" class="md-nav__link">
+        Boot không cần USB và mount phân vùng EFI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Config_Laptop_Clarksfield_and_Arrandale/" class="md-nav__link">
+        Config Laptop Clarksfield và Arrandale
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Control_Brightness_External_Display/" class="md-nav__link">
+        Control Brightness cho External Display
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Control_Led_RGB/" class="md-nav__link">
+        Control Led RGB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Convert_Bootloader/" class="md-nav__link">
+        Convert Bootloader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C%C3%A1ch%20x%C3%A1c%20%C4%91%E1%BB%8Bnh%20ph%E1%BA%A7n%20c%E1%BB%A9ng/" class="md-nav__link">
+        Cách xác định phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_CFG-Clock/" class="md-nav__link">
+        Disable CFG-Clock
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_dGPU_Desktop/" class="md-nav__link">
+        Disable dGPU Desktop
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_dgpu_Laptop/" class="md-nav__link">
+        Disable dgpu Laptop
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Emulated_NVRAM/" class="md-nav__link">
+        Emulated NVRAM
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Enable_Trim_For_SSD/" class="md-nav__link">
+        Enable Trim For SSD
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../External_Card_Reader/" class="md-nav__link">
+        Fix Internal/External Card Reader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fake_CPU-ID/" class="md-nav__link">
+        Fake CPU-ID
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix%20_for_slow_AMD_GPU/" class="md-nav__link">
+        Fix for slow AMD GPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Backlight/" class="md-nav__link">
+        Fix Backlight
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Connect_%28HDMI%29/" class="md-nav__link">
+        Fix Connect (HDMI)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Ethernet/" class="md-nav__link">
+        Fix Ethernet
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_HDMI_Audio/" class="md-nav__link">
+        Fix HDMI Audio
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Hotkeys/" class="md-nav__link">
+        Fix Hotkeys
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_RTC_Manual/" class="md-nav__link">
+        Fix RTC Manual
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_RTC_write_issues/" class="md-nav__link">
+        Fix RTC write issues
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Shutdown/" class="md-nav__link">
+        Fix Shut down
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_System_Clocks_on_HEDT/" class="md-nav__link">
+        Fix System Clocks on HEDT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_WiFi_and_Bluetooth/" class="md-nav__link">
+        Fix WiFi và Bluetooth
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_darkwake/" class="md-nav__link">
+        Fix darkwake
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_iServices/" class="md-nav__link">
+        Fix iServices
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_keyboard_wake/" class="md-nav__link">
+        Fix keyboard wake
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_power_management/" class="md-nav__link">
+        Fix power management
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_sleep/" class="md-nav__link">
+        Fix sleep
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_trackpad/" class="md-nav__link">
+        Fix trackpad
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fixing_KASLR/" class="md-nav__link">
+        Fixing KASLR
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GPRW_UPRW_LANC/" class="md-nav__link">
+        GPRW/UPRW/LANC
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ghost_macos/" class="md-nav__link">
+        Ghost macos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Guide_dual_Boot/" class="md-nav__link">
+        Hướng dẫn Dual Boot
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HotPlug_Thunderbolt_3/" class="md-nav__link">
+        HotPlug Thunderbolt 3
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hotpatch_PTS_Wake_TTS/" class="md-nav__link">
+        Hotpatch PTS Wake TTS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Injects_USB_Manual/" class="md-nav__link">
+        Injects USB Manual
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kernel_issue/" class="md-nav__link">
+        Kernel issue
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Map_USB/" class="md-nav__link">
+        Map USB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenCore_Legacy/" class="md-nav__link">
+        OpenCore Legacy
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_AMD_GPU/" class="md-nav__link">
+        Patch Card đồ họa AMD
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_2/" class="md-nav__link">
+        Patch DSDT Phần 2
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_3/" class="md-nav__link">
+        Patch DSDT Phần 3
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_4/" class="md-nav__link">
+        Patch DSDT phần 4
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_GMA_GPU/" class="md-nav__link">
+        Patch GMA GPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_IGPU/" class="md-nav__link">
+        Patch IGPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_NVIDIA_GPU/" class="md-nav__link">
+        Patch Card đồ họa NVIDIA
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_SATA_Controller/" class="md-nav__link">
+        Patch SATA Controller
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_audio_with_AppleALC/" class="md-nav__link">
+        Patch âm thanh với AppleALC
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_audio_with_VoodooHDA/" class="md-nav__link">
+        Patch audio với VoodooHDA
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_dsdt_part_1/" class="md-nav__link">
+        Patch dsdt phần 1
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_pin/" class="md-nav__link">
+        Patch pin
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Resize_EFI/" class="md-nav__link">
+        Resize EFI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SIP_and_Gatekeeper/" class="md-nav__link">
+        SIP và Gatekeeper
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SLE_kext_in_bigsur/" class="md-nav__link">
+        Cách sửa kext S/L/E trên bigsur
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SSDT_recomend/" class="md-nav__link">
+        SSDT recomend
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Scan_policy/" class="md-nav__link">
+        Scan policy
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Some_error_in_bigsur/" class="md-nav__link">
+        Một số lỗi ở xuất hiện ở macOS Big Sur
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Some_error_in_propertree/" class="md-nav__link">
+        1 số lỗi ProperTree
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Turn_on_Backlight_Keyboard/" class="md-nav__link">
+        Turn on Backlight Keyboard
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Update_macOS_and_Bootloader/" class="md-nav__link">
+        Update macOS và Bootloader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Use_SSDT-time_to_Prebuilt%20SSDT/" class="md-nav__link">
+        Dùng SSDT-Time để Prebuilt SSDT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%5BEB%7C%23LOG%3AEXITBS%3ASTART%5D/" class="md-nav__link">
+        [EB|#LOG:EXITBS:START]
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../add_boot_option_in_bios/" class="md-nav__link">
+        Cách thêm Boot vào BIOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creat_GUI/" class="md-nav__link">
+        Tạo GUI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creat_online_usb_%28recovery%29/" class="md-nav__link">
+        Cách tạo bộ cài online (recovery)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Cách tạo EFI OpenCore
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_EFI_Opencore_No_ACPI/" class="md-nav__link">
+        Cách làm EFI Opencore No ACPI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_offline_bootable_without_no_usb/" class="md-nav__link">
+        Cách tạo bộ cài Offline khi không có USB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_usb_offline/" class="md-nav__link">
+        Cách tạo bộ cài offline
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fake_CPU_Name%3Aigpu_name/" class="md-nav__link">
+        Fake iGPU/ CPU Name
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_mod_bios/" class="md-nav__link">
+        Cách mod bios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inject_all_hardware_properties/" class="md-nav__link">
+        Cách inject toàn bộ thông tin phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn_about_hackintosh/" class="md-nav__link">
+        Tìm hiểu về Hackintosh
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn_about_to_hardware/" class="md-nav__link">
+        Tìm hiểu chung về phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../macOS_12_Monterey/" class="md-nav__link">
+        macOS 12: Monterey
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patch_connector_type_force_rgb%3AInject_EDID/" class="md-nav__link">
+        Patch Connect Type/ Force RGB/ Inject EDID
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="cach-tao-efi-opencore">Cách tạo EFI OpenCore<a class="headerlink" href="#cach-tao-efi-opencore" title="Permanent link">&para;</a></h1>
+<h1 id="chuan-bi">Chuẩn bị<a class="headerlink" href="#chuan-bi" title="Permanent link">&para;</a></h1>
+<p>B1: Tải xuống <code>OpenCorePkg</code> <a href="https://github.com/acidanthera/OpenCorePkg/releases">tại đây</a></p>
+<p>B2: Chọn thư mục <code>IA32</code> hoặc <code>X64</code></p>
+<ul>
+<li>&lt; 4GB RAM chọn bản 32bit (IA32)</li>
+<li>
+<blockquote>
+<p>4GB RAM chọn bản 64 bit (X64)</p>
+</blockquote>
+</li>
+</ul>
+<p>B3: các bạn cần loại bỏ 1 số mục và chỉ giữ lại những mục sau đây</p>
+<ul>
+<li>Driver :</li>
+<li>OpenRuntime</li>
+<li><a href="https://github.com/JrCs/CloverGrowerPro/blob/master/Files/HFSPlus/X64/HFSPlus.efi?raw=true">HFSPlus</a></li>
+<li>ResetNvramEntry</li>
+<li>OpenCanopy (nếu dùng <a href="https://heavietnam.ga/2021/09/29/xvii-tao-gui/">gui</a> thì thêm driver này không dùng có thể xoá đi)</li>
+<li>Tool</li>
+<li>Xóa tất cả hoặc chừa lại OpenShell</li>
+<li>OpenCore.efi</li>
+<li>ACPI</li>
+<li>Kext</li>
+<li>Boot</li>
+</ul>
+<p><img alt="" src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-12-at-23.34.21.png?w=1024" /></p>
+<p>B4: Vào file docs và copy file <code>sample.plist</code> sau đó đổi tên nó thành <code>config.plist</code></p>
+<p><img alt="" src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-12-at-23.41.10.png?w=1024" /></p>
+<h2 id="them-cac-kext">Thêm các kext<a class="headerlink" href="#them-cac-kext" title="Permanent link">&para;</a></h2>
+<p>Thêm các kext sau vào EFI ==&gt; OC ==&gt; Kexts</p>
+<h3 id="cac-kext-bat-buoc">Các kext bắt buộc<a class="headerlink" href="#cac-kext-bat-buoc" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/acidanthera/Lilu/releases">Lilu</a> : đây là mục kext vô cùng quan trọng nếu không có nó bạn sẽ không thể boot được</li>
+<li><a href="https://github.com/acidanthera/whatevergreen/releases">WhateverGreen</a> : đây là kext giúp patch đồ họa</li>
+<li><a href="https://github.com/acidanthera/VirtualSMC/releases">VirtualSMC</a> : dùng để mô phỏng SMC, không có nó bạn sẽ không thể boot được</li>
+</ul>
+<h3 id="kext-khong-bat-buoc">Kext không bắt buộc<a class="headerlink" href="#kext-khong-bat-buoc" title="Permanent link">&para;</a></h3>
+<p>Các plugin của VirtualSMC</p>
+<ul>
+<li>
+<p>SMCProcessor.kext : Dùng để theo dõi nhiệu độ CPU (Không áp dụng cho các CPU AMD)</p>
+</li>
+<li>
+<p>SMCSuperIO.kext : Dùng để theo dõi tốc độ quạt (Không áp dụng cho các CPU AMD)</p>
+</li>
+<li>
+<p>SMCLightSensor.kext : Dùng để fix cảm biến ánh sáng</p>
+</li>
+<li>
+<p>SMCBatteryManager.kext : Dùng để hiển thị phần trăm pin</p>
+</li>
+<li>
+<p>SMCDellSensors.kext : Dùng để theo dõi tốc độ quạt trên các máy Dell</p>
+</li>
+</ul>
+<p><a href="https://github.com/acidanthera/AppleALC/releases">AppleALC</a> : dùng để patch âm thanh</p>
+<p>Các Kext về Ethernet xem chi tiết ở bài <a href="https://everythingforhackintosher.wordpress.com/2021/09/09/fix-ethernet/">này</a></p>
+<p>Các Kext về WiFi và Bluetooth xem chi tiết ở bài <a href="https://everythingforhackintosher.wordpress.com/2021/09/09/40/">này</a></p>
+<p><a href="https://bitbucket.org/RehabMan/os-x-usb-inject-all/downloads/">USBInjectAll</a>: Dùng để inject usb</p>
+<p><a href="https://github.com/RehabMan/OS-X-USB-Inject-All">XHCI-unsupported</a>: Cần trên các chipset</p>
+<ul>
+<li>H370</li>
+<li>B360</li>
+<li>H310</li>
+<li>Z390 (Không cần thiết trên Mojave và mới hơn)</li>
+<li>X79</li>
+<li>X99</li>
+<li>Mainboard AsRock (Trên bo mạch chủ Intel cụ thể, bảng B460 / Z490+ không cần nó tuy nhiên)</li>
+</ul>
+<p><a href="https://cdn.discordapp.com/attachments/566705665616117760/566728101292408877/XLNCUSBFix.kext.zip">XLNCUSBFIX</a> : Inject USB trên các máy sử dụng CPU AMD</p>
+<p><a href="https://sourceforge.net/projects/voodoohda/">VoodooHDA</a> : Fix âm thanh trên các máy sử dụng CPU AMD</p>
+<p><a href="https://github.com/acidanthera/bugtracker/files/3703498/AppleMCEReporterDisabler.kext.zip">AppleMCEReporterDisabler</a> : Dùng để vô hiệu hóa AppleMCEReporter trên các máy AMD, yêu cầu macOS 10.15+</p>
+<p><a href="https://github.com/lvs1974/CpuTscSync/releases">CpuTscSync</a> : Cần thiết để đồng bộ hóa TSC trên một số bo mạch chủ HEDT và máy chủ của Intel, nếu không có macOS này có thể cực kỳ chậm hoặc thậm chí không thể vào được.</p>
+<p><a href="https://github.com/acidanthera/VoodooPS2/releases">VoodooPS2</a> : Dùng để patch bàn phím và trackpad</p>
+<p><a href="https://github.com/VoodooSMBus/VoodooRMI/releases/">VoodooRMI</a> : Dùng cho các trackpad Synaptics</p>
+<p><a href="https://github.com/VoodooSMBus/VoodooSMBus/releases">VoodooSMBus</a> : Dùng cho cho các trackpad Elan SMBus</p>
+<p><a href="https://github.com/VoodooI2C/VoodooI2C/releases">VoodooI2C</a>: Dùng cho các trackpad có giao thức I2C</p>
+<p><a href="https://github.com/1Revenger1/ECEnabler/releases">ECEnabler</a> : Dùng để Enable EC (patch pin là chính)</p>
+<p><a href="https://github.com/acidanthera/BrightnessKeys/releases">BrightnessKeys</a> : Dùng để patch hotkeys chỉnh độ sáng</p>
+<p><a href="https://drive.google.com/drive/folders/1r5kISeTwwJ5TmQuk2zzgk14cR5H_V1IG?usp=sharing">SATA-RAID-unsupported.kext</a> : Cho phép chuẩn Raid hoạt động trên mac thay vì ahci</p>
+<ul>
+<li>Dùng cho trường hợp bios không có tuỳ chọn ahci</li>
+</ul>
+<p>Mình khuyến khích bạn thêm 5 kext cơ bản sau đây</p>
+<ul>
+<li>Lilu</li>
+<li>VirtualSMC</li>
+<li>WhateverGreen</li>
+<li>Voodoops2 controller</li>
+<li>Usb injectall</li>
+</ul>
+<p>1 số máy có thể sẽ cần thêm CpuTscSync</p>
+<h2 id="them-cac-file-ssdt">Thêm các file SSDT<a class="headerlink" href="#them-cac-file-ssdt" title="Permanent link">&para;</a></h2>
+<p>Các bạn chỉ cần mỗi <a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-EC-DESKTOP.aml">SSDT-EC</a> để boot. nhưng để hoạt động tốt bạn cần nhiều hơn thế nữa, xem chi tiết về SSDT <a href="https://heavietnam.ga/2022/03/10/ssdt-recomend/">tại đây</a></p>
+<h2 id="chinh-sua-config">Chỉnh sửa config<a class="headerlink" href="#chinh-sua-config" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Mở file <code>config.plist</code> bằng <a href="https://github.com/corpnewt/ProperTree">ProperTree</a> </li>
+<li>Chọn File ⇒ OC Snapshot <img alt="" src="https://lh6.googleusercontent.com/SCT2Gq_55sCnidkxh8Kn2GjrTrkFc-lj0-5v9yBHi_YUZEK9Zy-OLojhKH-VaT_78oZfvBH8gCl-sdLuwnCyBg5RZv4PLtaeWq81Xlg4oRc9G3AiAXvU21W2A0Q8DdcuLZQSH5W8=s0" /></li>
+</ul>
+<p><img alt="" src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-08.23.31.png?w=874" /></p>
+<p>Xem cách xác định phần cứng <a href="https://heavietnam.ga/2022/04/29/cach-xac-dinh-phan-cung/">tại đây</a> sau đó setting config theo hướng dẫn</p>
+<h3 id="intel-desktop">Intel Desktop<a class="headerlink" href="#intel-desktop" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>CODE NAME</th>
+<th>SERIES</th>
+<th>PHÁT HÀNH</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://heavietnam.ga/2022/06/04/cach-tao-efi-desktop/">Yonah, Conroe and Penryn</a></td>
+<td>E8XXX, Q9XXX</td>
+<td>2006-2009</td>
+</tr>
+<tr>
+<td><a href="https://heavietnam.ga/2022/06/06/config-desktop-lynnfield-va-clarkdale/">Lynnfield and Clarkdale</a></td>
+<td>5XX-8XX</td>
+<td>2010</td>
+</tr>
+<tr>
+<td><a href="https://heavietnam.ga/2022/06/07/config-desktop-sandy-bridge/">Sandy Bridge</a></td>
+<td>2XXX</td>
+<td>2011</td>
+</tr>
+<tr>
+<td><a href="https://heavietnam.ga/2022/06/08/config-desktop-ivy-bridge/">Ivy Bridge</a></td>
+<td>3XXX</td>
+<td>2012</td>
+</tr>
+<tr>
+<td><a href="https://heavietnam.ga/2022/06/08/config-desktop-haswell-va-broadwell/">Haswell-Broadwell</a></td>
+<td>4XXX-5XXX</td>
+<td>2013-2014</td>
+</tr>
+<tr>
+<td><a href="https://heavietnam.ga/2022/06/09/config-desktop-skylake/">Skylake</a></td>
+<td>6XXX</td>
+<td>2015-2016</td>
+</tr>
+<tr>
+<td><a href="https://heavietnam.ga/2022/06/09/config-desktop-kaby-lake/">Kaby Lake</a></td>
+<td>7XXX</td>
+<td>2017</td>
+</tr>
+<tr>
+<td><a href="https://heavietnam.ga/2022/06/10/config-desktop-coffee-lake/">Coffee Lake</a></td>
+<td>8XXX-9XXX</td>
+<td>2017-2019</td>
+</tr>
+<tr>
+<td><a href="https://heavietnam.ga/2022/06/10/config-desktop-comet-lake/">Comet Lake</a></td>
+<td>10XXX</td>
+<td>2020</td>
+</tr>
+</tbody>
+</table>
+<h3 id="intel-laptop">Intel Laptop<a class="headerlink" href="#intel-laptop" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>CODE NAME</th>
+<th>SERIES</th>
+<th>PHÁT HÀNH</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://heavietnam.ga/2022/06/13/config-laptop-clarksfield-va-arrandale/">Clarksfield and Arrandale</a></td>
+<td>3XX-9XX</td>
+<td>2010</td>
+</tr>
+<tr>
+<td><a href="https://heavietnam.ga/2022/06/12/config-laptop-sandy-bridge/">Sandy Bridge</a></td>
+<td>2XXX</td>
+<td>2011</td>
+</tr>
+<tr>
+<td><a href="https://heavietnam.ga/2022/06/12/config-laptop-ivy-bridge/">Ivy Bridge</a></td>
+<td>3XXX</td>
+<td>2012</td>
+</tr>
+<tr>
+<td><a href="https://heavietnam.ga/2022/06/12/config-laptop-haswell/">Haswell</a></td>
+<td>4XXX</td>
+<td>2013-2014</td>
+</tr>
+<tr>
+<td><a href="https://heavietnam.ga/2022/06/12/config-laptop-broadwell/">Broadwell</a></td>
+<td>5XXX</td>
+<td>2014-2015</td>
+</tr>
+<tr>
+<td><a href="https://heavietnam.ga/2022/06/12/3279/">Skylake</a></td>
+<td>6XXX</td>
+<td>2015-2016</td>
+</tr>
+<tr>
+<td><a href="https://heavietnam.ga/2022/06/12/config-laptop-kabylake/">Kaby Lake and Amber Lake</a></td>
+<td>7XXX</td>
+<td>2017</td>
+</tr>
+<tr>
+<td><a href="https://heavietnam.ga/2022/06/12/config-laptop-coffee-lake-va-whiskey-lake/">Coffee Lake and Whiskey Lake</a></td>
+<td>8XXX</td>
+<td>2017-2018</td>
+</tr>
+<tr>
+<td><a href="https://heavietnam.ga/2022/06/12/config-laptop-coffee-lake-plus-va-comet-lake/">Coffee Lake Plus and Comet Lake</a></td>
+<td>9XXX-10XXX</td>
+<td>2019-2020</td>
+</tr>
+<tr>
+<td><a href="https://heavietnam.ga/2022/06/12/config-laptop-icelake/">Ice Lake</a></td>
+<td>10XXX</td>
+<td>2019-2020</td>
+</tr>
+</tbody>
+</table>
+<p>Một số setting cho laptop:</p>
+<p><strong>HP</strong>:</p>
+<ul>
+<li>Kernel -&gt; Quirks -&gt; LapicKernelPanic -&gt; True</li>
+<li>Nếu tắt quirk này bạn sẽ bị kernel panic ngay LAPIC</li>
+<li>UEFI -&gt; Quirks -&gt; UnblockFsConnect -&gt; True</li>
+</ul>
+<p><strong>Dell</strong>:</p>
+<p>Cho skylake và mới hơn</p>
+<ul>
+<li>Kernel -&gt; Quirk -&gt; CustomSMBIOSGuid -&gt; True</li>
+<li>PlatformInfo -&gt; UpdateSMBIOSMode -&gt; Custom</li>
+</ul>
+<h2 id="chinh-cai-at-firmware">Chỉnh cài đặt firmware :<a class="headerlink" href="#chinh-cai-at-firmware" title="Permanent link">&para;</a></h2>
+<h3 id="disable">Disable<a class="headerlink" href="#disable" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Fast Boot</p>
+</li>
+<li>
+<p>Secure Boot</p>
+</li>
+<li>
+<p>Serial/COM Port</p>
+</li>
+<li>
+<p>Parallel Port</p>
+</li>
+<li>
+<p>VT-d</p>
+</li>
+<li>
+<p>bạn có thể enable nó nếu bạn set <code>DisableIoMapper</code> là YES</p>
+</li>
+<li>
+<p>CSM</p>
+</li>
+<li>
+<p>Thunderbolt</p>
+</li>
+<li>
+<p>Nếu có thunderbolt thì hãy setting cẩn thận mục này xem chi tiết <a href="https://heavietnam.ga/2022/02/13/hotplug-thunderbolt-3/">tại đây</a></p>
+</li>
+<li>
+<p>Intel SGX</p>
+</li>
+<li>
+<p>Intel Platform Trust</p>
+</li>
+<li>
+<p>CFG Lock (MSR 0xE2 write protection)</p>
+</li>
+<li>
+<p>Nếu là Yonah, Conroe and Penryn thì không cần quan tâm mục này vì chúng không có xcpm</p>
+</li>
+<li>
+<p>nó phải được disable nếu bạn không tìm thấy nó có thể enable <code>AppleCpuPmCfgLock</code> hoặc <code>AppleXcpmCfgLock</code> dưới Kernel -&gt; Quirks xem chi tiết ở mục setting config</p>
+</li>
+</ul>
+<h3 id="enable">Enable<a class="headerlink" href="#enable" title="Permanent link">&para;</a></h3>
+<ul>
+<li>VT-x (Virtualization Support)</li>
+<li>Above 4G decoding</li>
+<li>2020+ BIOS: khi enabling Above4G, Resizable BAR Support có thể trở nên khả dụng ở Z490 và mainboard mới hơn. chắc rằng Booter -&gt; Quirks -&gt; ResizeAppleGpuBars được set là <code>0</code> nếu enable nó.</li>
+<li>Hyper-Threading</li>
+<li>Execute Disable Bit</li>
+<li>EHCI/XHCI Hand-off</li>
+<li>OS type: Windows 8.1/10 UEFI Mode</li>
+<li>DVMT Pre-Allocated(iGPU Memory): 64MB</li>
+<li>SATA Mode: AHCI</li>
+</ul>
+<p>Lưu ý : đối với các CPU Pentium hoặc Celeron, nếu các bạn muốn hackinotsh cần phải có card đồ họa rời mới được hỗ trợ vì các iGPU của dòng này đều tạch và bắt buộc phải fake CPUID, xem chi tiết <a href="https://heavietnam.ga/2021/09/29/xxiv-fake-cpu-id/">ở đây</a></p>
+<p>Lưu ý 2 : Các cpu 11th gen desktop các bạn cần fake cpuid thành gen 10 theo hướng dẫn <a href="https://heavietnam.ga/2021/09/29/xxiv-fake-cpu-id/">tại đây</a></p>
+<h2 id="check-lai-config">Check lại config<a class="headerlink" href="#check-lai-config" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Phân này chỉ mang tính chất tham khảo</p>
+</blockquote>
+<p>B1 : Download OpenCore Configurator <a href="https://mackie100projects.altervista.org/download-opencore-configurator/">tại đây</a></p>
+<p><img alt="" src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-08.51.42.png?w=1024" /></p>
+<p>B2: Bấm tổ hợp phím Option + C</p>
+<p><img alt="" src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-08.52.31.png?w=1024" /></p>
+<p>B3: Chọn đời CPU</p>
+<p><img alt="" src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-08.52.54.png?w=1024" /></p>
+<p>B4: Chọn phiên bản OpenCore</p>
+<p><img alt="" src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-08.53.11.png?w=1024" /></p>
+<p>B5: Bật Drag and Drop</p>
+<p><img alt="" src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-08.53.45.png?w=1024" /></p>
+<p>B6: Kéo file config vào ô</p>
+<p><img alt="" src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-08.54.08.png?w=1024" /></p>
+<p>B7: Bấm <code>Check</code></p>
+<p><img alt="" src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-13-at-08.55.25.png?w=1024" /></p>
+<p>B8: Nhìn vào những mục màu vàng hoặc màu đỏ sau đó check lại các mục theo setting config ở trên</p>
+<h2 id="issue">Issue<a class="headerlink" href="#issue" title="Permanent link">&para;</a></h2>
+<p>Nếu trong quá trình cài đặt có bất cứ lỗi nào bạn có thể tham khảo cách fix lỗi ở đây</p>
+<ul>
+<li><a href="https://heavietnam.ga/su-co-khoi-dong-opencore/">Boot issue</a></li>
+<li>Các vấn đề gặp phải từ khi khởi động usb cho đến trước khi chọn option boot macos</li>
+<li><a href="https://heavietnam.ga/2022/04/09/kernel-issue/">Kernel issue</a></li>
+<li>Các vấn đề gặp phải từ khi chọn option boot macos ở picker cho đến khi vào giao diện cài đặt</li>
+<li><a href="https://heavietnam.ga/2022/04/10/1-so-loi-o-xuat-hien-o-bigsur/">Bigsur issue</a></li>
+<li>Các lỗi đặt trưng ở bigsur</li>
+<li><a href="https://heavietnam.ga/2022/04/10/fix-loi-khong-mount-duoc-file-dmg-tren-monterey/">Monterey issue</a></li>
+<li>Các lỗi đặt trưng ở monterey</li>
+<li><a href="https://heavietnam.ga/2022/04/10/1-so-loi-propertree/">Propertree issue</a></li>
+<li>Các vấn đề gặp phải khi sử dụng propertree</li>
+</ul>
+<p><strong>Source tham khảo: <a href="https://dortania.github.io/OpenCore-Install-Guide/">OpenCore Install Guide (dortania.github.io)</a></strong></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../creat_online_usb_%28recovery%29/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Cách tạo bộ cài online (recovery)" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Cách tạo bộ cài online (recovery)
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../create_EFI_Opencore_No_ACPI/" class="md-footer__link md-footer__link--next" aria-label="Next: Cách làm EFI Opencore No ACPI" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Cách làm EFI Opencore No ACPI
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.748e2769.min.js"></script>
+      
+    
+  </body>
+</html>

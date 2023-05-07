@@ -1,0 +1,1958 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.2.11">
+    
+    
+      
+        <title>Map USB - Hackintosh Documents</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c5ef100.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.9647289d.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#map-usb" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Hackintosh Documents" class="md-header__button md-logo" aria-label="Hackintosh Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Hackintosh Documents
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Map USB
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Hackintosh Documents" class="md-nav__button md-logo" aria-label="Hackintosh Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Hackintosh Documents
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        content
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Add_device-id_in_amd_kext/" class="md-nav__link">
+        Add device-id vào amd kext
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Backup_and_Restore_with_Time_Machine/" class="md-nav__link">
+        Backup and Restore with Time Machine
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Boot_Arguments/" class="md-nav__link">
+        Boot Arguments
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Boot_without_USB_and_mount_partion_EFI/" class="md-nav__link">
+        Boot không cần USB và mount phân vùng EFI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Config_Laptop_Clarksfield_and_Arrandale/" class="md-nav__link">
+        Config Laptop Clarksfield và Arrandale
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Control_Brightness_External_Display/" class="md-nav__link">
+        Control Brightness cho External Display
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Control_Led_RGB/" class="md-nav__link">
+        Control Led RGB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Convert_Bootloader/" class="md-nav__link">
+        Convert Bootloader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C%C3%A1ch%20x%C3%A1c%20%C4%91%E1%BB%8Bnh%20ph%E1%BA%A7n%20c%E1%BB%A9ng/" class="md-nav__link">
+        Cách xác định phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_CFG-Clock/" class="md-nav__link">
+        Disable CFG-Clock
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_dGPU_Desktop/" class="md-nav__link">
+        Disable dGPU Desktop
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_dgpu_Laptop/" class="md-nav__link">
+        Disable dgpu Laptop
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Emulated_NVRAM/" class="md-nav__link">
+        Emulated NVRAM
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Enable_Trim_For_SSD/" class="md-nav__link">
+        Enable Trim For SSD
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../External_Card_Reader/" class="md-nav__link">
+        Fix Internal/External Card Reader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fake_CPU-ID/" class="md-nav__link">
+        Fake CPU-ID
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix%20_for_slow_AMD_GPU/" class="md-nav__link">
+        Fix for slow AMD GPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Backlight/" class="md-nav__link">
+        Fix Backlight
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Connect_%28HDMI%29/" class="md-nav__link">
+        Fix Connect (HDMI)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Ethernet/" class="md-nav__link">
+        Fix Ethernet
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_HDMI_Audio/" class="md-nav__link">
+        Fix HDMI Audio
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Hotkeys/" class="md-nav__link">
+        Fix Hotkeys
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_RTC_Manual/" class="md-nav__link">
+        Fix RTC Manual
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_RTC_write_issues/" class="md-nav__link">
+        Fix RTC write issues
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Shutdown/" class="md-nav__link">
+        Fix Shut down
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_System_Clocks_on_HEDT/" class="md-nav__link">
+        Fix System Clocks on HEDT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_WiFi_and_Bluetooth/" class="md-nav__link">
+        Fix WiFi và Bluetooth
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_darkwake/" class="md-nav__link">
+        Fix darkwake
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_iServices/" class="md-nav__link">
+        Fix iServices
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_keyboard_wake/" class="md-nav__link">
+        Fix keyboard wake
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_power_management/" class="md-nav__link">
+        Fix power management
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_sleep/" class="md-nav__link">
+        Fix sleep
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_trackpad/" class="md-nav__link">
+        Fix trackpad
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fixing_KASLR/" class="md-nav__link">
+        Fixing KASLR
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GPRW_UPRW_LANC/" class="md-nav__link">
+        GPRW/UPRW/LANC
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ghost_macos/" class="md-nav__link">
+        Ghost macos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Guide_dual_Boot/" class="md-nav__link">
+        Hướng dẫn Dual Boot
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HotPlug_Thunderbolt_3/" class="md-nav__link">
+        HotPlug Thunderbolt 3
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hotpatch_PTS_Wake_TTS/" class="md-nav__link">
+        Hotpatch PTS Wake TTS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Injects_USB_Manual/" class="md-nav__link">
+        Injects USB Manual
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kernel_issue/" class="md-nav__link">
+        Kernel issue
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Map USB
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Map USB
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tim-hieu-chung" class="md-nav__link">
+    Tìm hiểu chung
+  </a>
+  
+    <nav class="md-nav" aria-label="Tìm hiểu chung">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-port" class="md-nav__link">
+    Type port
+  </a>
+  
+    <nav class="md-nav" aria-label="Type port">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usb-type-a" class="md-nav__link">
+    Usb type A
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usb-type-mini" class="md-nav__link">
+    Usb type Mini
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usb-type-b" class="md-nav__link">
+    Usb type B
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usb-type-micro" class="md-nav__link">
+    Usb Type Micro
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usb-type-power-b" class="md-nav__link">
+    USB Type Power-B
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usb-type-c" class="md-nav__link">
+    USB Type C
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#special" class="md-nav__link">
+    Special:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tien-hanh" class="md-nav__link">
+    Tiến hành:
+  </a>
+  
+    <nav class="md-nav" aria-label="Tiến hành:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usb-toolbox-version-windows" class="md-nav__link">
+    Usb toolbox version windows:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usb-toolbox-version-macos" class="md-nav__link">
+    Usb toolbox version macos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map-by-hackintool-with-uia_include" class="md-nav__link">
+    Map by hackintool with uia_include
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map-by-hackintool-with-uia_exclude" class="md-nav__link">
+    Map by hackintool with uia_exclude
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenCore_Legacy/" class="md-nav__link">
+        OpenCore Legacy
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_AMD_GPU/" class="md-nav__link">
+        Patch Card đồ họa AMD
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_2/" class="md-nav__link">
+        Patch DSDT Phần 2
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_3/" class="md-nav__link">
+        Patch DSDT Phần 3
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_4/" class="md-nav__link">
+        Patch DSDT phần 4
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_GMA_GPU/" class="md-nav__link">
+        Patch GMA GPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_IGPU/" class="md-nav__link">
+        Patch IGPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_NVIDIA_GPU/" class="md-nav__link">
+        Patch Card đồ họa NVIDIA
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_SATA_Controller/" class="md-nav__link">
+        Patch SATA Controller
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_audio_with_AppleALC/" class="md-nav__link">
+        Patch âm thanh với AppleALC
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_audio_with_VoodooHDA/" class="md-nav__link">
+        Patch audio với VoodooHDA
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_dsdt_part_1/" class="md-nav__link">
+        Patch dsdt phần 1
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_pin/" class="md-nav__link">
+        Patch pin
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Resize_EFI/" class="md-nav__link">
+        Resize EFI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SIP_and_Gatekeeper/" class="md-nav__link">
+        SIP và Gatekeeper
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SLE_kext_in_bigsur/" class="md-nav__link">
+        Cách sửa kext S/L/E trên bigsur
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SSDT_recomend/" class="md-nav__link">
+        SSDT recomend
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Scan_policy/" class="md-nav__link">
+        Scan policy
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Some_error_in_bigsur/" class="md-nav__link">
+        Một số lỗi ở xuất hiện ở macOS Big Sur
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Some_error_in_propertree/" class="md-nav__link">
+        1 số lỗi ProperTree
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Turn_on_Backlight_Keyboard/" class="md-nav__link">
+        Turn on Backlight Keyboard
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Update_macOS_and_Bootloader/" class="md-nav__link">
+        Update macOS và Bootloader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Use_SSDT-time_to_Prebuilt%20SSDT/" class="md-nav__link">
+        Dùng SSDT-Time để Prebuilt SSDT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%5BEB%7C%23LOG%3AEXITBS%3ASTART%5D/" class="md-nav__link">
+        [EB|#LOG:EXITBS:START]
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../add_boot_option_in_bios/" class="md-nav__link">
+        Cách thêm Boot vào BIOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creat_GUI/" class="md-nav__link">
+        Tạo GUI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creat_online_usb_%28recovery%29/" class="md-nav__link">
+        Cách tạo bộ cài online (recovery)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_EFI_OpenCore/" class="md-nav__link">
+        Cách tạo EFI OpenCore
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_EFI_Opencore_No_ACPI/" class="md-nav__link">
+        Cách làm EFI Opencore No ACPI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_offline_bootable_without_no_usb/" class="md-nav__link">
+        Cách tạo bộ cài Offline khi không có USB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_usb_offline/" class="md-nav__link">
+        Cách tạo bộ cài offline
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fake_CPU_Name%3Aigpu_name/" class="md-nav__link">
+        Fake iGPU/ CPU Name
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_mod_bios/" class="md-nav__link">
+        Cách mod bios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inject_all_hardware_properties/" class="md-nav__link">
+        Cách inject toàn bộ thông tin phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn_about_hackintosh/" class="md-nav__link">
+        Tìm hiểu về Hackintosh
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn_about_to_hardware/" class="md-nav__link">
+        Tìm hiểu chung về phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../macOS_12_Monterey/" class="md-nav__link">
+        macOS 12: Monterey
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patch_connector_type_force_rgb%3AInject_EDID/" class="md-nav__link">
+        Patch Connect Type/ Force RGB/ Inject EDID
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tim-hieu-chung" class="md-nav__link">
+    Tìm hiểu chung
+  </a>
+  
+    <nav class="md-nav" aria-label="Tìm hiểu chung">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-port" class="md-nav__link">
+    Type port
+  </a>
+  
+    <nav class="md-nav" aria-label="Type port">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usb-type-a" class="md-nav__link">
+    Usb type A
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usb-type-mini" class="md-nav__link">
+    Usb type Mini
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usb-type-b" class="md-nav__link">
+    Usb type B
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usb-type-micro" class="md-nav__link">
+    Usb Type Micro
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usb-type-power-b" class="md-nav__link">
+    USB Type Power-B
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usb-type-c" class="md-nav__link">
+    USB Type C
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#special" class="md-nav__link">
+    Special:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tien-hanh" class="md-nav__link">
+    Tiến hành:
+  </a>
+  
+    <nav class="md-nav" aria-label="Tiến hành:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usb-toolbox-version-windows" class="md-nav__link">
+    Usb toolbox version windows:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usb-toolbox-version-macos" class="md-nav__link">
+    Usb toolbox version macos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map-by-hackintool-with-uia_include" class="md-nav__link">
+    Map by hackintool with uia_include
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map-by-hackintool-with-uia_exclude" class="md-nav__link">
+    Map by hackintool with uia_exclude
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="map-usb">Map USB<a class="headerlink" href="#map-usb" title="Permanent link">&para;</a></h1>
+<h2 id="tim-hieu-chung">Tìm hiểu chung<a class="headerlink" href="#tim-hieu-chung" title="Permanent link">&para;</a></h2>
+<h3 id="type-port">Type port<a class="headerlink" href="#type-port" title="Permanent link">&para;</a></h3>
+<p>Các conector type của usb được thể hiện dưới dạng decimal nhưng khi các bạn viết ssdt-uiac (hay ssdt-usb,..) thì cần chuyển nó về dạng hex (cách chuyển decimal to hex mình đã hướng dẫn rất nhiều ở các post trước các bạn có thể xem cách chuyển ở trong bài <a href="https://heavietnam.ga/2021/09/29/v-fix-trackpad/">patch i2c</a>)</p>
+<h4 id="usb-type-a">Usb type A<a class="headerlink" href="#usb-type-a" title="Permanent link">&para;</a></h4>
+<ul>
+<li>USB type A 2.0 connector type: 0<br />
+<img alt="" src="https://i.imgur.com/Fr9JZxi.png" /></li>
+<li>usb type A 3.0 connector: 3<br />
+<img alt="" src="https://i.imgur.com/OzyqrsH.png" /></li>
+</ul>
+<h4 id="usb-type-mini">Usb type Mini<a class="headerlink" href="#usb-type-mini" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Usb type mini-ab connector type: 1<br />
+<img alt="" src="https://i.imgur.com/ufoNYJd.png" /></li>
+</ul>
+<h4 id="usb-type-b">Usb type B<a class="headerlink" href="#usb-type-b" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Usb 3 type B connector type: 4<br />
+<img alt="" src="https://i.imgur.com/9eCxIRi.png" /></li>
+</ul>
+<h4 id="usb-type-micro">Usb Type Micro<a class="headerlink" href="#usb-type-micro" title="Permanent link">&para;</a></h4>
+<ul>
+<li>USB 3 Type Micro-B có connector type: 5<br />
+<img alt="" src="https://i.imgur.com/43haG29.png" /></li>
+<li>USB 3 Type Micro-AB có connector type: 6<br />
+<img alt="" src="https://i.imgur.com/0QGX1Cc.png" /></li>
+</ul>
+<h4 id="usb-type-power-b">USB Type Power-B<a class="headerlink" href="#usb-type-power-b" title="Permanent link">&para;</a></h4>
+<ul>
+<li>USB 3 Type Power-B có connector type: 7<br />
+<img alt="" src="https://i.imgur.com/aBC9J8x.gif" /></li>
+</ul>
+<h4 id="usb-type-c">USB Type C<a class="headerlink" href="#usb-type-c" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="https://i.imgur.com/b8fjAvM.png" /></p>
+<ul>
+<li>USB Type C – USB 2 có connector type: 8</li>
+<li>USB Type C -switch có connector type: 9</li>
+<li>USB Type C – without switch có connector type: 10</li>
+</ul>
+<h4 id="special">Special:<a class="headerlink" href="#special" title="Permanent link">&para;</a></h4>
+<ul>
+<li>ExpressCard có connector type: 2</li>
+<li>Internal (cam, bluetooth,…) có connector type: 255</li>
+</ul>
+<h2 id="tien-hanh">Tiến hành:<a class="headerlink" href="#tien-hanh" title="Permanent link">&para;</a></h2>
+<h3 id="usb-toolbox-version-windows">Usb toolbox version windows:<a class="headerlink" href="#usb-toolbox-version-windows" title="Permanent link">&para;</a></h3>
+<p>B1: các bạn tải usbtoolbox <a href="https://github.com/USBToolBox/tool/releases">tại đây</a></p>
+<p><img alt="" src="https://i.imgur.com/f9ieXrf.png" /></p>
+<p>B2: các bạn tải và cài đặt <code>USBToolBox.kext</code> <a href="https://github.com/USBToolBox/kext/releases">tại đây</a></p>
+<p><img alt="" src="https://i.imgur.com/rZxwgf1.png" /></p>
+<p>B3: các bạn cài python <a href="https://www.python.org/downloads/">tại đây</a></p>
+<p>B4: Các bạn chạy tool lên và nhấn D</p>
+<p><img alt="" src="https://i.imgur.com/FelbSzo.png" /></p>
+<p>B5: Các bạn cắm lần lượt usb vào hết các cổng (cổng nào nhận sẽ hiện màu xanh và không nhận sẽ hiện màu trắng)</p>
+<p><img alt="" src="https://i.imgur.com/n4ClFIg.png" /></p>
+<p>B6: nhấn B</p>
+<p>B7: Nhấn S</p>
+<p>Ta sẽ dùng cú pháp T:port:type (đọc ở phần tìm hiểu chung để biết type port ở decimal là gì)</p>
+<p><img alt="" src="https://i.imgur.com/itTke7q.png" /></p>
+<ul>
+<li>Ta thấy port 2 là 2.0 nhưng nhận dạng lại là 3.0 ta sẽ cần set nó lại thành 2.0 <code>T:1:0</code></li>
+<li>Tiếp đó là port 3 ta thấy usb 2.0 nhận dạng là type A tức 2.0 &ndash;&gt; đúng không cần sửa</li>
+<li>port 4 là 2.0 nhận dạng là 2.0 &ndash;&gt; đúng</li>
+<li>port 5 là card mạng nhận dạng internal &ndash;&gt; đúng</li>
+<li>Port 7 là bluetooth nhận dạng internal &ndash;&gt; đúng</li>
+<li>Port 8 là web cam nhận dạng internal &ndash;&gt; đúng</li>
+<li>Port 14 usb 3.0 nhận dạng là 3.0 &ndash;&gt; đúng</li>
+</ul>
+<p>B8: nhấn K</p>
+<p>B9: các bạn sẽ copy kext <code>UTBmap.kext</code> và <code>Usbtoolbox.kext</code> vào EFI &ndash;&gt; OC &ndash;&gt; kext sau đó snaps (hoặc EFI &ndash;&gt; clover &ndash;&gt; kext &ndash;&gt; other)</p>
+<p>B10: reboot</p>
+<h3 id="usb-toolbox-version-macos">Usb toolbox version macos<a class="headerlink" href="#usb-toolbox-version-macos" title="Permanent link">&para;</a></h3>
+<p>B1: tải usbtoolbox <a href="https://github.com/USBToolBox/tool/releases">tại đây</a></p>
+<p><img alt="" src="https://i.imgur.com/q4zUsBP.png" /></p>
+<p>B2: tải và cài đặt <code>USBToolBox.kext</code> và <code>UTBDefault.kext</code> <a href="https://github.com/USBToolBox/kext">tại đây</a></p>
+<p><img alt="" src="https://i.imgur.com/Mfatjy6.png" /></p>
+<p>B3: chạy tool vừa tại về và nhấn D</p>
+<p><img alt="" src="https://i.imgur.com/uySyTsf.png" /></p>
+<p>B4: các bạn cắm lần lược usb vào các cổng (các cổng nhận sẽ hiện màu xanh)</p>
+<p><img alt="" src="https://i.imgur.com/zRyRaKs.png" /></p>
+<p>B5: nhấn B</p>
+<p><img alt="" src="https://i.imgur.com/9p5F7X6.png" /></p>
+<p>B6: nhấn S</p>
+<p>sử dụng cú pháp T:port:type để chọn type cho port (xem ở phần tìm hiểu chung để biết type phù hợp)</p>
+<p><img alt="" src="https://i.imgur.com/qTwcdnA.png" /></p>
+<p>Do mình không kiếm được 1 máy chưa map usb nên các bạn xem cú pháp và áp dụng vào máy các bạn</p>
+<ul>
+<li>Port 1 là 1 hub device nhận dạng internal &ndash;&gt; đúng</li>
+<li>Port 2 là cam và bluetooth nhận dạng là internal &ndash;&gt; đúng</li>
+<li>Port 3 là usb 2.0 nhận dạng type A tức 2.0 &ndash;&gt; đúng</li>
+<li>Port 4 là usb 3.0 nhận dạng là 3.0 &ndash;&gt; đúng</li>
+</ul>
+<p>B7: nhấn K</p>
+<p><img alt="" src="https://i.imgur.com/UvRqJxF.png" /></p>
+<p><img alt="" src="https://i.imgur.com/xFt1P3u.png" /></p>
+<p>B8: Bỏ kext <code>UTBmap.kext</code> và xóa kext <code>UTBDefault.kext</code> sau đó snaps</p>
+<p>B9: save và reboot</p>
+<h3 id="map-by-hackintool-with-uia_include">Map by hackintool with uia_include<a class="headerlink" href="#map-by-hackintool-with-uia_include" title="Permanent link">&para;</a></h3>
+<p>B1: tải kext usbinjectall <a href="https://github.com/daliansky/OS-X-USB-Inject-All">tại đây</a></p>
+<p>B2: Các bạn tiến hành nhìn vào mục type của controller trong tab usb hackintool</p>
+<p><img alt="" src="https://i.imgur.com/2a13Ghj.png" /></p>
+<p><img alt="" src="https://i.imgur.com/nemXgWt.png" /></p>
+<p>Nếu controller của bạn có type khác với</p>
+<ul>
+<li>EH01</li>
+<li>EH02</li>
+<li>XHCI</li>
+<li>XHC</li>
+</ul>
+<p>Thì bạn sẽ cần rename chúng thành các tên tương ứng. Một số rename thường gặp là</p>
+<ul>
+<li><code>EHC1 to EH01</code></li>
+<li><code>EHC2 to EH02</code></li>
+<li><code>XHC1 to XHCI</code></li>
+</ul>
+<p>Trường hợp trong DSDT tên XHCI đã được sử dụng thì các bạn có thể rename là <code>XHC1 to XHC_</code></p>
+<p>Xem chi tiết hướng dẫn add patch rename <a href="https://heavietnam.ga/2021/09/29/xxviii-patch-dsdt-phan-3/">tại đây</a> mẫu patch rename xem <a href="https://www.mediafire.com/file/dkclyfcox4jay60/Heavietnam_usb_rename.plist/file">tại đây</a></p>
+<p>Có trường hợp DSDT dã sử dụng cả <code>XHCI</code> và <code>XHC</code> khi này các bạn sẽ tiến hành rename <code>XHCI</code> thành <code>XHC2</code> và rename controller thành <code>XHCI</code></p>
+<p>B3: reboot</p>
+<p>B4: Các bạn cắm usb vào port usb 2.0</p>
+<p><img alt="" src="https://i.imgur.com/7TdvZo4.png" /></p>
+<p>B5: add boot-arg <code>-uia_exclude_ss uia_include=XX</code> (thay XX bằng các port usb 2.0)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>-uia_exclude_ss uia_include=PR11,PR21,HP21,HP23,HS01,HS02
+</code></pre></div>
+<p>B6: reboot</p>
+<p>B7: cắm tiếp usb 2.0 vào các port 2.0 sau đó xóa hết những port không xanh (các usb khi đã nhận có màu xanh)</p>
+<p>B8: add boot-arg <code>-uia_exclude_hs</code> và xóa boot-arg <code>-uia_exclude_ss</code></p>
+<p>B9: reboot</p>
+<p>B10: cắm các port usb 3.0 và type C vào sau đó tiếp tục xóa các port không xanh</p>
+<p>B11: điều chỉnh type các port</p>
+<ul>
+<li>Bluetooth và web cam set là internal</li>
+<li>usb 2.0 set là 2.0</li>
+<li>Usb 3.0 set là 3.0</li>
+<li>type C</li>
+<li>Nếu mà nhận cùng là HSxx/SSxx(hs03/ss03) thì set là TypeC+Sw</li>
+<li>Ngược lại nếu 2 port nhận khác thì set là TypeC</li>
+</ul>
+<p>B12: ấn export</p>
+<ul>
+<li>Có thể sử dụng ssdt-uiac kèm usb injectall.kext</li>
+<li>Hoặc usbport.kext</li>
+</ul>
+<p>B13: copy ssdt-uiac vào EFI &ndash;&gt; OC &ndash;&gt; ACPI (EFI &ndash;&gt; Clover &ndash;&gt; ACPI &ndash;&gt; Patched) hoặc usbport.kext vào EFI &ndash;&gt; OC &ndash;&gt; kext (EFI &ndash;&gt; Clover &ndash;&gt; kext &ndash;&gt; other)</p>
+<p>B14: snaps nếu là OC và reboot</p>
+<h3 id="map-by-hackintool-with-uia_exclude">Map by hackintool with uia_exclude<a class="headerlink" href="#map-by-hackintool-with-uia_exclude" title="Permanent link">&para;</a></h3>
+<p>B1: Cắm 1 thiết bị USB 2.0 vào tất cả cổng trong hệ thống (mở Hackintool, chọn tab <code>USB</code>)</p>
+<p>B2: Ở đây các cổng thực sẽ hiện màu xanh các bạn hãy ghi nhớ phần name của các cổng ko hiện xanh ( có thể gh‌i tên các cổng đây ra )</p>
+<p>B3: các bạ‌n thêm đoạn code sau vào boot-arg </p>
+<p><code>uia_exclude=“tên các cổng không hiện xanh”</code> ( khi viết code không có dấu “ ”) </p>
+<p>Đây là đoạn code của mình sau khi viết ra các bạn nhớ thêm vào boot-arg nhé</p>
+<p><img alt="" src="https://lh4.googleusercontent.com/gYzSUtlhSnlAD_u4tQC2GKCo0D2DGhFK9AzBzJXJOyFol9Z9bgyOdLflgc2jDY2Tk2v8gnN7DSR4kudYjRbD_LCAICVxfqozFxelTYS0QMVJgTGlqgzeg7YiUvizva_9Na2O2ggj=s0" /></p>
+<p><strong>B4</strong>: Restart</p>
+<p><strong>B5</strong>: Các bạn cắm 1 thiết bị USB 3.0 và USB Type-C vào tất cả cá‌c cổng trên hệ thống </p>
+<p><strong>B</strong>6: Các bạn sửa lại đoạn code trên theo đúng với hiện tại ( loại bỏ 1 số cổng vừa hiện xanh trong code ) tiếp các bạn xóa đoạn code ở phần 1 đi và dán đoạn code mới vào boot-arg </p>
+<p><strong>B</strong>7: Restart</p>
+<p>B8: mở và cắm các usb 2.0 vào các cổng 2.0 usb 3.0 vào các cổng 3.0 sau đó ấn dấu <img alt="" src="https://i.imgur.com/K3uqfX7.png" /> để loại bỏ các port không xanh (port rỗng)</p>
+<p>B9: Sau khi các bạn đã làm xong cả 2 phần trên thì hãy điều chỉnh lại loại cổng trong hackintool cho đúng nhé </p>
+<ul>
+<li>Bluetooth và web cam set là internal</li>
+<li>usb 2.0 set là 2.0</li>
+<li>Usb 3.0 set là 3.0</li>
+<li>type C</li>
+<li>Nếu mà nhận cùng là HSxx/SSxx(hs03/ss03) thì set là TypeC+Sw</li>
+<li>Ngược lại nếu 2 port nhận khác thì set là TypeC</li>
+</ul>
+<p>Đây là của mình sau khi điều chỉnh xong:</p>
+<p><img alt="" src="https://lh4.googleusercontent.com/-CcjUexMrlgpj8X1LhxCbmgVSCXtDBYSAM94AVXohQJvqMvWvZlo3qt9UyoRvXD835h-xQJV77L1P6EAsyaqKWpOhzzhNlpycuASsEBbKDDNM6gxA48hGbMnw6_FzviyrdpSKD4h=s0" /></p>
+<p>B10: ấn export</p>
+<ul>
+<li>Có thể sử dụng ssdt-uiac kèm usb injectall.kext</li>
+<li>Hoặc usbport.kext</li>
+</ul>
+<p>B11: copy ssdt-uiac vào EFI &ndash;&gt; OC &ndash;&gt; ACPI (EFI &ndash;&gt; Clover &ndash;&gt; ACPI &ndash;&gt; Patched) hoặc usbport.kext vào EFI &ndash;&gt; OC &ndash;&gt; kext (EFI &ndash;&gt; Clover &ndash;&gt; kext &ndash;&gt; other)</p>
+<p>B12: snaps nếu là OC và reboot</p>
+<p><strong>Lưu ý: USB 3.0 type A và USB type C xuất ra 2 port là 2.0 và 3.0. Lưu ý cắm usb 2.0 và usb 3.0 lần lược vào USB 3.0 type A và USB type C</strong></p>
+<p><strong>Lưu ý 2: Sau khia add file đã xuất từ hackitool các bạn có thể xóa code ở boot-arg</strong></p>
+<p><strong>Lưu ý 3: đối với usbtoolbox ở mac thì sẽ không có khả năng tiên đoán port các bạn phải tự set bằng tay. Còn đối với windows có khả năng tiên đoán port các bạn có thể bỏ qua bước set port bằng tay và trực tiếp build kext</strong></p>
+<p><strong>Lưu ý 4: Khi map usb bằng usbtoolbox 1 số controller có thể sẽ không nhận. Biện pháp khắc phục là bạn sẽ cần load kext <a href="https://github.com/RehabMan/OS-X-USB-Inject-All">xhci-unsupported</a> chung với kext usb vừa map</strong></p>
+<blockquote>
+<p>Cách để biết usb controller của bạn có cần kext XHCI-unsupported.kext hay không</p>
+</blockquote>
+<ul>
+<li>B1: mở hackintool vào tab usb chú ý và vendor id và device id</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/WgIjlzQ.png" /></p>
+<ul>
+<li>B2: nếu bạn có vendor id là <code>8086</code> và device id là 1 trong những id sau:</li>
+<li>8D31</li>
+<li>A2AF</li>
+<li>A36D</li>
+<li>9DED</li>
+</ul>
+<p>Thì bạn sẽ cần thêm kext trên. Đối với những bạn chưa boot được vào macos thì có thể xác định vendor-id và device-id theo hướng dẫn <a href="https://heavietnam.ga/2022/04/29/cach-xac-dinh-phan-cung/">tại đây</a></p>
+<p><strong>Lưu ý 5: các bạn hoàn toàn có thể dựa vào cấu trúc của ssdt-uiac để tự map usb bằng ssdt manual (mình thấy nó không cần thiết nên sẽ không hướng dẫn)</strong></p>
+<p><strong>Source tham khảo: <a href="https://github.com/USBToolBox/tool">USBToolBox/tool: the USBToolBox tool (github.com)</a> | <a href="https://github.com/USBToolBox/tool/blob/master/TYPES.md">tool/TYPES.md at master · USBToolBox/tool (github.com)</a> | <a href="https://www.olarila.com/topic/14220-hackintosh-usb-port-mapping-guide-2021-2022-mojave-catalina-bigsur-monterey/">Hackintosh USB Port Mapping Guide 2021 / 2022 – Mojave – Catalina – BigSur – Monterey – Guides and Tutorials – Olarila</a> | <a href="https://github.com/headkaze/Hackintool">headkaze/Hackintool: The Swiss army knife of vanilla Hackintoshing (github.com)</a></strong></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../Kernel_issue/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kernel issue" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Kernel issue
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../OpenCore_Legacy/" class="md-footer__link md-footer__link--next" aria-label="Next: OpenCore Legacy" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              OpenCore Legacy
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.748e2769.min.js"></script>
+      
+    
+  </body>
+</html>

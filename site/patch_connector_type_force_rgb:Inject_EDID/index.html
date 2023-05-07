@@ -1,0 +1,1818 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.2.11">
+    
+    
+      
+        <title>Patch Connect Type/ Force RGB/ Inject EDID - Hackintosh Documents</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c5ef100.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.9647289d.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#patch-connect-type-force-rgb-inject-edid" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Hackintosh Documents" class="md-header__button md-logo" aria-label="Hackintosh Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Hackintosh Documents
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Patch Connect Type/ Force RGB/ Inject EDID
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Hackintosh Documents" class="md-nav__button md-logo" aria-label="Hackintosh Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Hackintosh Documents
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        content
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Add_device-id_in_amd_kext/" class="md-nav__link">
+        Add device-id vào amd kext
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Backup_and_Restore_with_Time_Machine/" class="md-nav__link">
+        Backup and Restore with Time Machine
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Boot_Arguments/" class="md-nav__link">
+        Boot Arguments
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Boot_without_USB_and_mount_partion_EFI/" class="md-nav__link">
+        Boot không cần USB và mount phân vùng EFI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Config_Laptop_Clarksfield_and_Arrandale/" class="md-nav__link">
+        Config Laptop Clarksfield và Arrandale
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Control_Brightness_External_Display/" class="md-nav__link">
+        Control Brightness cho External Display
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Control_Led_RGB/" class="md-nav__link">
+        Control Led RGB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Convert_Bootloader/" class="md-nav__link">
+        Convert Bootloader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C%C3%A1ch%20x%C3%A1c%20%C4%91%E1%BB%8Bnh%20ph%E1%BA%A7n%20c%E1%BB%A9ng/" class="md-nav__link">
+        Cách xác định phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_CFG-Clock/" class="md-nav__link">
+        Disable CFG-Clock
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_dGPU_Desktop/" class="md-nav__link">
+        Disable dGPU Desktop
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_dgpu_Laptop/" class="md-nav__link">
+        Disable dgpu Laptop
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Emulated_NVRAM/" class="md-nav__link">
+        Emulated NVRAM
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Enable_Trim_For_SSD/" class="md-nav__link">
+        Enable Trim For SSD
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../External_Card_Reader/" class="md-nav__link">
+        Fix Internal/External Card Reader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fake_CPU-ID/" class="md-nav__link">
+        Fake CPU-ID
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix%20_for_slow_AMD_GPU/" class="md-nav__link">
+        Fix for slow AMD GPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Backlight/" class="md-nav__link">
+        Fix Backlight
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Connect_%28HDMI%29/" class="md-nav__link">
+        Fix Connect (HDMI)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Ethernet/" class="md-nav__link">
+        Fix Ethernet
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_HDMI_Audio/" class="md-nav__link">
+        Fix HDMI Audio
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Hotkeys/" class="md-nav__link">
+        Fix Hotkeys
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_RTC_Manual/" class="md-nav__link">
+        Fix RTC Manual
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_RTC_write_issues/" class="md-nav__link">
+        Fix RTC write issues
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Shutdown/" class="md-nav__link">
+        Fix Shut down
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_System_Clocks_on_HEDT/" class="md-nav__link">
+        Fix System Clocks on HEDT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_WiFi_and_Bluetooth/" class="md-nav__link">
+        Fix WiFi và Bluetooth
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_darkwake/" class="md-nav__link">
+        Fix darkwake
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_iServices/" class="md-nav__link">
+        Fix iServices
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_keyboard_wake/" class="md-nav__link">
+        Fix keyboard wake
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_power_management/" class="md-nav__link">
+        Fix power management
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_sleep/" class="md-nav__link">
+        Fix sleep
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_trackpad/" class="md-nav__link">
+        Fix trackpad
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fixing_KASLR/" class="md-nav__link">
+        Fixing KASLR
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GPRW_UPRW_LANC/" class="md-nav__link">
+        GPRW/UPRW/LANC
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ghost_macos/" class="md-nav__link">
+        Ghost macos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Guide_dual_Boot/" class="md-nav__link">
+        Hướng dẫn Dual Boot
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HotPlug_Thunderbolt_3/" class="md-nav__link">
+        HotPlug Thunderbolt 3
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hotpatch_PTS_Wake_TTS/" class="md-nav__link">
+        Hotpatch PTS Wake TTS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Injects_USB_Manual/" class="md-nav__link">
+        Injects USB Manual
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kernel_issue/" class="md-nav__link">
+        Kernel issue
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Map_USB/" class="md-nav__link">
+        Map USB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenCore_Legacy/" class="md-nav__link">
+        OpenCore Legacy
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_AMD_GPU/" class="md-nav__link">
+        Patch Card đồ họa AMD
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_2/" class="md-nav__link">
+        Patch DSDT Phần 2
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_3/" class="md-nav__link">
+        Patch DSDT Phần 3
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_4/" class="md-nav__link">
+        Patch DSDT phần 4
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_GMA_GPU/" class="md-nav__link">
+        Patch GMA GPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_IGPU/" class="md-nav__link">
+        Patch IGPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_NVIDIA_GPU/" class="md-nav__link">
+        Patch Card đồ họa NVIDIA
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_SATA_Controller/" class="md-nav__link">
+        Patch SATA Controller
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_audio_with_AppleALC/" class="md-nav__link">
+        Patch âm thanh với AppleALC
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_audio_with_VoodooHDA/" class="md-nav__link">
+        Patch audio với VoodooHDA
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_dsdt_part_1/" class="md-nav__link">
+        Patch dsdt phần 1
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_pin/" class="md-nav__link">
+        Patch pin
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Resize_EFI/" class="md-nav__link">
+        Resize EFI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SIP_and_Gatekeeper/" class="md-nav__link">
+        SIP và Gatekeeper
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SLE_kext_in_bigsur/" class="md-nav__link">
+        Cách sửa kext S/L/E trên bigsur
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SSDT_recomend/" class="md-nav__link">
+        SSDT recomend
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Scan_policy/" class="md-nav__link">
+        Scan policy
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Some_error_in_bigsur/" class="md-nav__link">
+        Một số lỗi ở xuất hiện ở macOS Big Sur
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Some_error_in_propertree/" class="md-nav__link">
+        1 số lỗi ProperTree
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Turn_on_Backlight_Keyboard/" class="md-nav__link">
+        Turn on Backlight Keyboard
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Update_macOS_and_Bootloader/" class="md-nav__link">
+        Update macOS và Bootloader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Use_SSDT-time_to_Prebuilt%20SSDT/" class="md-nav__link">
+        Dùng SSDT-Time để Prebuilt SSDT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%5BEB%7C%23LOG%3AEXITBS%3ASTART%5D/" class="md-nav__link">
+        [EB|#LOG:EXITBS:START]
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../add_boot_option_in_bios/" class="md-nav__link">
+        Cách thêm Boot vào BIOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creat_GUI/" class="md-nav__link">
+        Tạo GUI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creat_online_usb_%28recovery%29/" class="md-nav__link">
+        Cách tạo bộ cài online (recovery)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_EFI_OpenCore/" class="md-nav__link">
+        Cách tạo EFI OpenCore
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_EFI_Opencore_No_ACPI/" class="md-nav__link">
+        Cách làm EFI Opencore No ACPI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_offline_bootable_without_no_usb/" class="md-nav__link">
+        Cách tạo bộ cài Offline khi không có USB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_usb_offline/" class="md-nav__link">
+        Cách tạo bộ cài offline
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fake_CPU_Name%3Aigpu_name/" class="md-nav__link">
+        Fake iGPU/ CPU Name
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_mod_bios/" class="md-nav__link">
+        Cách mod bios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inject_all_hardware_properties/" class="md-nav__link">
+        Cách inject toàn bộ thông tin phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn_about_hackintosh/" class="md-nav__link">
+        Tìm hiểu về Hackintosh
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn_about_to_hardware/" class="md-nav__link">
+        Tìm hiểu chung về phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../macOS_12_Monterey/" class="md-nav__link">
+        macOS 12: Monterey
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Patch Connect Type/ Force RGB/ Inject EDID
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Patch Connect Type/ Force RGB/ Inject EDID
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#patch-connect-type" class="md-nav__link">
+    Patch Connect Type:
+  </a>
+  
+    <nav class="md-nav" aria-label="Patch Connect Type:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chuan-bi" class="md-nav__link">
+    Chuẩn bị
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tien-hanh" class="md-nav__link">
+    Tiến hành
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#force-rgb" class="md-nav__link">
+    Force RGB:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#injects-edid" class="md-nav__link">
+    Injects EDID:
+  </a>
+  
+    <nav class="md-nav" aria-label="Injects EDID:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cach-1-dung-hackintool" class="md-nav__link">
+    Cách 1: Dùng Hackintool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cach-2-dung-one-key-hidpi" class="md-nav__link">
+    Cách 2: Dùng One-Key-HIDPI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cach-3-dump-edid-bang-windows" class="md-nav__link">
+    Cách 3: Dump EDID bằng Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cach-4-dung-ioreg" class="md-nav__link">
+    Cách 4: Dùng IOReg
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#patch-connect-type" class="md-nav__link">
+    Patch Connect Type:
+  </a>
+  
+    <nav class="md-nav" aria-label="Patch Connect Type:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chuan-bi" class="md-nav__link">
+    Chuẩn bị
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tien-hanh" class="md-nav__link">
+    Tiến hành
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#force-rgb" class="md-nav__link">
+    Force RGB:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#injects-edid" class="md-nav__link">
+    Injects EDID:
+  </a>
+  
+    <nav class="md-nav" aria-label="Injects EDID:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cach-1-dung-hackintool" class="md-nav__link">
+    Cách 1: Dùng Hackintool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cach-2-dung-one-key-hidpi" class="md-nav__link">
+    Cách 2: Dùng One-Key-HIDPI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cach-3-dump-edid-bang-windows" class="md-nav__link">
+    Cách 3: Dump EDID bằng Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cach-4-dung-ioreg" class="md-nav__link">
+    Cách 4: Dùng IOReg
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="patch-connect-type-force-rgb-inject-edid">Patch Connect Type/ Force RGB/ Inject EDID<a class="headerlink" href="#patch-connect-type-force-rgb-inject-edid" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>Nói chung đây là 1 bài hướng dẫn fix lỗi lệch màu khi xuất màn hình.</p>
+</blockquote>
+<h2 id="patch-connect-type"><strong><em>Patch Connect Type:</em></strong><a class="headerlink" href="#patch-connect-type" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Phần này mình dành cho các bạn nào khi xuất HDMI bị lệch màu. </p>
+</blockquote>
+<h3 id="chuan-bi">Chuẩn bị<a class="headerlink" href="#chuan-bi" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/khronokernel/IORegistryClone/blob/master/ioreg-302.zip">IOReg</a> </li>
+</ul>
+<blockquote>
+<p>hoặc <a href="https://github.com/headkaze/Hackintool/releases">Hackintool</a></p>
+</blockquote>
+<ul>
+<li><a href="https://github.com/corpnewt/ProperTree">ProperTree</a></li>
+</ul>
+<h3 id="tien-hanh">Tiến hành<a class="headerlink" href="#tien-hanh" title="Permanent link">&para;</a></h3>
+<p>B1: Cắm HDMI vào và mở <code>IOReg</code> lên bạn sẽ tìm đến mục <code>IGPU</code> </p>
+<p>B2: Tìm đến mục <code>IGPU@2</code> ở đây màn hình của Laptop sẽ chứa <code>AppleBacklightDisplay</code> còn cắm màn hình rời sẽ chứa <code>AppleDisplay</code></p>
+<p><img alt="" src="https://lh4.googleusercontent.com/zBcWFoFm6MX6A_IMIWLAkcWhS1G9hdS7LoSjsUpydhFQy9QIjigI5YkDVKCfwlqf-dq37gvmcXh3XwgyYJv2cElE9K7kPYe8US0eMV4mMorKVxJsXH756sa-GB0pS5Cz0iCIaWzI=s0" /></p>
+<blockquote>
+<p>sau khi cắm màn rời.</p>
+</blockquote>
+<p>Hoặc các bạn có thể dùng Hackintool để xác định: (chỉ dùng cho Card On)</p>
+<p>B1: Mở Hackintool chuyển tới tab <code>Patch ⇒ Connect</code></p>
+<p>B2: Xác định index màn các bạn đang dùng sẽ có màu xanh khi cắm màn rời sẽ có màu đỏ:</p>
+<p><img alt="" src="https://imgur.com/I9nmJAn.png" /></p>
+<blockquote>
+<p>hình ảnh chỉ mang tính chất minh hoạ nên nếu các thông số có không khớp nhau mong các bạn thông cảm</p>
+</blockquote>
+<p>B3: Xác định conX ở đây các bạn sẽ quan tâm đến mục Connector Info ta có như sau theo thứ tự là con0, con1, con2 v.v từ trên xuống dưới.</p>
+<p>B4: Các bạn dựa vào đây để xác định type cho cổng: </p>
+<p><img alt="" src="https://lh6.googleusercontent.com/ZpmL2YsMwBW708xu1KWzTr-XxC4q1M70RBU07LmYUf0vQDNvZfZwuVisEoBfjeHeUrts35Zvm6bmy6T4NLsVpJnXP4cxwJzzZqPNGVLS1zEzZw5oVnyDmgGDRymQBGuoL602XTYm=s0" /></p>
+<p>B5: Xác định các code cần cần thiết:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>framebuffer-patch-enable | data | 01000000
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>framebuffer-conX-enable |data | 01000000
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>framebuffer-conX-type | data | 00080000 (ở đây mình sử dụng cổng hdmi)
+</code></pre></div>
+<p>B5: Thêm các code này vào dòng </p>
+<p><code>DeviceProperties -&gt; Add -&gt; PciRoot(0x0)/Pci(0x2,0x0)</code></p>
+<blockquote>
+<p>sau khi add các bạn sẽ được như hình</p>
+</blockquote>
+<p><img alt="" src="https://lh4.googleusercontent.com/hEKHXfqUx6nMILDAEEZQaEF1syvUArZi_zyk75qIA1I4W64RiOuIHd9uuL7_s8gR3Tx8-QS-tOkC-uO5g3wWdJzzTYgBPypnYcYHEO8jR-cxBccbYWOkLsGRWFFive0Z9i5n8dJu=s0" /></p>
+<p>B6: Save và Reboot. </p>
+<p><strong>Lưu ý: Nguồn tham khảo</strong> <a href="https://dortania.github.io/OpenCore-Post-Install/gpu-patching/intel-patching/connector.html"><strong>Các loại đầu nối vá lỗi | OpenCore Sau cài đặt (dortania.github.io)</strong></a> <strong>|</strong> <a href="https://hackintosh.vn/driver-audio#hdmisound"><strong>Cài driver âm thanh, đừng để Hackintosh của bạn im lặng mãi!!!</strong></a> </p>
+<h2 id="force-rgb"><strong><em>Force RGB:</em></strong><a class="headerlink" href="#force-rgb" title="Permanent link">&para;</a></h2>
+<p>Sử dụng cách này khi màn của bạn bị như hình </p>
+<blockquote>
+<p>thường đi kèm với Injects EDID</p>
+</blockquote>
+<p><img alt="" src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-11-at-11.47.18.png?w=603" /></p>
+<p>B1: Các bạn tải file <a href="https://gist.github.com/adaugherity/7435890">tại đây</a>. </p>
+<p>B2: ​​Kéo file vào Terminal và nhấn Enter. Lưu ý lúc nãy các bạn hãy chắc chắn là đã cắm màn ngoài nếu chưa cắm thì Terminal sẽ báo lại như sau: </p>
+<p><img alt="" src="https://lh5.googleusercontent.com/V7--wurPh9a71-GYxKFQ7UgXAmAYidcJohsh3PQ7OaXi_DZ16cBkPinDiBm9AzkZ1LFqIRNvpTfAPSx1pl2iHd_lfPHbXHC3_UrQ--NGJbfzI2TGu1lNRzQAywkAbeCIYeU2-BFW=s0" /></p>
+<p><img alt="" src="https://lh3.googleusercontent.com/uRYVhQnahTdPslN00qdJad-loREsAbDg6iWHvIw_jW0kOuGyrs-vxyv0glF8yzSN-b5uwtjVKKOdfpmvUnEUzTCkoY-aj9rCTDYSSyZy0dqiK-3f6X_c0nYbOb9wNtaLLtBNYKlm=s0" /></p>
+<p>B3: Các bạn Chú ý vào mục output copy đường dẫn ở mục này ấn </p>
+<p><code>Shift + Command + G</code> và dán đường dẫn vào rồi nhấn <code>Enter</code> các bạn sẽ được như sau: </p>
+<p><img alt="" src="https://lh5.googleusercontent.com/dyT2RqtJ7LaDRcMcqFtZy2MSTtekFzsCM4uWE4yXjsJhw-azXxpdzsWtnxPqr44N4kfLYtV4nXKyRj5dC5lqt55EUj4UwZ1k7JAZmySOMpD10Yv8rDLXGTxekjPZKAKoiinZGJIP=s0" /></p>
+<p>Các bạn copy thư mục display vendorid.</p>
+<p>B4: Nhấn tổ hợp phím <code>Shift + Command + G</code> r dán đường dẫn sau vào: <code>/Library/Displays/Contents/Resources</code> nếu như các bạn không có thư mục này thì hãy tạo nó trong mục Library tên của các thư mục ứng với đường dẫn ở trên. </p>
+<p>B5: Tạo thư mục <code>Overrides</code> trong thư mục <code>Contents</code>. </p>
+<p>B6: Bỏ thư mục <code>display vendorid</code> vào mục <code>Content</code> sẽ được như sau tiếp theo restart máy và tận hưởng thôi.</p>
+<p><img alt="" src="https://lh3.googleusercontent.com/BHAnfRYXzZrFH-9EwhHHXEUYt6h9PU8YP51AL_SLEFpZ5hMIb6I7UjpLfxlEPbOwjddaK0aZr8lpv4DD1xowt2vaPUTx4fSeyi5BKdMrsjTJVyaXuZLkCmoVZXuE5PlUT8rgHbbn=s0" /></p>
+<p><strong>Lưu ý: Source tham khảo</strong> <a href="https://vietnamitx.com/t/fix-man-hinh-am-tim-force-rgb-hackintosh-khi-connect-voi-man-hinh-ngoai.171/"><strong>Chia sẻ – Fix màn hình ám tím (Force RGB) Hackintosh khi connect với màn hình ngoài | Vietnam ITX</strong></a>.</p>
+<p><strong>Lưu ý 2: Đối với cách này khi mà các bạn xuất nhiều màn thì hãy mua các màn giống nhau nếu không sẽ có 1 màn bị ám tím.</strong></p>
+<p><strong>Lưu ý 3: Đối với các macOS dưới 11 (Big Sur) các bạn phải mount thư mục Library ra bằng Hackintool</strong>.</p>
+<p><img alt="" src="https://lh4.googleusercontent.com/nToYKXYovvHLrlDNyxbD5Bn9Md8UZV9sucWjd4rM8gvridxDPRAlwIlHD5uZJWbmAJxzJp9Y8m3bkxcvskvNLb4s0TEUV_gTFw3otBklpX3d4Huh6leOZKWfr3gC6125XZzbAvLd=s0" /></p>
+<h2 id="injects-edid">Injects EDID:<a class="headerlink" href="#injects-edid" title="Permanent link">&para;</a></h2>
+<h3 id="cach-1-dung-hackintool">Cách 1: Dùng Hackintool<a class="headerlink" href="#cach-1-dung-hackintool" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Chỉ igpu</p>
+<p>Khi nào cần Injects EDID: Máy không nhận đủ thông tin màn hoặc bị lệch màu lỗi sleep/wake v.v</p>
+</blockquote>
+<p>B1: Tải Hackintool <a href="https://github.com/headkaze/Hackintool">tại đây</a></p>
+<p>B2: Mở Hackintool lên và nhấn vào mục Patch ⇒ Patch</p>
+<p><img alt="" src="https://lh3.googleusercontent.com/64UGDKnWJcb8r2NCCvvkjOfmuK-yw7V4hBVns3HZ35nztn2BTpXsBAxHggJl7g_SOIONGhwkaJLV9gDE0ie7liX0LS2-v0k0WwTWRJtBx2k0Xb0lYMVFe3IMSN6FQYUHcJyrSatn=s0" /></p>
+<p>B3: Tick vào mục EDID và 1 số mục khác như hình:</p>
+<p><strong>Lưu ý: nhớ tick vào mục Graphics Device</strong>.</p>
+<p><img alt="" src="https://lh5.googleusercontent.com/obqiLU16qx5J34bjbLlUvQSZ8pgmRleI5J2NyxzXU3XjpKB8tE9R_GtRz0eiRqcFi7tCcoyIsFPCWiItwYuGbAmpVaelL0DyuzH0qIGwp4D0wkIqd7BDnxlssDHjy7VzIgaMwEVE=s0" /></p>
+<p>B4: Ấn Generate Patch <img alt="" src="https://lh3.googleusercontent.com/Fg0lUovs47VwGY_r6-uREWoeOB6m9ows7i_1n0XlPfGJd_WBLA-NgOE_sUbhBgPCfYBI_BCDu0ERHJ54fdAObYZW-ghnKXxrONhW3RdSDsmVvVNA6be7ZFMWpMjSFP85BdJomHWO=s0" /></p>
+<p><img alt="" src="https://lh3.googleusercontent.com/YO4z53E_gxPJbVNZk6AFQe_FE195jHK_bjQFaUITK79GSYXz3sE3QQdqurOxH7svU18eCm_-9nzu4xYEC7l2K2No8evZlWdHqr4-ShIb0y4f9YDpU4v2mU2BacOMFl9hgPcgafQR=s0" /></p>
+<p>Các bạn chuyển mục 2 từ Base64 thành hex bằng hackintool ta sẽ có </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>00 FF FF FF FF FF FF 00 0D AE 7C 9C 00 00 00 00 23 15 01 03 80 1F 11 60 0A 6F B1 A7 55 4C 9E 25 0C 50 54 00 00 00 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 12 1B 56 64 50 00 14 30 30 20 14 00 35 AE 10 00 00 18 00 00 00 FE 00 4E 31 34 30 42 47 45 2D 4C 34 32 0A 20 00 00 00 FE 00 43 4D 4E 0A 20 20 20 20 20 20 20 20 20 00 00 00 FE 00 4E 31 34 30 42 47 45 2D 4C 34 32 0A 20 00 92
+</code></pre></div>
+<p>Hoặc các bạn ấn Patch ⇒ Export bootloader config.plist </p>
+<p><img alt="" src="https://lh4.googleusercontent.com/meOUolnvkjWiLkStRviRZiMly6YWkrm8uUlMxgxyeCoVgUhzhY2wIjp_YELKZ43IU9FBxoZaoY9MM7WuiGHhLF4Z1Ll3iEhaRUxbn79yGHm3ISXCdGQ3fdgyPM68b7Ue8bgyN-B9=s0" /></p>
+<p>B5: Copy mục <code>AAPL00,override-no-connect</code> hoặc tạo nó dưới mục <code>PciRoot(0x0)/Pci(0x2,0x0)</code> với giá trị như sau: </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>AAPL00,override-no-connect | data | 00 FF FF FF FF FF FF 00 0D AE 7C 9C 00 00 00 00 23 15 01 03 80 1F 11 60 0A 6F B1 A7 55 4C 9E 25 0C 50 54 00 00 00 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 12 1B 56 64 50 00 14 30 30 20 14 00 35 AE 10 00 00 18 00 00 00 FE 00 4E 31 34 30 42 47 45 2D 4C 34 32 0A 20 00 00 00 FE 00 43 4D 4E 0A 20 20 20 20 20 20 20 20 20 00 00 00 FE 00 4E 31 34 30 42 47 45 2D 4C 34 32 0A 20 00 92
+</code></pre></div>
+<blockquote>
+<p>mỗi máy giá trị mỗi khác nhưng sẽ chung tên và type</p>
+</blockquote>
+<p><img alt="" src="https://lh6.googleusercontent.com/MemjAD5uI99KgsXv3Yoy6b3ajXByPLVPuL6JjKViwCL8rE0kquj9Hxt_286T5NsSkiASI47E9TYXZ1Owz1glAhINhEokEF0Labw10ZNghSiY5TGU15yMXpAog3ojh2qBQHOMVKwy=s0" /></p>
+<p>Đối với Clover các bạn add <code>EDID</code> vào mục <code>Graphics ==&gt; Custom EDID</code> và bật <code>Injects EDID</code> lên như hình:</p>
+<p><img alt="" src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-11-at-11.56.25.png?w=1024" /></p>
+<p><strong>Lưu ý: Cách này chỉ dùng cho Card On.</strong></p>
+<p><strong>Lưu ý 2: Các bạn có thể dùng one-key HIDPI để injects cho Card rời Download phần mền</strong> <a href="https://github.com/xzhih/one-key-hidpi"><strong>tại đây</strong></a>. </p>
+<p>B6: Save lại và Reboot.</p>
+<h3 id="cach-2-dung-one-key-hidpi">Cách 2: Dùng One-Key-HIDPI<a class="headerlink" href="#cach-2-dung-one-key-hidpi" title="Permanent link">&para;</a></h3>
+<p>B1: Các bạn tải <code>One-Key-HIDPI</code> <a href="https://github.com/xzhih/one-key-hidpi"><strong>tại đây</strong></a>. </p>
+<p>B2: Chạy file <code>.command</code> lên.</p>
+<p><img alt="" src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-11-at-12.00.50.png?w=740" /></p>
+<p>B3: Chọn 2.</p>
+<p><img alt="" src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-11-at-12.01.12.png?w=740" /></p>
+<p>B4: Chọn Display Icons và nhập Pass.</p>
+<p><img alt="" src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-11-at-12.01.59.png?w=740" /></p>
+<p>B5: Chọn độ phân giải màn hình sau đó nhấn Enter (nếu độ phân giải màn hình của bạn không có trong đó thì bấm 6 sau đó gõ độ phân giải màn hình ra)</p>
+<p><img alt="" src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-11-at-12.03.35.png?w=740" /></p>
+<p>B6: Reboot và tận hưởng thành quả.</p>
+<h3 id="cach-3-dump-edid-bang-windows">Cách 3: Dump EDID bằng Windows<a class="headerlink" href="#cach-3-dump-edid-bang-windows" title="Permanent link">&para;</a></h3>
+<p>Dành cho 1 số bạn EDID bị lỗi.</p>
+<p>B1: Các bạn mở Windows lên và search <code>reg</code> hoặc nhấn <code>Windows + R</code> rồi gõ regedit.</p>
+<p><img alt="" src="https://imgur.com/4vWHezu.png" /></p>
+<p>B2: các bạn tìm đến đường dẫn sau:</p>
+<p><code>Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\DISPLAY</code>Ở đây tùy máy sẽ có 1 hoặc 2 folder các bạn mở folder có đuôi là <code>&amp;UID0</code></p>
+<p><img alt="" src="https://imgur.com/7dZVhiL.png" /></p>
+<p>B3: Các bạn tiến hành Export File <code>EDID</code> ra như ảnh:</p>
+<p><img alt="" src="https://imgur.com/CyBUJ94.png" /></p>
+<p><img alt="" src="https://imgur.com/73tFZdf.png" /></p>
+<p>B4: Các bạn lấy EDID theo quy tắc sau:</p>
+<p><img alt="" src="https://imgur.com/LlgjHGb.png" /></p>
+<p>Lấy cột ở giữa viết từ đâu đến dầu gạch nối sau đó các bạn xóa dấu gạch nối và viết tiếp dãy đằng sau ta sẽ được:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>00 ff ff ff ff ff ff 00 0d ae 72 14 00 00 00 00 23 15 01 03 80 1f 11 78 0a d1 45 9b 59 57 8e 2b 23 50 54 00 00 00 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 12 1b 56 64 50 00 14 30 30 20 14 00 35 ae 10 00 00 18 00 00 00 fe 00 4e 31 34 30 42 47 45 2d 4c 34 32 0a 20 00 00 00 fe 00 43 4d 4e 0a 20 20 20 20 20 20 20 20 20 00 00 00 fe 00 4e 31 34 30 42 47 45 2d 4c 34 32 0a 20 00 06
+</code></pre></div>
+<p>B5: Các bạn add vào mục AAPL00,override-no-connect tạo nó dưới mục PciRoot(0x0)/Pci(0x2,0x0) với giá trị như sau: </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>AAPL00,override-no-connect | data | 00 FF FF FF FF FF FF 00 0D AE 7C 9C 00 00 00 00 23 15 01 03 80 1F 11 60 0A 6F B1 A7 55 4C 9E 25 0C 50 54 00 00 00 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 12 1B 56 64 50 00 14 30 30 20 14 00 35 AE 10 00 00 18 00 00 00 FE 00 4E 31 34 30 42 47 45 2D 4C 34 32 0A 20 00 00 00 FE 00 43 4D 4E 0A 20 20 20 20 20 20 20 20 20 00 00 00 FE 00 4E 31 34 30 42 47 45 2D 4C 34 32 0A 20 00 92
+</code></pre></div>
+<blockquote>
+<p>mỗi máy giá trị mỗi khác nhưng sẽ chung tên và type</p>
+</blockquote>
+<p><img alt="" src="https://lh6.googleusercontent.com/MemjAD5uI99KgsXv3Yoy6b3ajXByPLVPuL6JjKViwCL8rE0kquj9Hxt_286T5NsSkiASI47E9TYXZ1Owz1glAhINhEokEF0Labw10ZNghSiY5TGU15yMXpAog3ojh2qBQHOMVKwy=s0" /></p>
+<p>Đối với clover các bạn add EDID vào mục graphics ==&gt; custom edid và bật injects edid lên như hình</p>
+<p><img alt="" src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-11-at-11.56.25.png?w=1024" /></p>
+<p>B6: Reboot và tận hưởng.</p>
+<h3 id="cach-4-dung-ioreg">Cách 4: Dùng IOReg<a class="headerlink" href="#cach-4-dung-ioreg" title="Permanent link">&para;</a></h3>
+<p>B1: Các bạn tải IOReg <a href="https://github.com/vulgo/IORegistryExplorer/releases/tag/v2.1">tại đây</a>.</p>
+<p>B2: Các bạn mở IOReg lên và search mục display:</p>
+<p>Các bạn chọn mục bên dưới mục display 0 (là apple display nếu dùng màn rời).</p>
+<p><img alt="" src="https://imgur.com/rarfbLL.png" /></p>
+<p>B3: Các bạn copy mục IODisplayEDID.</p>
+<p>B4: Các bạn add vào mục <code>AAPL00,override-no-connect</code> tạo nó dưới mục <code>PciRoot(0x0)/Pci(0x2,0x0)</code> với giá trị như sau :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>AAPL00,override-no-connect | data | 00 FF FF FF FF FF FF 00 0D AE 7C 9C 00 00 00 00 23 15 01 03 80 1F 11 60 0A 6F B1 A7 55 4C 9E 25 0C 50 54 00 00 00 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 12 1B 56 64 50 00 14 30 30 20 14 00 35 AE 10 00 00 18 00 00 00 FE 00 4E 31 34 30 42 47 45 2D 4C 34 32 0A 20 00 00 00 FE 00 43 4D 4E 0A 20 20 20 20 20 20 20 20 20 00 00 00 FE 00 4E 31 34 30 42 47 45 2D 4C 34 32 0A 20 00 92
+</code></pre></div>
+<blockquote>
+<p>mỗi máy giá trị mỗi khác nhưng sẽ chung tên và type</p>
+</blockquote>
+<p><img alt="" src="https://lh6.googleusercontent.com/MemjAD5uI99KgsXv3Yoy6b3ajXByPLVPuL6JjKViwCL8rE0kquj9Hxt_286T5NsSkiASI47E9TYXZ1Owz1glAhINhEokEF0Labw10ZNghSiY5TGU15yMXpAog3ojh2qBQHOMVKwy=s0" /></p>
+<p>Đối với Clover các bạn add <code>EDID</code> vào mục <code>Graphics ==&gt; Custom EDID</code> và bật <code>Injects EDID</code> lên như hình:</p>
+<p><img alt="" src="https://everythingforhackintosher.files.wordpress.com/2021/09/cleanshot-2021-09-11-at-11.56.25.png?w=1024" /></p>
+<p>B5: Reboot và tận hưởng.</p>
+<p><strong>Lưu ý: Source tham khảo của Cách 4 là <a href="https://elitemacx86.com/threads/how-to-inject-edid-clover-opencore.576/">How to Inject EDID [Clover/OpenCore] | EliteMacx86 Forum</a></strong></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../macOS_12_Monterey/" class="md-footer__link md-footer__link--prev" aria-label="Previous: macOS 12: Monterey" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              macOS 12: Monterey
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.748e2769.min.js"></script>
+      
+    
+  </body>
+</html>

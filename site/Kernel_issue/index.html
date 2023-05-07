@@ -1,0 +1,2435 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.2.11">
+    
+    
+      
+        <title>Kernel issue - Hackintosh Documents</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c5ef100.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.9647289d.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kernel-issue" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Hackintosh Documents" class="md-header__button md-logo" aria-label="Hackintosh Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Hackintosh Documents
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kernel issue
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Hackintosh Documents" class="md-nav__button md-logo" aria-label="Hackintosh Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Hackintosh Documents
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        content
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Add_device-id_in_amd_kext/" class="md-nav__link">
+        Add device-id vào amd kext
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Backup_and_Restore_with_Time_Machine/" class="md-nav__link">
+        Backup and Restore with Time Machine
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Boot_Arguments/" class="md-nav__link">
+        Boot Arguments
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Boot_without_USB_and_mount_partion_EFI/" class="md-nav__link">
+        Boot không cần USB và mount phân vùng EFI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Config_Laptop_Clarksfield_and_Arrandale/" class="md-nav__link">
+        Config Laptop Clarksfield và Arrandale
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Control_Brightness_External_Display/" class="md-nav__link">
+        Control Brightness cho External Display
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Control_Led_RGB/" class="md-nav__link">
+        Control Led RGB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Convert_Bootloader/" class="md-nav__link">
+        Convert Bootloader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C%C3%A1ch%20x%C3%A1c%20%C4%91%E1%BB%8Bnh%20ph%E1%BA%A7n%20c%E1%BB%A9ng/" class="md-nav__link">
+        Cách xác định phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_CFG-Clock/" class="md-nav__link">
+        Disable CFG-Clock
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_dGPU_Desktop/" class="md-nav__link">
+        Disable dGPU Desktop
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_dgpu_Laptop/" class="md-nav__link">
+        Disable dgpu Laptop
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Emulated_NVRAM/" class="md-nav__link">
+        Emulated NVRAM
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Enable_Trim_For_SSD/" class="md-nav__link">
+        Enable Trim For SSD
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../External_Card_Reader/" class="md-nav__link">
+        Fix Internal/External Card Reader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fake_CPU-ID/" class="md-nav__link">
+        Fake CPU-ID
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix%20_for_slow_AMD_GPU/" class="md-nav__link">
+        Fix for slow AMD GPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Backlight/" class="md-nav__link">
+        Fix Backlight
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Connect_%28HDMI%29/" class="md-nav__link">
+        Fix Connect (HDMI)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Ethernet/" class="md-nav__link">
+        Fix Ethernet
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_HDMI_Audio/" class="md-nav__link">
+        Fix HDMI Audio
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Hotkeys/" class="md-nav__link">
+        Fix Hotkeys
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_RTC_Manual/" class="md-nav__link">
+        Fix RTC Manual
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_RTC_write_issues/" class="md-nav__link">
+        Fix RTC write issues
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Shutdown/" class="md-nav__link">
+        Fix Shut down
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_System_Clocks_on_HEDT/" class="md-nav__link">
+        Fix System Clocks on HEDT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_WiFi_and_Bluetooth/" class="md-nav__link">
+        Fix WiFi và Bluetooth
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_darkwake/" class="md-nav__link">
+        Fix darkwake
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_iServices/" class="md-nav__link">
+        Fix iServices
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_keyboard_wake/" class="md-nav__link">
+        Fix keyboard wake
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_power_management/" class="md-nav__link">
+        Fix power management
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_sleep/" class="md-nav__link">
+        Fix sleep
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_trackpad/" class="md-nav__link">
+        Fix trackpad
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fixing_KASLR/" class="md-nav__link">
+        Fixing KASLR
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GPRW_UPRW_LANC/" class="md-nav__link">
+        GPRW/UPRW/LANC
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ghost_macos/" class="md-nav__link">
+        Ghost macos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Guide_dual_Boot/" class="md-nav__link">
+        Hướng dẫn Dual Boot
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HotPlug_Thunderbolt_3/" class="md-nav__link">
+        HotPlug Thunderbolt 3
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hotpatch_PTS_Wake_TTS/" class="md-nav__link">
+        Hotpatch PTS Wake TTS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Injects_USB_Manual/" class="md-nav__link">
+        Injects USB Manual
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Kernel issue
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Kernel issue
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#stuck-on-eblogexitbsstart" class="md-nav__link">
+    Stuck on [EB|#LOG:EXITBS:START]
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stuck-on-endrandomseed" class="md-nav__link">
+    Stuck on EndRandomSeed
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stuck-sau-khi-select-macos-partion-o-opencore" class="md-nav__link">
+    Stuck sau khi select macOS partion ở OpenCore
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-panic-on-invalid-frame-pointer" class="md-nav__link">
+    Kernel Panic on Invalid frame pointer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stuck-on-ebldofs-err0xe-when-booting-preboot-volume" class="md-nav__link">
+    Stuck on [EB|LD:OFS] Err(0xE) when booting preboot volume
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stuck-on-ocb-loadimage-failed-security-violation" class="md-nav__link">
+    Stuck on OCB: LoadImage failed - Security Violation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stuck-on-ocabc-memory-pool-allocation-failure-not-found" class="md-nav__link">
+    Stuck on OCABC: Memory pool allocation failure - Not Found
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stuck-on-buffer-too-small" class="md-nav__link">
+    Stuck on Buffer Too Small
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stuck-on-plist-only-kext-has-cfbundleexecutable-key" class="md-nav__link">
+    Stuck on Plist only kext has CFBundleExecutable key
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stuck-on-this-version-of-mac-os-x-is-not-supported-reason-mac" class="md-nav__link">
+    Stuck on This version of Mac OS X is not supported: Reason Mac…
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#couldnt-allocate-runtime-area-errors" class="md-nav__link">
+    Couldn't allocate runtime area errors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stuck-on-rtc-pci-configuration-begins-previous-shutdown-hpet-hid-legacy" class="md-nav__link">
+    Stuck on RTC…, PCI Configuration Begins, Previous Shutdown…, HPET, HID: Legacy…
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stuck-at-acpi-table-loading-on-b550" class="md-nav__link">
+    Stuck at ACPI table loading on B550
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#waiting-for-root-device-or-prohibited-sign-error" class="md-nav__link">
+    “Waiting for Root Device” or “Prohibited Sign error“
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-panic-with-iopcifamily-tren-hedt-x99" class="md-nav__link">
+    Kernel panic with IOPCIFamily trên hedt X99
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stuck-on-or-near-ioconsoleusers-gioscreenlockgiolockstate-3" class="md-nav__link">
+    Stuck on or near IOConsoleUsers: gIOScreenLock.../gIOLockState (3...
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scrambled-screen-on-laptops" class="md-nav__link">
+    Scrambled Screen on laptops
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#black-screen-after-ioconsoleusers-gioscreenlock-on-navi" class="md-nav__link">
+    Black screen after IOConsoleUsers: gIOScreenLock... on Navi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-panic-cannot-perform-kext-summary" class="md-nav__link">
+    Kernel Panic Cannot perform kext summary
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-panic-appleintelmcereporter" class="md-nav__link">
+    Kernel Panic AppleIntelMCEReporter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-panic-appleintelcpupowermanagement" class="md-nav__link">
+    Kernel Panic AppleIntelCPUPowerManagement
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-panic-appleacpiplatform-in-1013" class="md-nav__link">
+    Kernel Panic AppleACPIPlatform in 10.13
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macos-frozen-right-before-login" class="md-nav__link">
+    macOS frozen right before login
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keyboard-works-but-trackpad-does-not" class="md-nav__link">
+    Keyboard works but trackpad does not
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kextd-stall0-appleacpicpu" class="md-nav__link">
+    kextd stall[0]: AppleACPICPU
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-panic-on-appleinteli210ethernet" class="md-nav__link">
+    Kernel Panic on AppleIntelI210Ethernet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-panic-on-wrong-cd-clock-frequency-with-icelake-laptop" class="md-nav__link">
+    Kernel panic on “Wrong CD Clock Frequency” with Icelake laptop
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-panic-on-cckprng_int_gen" class="md-nav__link">
+    Kernel panic on “cckprng_int_gen“
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stuck-at-forcing-cs_runtime-for-entitlement-in-big-sur" class="md-nav__link">
+    Stuck at Forcing CS_RUNTIME for entitlement in Big Sur
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stuck-on-ramrod" class="md-nav__link">
+    Stuck on ramrod(^^^^^^^^^^^^^)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtual-machine-issues" class="md-nav__link">
+    Virtual Machine Issues
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reboot-on-appleusbhostportcreatedevice-failed-to-create-device-on-macos-113" class="md-nav__link">
+    Reboot on “AppleUSBHostPort::createDevice: failed to create device” on macOS 11.3+
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oc-prelinked-injection-usbinjectallkext-usbinjectallkext-invalid-parameter" class="md-nav__link">
+    OC: Prelinked injection USBInjectAll.kext (USBInjectAll.kext) – Invalid Parameter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stuck-on-cputscsync" class="md-nav__link">
+    Stuck on CpuTscSync
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Map_USB/" class="md-nav__link">
+        Map USB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenCore_Legacy/" class="md-nav__link">
+        OpenCore Legacy
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_AMD_GPU/" class="md-nav__link">
+        Patch Card đồ họa AMD
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_2/" class="md-nav__link">
+        Patch DSDT Phần 2
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_3/" class="md-nav__link">
+        Patch DSDT Phần 3
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_4/" class="md-nav__link">
+        Patch DSDT phần 4
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_GMA_GPU/" class="md-nav__link">
+        Patch GMA GPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_IGPU/" class="md-nav__link">
+        Patch IGPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_NVIDIA_GPU/" class="md-nav__link">
+        Patch Card đồ họa NVIDIA
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_SATA_Controller/" class="md-nav__link">
+        Patch SATA Controller
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_audio_with_AppleALC/" class="md-nav__link">
+        Patch âm thanh với AppleALC
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_audio_with_VoodooHDA/" class="md-nav__link">
+        Patch audio với VoodooHDA
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_dsdt_part_1/" class="md-nav__link">
+        Patch dsdt phần 1
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_pin/" class="md-nav__link">
+        Patch pin
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Resize_EFI/" class="md-nav__link">
+        Resize EFI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SIP_and_Gatekeeper/" class="md-nav__link">
+        SIP và Gatekeeper
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SLE_kext_in_bigsur/" class="md-nav__link">
+        Cách sửa kext S/L/E trên bigsur
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SSDT_recomend/" class="md-nav__link">
+        SSDT recomend
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Scan_policy/" class="md-nav__link">
+        Scan policy
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Some_error_in_bigsur/" class="md-nav__link">
+        Một số lỗi ở xuất hiện ở macOS Big Sur
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Some_error_in_propertree/" class="md-nav__link">
+        1 số lỗi ProperTree
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Turn_on_Backlight_Keyboard/" class="md-nav__link">
+        Turn on Backlight Keyboard
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Update_macOS_and_Bootloader/" class="md-nav__link">
+        Update macOS và Bootloader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Use_SSDT-time_to_Prebuilt%20SSDT/" class="md-nav__link">
+        Dùng SSDT-Time để Prebuilt SSDT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%5BEB%7C%23LOG%3AEXITBS%3ASTART%5D/" class="md-nav__link">
+        [EB|#LOG:EXITBS:START]
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../add_boot_option_in_bios/" class="md-nav__link">
+        Cách thêm Boot vào BIOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creat_GUI/" class="md-nav__link">
+        Tạo GUI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creat_online_usb_%28recovery%29/" class="md-nav__link">
+        Cách tạo bộ cài online (recovery)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_EFI_OpenCore/" class="md-nav__link">
+        Cách tạo EFI OpenCore
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_EFI_Opencore_No_ACPI/" class="md-nav__link">
+        Cách làm EFI Opencore No ACPI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_offline_bootable_without_no_usb/" class="md-nav__link">
+        Cách tạo bộ cài Offline khi không có USB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_usb_offline/" class="md-nav__link">
+        Cách tạo bộ cài offline
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fake_CPU_Name%3Aigpu_name/" class="md-nav__link">
+        Fake iGPU/ CPU Name
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_mod_bios/" class="md-nav__link">
+        Cách mod bios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inject_all_hardware_properties/" class="md-nav__link">
+        Cách inject toàn bộ thông tin phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn_about_hackintosh/" class="md-nav__link">
+        Tìm hiểu về Hackintosh
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn_about_to_hardware/" class="md-nav__link">
+        Tìm hiểu chung về phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../macOS_12_Monterey/" class="md-nav__link">
+        macOS 12: Monterey
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patch_connector_type_force_rgb%3AInject_EDID/" class="md-nav__link">
+        Patch Connect Type/ Force RGB/ Inject EDID
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#stuck-on-eblogexitbsstart" class="md-nav__link">
+    Stuck on [EB|#LOG:EXITBS:START]
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stuck-on-endrandomseed" class="md-nav__link">
+    Stuck on EndRandomSeed
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stuck-sau-khi-select-macos-partion-o-opencore" class="md-nav__link">
+    Stuck sau khi select macOS partion ở OpenCore
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-panic-on-invalid-frame-pointer" class="md-nav__link">
+    Kernel Panic on Invalid frame pointer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stuck-on-ebldofs-err0xe-when-booting-preboot-volume" class="md-nav__link">
+    Stuck on [EB|LD:OFS] Err(0xE) when booting preboot volume
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stuck-on-ocb-loadimage-failed-security-violation" class="md-nav__link">
+    Stuck on OCB: LoadImage failed - Security Violation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stuck-on-ocabc-memory-pool-allocation-failure-not-found" class="md-nav__link">
+    Stuck on OCABC: Memory pool allocation failure - Not Found
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stuck-on-buffer-too-small" class="md-nav__link">
+    Stuck on Buffer Too Small
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stuck-on-plist-only-kext-has-cfbundleexecutable-key" class="md-nav__link">
+    Stuck on Plist only kext has CFBundleExecutable key
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stuck-on-this-version-of-mac-os-x-is-not-supported-reason-mac" class="md-nav__link">
+    Stuck on This version of Mac OS X is not supported: Reason Mac…
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#couldnt-allocate-runtime-area-errors" class="md-nav__link">
+    Couldn't allocate runtime area errors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stuck-on-rtc-pci-configuration-begins-previous-shutdown-hpet-hid-legacy" class="md-nav__link">
+    Stuck on RTC…, PCI Configuration Begins, Previous Shutdown…, HPET, HID: Legacy…
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stuck-at-acpi-table-loading-on-b550" class="md-nav__link">
+    Stuck at ACPI table loading on B550
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#waiting-for-root-device-or-prohibited-sign-error" class="md-nav__link">
+    “Waiting for Root Device” or “Prohibited Sign error“
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-panic-with-iopcifamily-tren-hedt-x99" class="md-nav__link">
+    Kernel panic with IOPCIFamily trên hedt X99
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stuck-on-or-near-ioconsoleusers-gioscreenlockgiolockstate-3" class="md-nav__link">
+    Stuck on or near IOConsoleUsers: gIOScreenLock.../gIOLockState (3...
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scrambled-screen-on-laptops" class="md-nav__link">
+    Scrambled Screen on laptops
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#black-screen-after-ioconsoleusers-gioscreenlock-on-navi" class="md-nav__link">
+    Black screen after IOConsoleUsers: gIOScreenLock... on Navi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-panic-cannot-perform-kext-summary" class="md-nav__link">
+    Kernel Panic Cannot perform kext summary
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-panic-appleintelmcereporter" class="md-nav__link">
+    Kernel Panic AppleIntelMCEReporter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-panic-appleintelcpupowermanagement" class="md-nav__link">
+    Kernel Panic AppleIntelCPUPowerManagement
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-panic-appleacpiplatform-in-1013" class="md-nav__link">
+    Kernel Panic AppleACPIPlatform in 10.13
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macos-frozen-right-before-login" class="md-nav__link">
+    macOS frozen right before login
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keyboard-works-but-trackpad-does-not" class="md-nav__link">
+    Keyboard works but trackpad does not
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kextd-stall0-appleacpicpu" class="md-nav__link">
+    kextd stall[0]: AppleACPICPU
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-panic-on-appleinteli210ethernet" class="md-nav__link">
+    Kernel Panic on AppleIntelI210Ethernet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-panic-on-wrong-cd-clock-frequency-with-icelake-laptop" class="md-nav__link">
+    Kernel panic on “Wrong CD Clock Frequency” with Icelake laptop
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-panic-on-cckprng_int_gen" class="md-nav__link">
+    Kernel panic on “cckprng_int_gen“
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stuck-at-forcing-cs_runtime-for-entitlement-in-big-sur" class="md-nav__link">
+    Stuck at Forcing CS_RUNTIME for entitlement in Big Sur
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stuck-on-ramrod" class="md-nav__link">
+    Stuck on ramrod(^^^^^^^^^^^^^)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtual-machine-issues" class="md-nav__link">
+    Virtual Machine Issues
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reboot-on-appleusbhostportcreatedevice-failed-to-create-device-on-macos-113" class="md-nav__link">
+    Reboot on “AppleUSBHostPort::createDevice: failed to create device” on macOS 11.3+
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oc-prelinked-injection-usbinjectallkext-usbinjectallkext-invalid-parameter" class="md-nav__link">
+    OC: Prelinked injection USBInjectAll.kext (USBInjectAll.kext) – Invalid Parameter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stuck-on-cputscsync" class="md-nav__link">
+    Stuck on CpuTscSync
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="kernel-issue">Kernel issue<a class="headerlink" href="#kernel-issue" title="Permanent link">&para;</a></h1>
+<h2 id="stuck-on-eblogexitbsstart">Stuck on [EB|#LOG:EXITBS:START]<a class="headerlink" href="#stuck-on-eblogexitbsstart" title="Permanent link">&para;</a></h2>
+<p>Xem chi tiết <a href="https://heavietnam.ga/2022/03/03/eblogexitbsstart/">tại đây</a>.</p>
+<h2 id="stuck-on-endrandomseed">Stuck on <code>EndRandomSeed</code><a class="headerlink" href="#stuck-on-endrandomseed" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Fix giống như lỗi Stuck on [EB|#LOG:EXITBS:START]</li>
+<li>Đối với các máy đang sử dụng OpenCore version 0.7.3+ boot Catalina bị stuck lỗi này thì chuyển <code>SecureBootModel</code> trong config về <code>Disable</code>.</li>
+</ul>
+<h2 id="stuck-sau-khi-select-macos-partion-o-opencore">Stuck sau khi select macOS partion ở OpenCore<a class="headerlink" href="#stuck-sau-khi-select-macos-partion-o-opencore" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Fix giống như lỗi Stuck on [EB|#LOG:EXITBS:START]</li>
+<li>Nên sử dụng <a href="https://heavietnam.ga/2022/04/09/opencore-debug/">EFI debug</a> trong trường hợp này.</li>
+</ul>
+<h2 id="kernel-panic-on-invalid-frame-pointer">Kernel Panic on <code>Invalid frame pointer</code><a class="headerlink" href="#kernel-panic-on-invalid-frame-pointer" title="Permanent link">&para;</a></h2>
+<p>Đây là lỗi ở <code>Booter --&gt; quirks</code> các bạn sẽ tiến hành check các phần sau:</p>
+<ul>
+<li>DevirtualiseMmio</li>
+<li>Một số Certain MMIO vẫn yêu được bật để có thể hoạt động được vì vậy bạn cần loại trừ các Certain này trong <code>Booter -&gt; MmioWhitelist</code> hoặc disable hoàn toàn tính năng này</li>
+<li>Xem chi tiết <a href="https://heavietnam.ga/2022/01/31/using-devirtualisemmio/">tại đây</a></li>
+<li>SetupVirtualMap</li>
+<li>Tính năng này là bắt buộc đối với hầu hết các model. Nếu chưa có bạn hãy bật lên</li>
+<li>Tuy nhiên 1 số model sẽ không hoạt động với quirks này và có thể xảy ra panic<ul>
+<li>Intel’s Ice Lake series</li>
+<li>Intel’s Comet Lake series</li>
+<li>AMD’s B550</li>
+<li>AMD’s A520</li>
+<li>AMD’s TRx40</li>
+<li>VMs like QEMU</li>
+</ul>
+</li>
+</ul>
+<p>1 số lỗi khác có thể xảy ra do macos xung đột với tính năng write protection from CR0 register để giải quyết ta có thể làm như sau:</p>
+<ul>
+<li>Nếu firmware của bạn support MATs (2018+) thì làm theo sau:</li>
+<li>EnableWriteUnprotector -&gt; False</li>
+<li>RebuildAppleMemoryMap -&gt; True</li>
+<li>SyncRuntimePermissions -&gt; True</li>
+<li>Đối với những firmware cũ hơn thì bạn chỉnh theo sau:</li>
+<li>EnableWriteUnprotector -&gt; True</li>
+<li>RebuildAppleMemoryMap -&gt; False</li>
+<li>SyncRuntimePermissions -&gt; False</li>
+</ul>
+<p>Tuy nhiên đối với 1 số máy thì gen 6 đã hộ trợ MATs để check xem máy bạn có hỗ trợ không bạn có thể check ở OpenCore log.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>OCABC: MAT support is 1
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>// Nếu hiện là 1 tức là support còn hiện là 0 tức là không support
+</code></pre></div>
+<h2 id="stuck-on-ebldofs-err0xe-when-booting-preboot-volume">Stuck on <code>[EB|LD:OFS] Err(0xE)</code> when booting preboot volume<a class="headerlink" href="#stuck-on-ebldofs-err0xe-when-booting-preboot-volume" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>// full error
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>[EB|`LD:OFS] Err(0xE) @ OPEN (System\\Library\\PrelinkedKernels\\prelinkedkernel)
+</code></pre></div>
+<p>Lỗi này xảy ra khi bạn preboot volume không được cập nhất đúng cách sẽ fix theo sau:</p>
+<ul>
+<li>Enable <code>JumpstartHotplug</code> ở <code>UEFI -&gt; APFS</code> (Nếu không có nó sẽ không thể boot vào recovery ở macos)</li>
+<li>Boot vào recovery</li>
+<li>mở terminal và chạy đoạn code sau:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>// Đầu tiên cần tìm preboot volume
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>diskutil list
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>// Nhìn vào list sau, ở đây preboot volume là disk5s2
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>/dev/disk5 (synthesized):
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>   #:                       TYPE NAME                    SIZE       IDENTIFIER
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>   0:      APFS Container Scheme -                      +255.7 GB   disk5
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>                                 Physical Store disk4s2
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>   1:                APFS Volume ⁨Big Sur HD - Data⁩       122.5 GB   disk5s1
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>   2:                APFS Volume ⁨Preboot⁩                 309.4 MB   disk5s2
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>   3:                APFS Volume ⁨Recovery⁩                887.8 MB   disk5s3
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>   4:                APFS Volume ⁨VM⁩                      1.1 MB     disk5s4
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>   5:                APFS Volume ⁨Big Sur HD⁩              16.2 GB    disk5s5
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>   6:              APFS Snapshot ⁨com.apple.os.update-...⁩ 16.2 GB    disk5s5s
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>// Mount Preboot volume
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>diskutil mount disk5s2
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>// sau đó run updatePreboot trên the Preboot volume
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>diskutil apfs updatePreboot /volume/disk5s2
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>// reboot hệ thống
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>reboot
+</code></pre></div>
+<h2 id="stuck-on-ocb-loadimage-failed-security-violation">Stuck on <code>OCB: LoadImage failed - Security Violation</code><a class="headerlink" href="#stuck-on-ocb-loadimage-failed-security-violation" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>// full error
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>OCSB: No suitable signature - Security Violation
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>OCB: Apple Secure Boot prohibits this boot entry, enforcing!
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>OCB: LoadImage failed - Security Violation
+</code></pre></div>
+<p>Điều này là do Apple Secure Boot đã bị lỗi thời hoặc thiếu trên preboot của bạn volume dẫn đến failure to load nếu bạn có bật securebootmodel. Lý do cho các file này bị thiếu là 1 lỗi của macOS.</p>
+<p>Để khắc phục lỗi này các bạn làm theo sau:</p>
+<ul>
+<li>Disable SecureBootModel</li>
+<li><code>Misc -&gt; Security -&gt; SecureBootModel -&gt; Disabled</code></li>
+<li>cài đặt lại bản macos mới nhất</li>
+<li>hoặc copy the Secure Boot manifests từ <code>/usr/standalone/i386</code> to <code>/Volumes/Preboot/&lt;UUID&gt;/System/Library/CoreServices</code></li>
+<li>Bạn có thể chỉnh điều này qua termianl ở recovery vì preboot volume không thể chỉnh sửa qua finder</li>
+<li>Chạy đoạn code sau ở terminal  </li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>// Tìm preboot volume
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>diskutil list
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>// Nhìn vào đoạn sau ta thấy preboot volume là disk5s2
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>/dev/disk5 (synthesized):
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>   #:                       TYPE NAME                    SIZE       IDENTIFIER
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>   0:      APFS Container Scheme -                      +255.7 GB   disk5
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>                                 Physical Store disk4s2
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>   1:                APFS Volume ⁨Big Sur HD - Data⁩       122.5 GB   disk5s1
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>   2:                APFS Volume ⁨Preboot⁩                 309.4 MB   disk5s2
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>   3:                APFS Volume ⁨Recovery⁩                887.8 MB   disk5s3
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>   4:                APFS Volume ⁨VM⁩                      1.1 MB     disk5s4
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>   5:                APFS Volume ⁨Big Sur HD⁩              16.2 GB    disk5s5
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>   6:              APFS Snapshot ⁨com.apple.os.update-...⁩ 16.2 GB    disk5s5s
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>// mount Preboot volume
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>diskutil mount disk5s2
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>// CD vào Preboot volume
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>// Lưu ý rằng preboot volume có đường dẫn là /System/Volumes/Preboot
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>cd /System/Volumes/Preboot
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>// lấy UUID
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>ls
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a> 46923F6E-968E-46E9-AC6D-9E6141DF52FD
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a> CD844C38-1A25-48D5-9388-5D62AA46CFB8
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>// nếu có nhiều UUID cũng hiện (bạn dual nhiều macos), bạn sẽ cần xác định UUID nào là chính xác
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>// Để làm như vậy bạn sẽ tiến hành in ra .disk_label.contentDetails của mỗi volume
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>cat ./46923F6E-968E-46E9-AC6D-9E6141DF52FD/System/Library/CoreServices/.disk_label.contentDetails
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a> Big Sur HD%
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>
+<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>cat ./CD844C38-1A25-48D5-9388-5D62AA46CFB8/System/Library/CoreServices/.disk_label.contentDetails
+<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a> Catalina HD%
+<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a>
+<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a>
+<a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a>// thay CD844C38-1A25-48D5-9388-5D62AA46CFB8 với UUID của bạn
+<a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a>cd ~
+<a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a>sudo cp -a /usr/standalone/i386/. /System/Volumes/Preboot/CD844C38-1A25-48D5-9388-5D62AA46CFB8/System/Library/CoreServices
+</code></pre></div>
+<h2 id="stuck-on-ocabc-memory-pool-allocation-failure-not-found">Stuck on <code>OCABC: Memory pool allocation failure - Not Found</code><a class="headerlink" href="#stuck-on-ocabc-memory-pool-allocation-failure-not-found" title="Permanent link">&para;</a></h2>
+<p>Để khắc phục các bạn có thể chỉnh setting BIOS theo sau:</p>
+<ul>
+<li>Above4GDecoding: Enabled</li>
+<li>CSM: Disabled</li>
+<li>1 vài laptop phải bật CSM</li>
+<li>update bios</li>
+</ul>
+<h2 id="stuck-on-buffer-too-small">Stuck on <code>Buffer Too Small</code><a class="headerlink" href="#stuck-on-buffer-too-small" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Enable Above4GDecoding in the BIOS</li>
+</ul>
+<h2 id="stuck-on-plist-only-kext-has-cfbundleexecutable-key">Stuck on <code>Plist only kext has CFBundleExecutable key</code><a class="headerlink" href="#stuck-on-plist-only-kext-has-cfbundleexecutable-key" title="Permanent link">&para;</a></h2>
+<p>Đường dẫn không chính xác trong config.plist. Để khắc phục tiến hành snapshot bằng propertree xem cách snapshot <a href="https://heavietnam.ga/2021/09/29/tim-hieu-ve-hackintosh/">tại đây</a></p>
+<h2 id="stuck-on-this-version-of-mac-os-x-is-not-supported-reason-mac">Stuck on <code>This version of Mac OS X is not supported: Reason Mac…</code><a class="headerlink" href="#stuck-on-this-version-of-mac-os-x-is-not-supported-reason-mac" title="Permanent link">&para;</a></h2>
+<p>Lỗi này xảy ra khi SMBios không còn được hỗ trợ nữa để khắc phục lỗi này các bạn có 2 phương pháp:</p>
+<ul>
+<li>Add boot-arg <code>-no_compat_check</code></li>
+<li>Hoặc thay các SMBios được hỗ trợ:</li>
+<li>Catalina:<ul>
+<li>iMac13,x+</li>
+<li>iMacPro1,1</li>
+<li>MacPro6,1+</li>
+<li>Macmini6,x+</li>
+<li>MacBook8,1+</li>
+<li>MacBookAir5,x+</li>
+<li>MacBookPro9,x+</li>
+</ul>
+</li>
+<li>Big Sur:<ul>
+<li>iMac14,4+</li>
+<li>iMacPro1,1</li>
+<li>MacPro6,1+</li>
+<li>Macmini7,1+</li>
+<li>MacBook8,1+</li>
+<li>MacBookAir6,x+</li>
+<li>MacBookPro11,x+</li>
+</ul>
+</li>
+<li>Monterey<ul>
+<li>iMac16,1+</li>
+<li>iMacPro1,1</li>
+<li>MacPro6,1+</li>
+<li>Macmini7,1+</li>
+<li>MacBook9,1+</li>
+<li>MacBookAir7,1+</li>
+<li>MacBookPro11,3+</li>
+</ul>
+</li>
+</ul>
+<h2 id="couldnt-allocate-runtime-area-errors"><code>Couldn't allocate runtime area errors</code><a class="headerlink" href="#couldnt-allocate-runtime-area-errors" title="Permanent link">&para;</a></h2>
+<p>Xem cách fix KASLR <a href="https://heavietnam.ga/2022/01/31/using-devirtualisemmio/">tại đây</a></p>
+<h2 id="stuck-on-rtc-pci-configuration-begins-previous-shutdown-hpet-hid-legacy">Stuck on <code>RTC…, PCI Configuration Begins, Previous Shutdown…, HPET, HID: Legacy…</code><a class="headerlink" href="#stuck-on-rtc-pci-configuration-begins-previous-shutdown-hpet-hid-legacy" title="Permanent link">&para;</a></h2>
+<p>Đây là nơi có nhiều PCI device được thiết lập và cấu hình và là nơi các lỗi khởi động sẽ xảy ra:</p>
+<ul>
+<li><code>apfs_module_start...</code>,</li>
+<li><code>Waiting for Root device</code>,</li>
+<li><code>Waiting on...IOResources...</code>,</li>
+<li><code>previous shutdown cause...</code></li>
+</ul>
+<p>Những vấn đề chính gây lỗi:</p>
+<ul>
+<li>
+<p>Thiếu EC (cata+):</p>
+</li>
+<li>
+<p>Thêm SSDT-EC theo <a href="https://heavietnam.ga/2022/03/10/ssdt-recomend/">link</a></p>
+</li>
+<li>
+<p>Bỏ SSDT-EC vào EFI &ndash;&gt; OC &ndash;&gt; ACPI và snaps (hoặc EFI &ndash;&gt; Clover &ndash;&gt; ACPI &ndash;&gt; Patched)</p>
+</li>
+<li>
+<p>Xung đột IRQ:</p>
+</li>
+<li>
+<p>dump SSDT-HPET theo <a href="https://heavietnam.ga/2021/09/29/ii-patch-am-thanh-voi-apple-alc-with-patch-hpet/#Patch_Hpet_IRQ">link</a></p>
+</li>
+<li>
+<p>PCI allocation issue:</p>
+</li>
+<li>
+<p>Update BIOS.</p>
+</li>
+<li>Bật Above4G trong bios. Nếu bios của bạn không có option này hãy add boot-arg <code>npci=0x2000</code><ul>
+<li>Các main X99 and X299 có thể yêu cầu cả ncpi boot-arg và Above4G trong bios</li>
+<li>AMD CPU không đồng thời bật cả Above4G và NCPI trong boot-arg vì chúg sẽ xung đột</li>
+<li>Đối với bios thế hệ 2020+ thì khi bật Above4G các bạn phải set Booter -&gt; Quirks -&gt; ResizeAppleGpuBars:0 vì Resizable BAR Support có thể sẽ trở nên khả dụng</li>
+</ul>
+</li>
+<li>
+<p>CSM disabled, Windows 8.1/10 UEFI Mode enabled.</p>
+</li>
+<li>
+<p>NVMe or SATA issue:</p>
+</li>
+<li>
+<p>không sử dụng Samsung PM981 or Micron 2200S NVMe SSD</p>
+</li>
+<li>cài đặt latest firmware cho Samsung 970 EVO Plus xem chi tiết <a href="https://semiconductor.samsung.com/consumer-storage/support/tools/">tại đây</a></li>
+<li>Disable SATA Hot-Plug trong bios</li>
+<li>
+<p>Đảm bảo ổ NVMe được đặt là NVMe trong bios</p>
+</li>
+<li>
+<p>NVRAM Failing:</p>
+</li>
+<li>
+<p>Đây là lỗi phổ biến trên các dòng HEDT hoặc trên các main 300 series</p>
+<ul>
+<li>Trên 300 series: tải và cài đặt SDT-PMC <a href="https://heavietnam.ga/2022/03/10/ssdt-recomend/">tại đây</a></li>
+<li>HEDT thì các bạn sẽ Emulating NVRAM theo link <a href="https://heavietnam.ga/2022/04/09/emulated-nvram/">sau</a> (chỉ cần chỉnh config không cần chạy lệnh)</li>
+</ul>
+</li>
+<li>
+<p>RTC missing</p>
+</li>
+<li>
+<p>Với các chip 300+ series bạn cần <a href="https://heavietnam.ga/2022/03/10/ssdt-recomend/">SSDT-AWAC</a></p>
+</li>
+<li>Đối với các máy hedt (X99 và X299) các RTC device sẽ bị thiếu cần dùng SSDT-RTC0-RANGE xem chi tiết <a href="https://heavietnam.ga/2022/01/22/fix-system-clocks-on-hedt/">tại đây</a></li>
+<li>1 số máy HP cũng gặp trường hợp này các bạn có thể dùng SSDT-RTC xem chi tiết các fix <a href="https://heavietnam.ga/2022/04/10/fix-rtc-manual/">tại đây</a></li>
+</ul>
+<h2 id="stuck-at-acpi-table-loading-on-b550">Stuck at <code>ACPI table loading on B550</code><a class="headerlink" href="#stuck-at-acpi-table-loading-on-b550" title="Permanent link">&para;</a></h2>
+<p>Thêm SSDT-CPUR.aml <a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/compiled/SSDT-CPUR.aml">tại đây</a>.</p>
+<h2 id="waiting-for-root-device-or-prohibited-sign-error">“<code>Waiting for Root Device</code>” or “<code>Prohibited Sign error</code>“<a class="headerlink" href="#waiting-for-root-device-or-prohibited-sign-error" title="Permanent link">&para;</a></h2>
+<ul>
+<li>USB</li>
+<li>Map USB theo hướng dẫn <a href="https://heavietnam.ga/2021/09/29/vi-1map-usb-intel-and-amd/">tại đây</a></li>
+<li><code>Kernel -&gt; Quirks -&gt; XhciPortLimit -&gt; flase</code></li>
+<li>1 vài lỗi khác có thể do firmware không truyền quyền điều khiển USB cho macOS.<ul>
+<li><code>UEFI -&gt; Quirks -&gt; bạn có thể đổi port usb để khắc pục lỗi nàyeleaseUsbOwnership -&gt; True</code></li>
+<li>Hoặc bật XHCI Handoff</li>
+</ul>
+</li>
+<li>Đôi khi việc đổi port usb cũng có thể giúp bạn khắc phục lỗi này</li>
+<li>Đối với các cpu amd gen 15 và 16 thì cần add <a href="https://cdn.discordapp.com/attachments/566705665616117760/566728101292408877/XLNCUSBFix.kext.zip">XLNCUSBFix.kext</a><ul>
+<li>Nếu như kext đó không hoạt động thì bạn có thể thử kext <a href="https://cdn.discordapp.com/attachments/249992304503291905/355235241645965312/StopSign-fixv5.zip">AMD StopSign-fixv5</a></li>
+</ul>
+</li>
+<li>Ngoài ra hedt X299 cũng cần Enable Above4G Decoding</li>
+<li>Thiếu USB port trong ACPI<ul>
+<li>Các máy Intel các bạn sử dụng <a href="https://github.com/daliansky/OS-X-USB-Inject-All">usbinjectall</a></li>
+<li>Còn đối với các CPU AMD thì bạn cần sử dụng SSDT-RHUB</li>
+<li>chọn <code>7.usb reset</code> trong SSDT-Time</li>
+</ul>
+</li>
+<li>Sata issue:</li>
+<li>Xem chi tiết <a href="https://heavietnam.ga/2021/12/06/xxxxi-patch-sata-controller/">tại đây</a>.</li>
+</ul>
+<h2 id="kernel-panic-with-iopcifamily-tren-hedt-x99">Kernel panic with <code>IOPCIFamily</code> trên hedt X99<a class="headerlink" href="#kernel-panic-with-iopcifamily-tren-hedt-x99" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Bật các mục sau trong config:</li>
+<li>AppleCpuPmCfgLock</li>
+<li>AppleXcpmCfgLock</li>
+<li>AppleXcpmExtraMsrs</li>
+<li>Thêm SSDT-UNC <a href="https://heavietnam.ga/2022/03/10/ssdt-recomend/">tại đây</a></li>
+</ul>
+<h2 id="stuck-on-or-near-ioconsoleusers-gioscreenlockgiolockstate-3">Stuck on or near <code>IOConsoleUsers: gIOScreenLock...</code>/<code>gIOLockState (3...</code><a class="headerlink" href="#stuck-on-or-near-ioconsoleusers-gioscreenlockgiolockstate-3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>DGPU không support hãy disable nó đi theo hướng dẫn <a href="https://heavietnam.ga/2021/09/29/xxi-disable-dgpu/">tại đây</a></li>
+<li>CSM bị tắt trong bios</li>
+<li>1 số laptop phải bật CSM</li>
+<li>Force tốc độ PCIe 3.0 link</li>
+<li>Check patch igpu theo hướng dẫn <a href="https://heavietnam.ga/2021/09/29/xii-patch-igpu/">tại đây</a></li>
+<li>Desktop UHD 630 có thể thử <code>00009B3E</code></li>
+<li><code>-igfxmlr</code> boot-arg. Điều này cũng có thể giúp fix lỗi <code>Divide by Zero</code></li>
+<li>igfxonln=1 boot-arg trên igpu coffelake+ từ 10.15.4+</li>
+</ul>
+<h2 id="scrambled-screen-on-laptops">Scrambled Screen on laptops<a class="headerlink" href="#scrambled-screen-on-laptops" title="Permanent link">&para;</a></h2>
+<p>Enable <code>CSM</code> trong bios setting nó có thể có tên là <code>Boot legacy ROMs</code> hoặc vài setting legacy khác</p>
+<h2 id="black-screen-after-ioconsoleusers-gioscreenlock-on-navi">Black screen after <code>IOConsoleUsers: gIOScreenLock...</code> on Navi<a class="headerlink" href="#black-screen-after-ioconsoleusers-gioscreenlock-on-navi" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Thêm <code>agdpmod=pikera</code> add vào boot-arg</li>
+<li>Thử thay đổi các display output khác.</li>
+<li>Thử smbios MacPro7,1 với boot-arg <code>agdpmod=ignore</code></li>
+<li>Đối với máy MSI thì bạn hãy add patch sau vào <code>Kernel -&gt; Patch</code> (ở bigsur không yêu cầu bản vá này).</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Base:
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Comment: Navi VBIOS Bug Patch
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Count: 1
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>Enabled: YES
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>Find: 4154592C526F6D2300
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>Identifier: com.apple.kext.AMDRadeonX6000Framebuffer
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>Limit: 0
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>Mask:
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>MinKernel: 19.00.00
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>MaxKernel: 19.99.99
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>Replace: 414D442C526F6D2300
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>ReplaceMask:
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>Skip: 0
+</code></pre></div>
+<h2 id="kernel-panic-cannot-perform-kext-summary">Kernel Panic <code>Cannot perform kext summary</code><a class="headerlink" href="#kernel-panic-cannot-perform-kext-summary" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Hãy chắc rằng bạn đã add kext chính trước khi add plugin</li>
+<li>Vì những plugin chỉ có file plist mà không chứa tệp thực thi nên cần pahỉ sử dụng với kext chính</li>
+<li>Không sử dụng nhiều kext giống nhau trong config.plist</li>
+<li>như voodooinput có thể xuất hiện trong kẽt i2c và cả pss2 nên bạn chỉ nên dùng 1 kext voodooinput và xóa cái còn lại trong kext kia</li>
+<li>Sử dụng phương pháp fix lỗi giống như <code>invalid frame pointer</code></li>
+</ul>
+<h2 id="kernel-panic-appleintelmcereporter">Kernel Panic <code>AppleIntelMCEReporter</code><a class="headerlink" href="#kernel-panic-appleintelmcereporter" title="Permanent link">&para;</a></h2>
+<p>Thêm kext <a href="https://github.com/acidanthera/bugtracker/files/3703498/AppleMCEReporterDisabler.kext.zip">AppleMCEReporterDisabler</a> vào EFI &ndash;&gt; OC &ndash;&gt; Kext hoặc EFI &ndash;&gt; Clover &ndash;&gt; kext &ndash;&gt; other (snaps nếu ở OpenCore).</p>
+<h2 id="kernel-panic-appleintelcpupowermanagement">Kernel Panic <code>AppleIntelCPUPowerManagement</code><a class="headerlink" href="#kernel-panic-appleintelcpupowermanagement" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Patch power manager <a href="https://heavietnam.ga/2021/09/29/vi-3fix-power-manager/">tại đây</a></li>
+<li>Thêm kext <a href="https://www.mediafire.com/folder/rhjg943ja2cc1/NullCPUPowerManagement.kext">NullCPUPowerManagement</a></li>
+<li>Hoặc bạn có thể enable <code>DummyPowerManagement</code> trong <code>Kernel -&gt; Emulate</code> (chỉ đối với opencore)</li>
+<li>Ở 1 số các cpu thế hệ cũ cung có thể bị thiếu hpet hoặc xung đột irq</li>
+<li>Fix hpet theo hướng dẫn <a href="https://heavietnam.ga/2021/09/29/ii-patch-am-thanh-voi-apple-alc-with-patch-hpet/">tại đây</a></li>
+<li>Force hpet</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>// add patch sau vào ACPI --&gt; Patch
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Comment    String    Force HPET Online
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>Enabled    Boolean    YES
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>Count    Number    0
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>Limit    Number    0
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>Find    Data    A010934F53464C00
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>Replace    Data    A40A0FA3A3A3A3A3
+</code></pre></div>
+<h2 id="kernel-panic-appleacpiplatform-in-1013">Kernel Panic <code>AppleACPIPlatform</code> in 10.13<a class="headerlink" href="#kernel-panic-appleacpiplatform-in-1013" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="https://heavietnam.ga/wp-content/uploads/2022/04/image-1.png" /></p>
+<p>Bật <code>NormalizeHeaders</code> trong <code>ACPI -&gt; Quirks</code></p>
+<h2 id="macos-frozen-right-before-login">macOS frozen right before login<a class="headerlink" href="#macos-frozen-right-before-login" title="Permanent link">&para;</a></h2>
+<p>Thêm kext <a href="https://github.com/lvs1974/CpuTscSync">CpuTscSync</a> vào EFI &ndash;&gt; OC &ndash;&gt; kext hoặc EFI &ndash;&gt; Clover &ndash;&gt; kext &ndash;&gt; other (snaps nếu là OpenCore).</p>
+<p><img alt="" src="https://dortania.github.io/OpenCore-Install-Guide/assets/img/asus-tsc.2397797f.png" /></p>
+<p>Lỗi 1</p>
+<p><img alt="" src="https://dortania.github.io/OpenCore-Install-Guide/assets/img/asus-tsc-2.029ce318.png" /></p>
+<p>Lỗi 2</p>
+<h2 id="keyboard-works-but-trackpad-does-not">Keyboard works but trackpad does not<a class="headerlink" href="#keyboard-works-but-trackpad-does-not" title="Permanent link">&para;</a></h2>
+<p>Fix trackpad theo <a href="https://heavietnam.ga/2021/09/29/v-fix-trackpad/">link</a></p>
+<h2 id="kextd-stall0-appleacpicpu"><code>kextd stall[0]: AppleACPICPU</code><a class="headerlink" href="#kextd-stall0-appleacpicpu" title="Permanent link">&para;</a></h2>
+<p>Điều này là do macOS bị thiếu giả lập SMC hãy đảm bản bạn có những phần sau:</p>
+<ul>
+<li><a href="https://github.com/acidanthera/Lilu/releases">Lilu</a> và <a href="https://github.com/acidanthera/VirtualSMC/releases">VirtualSMC</a> trong EFI &ndash;&gt; OC &ndash;&gt; kext hoặc EFI &ndash;&gt; Clover &ndash;&gt; kext &ndash;&gt; other (snaps nếu là OpenCore)</li>
+<li>Nếu không được hãy thử sử dụng <a href="https://bitbucket.org/RehabMan/os-x-fakesmc-kozlek/downloads/">Fake-SMC</a> (không sử dụng cả 2 fake-smc và VirtualSMC)</li>
+</ul>
+<h2 id="kernel-panic-on-appleinteli210ethernet">Kernel Panic on <code>AppleIntelI210Ethernet</code><a class="headerlink" href="#kernel-panic-on-appleinteli210ethernet" title="Permanent link">&para;</a></h2>
+<p>Đối với những main Comet lake với card I225-V NIC có thể xảy ra panic do kext I210 . Để khắc phục bạn cần có PciRoot đúng với card ethernet. 1 số đường dẫn phổ biến là</p>
+<ul>
+<li>PciRoot(0x0)/Pci(0x1C,0x1)/Pci(0x0, 0x0)</li>
+<li>đối với main Asus, Gigabyte và đây cũng là mặc định</li>
+<li>PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)</li>
+<li>được dùng để thay thế khi dường dẫn trên không hoạt động</li>
+</ul>
+<p>Bạn cũng có thể sử dụng <a href="https://github.com/acidanthera/gfxutil/releases">gfxutil</a> để tìm PciRoot của card ethernet 1 cách thủ công:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>&lt;kéo gfxutil vào terminal&gt; | grep -i &quot;8086:15f3&quot;
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>00:1f.6 8086:15f3 /PC00@0/GBE1@1F,6 = PciRoot(0x0)/Pci(0x1F,0x6)
+</code></pre></div>
+<p>Ta sẽ dễ thấy PciRoot là PciRoot(0x0)/Pci(0x1F,0x6). Ta sẽ add PciRoot(0x0)/Pci(0x1F,0x6)|data| F2150000</p>
+<h2 id="kernel-panic-on-wrong-cd-clock-frequency-with-icelake-laptop">Kernel panic on “<code>Wrong CD Clock Frequency</code>” with Icelake laptop<a class="headerlink" href="#kernel-panic-on-wrong-cd-clock-frequency-with-icelake-laptop" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="https://dortania.github.io/OpenCore-Install-Guide/assets/img/cd-clock.ad48e008.jpg" /></p>
+<p>Add boot-arg <code>-igfxcdc</code></p>
+<h2 id="kernel-panic-on-cckprng_int_gen">Kernel panic on “<code>cckprng_int_gen</code>“<a class="headerlink" href="#kernel-panic-on-cckprng_int_gen" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>// full error
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>&quot;cckprng_int_gen: generator has already been sealed&quot;
+</code></pre></div>
+<p>Có 2 khả năng dẫn đến lỗi</p>
+<ul>
+<li>Thiếu SMC</li>
+<li>add <a href="https://github.com/acidanthera/VirtualSMC/releases">VirtualSMC</a> vào EFI &ndash;&gt; OC &ndash;&gt; kext hoặc EFI &ndash;&gt; Clover &ndash;&gt; Kext &ndash;&gt; other (snaps nếu dùng opencore)</li>
+<li>sử dụng SSDT-CPUR không đúng<ul>
+<li>chỉ sử dụng SSDT này trên B550 and A520</li>
+<li>Không sử dụng SSDT này trên X570 (B450 or A320)</li>
+</ul>
+</li>
+</ul>
+<h2 id="stuck-at-forcing-cs_runtime-for-entitlement-in-big-sur">Stuck at <code>Forcing CS_RUNTIME for entitlement</code> in Big Sur<a class="headerlink" href="#stuck-at-forcing-cs_runtime-for-entitlement-in-big-sur" title="Permanent link">&para;</a></h2>
+<p><img alt="Credit to Stompy for image" src="https://dortania.github.io/OpenCore-Install-Guide/assets/img/cs-stuck.bddc4a2d.jpg" /></p>
+<p>Đây thực sự không phải là lỗi. Chỉ vì quá trình này rất lâu để vượt qua mà nhiều người nghĩ đây là lỗi nhưng hãy kiên nhẫn và đừng tắt máy</p>
+<h2 id="stuck-on-ramrod">Stuck on <code>ramrod</code>(^^^^^^^^^^^^^)<a class="headerlink" href="#stuck-on-ramrod" title="Permanent link">&para;</a></h2>
+<p>bị stuck ở ramrod có nghĩa là nó boot &ndash;&gt; gặp lỗi &ndash;&gt; reboot &ndash;&gt; vòng lặp</p>
+<p>Điều này có nghĩa là giả lặp smc của bạn đã bị hỏng có 2 cách khắc phục</p>
+<ul>
+<li>Cài đặt VirtualSMC và Lilu new version kèm boot-arg <code>vsmcgen=1</code></li>
+<li>Bạn cũng thể thử kext <a href="https://bitbucket.org/RehabMan/os-x-fakesmc-kozlek/downloads/">Fake-SMC</a> để thay thế</li>
+</ul>
+<h2 id="virtual-machine-issues">Virtual Machine Issues<a class="headerlink" href="#virtual-machine-issues" title="Permanent link">&para;</a></h2>
+<p>VMware 15 sẽ bị stuck ở <code>[EB|#LOG:EXITBS:START]</code>. Cách fix là nâng câp lên VMware 16</p>
+<h2 id="reboot-on-appleusbhostportcreatedevice-failed-to-create-device-on-macos-113">Reboot on “<code>AppleUSBHostPort::createDevice: failed to create device</code>” on macOS 11.3+<a class="headerlink" href="#reboot-on-appleusbhostportcreatedevice-failed-to-create-device-on-macos-113" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Map usb theo link <a href="https://heavietnam.ga/2021/09/29/vi-1map-usb-intel-and-amd/">tại đây</a></li>
+<li>Tắt <code>XhciPortLimit</code> ở <code>Kernel -&gt; Quirks</code> (ở 11.3+)</li>
+</ul>
+<h2 id="oc-prelinked-injection-usbinjectallkext-usbinjectallkext-invalid-parameter">OC: Prelinked injection USBInjectAll.kext (USBInjectAll.kext) – Invalid Parameter<a class="headerlink" href="#oc-prelinked-injection-usbinjectallkext-usbinjectallkext-invalid-parameter" title="Permanent link">&para;</a></h2>
+<p>Convert usb injectall về version 2018 của rehabman <a href="https://bitbucket.org/RehabMan/os-x-usb-inject-all/downloads/RehabMan-USBInjectAll-2018-1108.zip">tại đây</a></p>
+<h2 id="stuck-on-cputscsync">Stuck on <code>CpuTscSync</code><a class="headerlink" href="#stuck-on-cputscsync" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="https://i.imgur.com/YtYrwMa.jpg" /></p>
+<p>Hãy xóa kext CpuTscSync đi sau đó (snaps nếu là opencore) reboot</p>
+<p><strong>Lưu ý: Tuy bài viết này dựa trên cách fix lỗi cho opencore. nhưng người dùng clover vẫn có thể áp dụng cách đọc lỗi và nguyên nhân dẫn đến lỗi vì về bản chất thì nguyên nhân dẫn đến lỗi của opencore và oc là giống nhau</strong></p>
+<p><strong>Source tham khảo: <a href="https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/extended/kernel-issues.html">Kernel Issues | OpenCore Install Guide (dortania.github.io)</a></strong></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../Injects_USB_Manual/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Injects USB Manual" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Injects USB Manual
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../Map_USB/" class="md-footer__link md-footer__link--next" aria-label="Next: Map USB" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Map USB
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.748e2769.min.js"></script>
+      
+    
+  </body>
+</html>

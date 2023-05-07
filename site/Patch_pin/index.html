@@ -1,0 +1,2274 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.2.11">
+    
+    
+      
+        <title>Patch pin - Hackintosh Documents</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c5ef100.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.9647289d.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#patch-pin" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Hackintosh Documents" class="md-header__button md-logo" aria-label="Hackintosh Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Hackintosh Documents
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Patch pin
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Hackintosh Documents" class="md-nav__button md-logo" aria-label="Hackintosh Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Hackintosh Documents
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        content
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Add_device-id_in_amd_kext/" class="md-nav__link">
+        Add device-id vào amd kext
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Backup_and_Restore_with_Time_Machine/" class="md-nav__link">
+        Backup and Restore with Time Machine
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Boot_Arguments/" class="md-nav__link">
+        Boot Arguments
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Boot_without_USB_and_mount_partion_EFI/" class="md-nav__link">
+        Boot không cần USB và mount phân vùng EFI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Config_Laptop_Clarksfield_and_Arrandale/" class="md-nav__link">
+        Config Laptop Clarksfield và Arrandale
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Control_Brightness_External_Display/" class="md-nav__link">
+        Control Brightness cho External Display
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Control_Led_RGB/" class="md-nav__link">
+        Control Led RGB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Convert_Bootloader/" class="md-nav__link">
+        Convert Bootloader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C%C3%A1ch%20x%C3%A1c%20%C4%91%E1%BB%8Bnh%20ph%E1%BA%A7n%20c%E1%BB%A9ng/" class="md-nav__link">
+        Cách xác định phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_CFG-Clock/" class="md-nav__link">
+        Disable CFG-Clock
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_dGPU_Desktop/" class="md-nav__link">
+        Disable dGPU Desktop
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_dgpu_Laptop/" class="md-nav__link">
+        Disable dgpu Laptop
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Emulated_NVRAM/" class="md-nav__link">
+        Emulated NVRAM
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Enable_Trim_For_SSD/" class="md-nav__link">
+        Enable Trim For SSD
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../External_Card_Reader/" class="md-nav__link">
+        Fix Internal/External Card Reader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fake_CPU-ID/" class="md-nav__link">
+        Fake CPU-ID
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix%20_for_slow_AMD_GPU/" class="md-nav__link">
+        Fix for slow AMD GPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Backlight/" class="md-nav__link">
+        Fix Backlight
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Connect_%28HDMI%29/" class="md-nav__link">
+        Fix Connect (HDMI)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Ethernet/" class="md-nav__link">
+        Fix Ethernet
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_HDMI_Audio/" class="md-nav__link">
+        Fix HDMI Audio
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Hotkeys/" class="md-nav__link">
+        Fix Hotkeys
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_RTC_Manual/" class="md-nav__link">
+        Fix RTC Manual
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_RTC_write_issues/" class="md-nav__link">
+        Fix RTC write issues
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Shutdown/" class="md-nav__link">
+        Fix Shut down
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_System_Clocks_on_HEDT/" class="md-nav__link">
+        Fix System Clocks on HEDT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_WiFi_and_Bluetooth/" class="md-nav__link">
+        Fix WiFi và Bluetooth
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_darkwake/" class="md-nav__link">
+        Fix darkwake
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_iServices/" class="md-nav__link">
+        Fix iServices
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_keyboard_wake/" class="md-nav__link">
+        Fix keyboard wake
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_power_management/" class="md-nav__link">
+        Fix power management
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_sleep/" class="md-nav__link">
+        Fix sleep
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_trackpad/" class="md-nav__link">
+        Fix trackpad
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fixing_KASLR/" class="md-nav__link">
+        Fixing KASLR
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GPRW_UPRW_LANC/" class="md-nav__link">
+        GPRW/UPRW/LANC
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ghost_macos/" class="md-nav__link">
+        Ghost macos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Guide_dual_Boot/" class="md-nav__link">
+        Hướng dẫn Dual Boot
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HotPlug_Thunderbolt_3/" class="md-nav__link">
+        HotPlug Thunderbolt 3
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hotpatch_PTS_Wake_TTS/" class="md-nav__link">
+        Hotpatch PTS Wake TTS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Injects_USB_Manual/" class="md-nav__link">
+        Injects USB Manual
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kernel_issue/" class="md-nav__link">
+        Kernel issue
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Map_USB/" class="md-nav__link">
+        Map USB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenCore_Legacy/" class="md-nav__link">
+        OpenCore Legacy
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_AMD_GPU/" class="md-nav__link">
+        Patch Card đồ họa AMD
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_2/" class="md-nav__link">
+        Patch DSDT Phần 2
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_3/" class="md-nav__link">
+        Patch DSDT Phần 3
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_4/" class="md-nav__link">
+        Patch DSDT phần 4
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_GMA_GPU/" class="md-nav__link">
+        Patch GMA GPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_IGPU/" class="md-nav__link">
+        Patch IGPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_NVIDIA_GPU/" class="md-nav__link">
+        Patch Card đồ họa NVIDIA
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_SATA_Controller/" class="md-nav__link">
+        Patch SATA Controller
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_audio_with_AppleALC/" class="md-nav__link">
+        Patch âm thanh với AppleALC
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_audio_with_VoodooHDA/" class="md-nav__link">
+        Patch audio với VoodooHDA
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_dsdt_part_1/" class="md-nav__link">
+        Patch dsdt phần 1
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Patch pin
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Patch pin
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tim-hieu-thuat-ngu" class="md-nav__link">
+    Tìm hiểu thuật ngữ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tien-hanh" class="md-nav__link">
+    Tiến hành
+  </a>
+  
+    <nav class="md-nav" aria-label="Tiến hành">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cach-1-dung-kext-ecenabler" class="md-nav__link">
+    Cách 1: Dùng kext ECEnabler
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cach-2-dung-cac-patch-san-cua-rehabman" class="md-nav__link">
+    Cách 2: Dùng các patch sẵn của RehabMan
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cach-3-static-patch" class="md-nav__link">
+    Cách 3: Static patch
+  </a>
+  
+    <nav class="md-nav" aria-label="Cách 3: Static patch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#p1-xac-inh-phan-can-patch" class="md-nav__link">
+    P1: Xác định phần cần patch:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p2-patch-cac-truong-16-bit-va-32-bit" class="md-nav__link">
+    P2: Patch các trường 16 bit và 32 bit
+  </a>
+  
+    <nav class="md-nav" aria-label="P2: Patch các trường 16 bit và 32 bit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#truong-16-bit" class="md-nav__link">
+    Trường 16 bit:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#truong-32-bit" class="md-nav__link">
+    Trường 32 bit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p3-patch-cac-truong-lon-hon-32-bit" class="md-nav__link">
+    P3: Patch các trường lớn hơn 32 bit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Resize_EFI/" class="md-nav__link">
+        Resize EFI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SIP_and_Gatekeeper/" class="md-nav__link">
+        SIP và Gatekeeper
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SLE_kext_in_bigsur/" class="md-nav__link">
+        Cách sửa kext S/L/E trên bigsur
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SSDT_recomend/" class="md-nav__link">
+        SSDT recomend
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Scan_policy/" class="md-nav__link">
+        Scan policy
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Some_error_in_bigsur/" class="md-nav__link">
+        Một số lỗi ở xuất hiện ở macOS Big Sur
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Some_error_in_propertree/" class="md-nav__link">
+        1 số lỗi ProperTree
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Turn_on_Backlight_Keyboard/" class="md-nav__link">
+        Turn on Backlight Keyboard
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Update_macOS_and_Bootloader/" class="md-nav__link">
+        Update macOS và Bootloader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Use_SSDT-time_to_Prebuilt%20SSDT/" class="md-nav__link">
+        Dùng SSDT-Time để Prebuilt SSDT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%5BEB%7C%23LOG%3AEXITBS%3ASTART%5D/" class="md-nav__link">
+        [EB|#LOG:EXITBS:START]
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../add_boot_option_in_bios/" class="md-nav__link">
+        Cách thêm Boot vào BIOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creat_GUI/" class="md-nav__link">
+        Tạo GUI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creat_online_usb_%28recovery%29/" class="md-nav__link">
+        Cách tạo bộ cài online (recovery)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_EFI_OpenCore/" class="md-nav__link">
+        Cách tạo EFI OpenCore
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_EFI_Opencore_No_ACPI/" class="md-nav__link">
+        Cách làm EFI Opencore No ACPI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_offline_bootable_without_no_usb/" class="md-nav__link">
+        Cách tạo bộ cài Offline khi không có USB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_usb_offline/" class="md-nav__link">
+        Cách tạo bộ cài offline
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fake_CPU_Name%3Aigpu_name/" class="md-nav__link">
+        Fake iGPU/ CPU Name
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_mod_bios/" class="md-nav__link">
+        Cách mod bios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inject_all_hardware_properties/" class="md-nav__link">
+        Cách inject toàn bộ thông tin phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn_about_hackintosh/" class="md-nav__link">
+        Tìm hiểu về Hackintosh
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn_about_to_hardware/" class="md-nav__link">
+        Tìm hiểu chung về phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../macOS_12_Monterey/" class="md-nav__link">
+        macOS 12: Monterey
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patch_connector_type_force_rgb%3AInject_EDID/" class="md-nav__link">
+        Patch Connect Type/ Force RGB/ Inject EDID
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tim-hieu-thuat-ngu" class="md-nav__link">
+    Tìm hiểu thuật ngữ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tien-hanh" class="md-nav__link">
+    Tiến hành
+  </a>
+  
+    <nav class="md-nav" aria-label="Tiến hành">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cach-1-dung-kext-ecenabler" class="md-nav__link">
+    Cách 1: Dùng kext ECEnabler
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cach-2-dung-cac-patch-san-cua-rehabman" class="md-nav__link">
+    Cách 2: Dùng các patch sẵn của RehabMan
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cach-3-static-patch" class="md-nav__link">
+    Cách 3: Static patch
+  </a>
+  
+    <nav class="md-nav" aria-label="Cách 3: Static patch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#p1-xac-inh-phan-can-patch" class="md-nav__link">
+    P1: Xác định phần cần patch:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p2-patch-cac-truong-16-bit-va-32-bit" class="md-nav__link">
+    P2: Patch các trường 16 bit và 32 bit
+  </a>
+  
+    <nav class="md-nav" aria-label="P2: Patch các trường 16 bit và 32 bit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#truong-16-bit" class="md-nav__link">
+    Trường 16 bit:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#truong-32-bit" class="md-nav__link">
+    Trường 32 bit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p3-patch-cac-truong-lon-hon-32-bit" class="md-nav__link">
+    P3: Patch các trường lớn hơn 32 bit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="patch-pin">Patch pin<a class="headerlink" href="#patch-pin" title="Permanent link">&para;</a></h1>
+<h2 id="tim-hieu-thuat-ngu"><strong><em>Tìm hiểu thuật ngữ</em></strong><a class="headerlink" href="#tim-hieu-thuat-ngu" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Trước tiên ta phải hiểu nguyên tác hoạt động:</li>
+</ul>
+<p>Các bản AppleACPIPlatform mới không thể nào truy cập chính xác vào trường EC (Embedded Controller) nên nó sẽ gây ra 1 số lỗi khi sử dụng các kext hiển thị phần trăm pin, bạn phải tiến hành sửa đổi DSDT để nó nhận chính xác mặc dù bạn có thể dùng các bản AppleACPIPlatform cũ hơn (Snow Leopard) nhưng vì các CPU đời Ivy Birdge + có hỗ trợ tính năng quản lý năng lượng nên mình khuyên các bạn nên dùng bản mới nhất. Để làm điều đó, chúng ta cần thay đổi các trường trong EC thành 8 bit để có thể truy cập cùng 1 lúc.</p>
+<h2 id="tien-hanh"><strong><em>Tiến hành</em></strong><a class="headerlink" href="#tien-hanh" title="Permanent link">&para;</a></h2>
+<h3 id="cach-1-dung-kext-ecenabler"><strong>Cách 1: Dùng kext <code>ECEnabler</code></strong><a class="headerlink" href="#cach-1-dung-kext-ecenabler" title="Permanent link">&para;</a></h3>
+<p>Khi dùng cách này thì khả năng 90% là nhận pin</p>
+<p><strong>B1:</strong> Tải kext ECEnabler từ nguồn <a href="https://github.com/1Revenger1/ECEnabler/releases">Releases · 1Revenger1/Enabler · GitHub</a>  và bỏ vào thư mục EFI ⇒ OC hoặc EFI ==&gt; CLOVER ==&gt; KEXT ==&gt; OTHER</p>
+<p><strong>B2</strong> Snapshot config nếu dùng OpenCore.</p>
+<p><strong>B3</strong>: Tải SMCBattery.kext bỏ vô mục kext và snapshot lại (nếu dùng OpenCore) (tải ở đây nhé <a href="https://github.com/acidanthera/virtualsmc/releases">Releases · acidanthera/VirtualSMC · GitHub</a>)</p>
+<p><strong>B4</strong>: Reboot và tận hưởng.</p>
+<h3 id="cach-2-dung-cac-patch-san-cua-rehabman"><strong>Cách 2: Dùng các patch sẵn của RehabMan</strong><a class="headerlink" href="#cach-2-dung-cac-patch-san-cua-rehabman" title="Permanent link">&para;</a></h3>
+<p>B2: Các bạn download patch phù hợp với máy của các bạn <a href="https://github.com/RehabMan/Laptop-DSDT-Patch/tree/master/battery">tại đây</a>.</p>
+<p>Hầu hết các máy ASUS và Lenovo đều có patch.</p>
+<p>B3: Xem patch nào hỗ trợ máy của bạn:</p>
+<ul>
+<li>Các bạn vào các patch phù hợp với model máy và tìm xuống phần <code>works for</code></li>
+</ul>
+<p><img alt="" src="https://lh5.googleusercontent.com/3f9UFToVOlHMlbvcR3Dhw7mmzks3wz6spyFUlhVzf9MbUW20gUIkNc5SqjugE4iDEEDKxm00NB1KRlpLvMys_T08tuSU_ZAD7-wCh5zvTIriY0rL2O5zbI_34jE9XOviY81apmgo=s0" /></p>
+<p>B4: Tải patch và MaciASL <a href="https://bitbucket.org/RehabMan/os-x-maciasl-patchmatic/downloads/">tại đây</a>.</p>
+<p>B5: Dump DSDT và compile theo hướng dẫn <a href="https://heavietnam.ga/2021/09/29/xxvi-patch-dsdt-phan-1/">tại đây</a>.</p>
+<p>B6: Áp dụng các patch theo hướng dẫn <a href="https://heavietnam.ga/2021/09/29/xxvii-patch-dsdt-phan-2/">tại đây</a>.</p>
+<p><strong>Lưu ý : Khi làm theo cách này thì lúc các bạn update firmware sẽ phải làm lại, nếu không muốn làm lại thì các bạn có thể trích DSDT theo hướng dẫn <a href="https://heavietnam.ga/2021/09/29/xxviii-patch-dsdt-phan-3/">tại đây</a></strong>.</p>
+<h3 id="cach-3-static-patch"><strong>Cách 3: Static patch</strong><a class="headerlink" href="#cach-3-static-patch" title="Permanent link">&para;</a></h3>
+<h4 id="p1-xac-inh-phan-can-patch">P1: Xác định phần cần patch:<a class="headerlink" href="#p1-xac-inh-phan-can-patch" title="Permanent link">&para;</a></h4>
+<p>B1: Các bạn dump DSDT theo hướng dẫn <a href="https://heavietnam.ga/2021/09/29/xxvi-patch-dsdt-phan-1/">tại đây</a>.</p>
+<p>B2: Biên dịch DSDT thành .dsl theo hướng dẫn <a href="https://heavietnam.ga/2021/09/29/xxvi-patch-dsdt-phan-1/">tại đây</a>.</p>
+<p>B3: Mở DSDT lên và search <code>Embedded</code> để xác định các trường EC. Ở đây ta có 4 trường EC:</p>
+<ul>
+<li>ECOR</li>
+<li>SMBX</li>
+<li>SMB2</li>
+<li>NSBS</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/mHjuCbv.png" /></p>
+<p><img alt="" src="https://i.imgur.com/dCyEepS.png" /></p>
+<p><img alt="" src="https://i.imgur.com/MkH33ag.png" /></p>
+<p><img alt="" src="https://i.imgur.com/yW0kwml.png" /></p>
+<p>B4: Ta tiến hành search các trường EC đã xác định ở trên</p>
+<p><img alt="" src="https://i.imgur.com/c4T4m4n.png" /></p>
+<p><img alt="" src="https://i.imgur.com/nTeM727.png" /></p>
+<p><img alt="" src="https://i.imgur.com/Nc97ACs.png" /></p>
+<p><img alt="" src="https://i.imgur.com/l3IesQ7.png" /></p>
+<p>Ở đây ta có:</p>
+<ul>
+<li>Biến NSBS xuất hiện ở 1 field</li>
+<li>Biến SMB2 xuất hiện ở 2 field</li>
+<li>Biến SMBX xuất hiện ở 3 field</li>
+<li>Và biến ECOR xuất hiện ở 1 field</li>
+</ul>
+<p>B5: Các bạn tiến hành nhìn vào các biến ở các field đã xác định ở trên. Biến nào trên 8 bit thì ghi lại.</p>
+<p><img alt="" src="https://i.imgur.com/VowFNDs.png" /></p>
+<p><strong>Lưu ý:</strong></p>
+<ul>
+<li>Đối với những trường 16 bit và 32 bit các bạn tiết hành search các trường đó nếu chỉ trả về 1 giá trị có nghĩa là trường đó không được sử dụng và có thể bỏ qua.</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/I8f6UAl.png" /></p>
+<ul>
+<li><strong>Ở đây ta có trường B0TM có 16 bit</strong></li>
+<li>Tuy nhiên khi search lại trường này tả chỉ thấy có 1 kết quả trả về. Tức trường này không được sử dụng và có thể bỏ qua.</li>
+</ul>
+<p>Làm tương tự như vậy ta có:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>DT2B,   16 
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>TAH0,   16,  
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>TAH1,   16,  
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>B0C3,   16, 
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>B0SN,   16, 
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>B1SN,   16 
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>BDAT,   256, 
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>BDA2,   256,  
+</code></pre></div>
+<h4 id="p2-patch-cac-truong-16-bit-va-32-bit">P2: Patch các trường 16 bit và 32 bit<a class="headerlink" href="#p2-patch-cac-truong-16-bit-va-32-bit" title="Permanent link">&para;</a></h4>
+<h5 id="truong-16-bit">Trường 16 bit:<a class="headerlink" href="#truong-16-bit" title="Permanent link">&para;</a></h5>
+<p>Để fix các trường 16 bit bạn sẽ tiến hành chia nhỏ các trường 16 bit thành 2 trường 8 bit</p>
+<p>B1: Đặt tên cho 2 trường vừa tách. Tên mới không được trùng với các tên đã có trong DSDT (mẹo ở đây là bạn sẽ lấy tên của trường chính bỏ đi ký tự đầu tiên và thêm sau là các sô thứ tự. Cần tránh các tên bắt đầu bằn chữ số)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>// sau khi làm xong ta được
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>variableOrig.            variable1     variable2
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>DT2B,   16,      ==&gt;        T2B1,        T2B2
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>TAH0,   16,      ==&gt;        AH01,        AH02
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>TAH1,   16,      ==&gt;        AH11,        AH12
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>B0C3,   16,      ==&gt;        B0CX,        B0CK
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>B0SN,   16,      ==&gt;        B0SX,        B0SK
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>B1SN,   16,      ==&gt;        B1SX,        B1SK
+</code></pre></div>
+<p>B2: Tiến hành viết patch để tách các trường thành các trường nhỏ 8 bit.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a># cấu trúc chung:
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>into device label EC code_regex variableOrig,\s+16, replace_matched begin variable1,8,variable2,8, end;
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a># Note thay variable bằng tên trường các bạn đã xác định ở trên
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a># ví dụ
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>into device label EC code_regex DT2B,\s+16 replace_matched begin T2B1,8,T2B2,8, end;
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a># giái thích cú pháp:
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>  # into device label EC code_regex DT2B,\s+16: tức là tìm trong device EC đoạn code DT2B,   16
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>  # replace_matched begin T2B1,8,T2B2,8,: tức là thay thế đoạn code trên và thay thế chúng bằng T2B1,8,T2B2,8,
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a># sau khi làm xong ta được
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>into device label EC code_regex DT2B,\s+16 replace_matched begin T2B1,8,T2B2,8, end;
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>into device label EC code_regex TAH0,\s+16, replace_matched begin AH01,8,AH02,8, end;
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>into device label EC code_regex TAH1,\s+16, replace_matched begin AH11,8,AH12,8, end;
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>into device label EC code_regex B0C3,\s+16, replace_matched begin B0CX,8,B0CK,8, end;
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>into device label EC code_regex B0SN,\s+16, replace_matched begin B0SX,8,B0SK,8, end;
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>into device label EC code_regex B1SN,\s+16 replace_matched begin B1SX,8,B1SK,8, end;
+</code></pre></div>
+<p>B3: Tiến hành apply patch vừa viết theo hướng dẫn <a href="https://heavietnam.ga/2021/09/29/xxvii-patch-dsdt-phan-2/">tại đây</a>. Sau khi apply sẽ được như hình:</p>
+<p><img alt="" src="https://imgur.com/UeO8FcP.png" /></p>
+<p>hình ảnh chỉ mang tính chất minh họa</p>
+<p>B4: Ta sẽ tiến hành fix các lỗi. Do ở bước trên bạn đã tiên hành tách các trường 16 bit nên những method call qua trường này sẽ bị lỗi. Để fix lỗi đó các bạn sẽ tiến hành add method b1b2 vào:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>into method label B1B2 remove_entry;
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>into definitionblock code_regex . insert
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>begin
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>Method (B1B2, 2, NotSerialized) { Return(Or(Arg0, ShiftLeft(Arg1, 8))) }\n
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>end;
+</code></pre></div>
+<p>B5: Nhấn compiler để tiến hành check lỗi.</p>
+<p>B6: Các bạn sẽ ân vào vùng lỗi và tìm xem nó ở method nào.</p>
+<p><img alt="" src="https://i.imgur.com/NMHGJi2.png" /></p>
+<p>B7: Ta sẽ tiến hành phân tích lỗi và viết patch.</p>
+<p><img alt="" src="https://i.imgur.com/UcTCMTg.png" /></p>
+<p>Ở đây ta thấy nó báo lỗi trường <code>B1SN</code> khi nhấn vào thì sẽ hiện dòng code bị lỗi là <code>Store (B1SN, Local0)</code> ở method <code>BIFA</code> thì ta sẽ có cách dạng lỗi thường gặp:</p>
+<ul>
+<li><code>Store (variableOrig, )</code></li>
+<li>Đối với dạng này ta sẽ có cấu trúc fix chung là:<ul>
+<li><code>into method label &lt;method&gt; code_regex \(&lt;variableOrig&gt;, replaceall_matched begin (B1B2(&lt;variable1&gt;,&lt;variable2&gt;), end;</code></li>
+</ul>
+</li>
+<li>Ví dụ:<ul>
+<li><code>into method label BIFA code_regex \(B1SN, replaceall_matched begin (B1B2(B1SX,B1SK), end;</code></li>
+</ul>
+</li>
+<li><code>Store ( ,variableOrig)</code></li>
+<li>Đối với dạn này ta sẽ có câu trúc fix chung là:<ul>
+<li><code>into method label &lt;method&gt; code_regex \&lt;variableOrig&gt;) replaceall_matched begin B1B2(&lt;variable1&gt;,&lt;variable2&gt;)) end;</code></li>
+</ul>
+</li>
+<li>Ví dụ:<ul>
+<li><code>into method label SMBW code_regex \DT2B) replaceall_matched begin B1B2(T2B1,T2B2)) end;</code></li>
+</ul>
+</li>
+</ul>
+<p>Ở trên là 2 dạng khá phổ biến mà bạn có thể gặp phải. Ngoài ra còn 1 dạng lỗi đặc biệt nữa như sau:</p>
+<p><img alt="" src="https://i.imgur.com/91jK5ZI.png" /></p>
+<p>Ta có thể thấy biến bị lỗi được gắn với 1 đường dẫn. Vì vậy để fix lỗi này ta sẽ tiến hành thay toàn bộ đường dẫn bằng b1b2. Tuy nhiên bạn phải tiến hành gắn các biến trong b1b2 với đường dẫn đã thay thế:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>// before
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Store (^^LPCB.EC.B0C3, Index (BIXT, 0x0A))
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>// after
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>Store (B1B2(^^LPCB.EC.B0CX, ^^LPCB.EC.B0CK), Index (BIXT, 0x0A))
+</code></pre></div>
+<ul>
+<li>Cấu trúc chung:</li>
+<li><code>into method label&lt;method&gt; code_regex \&lt;path variableOrig&gt;, replaceall_matched begin B1B2(&lt;path variable1&gt;, &lt;path variable2&gt;), end;</code><ul>
+<li>Xem các xác định path <code>variable</code> ở mục lưu ý</li>
+</ul>
+</li>
+<li>Ví dụ:</li>
+<li><code>into method label _BIX code_regex \^\^LPCB.EC.B0C3, replaceall_matched begin B1B2(^\^LPCB.EC.B0CX, ^\^LPCB.EC.B0CK), end;</code></li>
+</ul>
+<p><strong>Chú ý:</strong></p>
+<ul>
+<li><strong><method> có nghĩa là method chứa dòng code lỗi như ở trên sẽ là <code>_BIX</code></strong></li>
+<li>Vậy để xác định được method của dòng code lỗi ta sẽ ấn nút compiler để check lỗi và ấn vào lỗi cần fix nhìn vào gốc dưới bên trái để xác định được method cần dùng.</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/5KJWGIW.png" /></p>
+<ul>
+<li><strong>Cách xác định <code>path variable1</code> và <code>path variable2</code>:</strong></li>
+<li><code>path variable Orig:_SB.PCI0.LPCB.EC.&lt;variable Orig&gt; ==&gt;</code></li>
+<li><code>path variable1:_SB.PCI0.LPCB.EC.&lt;variable1&gt;</code></li>
+<li><code>path variable2:_SB.PCI0.LPCB.EC.&lt;variable2&gt;</code></li>
+<li>Ví dụ:</li>
+<li><code>path variable Orig: _SB.PCI0.LPCB.EC.B0C3 ==&gt;</code></li>
+<li><code>path variable1:_SB.PCI0.LPCB.EC.B0CX</code></li>
+<li><code>path variable2:_SB.PCI0.LPCB.EC.B0CK</code></li>
+</ul>
+<p>B8: Sau khi làm như trên ta sẽ được các patch:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>into method label _BIX code_regex \^\^LPCB\.EC\.B0C3, replaceall_matched begin B1B2(^\^LPCB\.EC\.B0CX, ^\^LPCB\.EC\.B0CK), end;
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>into method label BIFA code_regex \(B1SN, replaceall_matched begin (B1B2(B1SX,B1SK), end;
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>into method label BIFA code_regex \(B0SN, replaceall_matched begin (B1B2(B0SX,B0SK), end;
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>into method label SMBR code_regex \(DT2B, replaceall_matched begin (B1B2(T2B1,T2B2), end;
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>into method label SMBW code_regex \DT2B\) replaceall_matched begin B1B2(T2B1,T2B2)) end;
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>into method label TACH code_regex \(TAH0, replaceall_matched begin (B1B2(AH01,AH02), end;
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>into method label TACH code_regex \(TAH1, replaceall_matched begin (B1B2(AH11,AH12), end;
+</code></pre></div>
+<p>Apply các patch theo hướng dẫn <a href="https://heavietnam.ga/2021/09/29/xxvii-patch-dsdt-phan-2/">tại đây</a>.</p>
+<h5 id="truong-32-bit">Trường 32 bit<a class="headerlink" href="#truong-32-bit" title="Permanent link">&para;</a></h5>
+<p>Ở đây do DSDT patch ở trên không có trường 32 bit nên ta sẽ dùng tạm DSDT khác để tiến hành patch trường 32 bit. Làm tương tự như P1 ta có các trường 32 bit sau:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>BTY0,   32, 
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>BTY1,   32,
+</code></pre></div>
+<p>B1: Ta sẽ tiến hành tách các trường 32 bit thành 4 trường 8 bit và đặt tên cho 4 trường đó:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>BTY0,   32, ==&gt; TY01,TY02,TY03,TY04
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>BTY1,   32, ==&gt; TY11,TY12,TY13,TY14
+</code></pre></div>
+<p>B2: Ta tiến hành viết patch trương tự như ở trường 16 bit. Nhưng thay vì thay bằng 2 trường 8 bit ta sẽ tiến hành thay bằng 4 trường 8 bit. Sau khi làm xong ta được:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>into device label EC code_regex BTY0,\s+32 replace_matched begin TY01,8,TY02,8,TY03,8,TY04,8 end;
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>into device label EC code_regex BTY1,\s+32 replace_matched begin TY11,8,TY12,8,TY13,8,TY14,8 end;
+</code></pre></div>
+<p>Tương tự như trường 16 bit ta vẫn sẽ gặp error.</p>
+<p>B3: Để khắc phục điều này ta sẽ tiến hành tương tự như trường 16 bit nhưng thay vì add method B1B2 ta sẽ add method B1B4:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>into method label B1B4 remove_entry;
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>into definitionblock code_regex . insert
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>begin
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>Method (B1B4, 4, NotSerialized)\n
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>{\n
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    Store(Arg3, Local0)\n
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    Or(Arg2, ShiftLeft(Local0, 8), Local0)\n
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>    Or(Arg1, ShiftLeft(Local0, 8), Local0)\n
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>    Or(Arg0, ShiftLeft(Local0, 8), Local0)\n
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>    Return(Local0)\n
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>}\n
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>end;
+</code></pre></div>
+<p>B4: Ta sẽ tiến hành add các patch fix lỗi tương tự như trường 16 bit nhưng thay B1B2 thành B1B4. Sau khi làm xong ta sẽ được:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>into method label GBTI code_regex \(BTY0, replaceall_matched begin (B1B4(TY01,TY02,TY03,TY04), end;
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>into method label GBTI code_regex \(BTY1, replaceall_matched begin (B1B4(TY11,TY12,TY13,TY14), end;
+</code></pre></div>
+<p>B5: Tiến hành apply các patch.</p>
+<h4 id="p3-patch-cac-truong-lon-hon-32-bit">P3: Patch các trường lớn hơn 32 bit<a class="headerlink" href="#p3-patch-cac-truong-lon-hon-32-bit" title="Permanent link">&para;</a></h4>
+<p>Như đã xác định ở P1 ta có các trường lớn hơn 32 bit là:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>BDAT,   256, 
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>BDA2,   256, 
+</code></pre></div>
+<p>B1: Ta sẽ tiến hành đổi tên các trường này:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>variableOrig      variablerenamed
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>BDAT,   256,  ==&gt;     DATX
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>BDA2,   256,  ==&gt;     DA2X
+</code></pre></div>
+<p>B2: Tiến hành viết patch</p>
+<ul>
+<li>Cấu trúc chung:</li>
+<li><code>into device label EC code_regex (&lt;variableOrig&gt;,)\s+(56) replace_matched begin &lt;variablerenamed&gt;,%2,//%1%2 end;</code></li>
+<li>Giải thích cú pháp:<ul>
+<li><code>into device label EC code_regex (&lt;variableOrig&gt;,)\s+(56)</code>: tìm trong device EC đoạn code là <code>BDAT, 256</code></li>
+<li><code>replace_matched begin &lt;variablerenamed&gt;,%2,//%1%2 end;</code>: là thay đoạn tìm thấy bằng <code>DATX,256,//BDAT,256,</code></li>
+</ul>
+</li>
+<li>Ví dụ:</li>
+<li><code>into device label EC code_regex (BDAT,)\s+(256) replace_matched begin DATX,%2,//%1%2 end;</code></li>
+<li><code>into device label EC code_regex (BDA2,)\s+(256) replace_matched begin DA2X,%2,//%1%2 end;</code></li>
+</ul>
+<p>B3: Apply patch vào DSDT.</p>
+<p>B4: Ta tiến hành xác định offset ở các trường này. Có 2 trường hợp có thể xảy ra:</p>
+<ul>
+<li>Thông thường thì ở các field sẽ có ít nhất 1 offset được cho trước<img alt="" src="https://i.imgur.com/EoDAibZ.png" /></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>// Ta sẽ có cách tính như sau
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>                Offset (0xDE), //convert hex to decimal ta được 222
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>                B1TM,   16, // 222 = 0xDE
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>                B1C1,   16, // 222 + (16/8) = 224 = 0xE0
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>                B1C2,   16, // 222 + (16/8) + (16/8) = 226 = 0xE2
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>                B1C3,   16, // 222 + (16/8) + (16/8) + 16/8) = 228 = 0xE4
+</code></pre></div>
+<ul>
+<li>Như vậy ta có các offset sau:</li>
+<li>B1TM: 0xDE</li>
+<li>B1C1: 0xE0</li>
+<li>B1C2: 0xE2</li>
+<li>B1C3: 0xE4</li>
+<li>Tuy nhiên có những trường hợp trong field không cho sẵn offset như là:<br />
+<img alt="" src="https://i.imgur.com/YsVWh4i.png" /><br />
+<img alt="" src="https://i.imgur.com/CX0WaqK.png" /></li>
+<li>Ta sẽ nhìn vào <code>OperationRegion (SMB2, EmbeddedControl, 0x40, 0x28)</code> và <code>OperationRegion (SMBX, EmbeddedControl, 0x18, 0x28)</code> ta có như sau:<ul>
+<li><code>0x28</code> thì đang chỉ vị trị của Region này</li>
+<li><code>0x40</code> và <code>0x18</code> chính là offset lần của <code>SMB2</code> và <code>SMBX</code></li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>// Ta có như sau
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>                  //convert hex to decimal: 0x18 = 24
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>            OperationRegion (SMBX, EmbeddedControl, 0x18, 0x28)
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>            Field (SMBX, ByteAcc, NoLock, Preserve)
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>            {
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>              // 24 = 0x18
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>                PRTC,   8,
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>              // 24 + (8/8) = 25 = 0x19 
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>                SSTS,   5, 
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>              // 24 + (8/8) + (5/8) = 25.625 = 0x19.A
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>                    ,   1,
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>             // 24 + (8/8) + (5/8) + (1/8) = 25.75 = 0x19.C 
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>                ALFG,   1,
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>             // 24 + (8/8) + (5/8) + (1/8) + (1/8) = 25.875 = 0x19.E 
+<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>                CDFG,   1, 
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>       // 24 + (8/8) + (5/8) + (1/8) + (1/8) + (1/8) = 26 = 0x1A 
+<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>                ADDR,   8, 
+<a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>       // 24 + (8/8) + (5/8) + (1/8) + (1/8) + (1/8) + (8/8) = 27 = 0x1B 
+<a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>                CMDB,   8, 
+<a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>// 24 + (8/8) + (5/8) + (1/8) + (1/8) + (1/8) + (8/8) + (8/8) = 28 = 0x1C 
+<a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>                BDAT,   256, 
+<a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a>            }
+<a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a>               //convert hex to decimal: 0x40 = 64
+<a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a>            OperationRegion (SMB2, EmbeddedControl, 0x40, 0x28)
+<a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a>            Field (SMB2, ByteAcc, NoLock, Preserve)
+<a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a>            {
+<a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a>              // 64 = 0x40
+<a id="__codelineno-14-28" name="__codelineno-14-28" href="#__codelineno-14-28"></a>                PRT2,   8, 
+<a id="__codelineno-14-29" name="__codelineno-14-29" href="#__codelineno-14-29"></a>        // 64 + (8/8) = 65 = 0x41
+<a id="__codelineno-14-30" name="__codelineno-14-30" href="#__codelineno-14-30"></a>                SST2,   5, 
+<a id="__codelineno-14-31" name="__codelineno-14-31" href="#__codelineno-14-31"></a>   // 64 + (8/8) + (5/8) = 65.625 = 0x41.A
+<a id="__codelineno-14-32" name="__codelineno-14-32" href="#__codelineno-14-32"></a>                    ,   1, 
+<a id="__codelineno-14-33" name="__codelineno-14-33" href="#__codelineno-14-33"></a> // 64 + (8/8) + (5/8) + (1/8) = 65.75 = 0x41.C
+<a id="__codelineno-14-34" name="__codelineno-14-34" href="#__codelineno-14-34"></a>                ALF2,   1, 
+<a id="__codelineno-14-35" name="__codelineno-14-35" href="#__codelineno-14-35"></a>// 64 + (8/8) + (5/8) + (1/8) + (1/8) = 65.875 = 0x41.E
+<a id="__codelineno-14-36" name="__codelineno-14-36" href="#__codelineno-14-36"></a>                CDF2,   1, 
+<a id="__codelineno-14-37" name="__codelineno-14-37" href="#__codelineno-14-37"></a>// 64 + (8/8) + (5/8) + (1/8) + (1/8) + (1/8) = 66 = 0x42
+<a id="__codelineno-14-38" name="__codelineno-14-38" href="#__codelineno-14-38"></a>                ADD2,   8, 
+<a id="__codelineno-14-39" name="__codelineno-14-39" href="#__codelineno-14-39"></a>// 64 + (8/8) + (5/8) + (1/8) + (1/8) + (1/8) + (8/8) = 67 = 0x43
+<a id="__codelineno-14-40" name="__codelineno-14-40" href="#__codelineno-14-40"></a>                CMD2,   8, 
+<a id="__codelineno-14-41" name="__codelineno-14-41" href="#__codelineno-14-41"></a>// 64 + (8/8) + (5/8) + (1/8) + (1/8) + (1/8) + (8/8) + (8/8) = 68 = 0x44
+<a id="__codelineno-14-42" name="__codelineno-14-42" href="#__codelineno-14-42"></a>                BDA2,   256, 
+<a id="__codelineno-14-43" name="__codelineno-14-43" href="#__codelineno-14-43"></a>            }
+</code></pre></div>
+<p>Vậy ta sẽ có các offset sau:</p>
+<ul>
+<li>BDAT: 0x1C</li>
+<li>BDA2: 0x44</li>
+</ul>
+<p>B5: Vì ta đã rename ở bước 2 nên khi compiler sẽ có error. Để khắc phục ta sẽ tiến hành add method RECB (Read EC Buffer) và WECB (Write EC Buffer)</p>
+<ul>
+<li>Khi bạn check lỗi mà nhận được lỗi có dạng <code>Store(&lt;variableOrig&gt;, )</code></li>
+<li>thì nó sẽ thuộc method RECB</li>
+<li>Ví dụ:<ul>
+<li><code>Store (BDAT, )</code></li>
+</ul>
+</li>
+<li>Khi check lỗi mà có dạng là <code>Store( ,&lt;variableOrig&gt;)</code></li>
+<li>thì nó sẽ thuộc method WECB</li>
+<li>Ví dụ:<ul>
+<li><code>Store ( ,BDAT)</code></li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a># RECB
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a># utility methods to read/write buffers from/to EC
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>into method label RE1B parent_label EC remove_entry;
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>into method label RECB parent_label EC remove_entry;
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>into device label EC insert
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>begin
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>Method (RE1B, 1, NotSerialized)\n
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>{\n
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>    OperationRegion(ERAM, EmbeddedControl, Arg0, 1)\n
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>    Field(ERAM, ByteAcc, NoLock, Preserve) { BYTE, 8 }\n
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>    Return(BYTE)\n
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>}\n
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>Method (RECB, 2, Serialized)\n
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>// Arg0 - offset in bytes from zero-based EC\n
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>// Arg1 - size of buffer in bits\n
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>{\n
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>    ShiftRight(Add(Arg1,7), 3, Arg1)\n
+<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>    Name(TEMP, Buffer(Arg1) { })\n
+<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a>    Add(Arg0, Arg1, Arg1)\n
+<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a>    Store(0, Local0)\n
+<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a>    While (LLess(Arg0, Arg1))\n
+<a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a>    {\n
+<a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a>        Store(RE1B(Arg0), Index(TEMP, Local0))\n
+<a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a>        Increment(Arg0)\n
+<a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a>        Increment(Local0)\n
+<a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a>    }\n
+<a id="__codelineno-15-27" name="__codelineno-15-27" href="#__codelineno-15-27"></a>    Return(TEMP)\n
+<a id="__codelineno-15-28" name="__codelineno-15-28" href="#__codelineno-15-28"></a>}\n
+<a id="__codelineno-15-29" name="__codelineno-15-29" href="#__codelineno-15-29"></a>end;
+<a id="__codelineno-15-30" name="__codelineno-15-30" href="#__codelineno-15-30"></a>
+<a id="__codelineno-15-31" name="__codelineno-15-31" href="#__codelineno-15-31"></a>#WECB
+<a id="__codelineno-15-32" name="__codelineno-15-32" href="#__codelineno-15-32"></a>into method label WE1B parent_label EC remove_entry;
+<a id="__codelineno-15-33" name="__codelineno-15-33" href="#__codelineno-15-33"></a>into method label WECB parent_label EC remove_entry;
+<a id="__codelineno-15-34" name="__codelineno-15-34" href="#__codelineno-15-34"></a>into device label EC insert
+<a id="__codelineno-15-35" name="__codelineno-15-35" href="#__codelineno-15-35"></a>begin
+<a id="__codelineno-15-36" name="__codelineno-15-36" href="#__codelineno-15-36"></a>Method (WE1B, 2, NotSerialized)\n
+<a id="__codelineno-15-37" name="__codelineno-15-37" href="#__codelineno-15-37"></a>{\n
+<a id="__codelineno-15-38" name="__codelineno-15-38" href="#__codelineno-15-38"></a>    OperationRegion(ERAM, EmbeddedControl, Arg0, 1)\n
+<a id="__codelineno-15-39" name="__codelineno-15-39" href="#__codelineno-15-39"></a>    Field(ERAM, ByteAcc, NoLock, Preserve) { BYTE, 8 }\n
+<a id="__codelineno-15-40" name="__codelineno-15-40" href="#__codelineno-15-40"></a>    Store(Arg1, BYTE)\n
+<a id="__codelineno-15-41" name="__codelineno-15-41" href="#__codelineno-15-41"></a>}\n
+<a id="__codelineno-15-42" name="__codelineno-15-42" href="#__codelineno-15-42"></a>Method (WECB, 3, Serialized)\n
+<a id="__codelineno-15-43" name="__codelineno-15-43" href="#__codelineno-15-43"></a>// Arg0 - offset in bytes from zero-based EC\n
+<a id="__codelineno-15-44" name="__codelineno-15-44" href="#__codelineno-15-44"></a>// Arg1 - size of buffer in bits\n
+<a id="__codelineno-15-45" name="__codelineno-15-45" href="#__codelineno-15-45"></a>// Arg2 - value to write\n
+<a id="__codelineno-15-46" name="__codelineno-15-46" href="#__codelineno-15-46"></a>{\n
+<a id="__codelineno-15-47" name="__codelineno-15-47" href="#__codelineno-15-47"></a>    ShiftRight(Add(Arg1,7), 3, Arg1)\n
+<a id="__codelineno-15-48" name="__codelineno-15-48" href="#__codelineno-15-48"></a>    Name(TEMP, Buffer(Arg1) { })\n
+<a id="__codelineno-15-49" name="__codelineno-15-49" href="#__codelineno-15-49"></a>    Store(Arg2, TEMP)\n
+<a id="__codelineno-15-50" name="__codelineno-15-50" href="#__codelineno-15-50"></a>    Add(Arg0, Arg1, Arg1)\n
+<a id="__codelineno-15-51" name="__codelineno-15-51" href="#__codelineno-15-51"></a>    Store(0, Local0)\n
+<a id="__codelineno-15-52" name="__codelineno-15-52" href="#__codelineno-15-52"></a>    While (LLess(Arg0, Arg1))\n
+<a id="__codelineno-15-53" name="__codelineno-15-53" href="#__codelineno-15-53"></a>    {\n
+<a id="__codelineno-15-54" name="__codelineno-15-54" href="#__codelineno-15-54"></a>        WE1B(Arg0, DerefOf(Index(TEMP, Local0)))\n
+<a id="__codelineno-15-55" name="__codelineno-15-55" href="#__codelineno-15-55"></a>        Increment(Arg0)\n
+<a id="__codelineno-15-56" name="__codelineno-15-56" href="#__codelineno-15-56"></a>        Increment(Local0)\n
+<a id="__codelineno-15-57" name="__codelineno-15-57" href="#__codelineno-15-57"></a>    }\n
+<a id="__codelineno-15-58" name="__codelineno-15-58" href="#__codelineno-15-58"></a>}\n
+<a id="__codelineno-15-59" name="__codelineno-15-59" href="#__codelineno-15-59"></a>end;
+</code></pre></div>
+<p>B6: Ta tiến hành viết patch. Tương tự như trường 16 bit và 32 bit việc đầu tiên ta cần làm là xác định đoạn code lỗi nằm ở method nào.</p>
+<p><img alt="" src="https://i.imgur.com/Bkr1BfD.png" /></p>
+<p>Như ảnh thì ta có thể thấy đoạn code lỗi nằm ở method <code>SMBR</code>. Tiến hành viết patch:</p>
+<ul>
+<li>
+<p>WECB</p>
+</li>
+<li>
+<p>Cú pháp chung:</p>
+<ul>
+<li><code>into method label &lt;method&gt; code_regex Store\s+((.*),\s+&lt;variableOrig&gt;) replaceall_matched begin WECB(&lt;offset&gt;,&lt;size&gt;,%1) end;</code></li>
+</ul>
+</li>
+<li>
+<p>Ví dụ:</p>
+<ul>
+<li><code>into method label SMBR code_regex Store\s+((.*),\s+BDAT) replaceall_matched begin WECB(0x1c,256,%1) end;</code></li>
+<li>Giải thích cú pháp:</li>
+<li><code>into method label SMBR code_regex Store\s+((.*),\s+BDAT)</code>: tức là sẽ tìm trong method <code>SMBR</code> đoạn code <code>Store (zero, BDAT)</code> (kí hiệu <code>.*</code> tức là đoạn code sẽ lấy giá trị ở trước trường <code>BDAT</code> trong đoạn code ở DSDT)</li>
+<li><code>replaceall_matched begin WECB(0x1c,256,%1) end;</code>: tức là tất cả đoạn code được tìm thấy ở trên sẽ được thay thế bằng <code>(0x1c,256,zero)</code> (kí hiệu <code>%1</code> có nghĩa là lấy phần tử T1 trong đoạn code được tìm thấy)</li>
+</ul>
+</li>
+<li>
+<p>RECB</p>
+</li>
+<li>
+<p>Cú pháp chung:</p>
+<ul>
+<li><code>into method label &lt;method&gt; code_regex (variableOrig, replaceall_matched begin (RECB(&lt;offset&gt;,&lt;size&gt;), end;</code></li>
+</ul>
+</li>
+<li>Ví dụ:<ul>
+<li><code>into method label SMBR code_regex (BDAT, replaceall_matched begin (RECB(0x1c,256), end;</code></li>
+<li>Giải thích cú pháp:</li>
+<li><code>into method label SMBR code_regex (BDAT,</code>: tức là sẽ tìm trong method SMBR đoạn code <code>(BDAT,</code></li>
+<li><code>replaceall_matched begin (RECB(0x1c,256), end;</code>: tức là sẽ thay thế tất cả các đoạn code được tìm thấy trong method SMBR bằng <code>(RECB(0x1c,256),</code></li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>// Patch tay
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a># RECB
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>  // before
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>Store (BDAT, Index (Local0, 0x02))
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a> // after
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>Store (RECB(0x1c,256), Index (Local0, 0x02))
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a># WECB
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a> // before
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>Store (Zero, BDAT)
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a> // after
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>WECB(0x1c,256,Zero)
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>// Trong đó 0x1c là offset 256 là dung lượng tính bằng bit của trường BDAT
+</code></pre></div>
+<p><strong>Chú ý:</strong></p>
+<ul>
+<li><strong><offset>: là offset mà bạn đã xác định ở B4</strong></li>
+<li><strong><method>: là method mà bạn đã xác định ở B6</strong></li>
+</ul>
+<p>Sau khi làm xong ta sẽ có:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>into method label SMBR code_regex Store\s+\((.*),\s+BDAT\) replaceall_matched begin WECB(0x1c,256,%1) end;
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>into method label SMBR code_regex \(BDAT, replaceall_matched begin (RECB(0x1c,256), end;
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>into method label SMBW code_regex Store\s+\((.*),\s+BDAT\) replaceall_matched begin WECB(0x1c,256,%1) end;
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>into method label ECSB code_regex Store\s+\((.*),\s+BDAT\) replaceall_matched begin WECB(0x1c,256,%1) end;
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>into method label ECSB code_regex Store\s+\((.*),\s+BDAT\) replaceall_matched begin WECB(0x1c,256,%1) end;
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>into method label ECSB code_regex \(BDAT, replaceall_matched begin (RECB(0x1c,256), end;
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>into method label ECSB code_regex Store\s+\((.*),\s+BDA2\) replaceall_matched begin WECB(0x44,256,%1) end;
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>into method label ECSB code_regex \(BDA2, replaceall_matched begin (RECB(0x44,256), end;
+</code></pre></div>
+<p>B7: Apply patch vào DSDT.</p>
+<p>B8: Đối với 1 số dòng Asus thì bạn cần thêm patch  <code>Logic bug with charging/discharging status</code></p>
+<p>Vì 1 số laptop ASUS có thể gặp tình trạng khi sạc đầy nhưng hệ thống vẫn báo chưa đầy hoặc khi hết pin nhưng hệ thống vẫn báo chưa hết pin dẫn đến các lỗi như sập nguồn bất chợt ( lỗi nãy vẫn có thể xảy ra ở 1 só máy model khác ) cách fix là các bạn add đoạn sau vào:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>into method label FBST code_regex If\s\(CHGS\s\(Zero\)\)[\s]+\{[\s]+Store\s\(0x02,\sLocal0\)[\s]+\}[\s]+Else[\s]+\{[\s]+Store\s\(One,\sLocal0\)[\s]+\} replaceall_matched begin
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>If (CHGS (Zero))\n
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>{\n
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>     Store (0x02, Local0)\n
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>}\n
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>Else\n
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>{\n
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>     Store (Zero, Local0)\n
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>}
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>end;
+</code></pre></div>
+<p>Sau khi làm xong tất cả các phần trên ta sẽ có đoạn patch sau:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>#Rename field EC
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>DT2B,   16  ==&gt;  T2B1,T2B2
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>TAH0,   16,  ==&gt; AH01,AH02
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>TAH1,   16,  ==&gt; AH11,AH12
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>B0C3,   16, ==&gt; B0CX, B0CK
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>B0SN,   16, ==&gt; B0SX,B0SK
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>B1SN,   16 ==&gt; B1SX,B1SK
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>BDAT,   256, ==&gt; DATX
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>BDA2,   256,  ==&gt; DA2X
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>#16 bit convert 8 bit
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>into device label EC code_regex DT2B,\s+16 replace_matched begin T2B1,8,T2B2,8, end;
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>into device label EC code_regex TAH0,\s+16, replace_matched begin AH01,8,AH02,8, end;
+<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>into device label EC code_regex TAH1,\s+16, replace_matched begin AH11,8,AH12,8, end;
+<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>into device label EC code_regex B0C3,\s+16, replace_matched begin B0CX,8,B0CK,8, end;
+<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a>into device label EC code_regex B0SN,\s+16, replace_matched begin B0SX,8,B0SK,8, end;
+<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>into device label EC code_regex B1SN,\s+16 replace_matched begin B1SX,8,B1SK,8, end;
+<a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a>#into b1b2 method
+<a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a>into method label B1B2 remove_entry;
+<a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a>into definitionblock code_regex . insert
+<a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a>begin
+<a id="__codelineno-19-22" name="__codelineno-19-22" href="#__codelineno-19-22"></a>Method (B1B2, 2, NotSerialized) { Return(Or(Arg0, ShiftLeft(Arg1, 8))) }\n
+<a id="__codelineno-19-23" name="__codelineno-19-23" href="#__codelineno-19-23"></a>end;
+<a id="__codelineno-19-24" name="__codelineno-19-24" href="#__codelineno-19-24"></a>#fix 16 bit error
+<a id="__codelineno-19-25" name="__codelineno-19-25" href="#__codelineno-19-25"></a>into method label _BIX code_regex \^\^LPCB\.EC\.B0C3, replaceall_matched begin B1B2(^\^LPCB\.EC\.B0CX, ^\^LPCB\.EC\.B0CK), end;
+<a id="__codelineno-19-26" name="__codelineno-19-26" href="#__codelineno-19-26"></a>
+<a id="__codelineno-19-27" name="__codelineno-19-27" href="#__codelineno-19-27"></a>into method label BIFA code_regex \(B1SN, replaceall_matched begin (B1B2(B1SX,B1SK), end;
+<a id="__codelineno-19-28" name="__codelineno-19-28" href="#__codelineno-19-28"></a>
+<a id="__codelineno-19-29" name="__codelineno-19-29" href="#__codelineno-19-29"></a>into method label BIFA code_regex \(B0SN, replaceall_matched begin (B1B2(B0SX,B0SK), end;
+<a id="__codelineno-19-30" name="__codelineno-19-30" href="#__codelineno-19-30"></a>
+<a id="__codelineno-19-31" name="__codelineno-19-31" href="#__codelineno-19-31"></a>into method label SMBR code_regex \(DT2B, replaceall_matched begin (B1B2(T2B1,T2B2), end;
+<a id="__codelineno-19-32" name="__codelineno-19-32" href="#__codelineno-19-32"></a>
+<a id="__codelineno-19-33" name="__codelineno-19-33" href="#__codelineno-19-33"></a>into method label SMBW code_regex \DT2B\) replaceall_matched begin B1B2(T2B1,T2B2)) end;
+<a id="__codelineno-19-34" name="__codelineno-19-34" href="#__codelineno-19-34"></a>
+<a id="__codelineno-19-35" name="__codelineno-19-35" href="#__codelineno-19-35"></a>into method label TACH code_regex \(TAH0, replaceall_matched begin (B1B2(AH01,AH02), end;
+<a id="__codelineno-19-36" name="__codelineno-19-36" href="#__codelineno-19-36"></a>
+<a id="__codelineno-19-37" name="__codelineno-19-37" href="#__codelineno-19-37"></a>into method label TACH code_regex \(TAH1, replaceall_matched begin (B1B2(AH11,AH12), end;
+<a id="__codelineno-19-38" name="__codelineno-19-38" href="#__codelineno-19-38"></a>
+<a id="__codelineno-19-39" name="__codelineno-19-39" href="#__codelineno-19-39"></a>#Patch 32 bit
+<a id="__codelineno-19-40" name="__codelineno-19-40" href="#__codelineno-19-40"></a>
+<a id="__codelineno-19-41" name="__codelineno-19-41" href="#__codelineno-19-41"></a>into device label EC code_regex (BDAT,)\s+(256) replace_matched begin DATX,%2,//%1%2 end;
+<a id="__codelineno-19-42" name="__codelineno-19-42" href="#__codelineno-19-42"></a>into device label EC code_regex (BDA2,)\s+(256) replace_matched begin DA2X,%2,//%1%2 end;
+<a id="__codelineno-19-43" name="__codelineno-19-43" href="#__codelineno-19-43"></a>
+<a id="__codelineno-19-44" name="__codelineno-19-44" href="#__codelineno-19-44"></a>#xác định offset
+<a id="__codelineno-19-45" name="__codelineno-19-45" href="#__codelineno-19-45"></a>
+<a id="__codelineno-19-46" name="__codelineno-19-46" href="#__codelineno-19-46"></a>BDAT: 24 + (8/8) + (5/8) + (1/8) + (1/8) + (1/8) + (8/8) + (8/8) = 28 = 0x1c
+<a id="__codelineno-19-47" name="__codelineno-19-47" href="#__codelineno-19-47"></a>BDA2: 64 + (8/8) + (5/8) + (1/8) + (1/8) + (1/8) + (8/8) + (8/8) = 68 = 0x44
+<a id="__codelineno-19-48" name="__codelineno-19-48" href="#__codelineno-19-48"></a>
+<a id="__codelineno-19-49" name="__codelineno-19-49" href="#__codelineno-19-49"></a>#fix 32 bit error
+<a id="__codelineno-19-50" name="__codelineno-19-50" href="#__codelineno-19-50"></a>
+<a id="__codelineno-19-51" name="__codelineno-19-51" href="#__codelineno-19-51"></a>into method label SMBR code_regex Store\s+\((.*),\s+BDAT\) replaceall_matched begin WECB(0x1c,256,%1) end;
+<a id="__codelineno-19-52" name="__codelineno-19-52" href="#__codelineno-19-52"></a>
+<a id="__codelineno-19-53" name="__codelineno-19-53" href="#__codelineno-19-53"></a>into method label SMBR code_regex \(BDAT, replaceall_matched begin (RECB(0x1c,256), end;
+<a id="__codelineno-19-54" name="__codelineno-19-54" href="#__codelineno-19-54"></a>
+<a id="__codelineno-19-55" name="__codelineno-19-55" href="#__codelineno-19-55"></a>into method label SMBW code_regex Store\s+\((.*),\s+BDAT\) replaceall_matched begin WECB(0x1c,256,%1) end;
+<a id="__codelineno-19-56" name="__codelineno-19-56" href="#__codelineno-19-56"></a>
+<a id="__codelineno-19-57" name="__codelineno-19-57" href="#__codelineno-19-57"></a>into method label ECSB code_regex Store\s+\((.*),\s+BDAT\) replaceall_matched begin WECB(0x1c,256,%1) end;
+<a id="__codelineno-19-58" name="__codelineno-19-58" href="#__codelineno-19-58"></a>
+<a id="__codelineno-19-59" name="__codelineno-19-59" href="#__codelineno-19-59"></a>into method label ECSB code_regex Store\s+\((.*),\s+BDAT\) replaceall_matched begin WECB(0x1c,256,%1) end;
+<a id="__codelineno-19-60" name="__codelineno-19-60" href="#__codelineno-19-60"></a>
+<a id="__codelineno-19-61" name="__codelineno-19-61" href="#__codelineno-19-61"></a>into method label ECSB code_regex \(BDAT, replaceall_matched begin (RECB(0x1c,256), end;
+<a id="__codelineno-19-62" name="__codelineno-19-62" href="#__codelineno-19-62"></a>
+<a id="__codelineno-19-63" name="__codelineno-19-63" href="#__codelineno-19-63"></a>into method label ECSB code_regex Store\s+\((.*),\s+BDA2\) replaceall_matched begin WECB(0x44,256,%1) end;
+<a id="__codelineno-19-64" name="__codelineno-19-64" href="#__codelineno-19-64"></a>
+<a id="__codelineno-19-65" name="__codelineno-19-65" href="#__codelineno-19-65"></a>into method label ECSB code_regex \(BDA2, replaceall_matched begin (RECB(0x44,256), end;
+<a id="__codelineno-19-66" name="__codelineno-19-66" href="#__codelineno-19-66"></a>
+<a id="__codelineno-19-67" name="__codelineno-19-67" href="#__codelineno-19-67"></a>#32 bit field
+<a id="__codelineno-19-68" name="__codelineno-19-68" href="#__codelineno-19-68"></a>BTY0,   32, ==&gt; TY01,TY02,TY03,TY04
+<a id="__codelineno-19-69" name="__codelineno-19-69" href="#__codelineno-19-69"></a>BTY1,   32, ==&gt; TY11,TY12,TY13,TY14
+<a id="__codelineno-19-70" name="__codelineno-19-70" href="#__codelineno-19-70"></a>
+<a id="__codelineno-19-71" name="__codelineno-19-71" href="#__codelineno-19-71"></a>#32 bit convert to 8 bit
+<a id="__codelineno-19-72" name="__codelineno-19-72" href="#__codelineno-19-72"></a>into device label EC code_regex BTY0,\s+32 replace_matched begin TY01,8,TY02,8,TY03,8,TY04,8 end;
+<a id="__codelineno-19-73" name="__codelineno-19-73" href="#__codelineno-19-73"></a>into device label EC code_regex BTY1,\s+32 replace_matched begin TY11,8,TY12,8,TY13,8,TY14,8 end;
+</code></pre></div>
+<p><strong>File cho các bạn tham khảo: <a href="https://github.com/king-dragon/EFI-asusx450c/blob/main/DSDT-orig.dsl">DSDT-Orig</a>, <a href="https://github.com/king-dragon/EFI-asusx450c/blob/main/DSDT-patch.dsl">DSDT-patched</a></strong></p>
+<p><strong>Lưu ý: Bạn nên trích DSDT ra SSDT theo hướng dẫn <a href="https://heavietnam.ga/2021/09/29/xxviii-patch-dsdt-phan-3/">tại đây</a>. Vì nếu dùng DSDT thì khi update bios các patch sẽ bị mất tác dụng. Hoặc bạn có thể save file patched.txt lại để apply lại vào DSDT khi update BIOS.</strong></p>
+<p><strong>Lưu ý 2: Khi các bạn không thể nào tìm thấy <code>EmbeddedControl</code> trong DSDT tức là pin của bạn không thuộc sự quản lý của EC Controler. Để khắc phục tình trạng này các bạn sẽ tiến hành update bios để cập nhật lại DSDT</strong></p>
+<p><strong>Source tham khảo: <a href="https://www.tonymacx86.com/threads/guide-how-to-patch-dsdt-for-working-battery-status.116102/">[Guide] How to patch DSDT for working battery status | tonymacx86.com</a> | <a href="https://www.olarila.com/topic/5673-guide-laptop-battery-indicator-the-dsdt-patching-horror/">[Guide] Laptop Battery Indicator – The DSDT Patching Horror – Page 14 – Guides and Tutorials – Olarila</a> ( thank you )</strong></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../Patch_dsdt_part_1/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Patch dsdt phần 1" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Patch dsdt phần 1
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../Resize_EFI/" class="md-footer__link md-footer__link--next" aria-label="Next: Resize EFI" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Resize EFI
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.748e2769.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1806 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.2.11">
+    
+    
+      
+        <title>Patch DSDT Phần 3 - Hackintosh Documents</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c5ef100.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.9647289d.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#patch-dsdt-phan-3" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Hackintosh Documents" class="md-header__button md-logo" aria-label="Hackintosh Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Hackintosh Documents
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Patch DSDT Phần 3
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Hackintosh Documents" class="md-nav__button md-logo" aria-label="Hackintosh Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Hackintosh Documents
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        content
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Add_device-id_in_amd_kext/" class="md-nav__link">
+        Add device-id vào amd kext
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Backup_and_Restore_with_Time_Machine/" class="md-nav__link">
+        Backup and Restore with Time Machine
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Boot_Arguments/" class="md-nav__link">
+        Boot Arguments
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Boot_without_USB_and_mount_partion_EFI/" class="md-nav__link">
+        Boot không cần USB và mount phân vùng EFI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Config_Laptop_Clarksfield_and_Arrandale/" class="md-nav__link">
+        Config Laptop Clarksfield và Arrandale
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Control_Brightness_External_Display/" class="md-nav__link">
+        Control Brightness cho External Display
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Control_Led_RGB/" class="md-nav__link">
+        Control Led RGB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Convert_Bootloader/" class="md-nav__link">
+        Convert Bootloader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C%C3%A1ch%20x%C3%A1c%20%C4%91%E1%BB%8Bnh%20ph%E1%BA%A7n%20c%E1%BB%A9ng/" class="md-nav__link">
+        Cách xác định phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_CFG-Clock/" class="md-nav__link">
+        Disable CFG-Clock
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_dGPU_Desktop/" class="md-nav__link">
+        Disable dGPU Desktop
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_dgpu_Laptop/" class="md-nav__link">
+        Disable dgpu Laptop
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Emulated_NVRAM/" class="md-nav__link">
+        Emulated NVRAM
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Enable_Trim_For_SSD/" class="md-nav__link">
+        Enable Trim For SSD
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../External_Card_Reader/" class="md-nav__link">
+        Fix Internal/External Card Reader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fake_CPU-ID/" class="md-nav__link">
+        Fake CPU-ID
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix%20_for_slow_AMD_GPU/" class="md-nav__link">
+        Fix for slow AMD GPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Backlight/" class="md-nav__link">
+        Fix Backlight
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Connect_%28HDMI%29/" class="md-nav__link">
+        Fix Connect (HDMI)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Ethernet/" class="md-nav__link">
+        Fix Ethernet
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_HDMI_Audio/" class="md-nav__link">
+        Fix HDMI Audio
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Hotkeys/" class="md-nav__link">
+        Fix Hotkeys
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_RTC_Manual/" class="md-nav__link">
+        Fix RTC Manual
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_RTC_write_issues/" class="md-nav__link">
+        Fix RTC write issues
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Shutdown/" class="md-nav__link">
+        Fix Shut down
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_System_Clocks_on_HEDT/" class="md-nav__link">
+        Fix System Clocks on HEDT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_WiFi_and_Bluetooth/" class="md-nav__link">
+        Fix WiFi và Bluetooth
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_darkwake/" class="md-nav__link">
+        Fix darkwake
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_iServices/" class="md-nav__link">
+        Fix iServices
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_keyboard_wake/" class="md-nav__link">
+        Fix keyboard wake
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_power_management/" class="md-nav__link">
+        Fix power management
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_sleep/" class="md-nav__link">
+        Fix sleep
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_trackpad/" class="md-nav__link">
+        Fix trackpad
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fixing_KASLR/" class="md-nav__link">
+        Fixing KASLR
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GPRW_UPRW_LANC/" class="md-nav__link">
+        GPRW/UPRW/LANC
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ghost_macos/" class="md-nav__link">
+        Ghost macos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Guide_dual_Boot/" class="md-nav__link">
+        Hướng dẫn Dual Boot
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HotPlug_Thunderbolt_3/" class="md-nav__link">
+        HotPlug Thunderbolt 3
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hotpatch_PTS_Wake_TTS/" class="md-nav__link">
+        Hotpatch PTS Wake TTS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Injects_USB_Manual/" class="md-nav__link">
+        Injects USB Manual
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kernel_issue/" class="md-nav__link">
+        Kernel issue
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Map_USB/" class="md-nav__link">
+        Map USB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenCore_Legacy/" class="md-nav__link">
+        OpenCore Legacy
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_AMD_GPU/" class="md-nav__link">
+        Patch Card đồ họa AMD
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_2/" class="md-nav__link">
+        Patch DSDT Phần 2
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Patch DSDT Phần 3
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Patch DSDT Phần 3
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cach-tao-patch-rename" class="md-nav__link">
+    Cách tạo Patch Rename
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cach-tao-ssdt" class="md-nav__link">
+    Cách tạo SSDT
+  </a>
+  
+    <nav class="md-nav" aria-label="Cách tạo SSDT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-so-ssdt-thuong-dung" class="md-nav__link">
+    1 số SSDT thường dùng:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xac-inh-cac-phan-thay-oi" class="md-nav__link">
+    Xác định các phần thay đổi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tien-hanh-viet-ssdt" class="md-nav__link">
+    Tiến hành viết SSDT :
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quy-tac-import-object" class="md-nav__link">
+    Quy tắc import object
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_4/" class="md-nav__link">
+        Patch DSDT phần 4
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_GMA_GPU/" class="md-nav__link">
+        Patch GMA GPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_IGPU/" class="md-nav__link">
+        Patch IGPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_NVIDIA_GPU/" class="md-nav__link">
+        Patch Card đồ họa NVIDIA
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_SATA_Controller/" class="md-nav__link">
+        Patch SATA Controller
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_audio_with_AppleALC/" class="md-nav__link">
+        Patch âm thanh với AppleALC
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_audio_with_VoodooHDA/" class="md-nav__link">
+        Patch audio với VoodooHDA
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_dsdt_part_1/" class="md-nav__link">
+        Patch dsdt phần 1
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_pin/" class="md-nav__link">
+        Patch pin
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Resize_EFI/" class="md-nav__link">
+        Resize EFI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SIP_and_Gatekeeper/" class="md-nav__link">
+        SIP và Gatekeeper
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SLE_kext_in_bigsur/" class="md-nav__link">
+        Cách sửa kext S/L/E trên bigsur
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SSDT_recomend/" class="md-nav__link">
+        SSDT recomend
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Scan_policy/" class="md-nav__link">
+        Scan policy
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Some_error_in_bigsur/" class="md-nav__link">
+        Một số lỗi ở xuất hiện ở macOS Big Sur
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Some_error_in_propertree/" class="md-nav__link">
+        1 số lỗi ProperTree
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Turn_on_Backlight_Keyboard/" class="md-nav__link">
+        Turn on Backlight Keyboard
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Update_macOS_and_Bootloader/" class="md-nav__link">
+        Update macOS và Bootloader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Use_SSDT-time_to_Prebuilt%20SSDT/" class="md-nav__link">
+        Dùng SSDT-Time để Prebuilt SSDT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%5BEB%7C%23LOG%3AEXITBS%3ASTART%5D/" class="md-nav__link">
+        [EB|#LOG:EXITBS:START]
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../add_boot_option_in_bios/" class="md-nav__link">
+        Cách thêm Boot vào BIOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creat_GUI/" class="md-nav__link">
+        Tạo GUI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creat_online_usb_%28recovery%29/" class="md-nav__link">
+        Cách tạo bộ cài online (recovery)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_EFI_OpenCore/" class="md-nav__link">
+        Cách tạo EFI OpenCore
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_EFI_Opencore_No_ACPI/" class="md-nav__link">
+        Cách làm EFI Opencore No ACPI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_offline_bootable_without_no_usb/" class="md-nav__link">
+        Cách tạo bộ cài Offline khi không có USB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_usb_offline/" class="md-nav__link">
+        Cách tạo bộ cài offline
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fake_CPU_Name%3Aigpu_name/" class="md-nav__link">
+        Fake iGPU/ CPU Name
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_mod_bios/" class="md-nav__link">
+        Cách mod bios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inject_all_hardware_properties/" class="md-nav__link">
+        Cách inject toàn bộ thông tin phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn_about_hackintosh/" class="md-nav__link">
+        Tìm hiểu về Hackintosh
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn_about_to_hardware/" class="md-nav__link">
+        Tìm hiểu chung về phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../macOS_12_Monterey/" class="md-nav__link">
+        macOS 12: Monterey
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patch_connector_type_force_rgb%3AInject_EDID/" class="md-nav__link">
+        Patch Connect Type/ Force RGB/ Inject EDID
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cach-tao-patch-rename" class="md-nav__link">
+    Cách tạo Patch Rename
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cach-tao-ssdt" class="md-nav__link">
+    Cách tạo SSDT
+  </a>
+  
+    <nav class="md-nav" aria-label="Cách tạo SSDT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-so-ssdt-thuong-dung" class="md-nav__link">
+    1 số SSDT thường dùng:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xac-inh-cac-phan-thay-oi" class="md-nav__link">
+    Xác định các phần thay đổi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tien-hanh-viet-ssdt" class="md-nav__link">
+    Tiến hành viết SSDT :
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quy-tac-import-object" class="md-nav__link">
+    Quy tắc import object
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="patch-dsdt-phan-3">Patch DSDT Phần 3<a class="headerlink" href="#patch-dsdt-phan-3" title="Permanent link">&para;</a></h1>
+<h2 id="cach-tao-patch-rename"><strong><em>Cách tạo Patch Rename</em></strong><a class="headerlink" href="#cach-tao-patch-rename" title="Permanent link">&para;</a></h2>
+<p>B1: Xác định Method cần Rename.</p>
+<ul>
+<li>Tuỳ vào mỗi SSDT thì các bạn sẽ cần add patch rename tương ứng</li>
+<li>Lý do cho điều này là vì khi dùng SSDT thì các bản và trong SSDT sẽ không thể ghi đè lên DSDT. Do đó khi thì các bản patch lỗi sẽ không được áp dụng</li>
+<li>Để khắc phục điều này các bạn sẽ tiến hành rename các method trong DSDT khi này thì SSDT đã có thể ghi đè lên DSDT. Tức các bản patch lỗi sẽ được thực hiện</li>
+</ul>
+<blockquote>
+<p>Nếu SSDT của bạn sử dụng 1 method không có trong DSDT (thêm method) thì các bạn không cần rename</p>
+</blockquote>
+<p>Các Patch Rename thông dụng: </p>
+<ul>
+<li>GFX0 -&gt; IGPU : Dùng để Enable GPU khi các bạn dùng với SSDT-iGPU.</li>
+<li>SAT0 -&gt; SATA : Kích hoạt Sata Controller với những cái không hỗ trợ dùng kèm với SSDT SATA.</li>
+<li>EHC1 -&gt; EH01 : Để Hotpatch các cổng USB.</li>
+<li>EHC2 -&gt; EH02 : Để Patch các cổng USB.</li>
+<li>XHCI -&gt; XHC : Để Enable các cổng USB 3.0</li>
+<li>HECI -&gt; IMEI : Để Fake IMEI.</li>
+<li>MEI -&gt; IMEI : Để Fake IMEI.</li>
+</ul>
+<p>B2: Các bạn Dump DSDT như hướng dẫn <a href="https://heavietnam.ga/2021/09/29/xxvi-patch-dsdt-phan-1/">ở đây</a></p>
+<p>B3: Vào terminal gõ lệnh: </p>
+<p><code>cd [kéo thư mục chứa file DSDT vào]</code></p>
+<p><code>[kéo file iasl62 vào] -l -dl DSDT.aml</code></p>
+<p>B4: Mở file DSDT vừa biên dịch và nhấn tổ hợp phím <code>Command +F</code> sau đó gõ tên Method vào. Ví dụ <code>FBST</code> và cần Replace thành <code>XBST</code> các bạn sẽ được đoạn code như sau: </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>           Method (FBST, 4, NotSerialized)
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>            {
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>                And (Arg1, 0xFFFF, Local1)
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>                Store (Zero, Local0)
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  FF74: 14 43 12 46 42 53 54 04 7B 69 0B FF FF 61 70 00  // .C.FBST.{i…ap.
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>  FF84: 60
+</code></pre></div>
+<p>B5: Chuyển <code>FBST</code> thành dạng thập lục phân :</p>
+<ul>
+<li>Mở Hackintool lên và gõ <code>FBST</code> vào ô ASCII.</li>
+<li>Sau đó gõ cụm <code>FBST</code> vào và quan sát ô Hex. </li>
+</ul>
+<p><img alt="" src="https://lh5.googleusercontent.com/i9zxuhKJARx9e22CpTxldE5Sc1lAYDy64uIEK1rorCSKIF-MMy4Ck3cTU9H240Esg_rjERoPSmUNle7Qt7MVcp-N5nPioyGuv8pIoyDK6y2JREtamDBnIQxToncFvF2RQXHA2uQz=s0" /></p>
+<p>(ta có <code>FBST= 46 42 53 54</code>)</p>
+<p>B6: Vào lại đoạn code vừa lấy ở bước 4 và lấy cụm số vừa nhận được ở bước 5 lấy thêm 2 chữ số sau 2 chữ số cuối của bước 5 các bạn sẽ được <code>46 42 53 54 04</code> (tại sao lại có <code>04</code> là vì để không injects toàn bộ method mà chỉ injects phần cần thiết | nếu các bạn cần injects toàn bộ thì chỉ cần chuyển tên cần Rename về thập lục phân là được không cần tìm trong DSDT).</p>
+<p>B7: Kiểm tra lại bằng cách nhập vào ô Hex dãy số vừa nhận được ở bước 6 và quan sát ô ASCII (sau đó chuyển tương tự với phần replace ta được <code>58 42 53 54 04 | X=58</code>).</p>
+<p><img alt="" src="https://lh6.googleusercontent.com/h0pf2kEIE_7WUzOebKMeKXuLgDateFQze7jf7WMdKLgxOM-wZT1U4e08BQ4eAEM2DesleaazyRnjaVSh1_5RaXVi_W1Bke9gwRn5bstOlpgSL9uyhrvFXU4jsWNsWSicREvceJ4e=s0" /></p>
+<p>B8: Add Patch vào config ⇒ ACPI ⇒ Patch </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>comment | string | chang FBST to XBST 
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Enable | bootclean | true 
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Count | number | 0
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>Limit | number | 0
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>Find | data | 46425354 04
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>Replace | data | 58425354 04
+</code></pre></div>
+<p><strong>Lưu ý : Các nguồn tham khảo</strong> <a href="https://www.tonymacx86.com/threads/guide-using-clover-to-hotpatch-acpi.200137/"><strong>[Guide] Using Clover to “hotpatch” ACPI | tonymacx86.com</strong></a> <strong>|</strong> <a href="https://hackintosh.vn/patch-dsdt"><strong>Hot patch Clover, chỉnh độ sáng màn hình, tinh chỉnh hệ thống hackintosh</strong></a></p>
+<h2 id="cach-tao-ssdt"><strong><em>Cách tạo</em></strong> SSDT<a class="headerlink" href="#cach-tao-ssdt" title="Permanent link">&para;</a></h2>
+<h3 id="1-so-ssdt-thuong-dung">1 số SSDT thường dùng:<a class="headerlink" href="#1-so-ssdt-thuong-dung" title="Permanent link">&para;</a></h3>
+<ul>
+<li>SSDT-RMCF.dsl: Dùng để cung cấp thông tin cho SSDT khác bổ trợ là chính.</li>
+<li>SSDT-RMDT.dsl: Được dùng với acpidebug.kext để hiện thị các log thông qua console (không khả dụng ở Big Sur).</li>
+<li>SSDT-XOSI.dsl: Được dùng để fix Trackpad I2C và giả lập Boot OC như Boot Windows (thường được dùng kèm patch rename _OSI ==&gt; XOSI).</li>
+<li>SSDT-IGPU.dsl: Dùng để injects thông tin iGPU thông qua SSDT thường dùng kèm với SSDT-RMCF.dsl và SSDT-SKLSPF.dsl (nó mặc định iGPU được đặt là iGPU trong 1 vài trường hợp bạn cần rename gfx0 ==&gt; igpu).</li>
+<li>SSDT-SKLSPF.dsl: Được dùng kèm với SSDT-IGPU.dsl để injects thông tin id iGPU.</li>
+<li>SSDT-IMEI.dsl: Được dùng để Fake IMEI trên iGPU HD4000 7 Series.</li>
+<li>SSDT-PNLF.dsl: Được dùng để Fix Backlight thường được dùng kèm với Kext SMCLightSensor.</li>
+<li>SSDT-LPC: Dùng để buộc apple LPC tải các id cho LPC (nó mặc định LPC được đặt thành LPCB).</li>
+<li>SSDT-SATA.dsl: Để Enable bộ điểu khiển Sata.</li>
+<li>SSDT-DDGPU.dsl: Dùng để disable dGPU không hỗ trợ.</li>
+<li>SSDT-SMBUS.dsl: Dùng để injects DVL0 trong các CPU Gen 2 và Gen 3 (Sandy Birdge, Ivy Birdge).</li>
+<li>SSDT-GPRW.dsl và SSDT-UPRW.dsl: Dùng để Fix Sleep (bị wake ngày sau khi vừa sleep | thường kèm theo các patch rename grw==&gt; xprw, uprw ==&gt; xprw).</li>
+<li>SSDT-LANC.dsl: Dùng để fix lỗi về Sleep (bị Wake ngay sau khi vừa Sleep do Ethernet).</li>
+<li>SSDT-PTSWAK.dsl: Dùng để fix lỗi Sleep (không thể Wake).</li>
+<li>SSDT-DEHCI.dsl: Dùng để vô hiệu hóa bộ điều khiển EHCI (khi đã đổi tên thành EH01 và EH02).</li>
+<li>SSDT-XCPM.dsl: Để set plugin type =1 giúp patch powermanagenment.</li>
+<li>SSDT-EH01.dsl: Dùng để injects USB 2.0</li>
+<li>SSDT-EH02.dsl: Dùng để injects USB 2.0</li>
+<li>SSDT-XHC.dsl: Dùng để injects USB 3.0</li>
+<li>SSDT-ALS0.dsl: Dùng để Fake ALS0 (cảm biến ánh sáng) để khắc phục sự cố ánh sáng không khôi phục sau khi khởi động.</li>
+</ul>
+<h3 id="xac-inh-cac-phan-thay-oi">Xác định các phần thay đổi<a class="headerlink" href="#xac-inh-cac-phan-thay-oi" title="Permanent link">&para;</a></h3>
+<p>B1: Các bạn Dump DSDT ra</p>
+<p>B2: Apply các Patch vào (VD mình sẽ Apply Patch IMEI | nhớ chuyển về .dsl)</p>
+<p>B3: Tải <a href="https://sourcegear.com/diffmerge/">DiffMerge.app</a></p>
+<p>B4: Mở app lên và chọn nút <img alt="" src="https://lh3.googleusercontent.com/QydjL452f2gXwfxE2K3BnXPBnof3CXqzeIitQ0sHBI4iQFwo6lRY63Ha-XXR06t5XPYAB7bEBQQcme8y4iZJ3pqZ8aVUBDhl-GOGrn96N5Q-z5kcsJrlCNWFWDmCIzWL-yegNhXe=s0" /></p>
+<p>B5: <img alt="" src="https://lh4.googleusercontent.com/vMxYDfxhnz3SyqpIelGN69LDTDU8NNd8WcAsZABSoj0dBgnsuTT4VnHMnQhgtS5JmnCmJRuvfkCmYvGuc6Xm4MS2gSIaiAQYMW5kStqb7tu6kqhuCcl1IA5p4k7GT0qNCGnrKdU9=s0" /></p>
+<ul>
+<li>Chọn mục 1: File gốc (DSDT gốc).</li>
+<li>Chọn mục 2: File đã sửa đổi (DSDT đã Apply Patch).</li>
+</ul>
+<p>B6: Sau khi chọn xong ta sẽ có như sau:</p>
+<p><img alt="" src="https://lh3.googleusercontent.com/hcL5xw9J1lMdr1PxyPLAcNFkR50KTEbGn1DzAJydDwWKDji4_4ORwZainPbJMa8RhlR8aNpuRQOkScRjC1s2lta597I0PxO4_ho0coBy8C-9kzmzSceD5wccnJjNTCKrupq9z0TC=s0" /></p>
+<p>Mục 1: Các dòng thay đổi.</p>
+<p>Mục 2: Nội dung thay đổi ở file gốc.</p>
+<p>Mục 3: Nội dung thay đổi ở file đã sửa đổi.</p>
+<h3 id="tien-hanh-viet-ssdt"><strong><em>Tiến hành viết SSDT :</em></strong><a class="headerlink" href="#tien-hanh-viet-ssdt" title="Permanent link">&para;</a></h3>
+<p>B1: Mở Maciasl và bấn tổ hợp phím Command + N. </p>
+<p>B2: Tạo phần tiêu đề cho SSDT.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>DefinitionBlock(“”, “SSDT”, 2, “hack”, “nhận tên ssdt (giới hạn 9 chữ số)”, 0)
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>{
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>}
+</code></pre></div>
+<p><img alt="" src="https://lh3.googleusercontent.com/NGWkkbEOPNcNqq_gW5SQMOXMt4hGGNQi0bXNLvcY-cJlvQbuGygKpL0ntWE_RJV7eQM0Vs9w4Ms0S7KqrssS6ow-lfKt5RIYA_J8PMN-wZs9RcGdM7uAXJV4ykcmHUTyO0DQh1Ec=s0" /></p>
+<p>B2: Copy các Method và Device của những phần thay đổi vào SSDT vừa tạo (nên Copy Scope).</p>
+<p>Ở bước này các bạn nhìn vào tree của DSDT để Copy <img alt="" src="https://lh5.googleusercontent.com/LwrqhXZteHS5cTEAyQ69GguNfBHcyuPyueQs9whBbgeVgOy9-B4rmNt_Abi4ALyYq7Y9uD6_BAsN_DG1md8CSwoaRzl_AZedOF6kkj-CACidiK7Ya0JR3jQfoqdYuK9t4PYY3Sqo=s0" /></p>
+<p><img alt="" src="https://lh5.googleusercontent.com/R4mvurflNTJilXMaZ8ZyR1qXegco1BcNg6mpBxZx5JCDJKQGY0B1SqLlUmLlHBZTZHSmlElrbU87I1aJQspyzp8l_YyQOod5o4yIsCKSq27un1pjSoU5TpBV8jAE4efSiGcnHCjl=s0" /></p>
+<p>B3: Check lỗi các bạn bấm vào dấu <img alt="" src="https://lh4.googleusercontent.com/-dXDMALBFeF1yuJJ-SlQ6MoY_utqyxGiG7lcAF-CpJpl5Qutrf-HepeAYL4BtIL14hyaXtsmleDKio2iGd8b3CQb9cooZBbN3_gkY-4Sy6_GW_TVyXBTXNaX53U7_ugck6ody_1P=s0" />  </p>
+<p>Nếu như thế này thì đã có thể sử dụng. <img alt="" src="https://lh6.googleusercontent.com/9e8wXwSYEMocRA5SeifpzbFUNrPQ6s1WttH3AqgsyPUBI7Z2moKRdqtiowaoIXXuTkLUvSuHbVjn3PiBZ4Z1WaRYPif5oX07o15Fsvkq-6O6jxUzDbobTeATfb4qIfVJsoTTxou2=s0" /></p>
+<p>Còn nếu sau khi check như hình dưới thì ta cần phải fix Error.</p>
+<p><img alt="" src="https://lh6.googleusercontent.com/5t1qdsw3C6fSeu7Qsu6rxMyCYMPJJ06uu80YGu5WRnW9bAU8MRYLKrCxAPskgpL8-gBmzhPapbRrOBbtUpadHETLSM1fTP8QZ_hOQg_aaDJUFAe1hELKybVZQsef-qAx54mt1RP1=s0" /></p>
+<p>B4: Khai báo các giá trị nếu gặp lỗi ở bước 3 </p>
+<ul>
+<li>Nhập cấu trúc như sau:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>External (nhập đường dẫn giá trị cần khai báo, nhập các đối tượng khai báo).
+</code></pre></div>
+<p><img alt="" src="https://lh5.googleusercontent.com/F6LTEpv5zcTH4FCmw0gtYsJK6QYoGGaXRt1SPNfOxUQqJdYJqAB8aHOjMpC86gW-cqGd8GCYFBTq-faEngqi1PbDv3UtmSQ9POtHEIbuR8vQC4J-BFmK7aHmUqA-CQug6-TV5zUz=s0" /></p>
+<ul>
+<li>Bấm lại nút <img alt="" src="https://lh5.googleusercontent.com/eTb45nzPOcH0NpdpyTGuaS2jTBF8RdEi9lzwr73605VtuymnzT5EAe-obocYFXK8FD4hZUefkg2mDrEQVkSFhHE19onKfynXFZQOpyfUm3Wsa5qf2K5bMLQGKFMmZ8JGWVmbK0ya=s0" /> để check lỗi.<img alt="" src="https://lh6.googleusercontent.com/jsPS7GLZlxBFPrFYhBG_iCzjBt8rl0ah9PG_4lfBQicT-DPrwCblf7j5u63iJtzevop3lvXVnhJGrUQc5g8Iv-G954Bcii01ZQN56oAKjTHEue2QRYBVRV8qlsuTI4mWxWuiSQbv=s0" /></li>
+<li>Ta có các giá trị Objects:</li>
+<li>DeviceObj (thường để khai báo mục device và scope).</li>
+<li>MethodObj (thường để khai báo method và các mục nằm trong method đó).</li>
+<li>PkgObj (thường để khai báo các package).<img alt="" src="https://lh6.googleusercontent.com/Sqr8kbOKrJOHnOCmLWnwrGIuWPyuWcQgDuus8lcKiFvL7kBG_n5kYY1yD8JywRnHD39MvmgePNr_V8GsmqiMHe3kqPy2QW9yinkCO5ew6LnR7kVteyWY5GU2FnQ2dCvgTfiN3q-S=s0" /></li>
+<li>FieldUnitObj (dùng để khai báo các biến lưu ram).</li>
+</ul>
+<p><img alt="" src="https://lh6.googleusercontent.com/WMd5TIhK8fY6RpcH4ZzAHUJt8D2acCVMisGTSQ_Lpd1-RqGPk_O7OAoI2xnr2l30AiOOKk3IN3znAmqEJXzWS2rIPMJe72wfcHrEJe5k8IbIA5Dc2m4loSnPhCYHlHi7x0OD7jW5=s0" /></p>
+<ul>
+<li></li>
+<li>
+<p>Đôi khi các bạn sẽ gặp dấu “^” này trong Method tên nó là Uper chức năng của nó là sẽ thay thế các giá trị ở trong scope vào method khi khi báo các giá trị này ta sẽ bỏ dấu “^” và thay bằng các mục Scope 1 dấu “^” là sẽ thay bằng 1 mục ở Scope VD. </p>
+</li>
+</ul>
+<p><img alt="" src="https://lh5.googleusercontent.com/vhEg3kfbrfK9NvYm-Fjz4btSFZMZpFvzF_tTLxLl1BbJgr2RNK8g9y6_B34bG5Z11PLSzrZ43ZuKTNLT_RHyT7uLCJWiXozu2Mt3oNVdlFQj78pQg3PF-b3pR5lLo-7b03wee5y1=s0" /></p>
+<p>Có Scope là <img alt="" src="https://lh3.googleusercontent.com/KBCb1khXgcMEqMBuUubpjZP-ig9gk49Y78Jz48Im-l-g4SjHMy7SaTpo4ZXarDrMO1iQ10MW5xLgJVmovEuUmF5a-hnohPjPnbkhKLW1Cr5SYvxCukoWqnv-v_qno25sN0-GllXQ=s0" />Thì khi khai báo ta sẽ có cấu trúc như sau</p>
+<p>“^^” = “_SB.PCI0”</p>
+<p>⇒ “^^LPCB.EC0.BATP” = “_SB.PCI0.EC0.BATP”</p>
+<p>Đối với ví dụ này ta sẽ External vào như sau: </p>
+<p>External (_SB.PCI0.EC0.BATP,  MethodObj)</p>
+<blockquote>
+<p>Phần phân loại object chúng ta sẽ tìm hiểu sâu hơn ở phần dưới</p>
+</blockquote>
+<h2 id="quy-tac-import-object">Quy tắc import object<a class="headerlink" href="#quy-tac-import-object" title="Permanent link">&para;</a></h2>
+<p>Ta có các object được import bằng external theo quy tắc kế thừa có nghĩa là:</p>
+<p>DeviceObj &ndash;&gt; MethodObj/MutexObj &ndash;&gt; PkgObj &ndash;&gt; FieldObj/OpRegionObj &ndash;&gt; FieldUnitObj/IntObj</p>
+<p>Ngoài ra IntObj còn có thể trực thuộc ở root scope</p>
+<p>Để tìm được kế thừa của 1 biến thì ta sẽ tiền hành search khai báo của biến đó:</p>
+<ul>
+<li>DeviceObj có khai báo là <code>Device (variable)</code></li>
+<li>vd: <code>Device (EC)</code></li>
+<li>MethodObj sẽ có khai báo là <code>Method (variable,</code></li>
+<li>vd: <code>Method (AR02, 0, NotSerialized)</code></li>
+<li>MutexObj sẽ có khai báo là <code>Mutex (variable,</code></li>
+<li>vd: <code>Mutex (MUTX, 0x00)</code></li>
+<li>PkgObj sẽ có khai báo là <code>Name (variable, Package</code></li>
+<li>vd: <code>Name (BIXT, Package (0x14)</code></li>
+<li>FieldObj có khai báo là <code>Field (variable,</code></li>
+<li>vd: <code>Field (SMB2, ByteAcc, NoLock, Preserve)</code></li>
+<li>OpRegionObj sẽ có khai báo <code>OperationRegion (variable,</code></li>
+<li>vd: <code>OperationRegion (SMB2, EmbeddedControl, 0x40, 0x28)</code></li>
+<li>FieldUnitObj sẽ có khai báo là <code>Field () {variable, }</code></li>
+<li>vd: <code>Field (SMB2, ByteAcc, NoLock, Preserve) {PRT2, 8,}</code><ul>
+<li>PRT2 là biến thuộc FieldUnitObj</li>
+<li>Có thể nói các biến “kế thừa” (thuộc) FieldObj sẽ được khai báo là FieldUnitObj</li>
+</ul>
+</li>
+<li>IntObj sẽ có khai báo là <code>Name (variable, )</code></li>
+<li>vd: <code>Name (RCBT, 0x05)</code></li>
+<li>Ngoài ra các biến “kế thừa” (thuộc) FieldObj cũng có thể được khai báo là IntObj</li>
+</ul>
+<p>Ở trên là 1 số loại object phổ biến còn có những loại object khác hiếm gặp nên mình không liệt kê vào</p>
+<p><strong>Lưu ý: đối với IntObj và FieldUnitObj các bạn có thể sử dụng thay được cho nhau như biến STAS của method AWAC. Tuy nó nằm dưới Field nhưng SSDT-AWAC vẫn import nó vô là IntObj. Tuy nhiên bạn nên dùng FieldUnitObj cho biến nằm dưới Field thì sẽ hay hơn.</strong></p>
+<p><strong>Lưu ý 2: Khi sử dụng SSDT thì các method của nó sẽ không thể ghi đè lên DSDT. Do đó ta cần add patch rename để đổi tên method trong DSDT. Khi này thì các method trong SSDT mới có thể hoạt động</strong></p>
+<p><strong>Source tham khảo</strong> <a href="https://www.tonymacx86.com/threads/guide-using-clover-to-hotpatch-acpi.200137/"><strong>[Guide] Using Clover to “hotpatch” ACPI | tonymacx86.com</strong></a></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../Patch_DSDT_part_2/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Patch DSDT Phần 2" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Patch DSDT Phần 2
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../Patch_DSDT_part_4/" class="md-footer__link md-footer__link--next" aria-label="Next: Patch DSDT phần 4" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Patch DSDT phần 4
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.748e2769.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2216 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.2.11">
+    
+    
+      
+        <title>Fix trackpad - Hackintosh Documents</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c5ef100.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.9647289d.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fix-trackpad" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Hackintosh Documents" class="md-header__button md-logo" aria-label="Hackintosh Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Hackintosh Documents
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Fix trackpad
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Hackintosh Documents" class="md-nav__button md-logo" aria-label="Hackintosh Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Hackintosh Documents
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        content
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Add_device-id_in_amd_kext/" class="md-nav__link">
+        Add device-id vào amd kext
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Backup_and_Restore_with_Time_Machine/" class="md-nav__link">
+        Backup and Restore with Time Machine
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Boot_Arguments/" class="md-nav__link">
+        Boot Arguments
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Boot_without_USB_and_mount_partion_EFI/" class="md-nav__link">
+        Boot không cần USB và mount phân vùng EFI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Config_Laptop_Clarksfield_and_Arrandale/" class="md-nav__link">
+        Config Laptop Clarksfield và Arrandale
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Control_Brightness_External_Display/" class="md-nav__link">
+        Control Brightness cho External Display
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Control_Led_RGB/" class="md-nav__link">
+        Control Led RGB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Convert_Bootloader/" class="md-nav__link">
+        Convert Bootloader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C%C3%A1ch%20x%C3%A1c%20%C4%91%E1%BB%8Bnh%20ph%E1%BA%A7n%20c%E1%BB%A9ng/" class="md-nav__link">
+        Cách xác định phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_CFG-Clock/" class="md-nav__link">
+        Disable CFG-Clock
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_dGPU_Desktop/" class="md-nav__link">
+        Disable dGPU Desktop
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Disable_dgpu_Laptop/" class="md-nav__link">
+        Disable dgpu Laptop
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Emulated_NVRAM/" class="md-nav__link">
+        Emulated NVRAM
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Enable_Trim_For_SSD/" class="md-nav__link">
+        Enable Trim For SSD
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../External_Card_Reader/" class="md-nav__link">
+        Fix Internal/External Card Reader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fake_CPU-ID/" class="md-nav__link">
+        Fake CPU-ID
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix%20_for_slow_AMD_GPU/" class="md-nav__link">
+        Fix for slow AMD GPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Backlight/" class="md-nav__link">
+        Fix Backlight
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Connect_%28HDMI%29/" class="md-nav__link">
+        Fix Connect (HDMI)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Ethernet/" class="md-nav__link">
+        Fix Ethernet
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_HDMI_Audio/" class="md-nav__link">
+        Fix HDMI Audio
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Hotkeys/" class="md-nav__link">
+        Fix Hotkeys
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_RTC_Manual/" class="md-nav__link">
+        Fix RTC Manual
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_RTC_write_issues/" class="md-nav__link">
+        Fix RTC write issues
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_Shutdown/" class="md-nav__link">
+        Fix Shut down
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_System_Clocks_on_HEDT/" class="md-nav__link">
+        Fix System Clocks on HEDT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_WiFi_and_Bluetooth/" class="md-nav__link">
+        Fix WiFi và Bluetooth
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_darkwake/" class="md-nav__link">
+        Fix darkwake
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_iServices/" class="md-nav__link">
+        Fix iServices
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_keyboard_wake/" class="md-nav__link">
+        Fix keyboard wake
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_power_management/" class="md-nav__link">
+        Fix power management
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fix_sleep/" class="md-nav__link">
+        Fix sleep
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Fix trackpad
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Fix trackpad
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tim-hieu-chung" class="md-nav__link">
+    **Tìm hiểu**** chung
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ps2-trackpad" class="md-nav__link">
+    PS2 trackpad:
+  </a>
+  
+    <nav class="md-nav" aria-label="PS2 trackpad:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#synaptics-ps2" class="md-nav__link">
+    Synaptics PS2 :
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elan-ps2" class="md-nav__link">
+    Elan PS2:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fix-i2c-trackpad" class="md-nav__link">
+    Fix i2c trackpad:
+  </a>
+  
+    <nav class="md-nav" aria-label="Fix i2c trackpad:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tim-hieu-chung_1" class="md-nav__link">
+    Tìm Hiểu Chung:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chuan-bi" class="md-nav__link">
+    Chuẩn bị:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gan-gpi0" class="md-nav__link">
+    Gắn GPI0
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gan-acpi-id-i2c-device" class="md-nav__link">
+    Gắn ACPI ID i2c device
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cach-xac-inh-i2c-mode" class="md-nav__link">
+    Cách xác định i2c mode
+  </a>
+  
+    <nav class="md-nav" aria-label="Cách xác định i2c mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dung-ioreg" class="md-nav__link">
+    Dùng Ioreg
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dung-gen-i2c" class="md-nav__link">
+    Dùng Gen i2c
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pin-list" class="md-nav__link">
+    Pin List
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#force-polling-mode" class="md-nav__link">
+    Force Polling mode
+  </a>
+  
+    <nav class="md-nav" aria-label="Force Polling mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edit-dsdt" class="md-nav__link">
+    Edit DSDT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-boot-arg" class="md-nav__link">
+    Add boot-arg
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#force-interrupt-mode" class="md-nav__link">
+    Force interrupt mode
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fixing_KASLR/" class="md-nav__link">
+        Fixing KASLR
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GPRW_UPRW_LANC/" class="md-nav__link">
+        GPRW/UPRW/LANC
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ghost_macos/" class="md-nav__link">
+        Ghost macos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Guide_dual_Boot/" class="md-nav__link">
+        Hướng dẫn Dual Boot
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HotPlug_Thunderbolt_3/" class="md-nav__link">
+        HotPlug Thunderbolt 3
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hotpatch_PTS_Wake_TTS/" class="md-nav__link">
+        Hotpatch PTS Wake TTS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Injects_USB_Manual/" class="md-nav__link">
+        Injects USB Manual
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kernel_issue/" class="md-nav__link">
+        Kernel issue
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Map_USB/" class="md-nav__link">
+        Map USB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenCore_Legacy/" class="md-nav__link">
+        OpenCore Legacy
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_AMD_GPU/" class="md-nav__link">
+        Patch Card đồ họa AMD
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_2/" class="md-nav__link">
+        Patch DSDT Phần 2
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_3/" class="md-nav__link">
+        Patch DSDT Phần 3
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_DSDT_part_4/" class="md-nav__link">
+        Patch DSDT phần 4
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_GMA_GPU/" class="md-nav__link">
+        Patch GMA GPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_IGPU/" class="md-nav__link">
+        Patch IGPU
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_NVIDIA_GPU/" class="md-nav__link">
+        Patch Card đồ họa NVIDIA
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_SATA_Controller/" class="md-nav__link">
+        Patch SATA Controller
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_audio_with_AppleALC/" class="md-nav__link">
+        Patch âm thanh với AppleALC
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_audio_with_VoodooHDA/" class="md-nav__link">
+        Patch audio với VoodooHDA
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_dsdt_part_1/" class="md-nav__link">
+        Patch dsdt phần 1
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patch_pin/" class="md-nav__link">
+        Patch pin
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Resize_EFI/" class="md-nav__link">
+        Resize EFI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SIP_and_Gatekeeper/" class="md-nav__link">
+        SIP và Gatekeeper
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SLE_kext_in_bigsur/" class="md-nav__link">
+        Cách sửa kext S/L/E trên bigsur
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SSDT_recomend/" class="md-nav__link">
+        SSDT recomend
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Scan_policy/" class="md-nav__link">
+        Scan policy
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Some_error_in_bigsur/" class="md-nav__link">
+        Một số lỗi ở xuất hiện ở macOS Big Sur
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Some_error_in_propertree/" class="md-nav__link">
+        1 số lỗi ProperTree
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Turn_on_Backlight_Keyboard/" class="md-nav__link">
+        Turn on Backlight Keyboard
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Update_macOS_and_Bootloader/" class="md-nav__link">
+        Update macOS và Bootloader
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Use_SSDT-time_to_Prebuilt%20SSDT/" class="md-nav__link">
+        Dùng SSDT-Time để Prebuilt SSDT
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%5BEB%7C%23LOG%3AEXITBS%3ASTART%5D/" class="md-nav__link">
+        [EB|#LOG:EXITBS:START]
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../add_boot_option_in_bios/" class="md-nav__link">
+        Cách thêm Boot vào BIOS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creat_GUI/" class="md-nav__link">
+        Tạo GUI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creat_online_usb_%28recovery%29/" class="md-nav__link">
+        Cách tạo bộ cài online (recovery)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_EFI_OpenCore/" class="md-nav__link">
+        Cách tạo EFI OpenCore
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_EFI_Opencore_No_ACPI/" class="md-nav__link">
+        Cách làm EFI Opencore No ACPI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_offline_bootable_without_no_usb/" class="md-nav__link">
+        Cách tạo bộ cài Offline khi không có USB
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create_usb_offline/" class="md-nav__link">
+        Cách tạo bộ cài offline
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fake_CPU_Name%3Aigpu_name/" class="md-nav__link">
+        Fake iGPU/ CPU Name
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_mod_bios/" class="md-nav__link">
+        Cách mod bios
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inject_all_hardware_properties/" class="md-nav__link">
+        Cách inject toàn bộ thông tin phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn_about_hackintosh/" class="md-nav__link">
+        Tìm hiểu về Hackintosh
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn_about_to_hardware/" class="md-nav__link">
+        Tìm hiểu chung về phần cứng
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../macOS_12_Monterey/" class="md-nav__link">
+        macOS 12: Monterey
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patch_connector_type_force_rgb%3AInject_EDID/" class="md-nav__link">
+        Patch Connect Type/ Force RGB/ Inject EDID
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tim-hieu-chung" class="md-nav__link">
+    **Tìm hiểu**** chung
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ps2-trackpad" class="md-nav__link">
+    PS2 trackpad:
+  </a>
+  
+    <nav class="md-nav" aria-label="PS2 trackpad:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#synaptics-ps2" class="md-nav__link">
+    Synaptics PS2 :
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elan-ps2" class="md-nav__link">
+    Elan PS2:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fix-i2c-trackpad" class="md-nav__link">
+    Fix i2c trackpad:
+  </a>
+  
+    <nav class="md-nav" aria-label="Fix i2c trackpad:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tim-hieu-chung_1" class="md-nav__link">
+    Tìm Hiểu Chung:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chuan-bi" class="md-nav__link">
+    Chuẩn bị:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gan-gpi0" class="md-nav__link">
+    Gắn GPI0
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gan-acpi-id-i2c-device" class="md-nav__link">
+    Gắn ACPI ID i2c device
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cach-xac-inh-i2c-mode" class="md-nav__link">
+    Cách xác định i2c mode
+  </a>
+  
+    <nav class="md-nav" aria-label="Cách xác định i2c mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dung-ioreg" class="md-nav__link">
+    Dùng Ioreg
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dung-gen-i2c" class="md-nav__link">
+    Dùng Gen i2c
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pin-list" class="md-nav__link">
+    Pin List
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#force-polling-mode" class="md-nav__link">
+    Force Polling mode
+  </a>
+  
+    <nav class="md-nav" aria-label="Force Polling mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edit-dsdt" class="md-nav__link">
+    Edit DSDT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-boot-arg" class="md-nav__link">
+    Add boot-arg
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#force-interrupt-mode" class="md-nav__link">
+    Force interrupt mode
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="fix-trackpad">Fix trackpad<a class="headerlink" href="#fix-trackpad" title="Permanent link">&para;</a></h1>
+<h2 id="tim-hieu-chung"><strong><em>*</em>*Tìm hiểu</strong>**** chung<a class="headerlink" href="#tim-hieu-chung" title="Permanent link">&para;</a></h2>
+<p>Đâu tiên ta phải biết, giao thức trackpad là gì? Giao thức trackpad chính là cách trackpad được kết nối với phần còn lại của máy tính, hiện tại có 2 giao thức chính là giao thức <code>PS2</code> và giao thức <code>I2C</code></p>
+<ul>
+<li>Giao thức <code>PS2</code> thường được dùng cho các máy đời cũ từ Intel 6th gen trở xuống, patch khá đơn giản chỉ việc cài kext vào thôi.</li>
+<li>Giao thức <code>I2C</code> thường được dùng cho các máy đời mới hơn từ Intel 6th gen trở lên, hỗ trợ nhiều thao tác hơn nhưng đòi hỏi kỹ năng patch DSDT</li>
+<li>Tiếp theo các bạn cần xác định <code>Satelite type</code> của trackpad bằng <a href="https://www.aida64.com/downloads">AIDA64</a> hướng dẫn chi tiết <a href="https://heavietnam.ga/2022/04/29/cach-xac-dinh-phan-cung/">ở đây</a></li>
+</ul>
+<blockquote>
+<p>Vẫn có một số máy gen 8 dùng ps2, ở trên chỉ mang tính chất khái quát</p>
+</blockquote>
+<h2 id="ps2-trackpad"><strong><em>PS2 trackpad:</em></strong><a class="headerlink" href="#ps2-trackpad" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Các bạn hãy <a href="https://heavietnam.ga/2021/09/29/iv-patch-pin/">patch pin</a> trước khi làm bất cứ điều gì theo guide này</p>
+</blockquote>
+<h3 id="synaptics-ps2"><strong>Synaptics PS2 :</strong><a class="headerlink" href="#synaptics-ps2" title="Permanent link">&para;</a></h3>
+<p><strong>B1</strong>: Download kext <code>VoodooPS2controller.kext</code> theo link sau: <a href="https://github.com/acidanthera/VoodooPS2/releases">Releases</a></p>
+<p><strong>B2</strong>: Download kext <code>VoodooRMI.kext</code> the‌o link sau: <a href="https://github.com/VoodooSMBus/VoodooRMI/releases">Releases</a></p>
+<p><strong>B3</strong>: Vào folder <code>Contents/Plugins</code> của <code>VoodooPS2Controller.kext</code>, xóa <code>VoodooPS2Mouse</code> và xóa  <code>VoodooPS2Input</code>, thêm kext <code>VoodooSMBus.kext</code> (nếu cần mới thêm, lấy th‌eo link sau: <a href="https://github.com/VoodooSMBus/VoodooSMBus/releases">Releases</a>) <br />
+<img alt="" src="https://lh5.googleusercontent.com/Hsgs69vD1_IFsbLa6kfDW1qt87WUuo4q38szDy_wfwPdzUB8FIvsVN1wkWQv83j0nX55VuY3xdP6mjZOh2tVen0McFiMjUH_Oy1G1xnLvd5zN_IT5t2LCwNzrcARQB7n0WGJL2z6=s0" /></p>
+<p><strong>B4</strong>: Dùng <a href="https://github.com/corpnewt/ProperTree">ProperTree</a> để mở config.plist và chọn <code>OC Snapshot</code> (hoặc <code>Clean Snapshot</code>)</p>
+<p><strong>B5</strong>: Kéo xuống phần <code>Kernel</code> để tìm và <code>Enable</code> (bật True) <code>VoodooInput</code> của <code>VoodooRMI.kext</code> và <code>RMI SMBus</code> (có thể xóa <code>VoodooRMI I2C</code> nếu các bạn không cần).</p>
+<p><strong>B6</strong>: Khởi động lại máy.</p>
+<h3 id="elan-ps2">Elan PS2:<a class="headerlink" href="#elan-ps2" title="Permanent link">&para;</a></h3>
+<p><strong>B1</strong>: Tải xuống kext từ nguồn <a href="https://github.com/BAndysc/VoodooPS2/releases/tag/elanps2.v1">tại đây</a></p>
+<p><strong>B2</strong>: Snap‌hot config bằng <a href="https://github.com/corpnewt/ProperTree">ProperTree</a> </p>
+<p><strong>B3</strong>: Restart máy </p>
+<blockquote>
+<p>Hầu hết các giao thức khác bạn chỉ việc patch cho hiển thị phần trăm pin và thêm kext <a href="https://github.com/acidanthera/VoodooPS2/releases">voodoops2</a> là sẽ lên được</p>
+</blockquote>
+<h2 id="fix-i2c-trackpad"><strong><em>Fix i2c trackpad:</em></strong><a class="headerlink" href="#fix-i2c-trackpad" title="Permanent link">&para;</a></h2>
+<h3 id="tim-hieu-chung_1">Tìm Hiểu Chung:<a class="headerlink" href="#tim-hieu-chung_1" title="Permanent link">&para;</a></h3>
+<p>I2c là 1 giao thức trackpad mới đầy mạnh mẽ và tiềm năng. Tuy nhiên để patch được multi gesture trên nó đòi hỏi 1 kỹ năng patch DSDT. Tuy nhiên nó chỉ đang chú ý đối với những service hackintosher. Bởi lẽ hầu hết các i2c trackpad chỉ cần gắn GPI0 là sẽ hoạt động. Vậy GPI0 là gì và để enable được multi gesture trên i2c chúng ta cần phải làm những công đoạn gì?</p>
+<ul>
+<li>Gắp GPI0</li>
+<li>Gắn ACPI ID</li>
+<li>Pin List</li>
+</ul>
+<p>À còn 1 phần nữa đó chế độ chạy của i2c gồm 2 chế độ:</p>
+<ul>
+<li>Polling mode: loại sử dụng về phần cứng nên nó sẽ ăn tài nguyên nhiều hơn</li>
+<li>Interrupt mode: loại sử dụng về phần cứng nên nó ăn tài nguyên ít hơn</li>
+</ul>
+<p>Nhiều hackintosher thích interrupt hơn polling nên ở cuối bài viết mình sẽ hướng dẫn cách chuyển từ polling mode sang Interrupt mode các bạn kiên nhẫn đọc hết bài từ trên xuống dưới để hiểu hết nội dung nhé.</p>
+<p>Tiếp đó là Satelite type của i2c bao gồm các loại:</p>
+<ul>
+<li>Synaptics</li>
+<li>HID</li>
+<li>FTE</li>
+<li>ELAN</li>
+<li>AtmelMXT</li>
+</ul>
+<p>Trong đó HID là loại phổ biến nhất. Bạn cần xác định Satelite type chính xác để sử dụng kext voodooi2c thích hợp</p>
+<h3 id="chuan-bi">Chuẩn bị:<a class="headerlink" href="#chuan-bi" title="Permanent link">&para;</a></h3>
+<p>B1: Các bạn cần xác định xem i2c của bạn đang thuộc Satelite type nào xem hướng dẫn chi tiết <a href="https://heavietnam.ga/2022/04/29/cach-xac-dinh-phan-cung/">tại đây</a></p>
+<p>B2: Tải voodooi2c <a href="https://github.com/VoodooI2C/VoodooI2C/releases">tại đây</a></p>
+<p>B3: Các bạn sẽ tiến hành thêm kext những kext sau vào EFI ==&gt; OC ==&gt; Kext (hoặc EFI ==&gt; Clover ==&gt; Kext ==&gt; Other)</p>
+<ul>
+<li>VoodooI2C.kext</li>
+<li>VoodooI2cSatelite.kext</li>
+<li>Những kext voodoo i2c có tên trùng với Satelite type của bạn</li>
+</ul>
+<p>B4: Snapshot (Nếu OC) xem hướng dẫn snapshot <a href="https://heavietnam.ga/2021/09/29/tim-hieu-ve-hackintosh/">tại đây</a></p>
+<p>B5: reboot</p>
+<h3 id="gan-gpi0">Gắn GPI0<a class="headerlink" href="#gan-gpi0" title="Permanent link">&para;</a></h3>
+<p>B1: Tải ioreg <a href="https://github.com/vulgo/IORegistryExplorer">tại đây</a></p>
+<p>B2: Mở Ioreg lên và tiến hành Search <code>GPIO</code></p>
+<p><img alt="" src="https://dortania.github.io/Getting-Started-With-ACPI/assets/img/gpio-enabled.c84356b7.png" /></p>
+<p>Như này là GPIO đã được gắn</p>
+<p>Nếu <code>GPIO</code> chưa được gắn các bạn sẽ tiến hành làm như sau:</p>
+<p>B2: Dump DSDT theo hướng dẫn <a href="https://heavietnam.ga/2021/09/29/xxvi-patch-dsdt-phan-1/">tại đây</a></p>
+<p>B3: Search <code>Device (GPI0)</code></p>
+<p><img alt="" src="https://dortania.github.io/Getting-Started-With-ACPI/assets/img/gpi0-2.8c3726d3.png" /></p>
+<p>Ở đây mình sẽ chia làm 2 mục nhỏ là đối với những bạn hot patch và static patch</p>
+<ul>
+<li>Static Patch</li>
+</ul>
+<p>các bạn sẽ tiến hành apply patch sau</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>into method label _STA parent_label GPI0 replace_content begin
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Return (0x0F)
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>end;
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>into_all method code_regex If\s+\([\\]?_OSI\s+\(\&quot;Windows\s2015\&quot;\)\) replace_matched begin If(LOr(_OSI(&quot;Darwin&quot;),_OSI(&quot;Windows 2015&quot;))) end;
+</code></pre></div>
+<ul>
+<li>HotPatch</li>
+</ul>
+<p>B1: các bạn sẽ cần quan sát <code>method _sta</code> ở <code>device GPIO</code> trong DSDT</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Method (_STA, 0, NotSerialized)
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>{
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    If ((SBRG == Zero))
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    {
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        Return (Zero)
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    }
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    If ((GPEN == Zero))
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    {
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        Return (Zero)
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    }
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    Return (0x0F)
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>}
+</code></pre></div>
+<p>Ở đây ta sẽ thấy có 2 method là <code>GPEN</code> VÀ <code>SBGR</code> ta chỉ cần sửa giá trị của 1 trong 2 method này thì Method <code>_Sta</code> sẽ hoạt động. Bởi ta cần Method <code>_sta</code> trả về giá trị là 0x0f nhưng nhìn vào đoạn ví dụ trên ta sẽ thấy</p>
+<ul>
+<li>Nếu <code>SBRG=zero</code> thì <code>method _Sta</code> sẽ trả về giá trị là <code>zero</code></li>
+<li>Nếu <code>GPEN=zero</code> thì <code>method _Sta</code> sẽ trả về giá trị là <code>Zero</code></li>
+</ul>
+<p>Do đó để Method <code>_Sta</code> trả về <code>0x0f</code> thì ta phải chỉnh sửa giá trị của method <code>SBRG</code> và <code>GPEN</code> Tuy nhiên để đảm bảo <code>GPIO</code> hoạt động bình thường ta sẽ không nên đụng chạm vào <code>SBRG</code> vậy ta sẽ tiến hành chỉnh sửa giá trị của <code>GPEN</code> cụ thể ở đây là ta sẽ chỉnh cho giá trị <code>GPEN</code> thành 1 thì method <code>_sta</code> sẽ trả về là <code>0x0f</code></p>
+<p>Nhưng không phải máy nào cũng vậy. Để cho các bạn hình dung rõ hơn mình sẽ cho thêm 1 ví dụ nữa</p>
+<p><img alt="" src="https://dortania.github.io/Getting-Started-With-ACPI/assets/img/gpi0.b0e0b8d8.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Method (_STA, 0, NotSerialized)
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>{
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    If ((GPHD == One))
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    {
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        Return (0x03)
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    }
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    Return (0x0F)
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>}
+</code></pre></div>
+<p>Ở đây ta sẽ thấy sự khác biệt</p>
+<ul>
+<li>Nếu method <code>GPHD</code> trả về giá trị là 1 thì method <code>_sta</code> sẽ trả về là 0x03 nhưng giá trị để enable là <code>0x0f</code></li>
+<li>Vậy ta sẽ cần chỉnh method <code>GPHD</code> về <code>zero</code> thì method <code>_sta</code> sẽ trả về là <code>0x0f</code></li>
+</ul>
+<p>B2: Ta sẽ edit <a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/decompiled/SSDT-GPI0.dsl">SSDT-GPIO</a></p>
+<p><img alt="" src="https://i.imgur.com/bManIm6.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>// Source: https://github.com/daliansky/OC-little
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>DefinitionBlock(&quot;&quot;, &quot;SSDT&quot;, 2, &quot;DRTNIA&quot;, &quot;GPI0&quot;, 0)
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>{
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    External(\GPEN, FieldUnitObj)
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    If (_OSI(&quot;Darwin&quot;))
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    {
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>        \GPEN = One
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    }
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>}
+</code></pre></div>
+<p>Ở đây ta sẽ cần phải chỉnh mục này</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>If (_OSI (&quot;Darwin&quot;))
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>{
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    \GPEN = One
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>}
+</code></pre></div>
+<ul>
+<li>Nếu như method _sta call qua 1 method khác không phải <code>GPEN</code> thì các bạn sẽ tiến hành đổi tên thành method đấy</li>
+<li>Tiếp theo các bạn sẽ cần đọc DSDT để chỉnh giá trị tương ứng</li>
+<li>như ở ví dụ 1 ta sẽ set là <code>one</code></li>
+<li>Ví dụ 2 sẽ set là <code>zero</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>If (_OSI (&quot;Darwin&quot;))
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>{
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    \GPHD = Zero
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>}
+</code></pre></div>
+<p>B3: Thông thường các thiết bị i2c sẽ kiểm tra chúng có đang chạy trong Windows hay không trước khi tự kích hoạt. Tương tự như GPIO ở đây chúng ta cũng sẽ làm việc trên method <code>_sta</code></p>
+<p>ví dụ _sta</p>
+<p>Các tốt nhất cũng như nhanh nhất cho việc giả lập này đó chính là sử dụng <code>SSDT-XOSI</code> kèm patch rename:</p>
+<ul>
+<li><code>_OSI to XOSI</code> method</li>
+<li>B1: Các bạn down <a href="https://github.com/dortania/Getting-Started-With-ACPI/blob/master/extra-files/decompiled/SSDT-XOSI.dsl">SSDT-XOSI.dsl</a></li>
+<li>B2: apply patch rename <a href="https://za7o7cw6-my.sharepoint.com/:u:/g/personal/hoanglong_coursedeals_org/Ea8SlxMbxlVHtrpzqXk-S9gBW2mS-50nx2H0PGeKE4GB-g?e=xkbO1Z">OSI to XOSI</a> sau vào file config.<ul>
+<li>Nếu là máy dell thì các bạn sẽ cần add patch rename <a href="https://za7o7cw6-my.sharepoint.com/:u:/g/personal/hoanglong_coursedeals_org/EZjpfVdbTV5BiFSlQaRWdLIBKICA1k4rGZ1CBK3F-zyH9A?e=SlTDpl">OSID to XSID</a> trước patch rename <code>OSI to XOSI</code> để tránh rename nhầm method <code>backlight keys</code></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Còn 1 các nữa là <code>Create OSYS Variable Under I2C Scope</code> nhưng mình thấy không cần thiết nên mình sẽ không hướng dẫn cách này</p>
+<p>1 lưu ý nữa là nếu các bạn đã làm đúng mà GPIO vẫn ko được gắn thì các bạn có thể thử add boot-arg sau vào <code>-vi2c-force-polling</code> nhằm force polling mode khi dùng arg này bạn sẽ không thể chuyển quan <code>Interrupt mode</code></p>
+</blockquote>
+<h3 id="gan-acpi-id-i2c-device">Gắn ACPI ID i2c device<a class="headerlink" href="#gan-acpi-id-i2c-device" title="Permanent link">&para;</a></h3>
+<p>B1: các bạn sẽ cần boot vào win tìm đến mục <code>Device Manager ==&gt; Human Interfaces Device ==&gt; I2C HID</code> device để xác định ACPI ID</p>
+<p><img alt="" src="https://i.imgur.com/VM2IjPW.png" /></p>
+<p>Ở đây ta có ACPI ID là TPL0</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>// Các ACPI ID phổ biến:
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    1. Touchpads - TPDX, ELAN, SYNA, CYPR
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    2. Touchscreen - TPLX, ELAN, ETPD, SYNA, ATML
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    3. Sensor Hubs - SHUB
+</code></pre></div>
+<p>Thông thường ACPI ID sẽ được tự động gắn nhưng cũng có 1 số trường hợp ngoại lệ là ACPI ID không được gắn. Để khắc phục chúng bạn sẽ cần kiểm tra <a href="https://github.com/vulgo/IORegistryExplorer">ioreg</a></p>
+<p>Nếu bạn tìm thấy ACPI ID của mình trong ioreg thì hãy chuyển tới phần tiếp theo nếu không tìm thấy nó chứng tỏ rằng ACPI ID i2c device chưa đước gắn ta sẽ tiến hành gắn ACPI ID i2c device vào</p>
+<p><img alt="" src="https://i.imgur.com/Q015Plo.png" /></p>
+<p>Đây là hình ảnh ACPI ID đã gắn</p>
+<blockquote>
+<p>Để gắn ACPI ID xem tiếp bước 2</p>
+</blockquote>
+<p>B2: Các bạn mở DSDT ra tìm đến ACPI ID i2c device của các bạn và chú ý vào <code>method _sta</code> chúng ta sẽ tiến hành xoá các dòng <code>if</code> để method <code>_sta</code> luôn trả về <code>0x0f</code> tức là luôn bật</p>
+<p><img alt="" src="https://i.imgur.com/CfoUzBF.png" /></p>
+<blockquote>
+<p>Thông thường khi làm như trên các bạn đã có thể gắn ACPI ID nếu vẫn chưa gắn được ACPI ID thì các bạn bắt buộc phải tự đọc DSDT và tự tìm hiểu</p>
+</blockquote>
+<h3 id="cach-xac-inh-i2c-mode">Cách xác định i2c mode<a class="headerlink" href="#cach-xac-inh-i2c-mode" title="Permanent link">&para;</a></h3>
+<p>Như đã nói ở trên i2c có 2 loại là Polling và Interrupt vậy làm sao đê biết thiết bị của bạn đang ở loại nào</p>
+<h4 id="dung-ioreg">Dùng Ioreg<a class="headerlink" href="#dung-ioreg" title="Permanent link">&para;</a></h4>
+<p>B1: Mở ioreg ra</p>
+<p>B2: Tìm đến ACPI ID i2c device đã xác định ở trên</p>
+<p>B3: Chú ý vào mục interupt mode và để ý giá trị của nó bạn sẽ xác định được trackpad mình đang ở loại nào</p>
+<p><img alt="" src="https://i.imgur.com/QLug2pG.png" /></p>
+<p>polling mode</p>
+<p><img alt="" src="https://i.imgur.com/m3JfTry.png" /></p>
+<p>Interrupt mode</p>
+<h3 id="dung-gen-i2c">Dùng Gen i2c<a class="headerlink" href="#dung-gen-i2c" title="Permanent link">&para;</a></h3>
+<p>B1 Tải app Gen i2c trong mục tool (trên thanh menu của web)</p>
+<p>B2: mở app ra và chú ý vào mục mode</p>
+<p><img alt="" src="https://i.imgur.com/jeMRQiO.png" /></p>
+<p>Polling mode</p>
+<p><img alt="" src="https://i.imgur.com/UI3M1gD.png" /></p>
+<p>Interrupt mode</p>
+<h3 id="pin-list">Pin List<a class="headerlink" href="#pin-list" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Phần này rất hiếm người cần dùng đến. Tuy nhiên nếu bạn cần dùng thì hãy đọc thật chậm và kỹ lưỡng nhé</p>
+<p>Nếu bạn đọc phần này tức là thiết bị của bạn đang là interrupt</p>
+</blockquote>
+<p>B1: Check xem <code>Pin Number</code> của bạn. Mở ioreg và tìm đến ACPI-ID của các bạn, chú ý vào dòng <code>IOInterruptSpecifiers</code>. Nếu như không có dòng đó hoặc giá trị nhỏ hơn <code>0X2F</code> (47) thì không cần làm gì nữa</p>
+<p><img alt="" src="https://i.imgur.com/2VkEyv9.png" /></p>
+<p>Như ở đây ta có <code>Pin number</code> là <code>0x33</code>. Tại sao là <code>0x33</code> vì ta chỉ lấy hai chữ số đầu của dãy số. <code>0x33</code> lớn hơn <code>0x27</code> nên tả sẽ phải tiến hành patch pin list cho nó.</p>
+<p><img alt="" src="https://i.imgur.com/nJ4vewI.png" /></p>
+<p>Việc đầu tiên cần làm là xác định <code>name SBFX</code> mà như hình là <code>SBFG</code> ta có 2 loại pin 1 là <code>pin crs</code> hai là <code>pin root</code>:</p>
+<ul>
+<li><code>Pin root</code>: <code>name SBFX</code> được tìm thấy ở ngay ACPI-ID</li>
+<li><code>Pin CRS</code>: <code>name SBFX</code> được tìm thấy ở method crs</li>
+</ul>
+<p>ở đây ta sẽ chú ý vào dòng note <code>//pin list</code> nếu giá trị khác <code>0x0000</code> thì thiết bị của bạn đang được pin tốt. Tuy nhiên nếu là <code>0x0000</code> thì đừng vội lo lắng bạn hãy tiến hành kiểm tra dòng return của method crs nếu nó có call tới method crs thì thiết bị của bạn vẫn đang được pin tốt ở đây ta có</p>
+<p><img alt="" src="https://i.imgur.com/xSPozfw.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>                If (LEqual (TPDM, Zero))
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>                {
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>                    Return (ConcatenateResTemplate (SBFB, SBFG))
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>                }
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>                Return (ConcatenateResTemplate (SBFB, SBFI))
+</code></pre></div>
+<p>2 dòng return ta có:</p>
+<ul>
+<li><code>SBFG</code> có nghĩa là <code>interrupt mode</code></li>
+<li><code>SBFI</code> có nghĩa là <code>polling mode</code></li>
+</ul>
+<p>Mà <code>GPIO</code> pin patch đòi hỏi bạn phải ở <code>interrupt mode</code> ta sẽ tieén hành edit method crs để cho nó luôn trả về là <code>interrupt mode</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Return (ConcatenateResTemplate (SBFB, SBFG))
+</code></pre></div>
+<p><img alt="" src="https://i.imgur.com/RoATCT2.png" /></p>
+<blockquote>
+<p>Ở đây ta có <code>//pin list</code> nếu là <code>0x00000</code> thì các bạn làm như vầy để cho nó trở thành pin tốt nếu khác <code>0x0000</code> thì các bạn cũng cần làm bước này để cho nó luôn trả về <code>interrupt</code></p>
+</blockquote>
+<p>Nhưng nếu bạn không tìm thấy <code>name SBFX</code> ở cả ACPI ID i2c device và method <code>crs</code> thì có nghĩa là i2c device của bạn chưa được pin. Nếu như vậy bạn sẽ cần phải tiến hành gắn pin thủ công xem ở bước 2</p>
+<p>B2: Các bạn sẽ tiến hành add <code>Name SBFX</code> vào ACPI id i2c device (đây gọi là gắn pin thủ công chỉ khi thiết bị của bạn không được pịn mới cần làm)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>    Name (SBFG, ResourceTemplate ()
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    {
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>        GpioInt (Level, ActiveLow, ExclusiveAndWake, PullDefault, 0x0000,
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>            &quot;\\_SB.PCI0.GPI0&quot;, 0x00, ResourceConsumer, ,
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>            )
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>            {   // Pin list
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>                0x0000
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>            }
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>    })
+</code></pre></div>
+<p><img alt="" src="https://imgur.com/7rm6D78.png" /></p>
+<p>B3: các bạn sẽ cần mở ioreg lên và search <code>GPIO</code></p>
+<p><img alt="" src="https://dortania.github.io/Getting-Started-With-ACPI/assets/img/gpio-enabled.c84356b7.png" /></p>
+<p>Ta có thể thấy ở đây là <code>CannonLakeH</code>, tiến hành tra nó theo bảng sau</p>
+<table>
+<thead>
+<tr>
+<th><em>text 1</em></th>
+<th><em>text 2</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/coreboot/coreboot/blob/master/src/soc/intel/skylake/include/soc/gpio_defs.h"><em>Sunrise Point</em></a></td>
+<td><a href="https://github.com/coreboot/coreboot/blob/master/src/soc/intel/skylake/include/soc/gpio_soc_defs.h"><em>Sunrise Point</em></a><em>,</em></td>
+</tr>
+<tr>
+<td><a href="https://github.com/coreboot/coreboot/blob/master/src/soc/intel/cannonlake/include/soc/gpio_defs.h"><em>Cannon Point-LP</em></a></td>
+<td><a href="https://github.com/coreboot/coreboot/blob/master/src/soc/intel/cannonlake/include/soc/gpio_soc_defs.h"><em>Cannon Point-LP</em></a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/coreboot/coreboot/blob/master/src/soc/intel/cannonlake/include/soc/gpio_defs_cnp_h.h"><em>Cannon Point-H</em></a></td>
+<td><a href="https://github.com/coreboot/coreboot/blob/master/src/soc/intel/cannonlake/include/soc/gpio_soc_defs_cnp_h.h"><em>Cannon Point-H</em></a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/coreboot/coreboot/blob/master/src/soc/intel/icelake/include/soc/gpio_defs.h"><em>Ice Lake</em></a></td>
+<td><a href="https://github.com/coreboot/coreboot/blob/master/src/soc/intel/icelake/include/soc/gpio_soc_defs.h"><em>Ice Lake</em></a></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><code>CannonLakeH</code> có thể dùng của <code>Cannon Point-H</code></p>
+</blockquote>
+<p>B4: mở file text bên text 1 và search <code>Pin number</code> đã xác định được ở ioreg</p>
+<p><img alt="" src="https://i.imgur.com/dc6RSlA.png" /></p>
+<p>Ở đây ta sẽ copy mục name và search bên text 2</p>
+<p><img alt="" src="https://i.imgur.com/uTofIiJ.png" /></p>
+<p>Ta sẽ copy giá trị nhận được là 43 và dùng hackintool <code>convert decimal to hex</code></p>
+<p><img alt="" src="https://i.imgur.com/bidpOFh.png" /></p>
+<p>Ta có <code>GPIO number</code> ở đây là 0x2B</p>
+<p>Ta tiến hành edit DSDT như sau</p>
+<p><img alt="" src="https://i.imgur.com/PbH4pfF.png" /></p>
+<p>Ngoài ra khi <code>Pin number</code> của bạn có nhiều giá trị chân GPIO bạn sẽ cần phải thử từng cái một</p>
+<p><img alt="" src="https://i.imgur.com/L3p8R9n.png" /></p>
+<p>Đối với các dòng <code>Cannon Point</code> trở lên có sự không khớp giữa <code>GPIO Pin number</code> và <code>hardware pin number</code>. Nếu bạn sử dụng loại phần cúng này thì bạn sẽ cần convert <code>hardware pin number</code> thành <code>GPIO number</code> </p>
+<blockquote>
+<p>Nếu bạn không biết mình có đang sử dụng phần cứng này không thì bạn cứ thử từng cái thử cách bình thường trước</p>
+</blockquote>
+<ul>
+<li>B1: mở file text1 ra và search Pin number nhận được ở ioreg sau đó copy phần name tương ứng như hướng dẫn ở trên</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Text 2′</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/VoodooI2C/VoodooGPIO/blob/master/VoodooGPIO/CannonLake-LP/VoodooGPIOCannonLakeLP.hpp#L366"><em>Cannon Point-LP</em></a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/VoodooI2C/VoodooGPIO/blob/master/VoodooGPIO/CannonLake-H/VoodooGPIOCannonLakeH.hpp#L414"><em>Cannon Point-H</em></a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/VoodooI2C/VoodooGPIO/blob/master/VoodooGPIO/IceLake-LP/VoodooGPIOIceLakeLP.hpp#L358"><em>Ice Lake-LP</em></a></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>B2: mở file text 2′ lên và xem phần tôi khoanh đỏ</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/jBpL3qN.png" /></p>
+<p>Ở đây ta có thể sẽ thấy được ý nghĩa các dòng trong file text</p>
+<ul>
+<li>B3: search name đã lấy được ở file 1 trong text 2′</li>
+<li>B4: ta sẽ lấy <code>Pin number</code> lấy được ở ioreg (ở decimal) trừ đi cho <code>base</code> cộng cho <code>gpio_base</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Tức là Pin number - s + g
+</code></pre></div>
+<ul>
+<li>B5: convert <code>GPIO number</code> vừa nhận được thành hex</li>
+<li>B6: edit DSDT theo hướng dẫn ở trên</li>
+</ul>
+<blockquote>
+<p>Chú ý vị trị nằm của r s e g</p>
+</blockquote>
+<h2 id="force-polling-mode">Force Polling mode<a class="headerlink" href="#force-polling-mode" title="Permanent link">&para;</a></h2>
+<p>Đối với các máy ở chế độ polling mode mà không native thì các bạn có thể tiến hành force <code>polling mode</code></p>
+<h3 id="edit-dsdt">Edit DSDT<a class="headerlink" href="#edit-dsdt" title="Permanent link">&para;</a></h3>
+<p>B1: Mở DSDT lên và tìm đến mục ACPI ID ở DSDT sau đó chú ý vào method <code>crs</code> ta có:</p>
+<ul>
+<li><code>SBFI</code>: là <code>polling mode</code></li>
+<li><code>SBFG</code>: là <code>interrupt</code></li>
+</ul>
+<p>Do đó việc bạn cần làm chỉ đơn giản là xoá return của <code>SBFG</code> đi và chỉ để lại return của <code>SBFI</code></p>
+<p><img alt="" src="https://i.imgur.com/0gUlJah.png" /></p>
+<blockquote>
+<p>Lưu ý ngoài name <code>SBFI</code> ra thì bạn cũng có thể sử dụng name <code>SBFB</code></p>
+<p>Khi dòng return có name khác đứng cùng name <code>SBFI</code> thì sẽ tiến hành rename nó thành <code>SBFB</code></p>
+</blockquote>
+<h3 id="add-boot-arg">Add boot-arg<a class="headerlink" href="#add-boot-arg" title="Permanent link">&para;</a></h3>
+<p>B1: mở config</p>
+<p>B2: thêm boot-arg <code>-vi2c-force-polling</code></p>
+<p>B3: save lại và reboot</p>
+<h2 id="force-interrupt-mode">Force interrupt mode<a class="headerlink" href="#force-interrupt-mode" title="Permanent link">&para;</a></h2>
+<p>B1: Các bạn tìm ACPI-id của các bạn trong DSDT sau đó kéo lên mục <code>scope</code> bạn sẽ có thể thấy name <code>SBFB</code> và một name <code>SBFX</code> nào đó theo sau nó như hình</p>
+<p><img alt="" src="https://i.imgur.com/EBeqO8Z.png" /></p>
+<p>B2: Chúng ta sẽ cần xem name <code>SBFX</code> đó có dòng nào đại loại như</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>                Interrupt (ResourceConsumer, Level, ActiveLow, ExclusiveAndWake, ,, _Y3A)
+</code></pre></div>
+<p>Thì tiến hành xoá cả phần đó đi</p>
+<p>Ngoài ra có trường hợp bạn sẽ không tìm thấy name <code>SBFB</code> mà sẽ tìm thấy 1 name <code>SPFX</code> đại loại như là</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>    Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>                {
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>                    Name (SBFI, ResourceTemplate ()
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>                    {
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>                        I2cSerialBusV2 (0x0015, ControllerInitiated, 0x00061A80,
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>                            AddressingMode7Bit, &quot;\\_SB.PCI0.I2C1&quot;,
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>                            0x00, ResourceConsumer, , Exclusive,
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>                            )
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>                        Interrupt (ResourceConsumer, Level, ActiveLow, Exclusive, ,, )
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>                        {
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>                            0x0000006D,
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>                        }
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>                    })
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>                    Return (SBFI)
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>                }
+</code></pre></div>
+<p>B3: các bạn cần chuyển <code>SBFX to SBFB</code></p>
+<p>B4: xóa dòng này đi nếu có </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>       Interrupt (ResourceConsumer, Level, ActiveLow, Exclusive, ,, )
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    {
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>        0x0000006D,
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    }
+</code></pre></div>
+<p>B5: Nếu bạn đang ở <code>polling mode</code> muốn force sang <code>interrupt mode</code> thì các bạn cần xem DSDT đã có pin chưa và nếu đã có pin thì chú ý vào name của pin đó nếu là <code>SBFB</code> hoặc <code>SBFG</code> thì bỏ qua nếu là <code>SBFI</code> hoặc các <code>SBFX</code> khác thì rename nó sang <code>SBFG</code></p>
+<p>B6: Các bạn sẽ tiến hành chỉnh method <code>CRS</code>. xoá hết các dòng return đi chỉ chừa lại dòng có name <code>SBFG</code>. Nếu name khai báo cùng <code>SBFG</code> không phải <code>SBFB</code> thì bạn sẽ cần rename nó là <code>SBFB</code></p>
+<p><img alt="" src="https://i.imgur.com/Eeh6tEE.png" /></p>
+<p><img alt="" src="https://i.imgur.com/HIRgnzO.pnghttps://i.imgur.com/HIRgnzO.pnghttps://i.imgur.com/HIRgnzO.png" /></p>
+<blockquote>
+<p>Chú ý rằng khi force từ <code>polling mode</code> sang <code>interrupt mode</code> thì bạn có thể sẽ cần phải pin list</p>
+<p>đối với các bạn lười không làm theo những phương pháp trên được vẫn còn 1 biện pháp cho bạn đó là các bạn hãy tải kext apple ps2 smart touch pad và đặc biệt lưu ý sau khi các bạn bỏ kext vào sẽ nhận trackpad trong setting nhưng sẽ không chỉnh gì được các thao tác (tùy máy) do đó các bạn nên lưu ý khi dùng (links tải file <a href="https://drive.google.com/drive/folders/17n9x1wcqMZSE5unmNs9KmkGCq7WvJ6iN?usp=sharing) do đây là 1 kext khá củ nên mình quên mất nguồn rồi nên mình sẽ để nó vào trong thư mục [CÁC TOOL HACKINTOSH](https://drive.google.com/drive/folders/17n9x1wcqMZSE5unmNs9KmkGCq7WvJ6iN?usp=sharing)">CÁC TOOL HACKINTOSH</a></p>
+</blockquote>
+<p><strong>Source tham khảo: <a href="https://voodooi2c.github.io/#GPIO%20Pinning/GPIO%20Pinning">GPIO Pinning (voodooi2c.github.io)</a> | <a href="https://hackintosh.vn/trackpad-on-hackintosh-voi-giao-thu-i2c">Trackpad on Hackintosh với giao thức I2C – Hackintosh Vietnam – Chuyên trang cung cấp hướng dẫn cài hackintosh</a> | <a href="https://dortania.github.io/Getting-Started-With-ACPI/Laptops/trackpad-methods/manual.html#create-osys-variable-under-i2c-scope">Fixing Trackpads: Manual | Getting Started With ACPI (dortania.github.io)</a> | <a href="https://voodooi2c.github.io/#Polling%20Mode/Polling%20Mode">Polling Mode (voodooi2c.github.io)</a> (thanks you)</strong></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../Fix_sleep/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Fix sleep" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Fix sleep
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../Fixing_KASLR/" class="md-footer__link md-footer__link--next" aria-label="Next: Fixing KASLR" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Fixing KASLR
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.748e2769.min.js"></script>
+      
+    
+  </body>
+</html>
